@@ -4,6 +4,8 @@ function bookings() {
   return (
     <div>
       
+      
+
     </div>
   )
 }

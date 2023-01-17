@@ -1,11 +1,10 @@
 
-import './App.css';
-import Bookings from '../src/customers/bookings/bookings';
+import './App.css'
 
 function App() {
   return (
     <div className="App">
-     <Bookings />
+     {/* <Landingpage /> */}
     </div>
   );
 }
