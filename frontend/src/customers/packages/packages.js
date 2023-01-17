@@ -4,8 +4,8 @@ import TodoItem from './TodoItem';
 import '../../App.css';
 
 function Packages() {
-  const [EventsPackages, setEventsPackages] = useState([]);
-  const [newEventsPackage, setNewEventsPackage] = useState("");
+  const [customEventPackages, setCustomEventPackages] = useState([]);
+  const [newCustomEventPackage, setNewCustomEventPackage] = useState("");
 
   useEffect(() => {
     // update update the list of todos
@@ -18,8 +18,8 @@ function Packages() {
   function update() {
     fetch(`http://localhost:1337/api/events-packages`)
       .then(res => res.json())
-      .then(EventsPackage => {
-        setEventsPackages(EventsPackage.data);
+      .then(customEventPackage => {
+        setCustomEventPackages(customEventPackage.data);
       })
   }
 
@@ -28,8 +28,8 @@ function Packages() {
   // component
   function addEventsPackage(e) {
     e.preventDefault();
-    let eventpackage = newEventsPackage;
-    let Details = newEventsPackage;
+    let eventpackage = newCustomEventPackage;
+    let Details = newCustomEventPackage;
 
     let body = {
       data: {
@@ -46,7 +46,7 @@ function Packages() {
       body: JSON.stringify(body)
     })
       .then(() => {
-        setNewEventsPackage("");
+        setNewCustomEventPackage("");
         update();
       })
   }
@@ -58,15 +58,21 @@ function Packages() {
 
         {/* This form collects the item we want to add to our todo, and sends it to the server */}
         <form className="form" onSubmit={addEventsPackage}>
-          <input type="text" className="todo_input" placeholder="Enter new todo" value={newEventsPackage} onChange={e => setNewEventsPackage(e.currentTarget.value) }/>
+          <input type="text" className="todo_input" placeholder="Package name" value={newCustomEventPackage.eventpackage} onChange={e => newCustomEventPackage(e.currentTarget.value) }/>
           <button type="submit" className="todo_button">Add todo</button>
         </form>
+
+        {/* <form className="form" onSubmit={addEventsPackage}>
+          <input type="text" className="todo_input" placeholder="Package details" value={newCustomEventPackage.Details} onChange={e => setNewCustomEventPackage(e.currentTarget.value) }/>
+          <button type="submit" className="todo_button">Add todo</button>
+        </form> */}
 
         {/* This is a list view of all the todos in the "todo" state variable */}
         <div>
           {
-            EventsPackages.map((EventsPackage, i) => {
-              return <TodoItem EventsPackage={EventsPackage} key={i} update={update} />
+            customEventPackages.map((customEventPackage, i) => {
+              return <TodoItem customEventPackage={customEventPackage} key={i} update={update} />
+              
             })
           }
         </div>

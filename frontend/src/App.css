@@ -65,4 +65,5 @@
   .name {
     max-width: 190.34px;
     text-align: left;
+    border: 2px solid green;
   }

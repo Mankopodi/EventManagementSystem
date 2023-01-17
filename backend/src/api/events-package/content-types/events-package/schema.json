@@ -4,7 +4,7 @@
   "info": {
     "singularName": "events-package",
     "pluralName": "events-packages",
-    "displayName": "eventsPackage",
+    "displayName": "customEventPackage",
     "description": ""
   },
   "options": {
