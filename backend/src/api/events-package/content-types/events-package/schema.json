@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events_packages",
+  "info": {
+    "singularName": "events-package",
+    "pluralName": "events-packages",
+    "displayName": "eventsPackage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventpackage": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "richtext"
+    }
+  }
+}
