@@ -4,8 +4,8 @@ import TodoItem from './TodoItem';
 import '../../App.css';
 
 function Packages() {
-  const [customEventPackages, setCustomEventPackages] = useState([]);
-  const [newCustomEventPackage, setNewCustomEventPackage] = useState("");
+  const [customizeEventsPackages, setCustomizeEventsPackages] = useState([]);
+  const [newCustomizeEventsPackage, setNewCustomizeEventsPackage] = useState("");
 
   useEffect(() => {
     // update update the list of todos
@@ -16,29 +16,26 @@ function Packages() {
   // This function updates the component with the
   // current todo data stored in the server
   function update() {
-    fetch(`http://localhost:1337/api/events-packages`)
+    fetch(`http://localhost:1337/api/customize-events-packages`)
       .then(res => res.json())
-      .then(customEventPackage => {
-        setCustomEventPackages(customEventPackage.data);
+      .then(customizeEventsPackage => {
+        setCustomizeEventsPackages(customizeEventsPackage.data);
       })
   }
 
   // This function sends a new todo to the server
   // and then call the update method to update the
   // component
-  function addEventsPackage(e) {
+  function addTodo(e) {
     e.preventDefault();
-    let eventpackage = newCustomEventPackage;
-    let Details = newCustomEventPackage;
-
+    let event_package = newCustomizeEventsPackage;
     let body = {
       data: {
-        eventpackage,
-        Details
+        event_package
       }
     };
  
-    fetch(`http://localhost:1337/api/events-packages`, {
+    fetch(`http://localhost:1337/api/customize-events-packages`, {
       method: "POST",
       headers: {
         'Content-type': 'application/json'
@@ -46,7 +43,7 @@ function Packages() {
       body: JSON.stringify(body)
     })
       .then(() => {
-        setNewCustomEventPackage("");
+        setNewCustomizeEventsPackage("");
         update();
       })
   }
@@ -57,22 +54,16 @@ function Packages() {
         {/* we centered the "main" tag in our style sheet*/}
 
         {/* This form collects the item we want to add to our todo, and sends it to the server */}
-        <form className="form" onSubmit={addEventsPackage}>
-          <input type="text" className="todo_input" placeholder="Package name" value={newCustomEventPackage.eventpackage} onChange={e => newCustomEventPackage(e.currentTarget.value) }/>
+        <form className="form" onSubmit={addTodo}>
+          <input type="text" className="todo_input" placeholder="Enter new todo" value={newCustomizeEventsPackage} onChange={e => setNewCustomizeEventsPackage(e.currentTarget.value) }/>
           <button type="submit" className="todo_button">Add todo</button>
         </form>
-
-        {/* <form className="form" onSubmit={addEventsPackage}>
-          <input type="text" className="todo_input" placeholder="Package details" value={newCustomEventPackage.Details} onChange={e => setNewCustomEventPackage(e.currentTarget.value) }/>
-          <button type="submit" className="todo_button">Add todo</button>
-        </form> */}
 
         {/* This is a list view of all the todos in the "todo" state variable */}
         <div>
           {
-            customEventPackages.map((customEventPackage, i) => {
-              return <TodoItem customEventPackage={customEventPackage} key={i} update={update} />
-              
+            customizeEventsPackages.map((customizeEventsPackage, i) => {
+              return <TodoItem customizeEventsPackage={customizeEventsPackage} key={i} update={update} />
             })
           }
         </div>
