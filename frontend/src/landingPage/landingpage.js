@@ -1,10 +1,11 @@
 import React from "react";
 import "./landingpage.css";
-import ems from "../assets/images/ems.jpeg";
+import event from "../assets/images/event.jpeg";
+
 
 function landingpage() {
   return (
-    <div className="landing">
+    <div className="min-h-screen">
       <div class="landing-page">
         <div class="container">
           <div class="header-area">
@@ -12,14 +13,14 @@ function landingpage() {
               Event <b>Management</b> <b>System</b>
             </div>
             <ul class="links">
-              <li>Home</li>
+              {/* <li>Home</li>
               <li>About Us</li>
-              <li>Contact Us</li>
+              <li>Contact Us</li> */}
               <li>Sign in</li>
             </ul>
           </div>
           <div class="info">
-            <h1>Looking For An Event Management System</h1>
+            <h1>Looking For An Event Manager</h1>
             <p>
               Event management is the process of creating and maintaining an
               event. This process spans from the very beginning of planning all
@@ -34,7 +35,7 @@ function landingpage() {
             <button>Get Started</button>
           </div>
           <div class="image">
-            <img src={ems} alt="image" />
+            <img src={event} alt="event" />
           </div>
           <div class="clearfix"></div>
         </div>
