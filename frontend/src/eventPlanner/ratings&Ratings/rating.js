@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import wedding from "../../assets/wedding.jpeg"
 import bookshop from "../../assets/bookshop.jpeg"
+import { MdDelete } from 'react-icons/md'
+import {AiOutlineEdit} from 'react-icons/ai'
 
 const ProductReview1 = () => {
     const [menu, setMenu] = useState(true);
@@ -15,6 +17,9 @@ const ProductReview1 = () => {
                     <div className="flex flex-col md:flex-row justify-between w-full">
                         <div className="flex flex-row justify-between items-start">
                             <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800">What a Beatiful Event</p>
+
+                            <MdDelete className="text-2xl"/> <AiOutlineEdit className="text-2xl"/>
+                            
                             <button onClick={() => setMenu(!menu)} className="ml-4 md:hidden">
                                 <svg className={"transform " + (menu ? "rotate-180" : "rotate-0")} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15 12.5L10 7.5L5 12.5" stroke="#1F2937" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
@@ -29,6 +34,7 @@ const ProductReview1 = () => {
                                         fill="#1F2937"
                                     />
                                 </g>
+                                
                                 <g clipPath="url(#clip1)">
                                     <path
                                         d="M49.5598 24.4285C49.3999 24.4291 49.2422 24.3914 49.0998 24.3185L43.9998 21.6485L38.8998 24.3185C38.7342 24.4056 38.5475 24.4444 38.3609 24.4307C38.1743 24.4169 37.9953 24.3511 37.8443 24.2407C37.6932 24.1303 37.5762 23.9797 37.5064 23.8061C37.4367 23.6324 37.4171 23.4427 37.4498 23.2585L38.4498 17.6285L34.3298 13.6285C34.2013 13.5002 34.1101 13.3394 34.0661 13.1632C34.022 12.987 34.0268 12.8022 34.0798 12.6285C34.1378 12.4508 34.2444 12.2928 34.3876 12.1726C34.5307 12.0525 34.7047 11.9748 34.8898 11.9485L40.5898 11.1185L43.0998 5.98849C43.1817 5.81942 43.3096 5.67683 43.4687 5.57706C43.6279 5.47729 43.812 5.42438 43.9998 5.42438C44.1877 5.42438 44.3717 5.47729 44.5309 5.57706C44.6901 5.67683 44.8179 5.81942 44.8998 5.98849L47.4398 11.1085L53.1398 11.9385C53.3249 11.9648 53.4989 12.0425 53.6421 12.1626C53.7852 12.2828 53.8919 12.4408 53.9498 12.6185C54.0029 12.7922 54.0076 12.977 53.9636 13.1532C53.9196 13.3294 53.8284 13.4902 53.6998 13.6185L49.5798 17.6185L50.5798 23.2485C50.6155 23.436 50.5968 23.6297 50.526 23.8069C50.4551 23.9841 50.335 24.1374 50.1798 24.2485C49.9987 24.3754 49.7807 24.4387 49.5598 24.4285V24.4285Z"
@@ -97,9 +103,12 @@ const ProductReview1 = () => {
                             <div>
                                 <img src={bookshop} alt="girl-avatar" />
                             </div>
-                            <div className="flex flex-col justify-start items-start space-y-2">
+                            <
+                                div className="flex flex-col justify-start items-start space-y-2">
                                 <p className="text-base font-medium leading-none text-gray-800">Rixongile</p>
                                 <p className="text-sm leading-none text-gray-600">02 September 2022</p>
+                              
+
                             </div>
                         </div>
                     </div>
@@ -107,6 +116,7 @@ const ProductReview1 = () => {
                         <div className="flex flex-col md:flex-row flex justify-between w-full">
                             <div className="flex flex-row justify-between items-start">
                                 <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800">Everything was extremely well organized</p>
+                                <MdDelete className="text-5xl"/> <AiOutlineEdit className="text-5xl"/>
                                 <button onClick={() => setMenu1(!menu1)} className="ml-4 md:hidden">
                                     <svg className={"transform " + (menu1 ? "rotate-180" : "rotate-0")} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15 12.5L10 7.5L5 12.5" stroke="#1F2937" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
@@ -176,6 +186,7 @@ const ProductReview1 = () => {
                                 </div>
                                 <div className="flex flex-col justify-start items-start space-y-2">
                                     <p className="text-base font-medium leading-none text-gray-800">James </p>
+  
                                     <p className="text-sm leading-none text-gray-600">23 December 2022</p>
                                 </div>
                             </div>

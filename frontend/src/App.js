@@ -7,7 +7,6 @@ import ForgotPasswordPage from './Auth/forgot password'
 import InjectedCheckoutForm from "./customers/payment/payment";
 import ProductReview1 from "./eventPlanner/ratings&Ratings/rating"; 
 
-
 import "./App.css";
 
 function App() {
