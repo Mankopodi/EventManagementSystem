@@ -9,13 +9,6 @@ import Home from '../home/home';
 
 function navbar() {
 
-    function homes() {
-        document
-            .getElementById("homes")
-            .scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-
     return (
         <div>
             <div className="navbar bg-base-100">

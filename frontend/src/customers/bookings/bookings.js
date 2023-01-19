@@ -1,101 +1,123 @@
-import {Fragment} from "react";
-import {Button, Table} from 'react-bootstrap';
-//import "bootstrap/dist/css/bootstrap.min.css";
-import {Events} from '../bookings/events';
-import {Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 
-
-function Bookings() {
-
-  //delete function
-  let history = useNavigate();
-
-  const handleDelete = (id) => {
-      var index = Events.map(function (e) {
-          return e.id
-      });
-      Events.splice(index, 1); // will delete at that particular index
-
-      history('/');
-
-  }
+function bookings() {
 
   return (
-    <div className="min-h-screen color" >
-        <Fragment>
-          <div style={{ margin: "1-rem" }}>
-          <div className="overflow-x-auto">
-        <h2 className="heading text-center text-5xl mb-8 mt-4" style={{color: 'white'}}>Manage Events</h2>
-      </div>
-          <Link className=" cre" to={"/create"}>
-              <Button size='sm' >Create</Button>
-            </Link>
-            <Table className="mt-4" striped bordered hover size='sm'>
-              <thead>
-                <tr>
-                  <th>Venue</th>
-                  <th>Event Name</th>
-                  <th>Date</th>
-                  <th>location</th>
-                  <th>Total Number of Guests</th>
-                  <th>Event Status</th>
-                  <th>Review</th>
-                </tr>
-              </thead>
 
-              <tbody>
-                {
-                  Events && Events.length > 0
-                    ?
-                    Events.map((item) => {
-                      return (
-                        <tr>
-                          <td>
-                            {item.Venue}
-                          </td>
-                          <td>
-                            {item.EventName}
-                          </td>
-                          <td>
-                            {item.Date}
-                          </td>
-                          <td>
-                            {item.Location}
-                          </td>
-                          <td>
-                            {item.TotalNumberOfGuests}
-                          </td>
-                          <td>
-                            {item.StatusOfEvent}
-                          </td>
-                          <td>
-                            <Link to={`edit`}>
-                              <Button onClick={() => alert(item.id, item.Venue, item.EventName, item.Date, item.Location, item.TotalNumberOfGuests, item.StatusOfEvent)} >Edit</Button>
-                            </Link>
-                            &nbsp;
-                            <Button onClick={() => handleDelete(item.id)} >DELETE</Button>
-                          </td>
-
-                        </tr>
-                      )
-
-                    })
-                    :
-                    "No data available"
-                }
-              </tbody>
-            </Table>
-            <br>
-            </br>
-
-            
+    <div className="hero min-h-screen">
+      <div className='card w-96 bg-base-100 shadow-xl  mt-8 '>
+        <div className='card-body'>
+        <p>Please fill in this form to make your booking.</p>
+        <form>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">First Name:</span>
+            </label>
+            <label className="input-group">
+              <span>First Name</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
           </div>
-        </Fragment>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Last Name:</span>
+            </label>
+            <label className="input-group">
+              <span>Last Name</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Email:</span>
+            </label>
+            <label className="input-group">
+              <span>Email</span>
+              <input type="email" placeholder="info@site.com" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Phone Number:</span>
+            </label>
+            <label className="input-group">
+              <span>Phone Number</span>
+              <input type="number" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Group Name:</span>
+            </label>
+            <label className="input-group">
+              <span>Group Name</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Event Type:</span>
+            </label>
+            <label className="input-group">
+              <span>Event Type</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Number of Guests:</span>
+            </label>
+            <label className="input-group">
+              <span>Number of Guests</span>
+              <input type="number" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Date:</span>
+            </label>
+            <label className="input-group">
+              <span>Date</span>
+              <input type="date" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Venue:</span>
+            </label>
+            <label className="input-group">
+              <span>Venue</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Package:</span>
+            </label>
+            <label className="input-group">
+              <span>Package</span>
+              <input type="text" placeholder="Type here" className="input input-bordered input-md" required />
+            </label>
+          </div>
+
+          <button className="btn btn-primary mt-8">Book</button>
+        </form>
         </div>
+      </div>
+    </div>
 
-     
 
-  );
+
+  )
 }
 
-export default Bookings;
+export default bookings
