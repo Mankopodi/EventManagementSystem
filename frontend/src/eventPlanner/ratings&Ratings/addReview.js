@@ -104,11 +104,12 @@ function AddList({setList}) {
         <form className='flex flex-col gap-4 addForm outline p-16 bg-white' onSubmit={handleSubmit}>
        
            
-            <input type="text" className='p-2' name="name" placeholder="Enter Name" ref={nameRef}/>
+            <input type="text" className='p-2 bg-gray-900' name="name" placeholder="Enter Name" ref={nameRef}/>
             <div className="mb-2"> </div>
             <input type="text" className='p-12 bg-gray-900' name="review" placeholder="The review" ref={priceRef}/>
             <div className="mb-2"> </div>
-            <input type="number" className='p-2' min={1} max={5} name="" placeholder="Ratings" ref={nameRef}/>
+            <input type="number" className='p-2 p-2 bg-gray-900' min={1} max={5} name="" placeholder="Ratings" ref={nameRef}/>
+            
             <div className="mb-2"> </div>
             <button type="submit">Add Review</button>
             
