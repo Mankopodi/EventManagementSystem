@@ -101,19 +101,19 @@ function AddList({setList}) {
         priceRef.current.value = ""
     }
     return(
-        <form className='flex flex-col gap-4 addForm' onSubmit={handleSubmit}>
+        <form className='flex flex-col gap-4 addForm outline p-16 bg-white' onSubmit={handleSubmit}>
        
            
-            <input type="text" name="name" placeholder="Enter Name" ref={nameRef}/>
+            <input type="text" className='p-2' name="name" placeholder="Enter Name" ref={nameRef}/>
             <div className="mb-2"> </div>
-            <input type="text" name="review" placeholder="The review" ref={priceRef}/>
+            <input type="text" className='p-12 bg-gray-900' name="review" placeholder="The review" ref={priceRef}/>
             <div className="mb-2"> </div>
-            <input type="number" min={1} max={5} name="" placeholder="Ratings" ref={nameRef}/>
+            <input type="number" className='p-2' min={1} max={5} name="" placeholder="Ratings" ref={nameRef}/>
             <div className="mb-2"> </div>
             <button type="submit">Add Review</button>
+            
            
 
-            
         </form>
     )
 }
