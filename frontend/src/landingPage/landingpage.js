@@ -8,11 +8,11 @@ function landingpage() {
     <div>
       <div className="navbar bg-base-200">
         <div className="navbar-start">
-          <a href={landingpage} className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a href={landingpage} className="btn btn-accent normal-case text-xl">Event Management System</a>
         </div>
 
         <div className="navbar-end">
-          <a href={landingpage} className="btn">Get started</a>
+          <a href={landingpage} className="btn btn-accent">Signin</a>
         </div>
       </div>
       <div className="hero min-h-screen bg-base-200">
@@ -31,7 +31,7 @@ function landingpage() {
               managers are tasked with reviewing event data, submitting KPI and
               ROI findings, and staying on the ball for any post-event
               offerings.</p>
-            <button className="btn btn-primary">Get Started</button>
+            {/* <button className="btn btn-accent">Signin</button> */}
           </div>
         </div>
       </div>
