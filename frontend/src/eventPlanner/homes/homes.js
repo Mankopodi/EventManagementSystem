@@ -1,4 +1,7 @@
 import React from "react";
+import {HiDocumentReport} from 'react-icons/hi';
+import { MdReviews} from 'react-icons/md';
+import {FiPackage} from 'react-icons/fi';
 
 function homes() {
   return (
@@ -6,9 +9,10 @@ function homes() {
       <div className="card w-96  shadow-xl image-full mt-16">
         <div className="card-body">
           <h2 className="card-title">Report for All Events</h2>
+          <HiDocumentReport  style={{fontSize: "2em"}} />
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent">Buy Now</button>
+            <button className="btn btn-accent">View</button>
           </div>
         </div>
       </div>
@@ -16,9 +20,10 @@ function homes() {
       <div className="card w-96  shadow-xl image-full mt-16">
         <div className="card-body">
           <h2 className="card-title">Report for All Venues</h2>
+          <HiDocumentReport  style={{fontSize: "2em"}} />
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent">Buy Now</button>
+            <button className="btn btn-accent">View</button>
           </div>
         </div>
       </div>
@@ -26,9 +31,10 @@ function homes() {
       <div className="card w-96  shadow-xl image-full mt-16">
         <div className="card-body">
           <h2 className="card-title">Review and Ratings</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <MdReviews  style={{fontSize: "2em"}} />
+          <p>Checkout the Rate and Reviews for our event management system.</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent">Buy Now</button>
+            <button className="btn btn-accent">View</button>
           </div>
         </div>
       </div>
@@ -36,9 +42,10 @@ function homes() {
       <div className="card w-96  shadow-xl image-full mt-16">
         <div className="card-body">
           <h2 className="card-title">Event Packages</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <FiPackage  style={{fontSize: "2em"}} />
+          <p>Find out more about Event packages that you might prefer depending on your event in details.</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent">Buy Now</button>
+            <button className="btn btn-accent">View</button>
           </div>
         </div>
       </div>
