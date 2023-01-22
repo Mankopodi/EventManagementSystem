@@ -5,8 +5,8 @@ import './App.css';
 //import Homes from './eventPlanner/homes/homes';
 //import Bookings from '../src/customers/bookings/bookings';
 //import Pack from './customers/pack/pack';
-//import History from './customers/history/history';
-import Navbar from './customers/navbar/navbar';
+import History from './customers/history/history';
+//import Navbar from './customers/navbar/navbar';
 //import Home from '../src/customers/home/home';
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
    {/* <Homes /> */}
    {/* <Bookings /> */}
    {/* <Pack /> */}
-   {/* <History /> */}
+   <History />
    {/* <Home /> */}
-   <Navbar />
+   {/* <Navbar /> */}
     </div>
   );
 }

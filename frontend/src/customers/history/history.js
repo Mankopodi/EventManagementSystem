@@ -2,7 +2,7 @@ import React from 'react'
 
 function history() {
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className="overflow-x-auto">
         <h1 className='flex justify-center text-4xl font-bold mb-4'>Booking History</h1>
         <table className="table w-full">
@@ -23,11 +23,7 @@ function history() {
             </tr>
           </thead>
           <tbody>
-
-
-
-
-
+            
           </tbody>
         </table>
       </div>
