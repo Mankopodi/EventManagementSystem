@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Token } from "../../tokens/constant";
 
 function Bookings() {
   const [FirstName, setFirstName] = useState("");
@@ -15,20 +17,74 @@ function Bookings() {
   const bookEvent = (e) => {
     e.preventDefault();
 
-    const data = {
-      FirstName: FirstName,
-      LastName: LastName,
-      Email: Email,
-      PhoneNumber: PhoneNumber,
-      GroupName: GroupName,
-      EventType: EventType,
-      NumberOfGuests: NumberOfGuests,
-      eventDate: eventDate,
-      Venue: Venue,
-      Package: Package,
+    const bookingData = {
+      data: {
+        FirstName: FirstName,
+        LastName: LastName,
+        Email: Email,
+        PhoneNumber: PhoneNumber,
+        GroupName: GroupName,
+        EventType: EventType,
+        NumberOfGuests: NumberOfGuests,
+        eventDate: eventDate,
+        Venue: Venue,
+        Package: Package,
+      },
     };
 
-    console.log(data);
+    console.log(bookingData);
+
+    axios
+      .post("http://localhost:1337/api/bookings", bookingData, {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      axios
+      .get("http://localhost:1337/api/bookings", bookingData, {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      axios
+      .put("http://localhost:1337/api/bookings", bookingData, {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      axios
+      .delete("http://localhost:1337/api/bookings", bookingData, {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -122,24 +178,7 @@ function Bookings() {
               </label>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Event Type:</span>
-              </label>
-              <label className="input-group">
-                <span>Event Type</span>
-                <select className="select w-md max-w-md">
-                value={EventType}
-                  onChange={(e) => setEventType(e.target.value)}
-                  <option disabled selected>
-                    Select your event
-                  </option>
-                  <option>Wedding</option>
-                  <option>Conference</option>
-                </select>
-              </label>
-            </div>
-
+           
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Number of Guests:</span>
@@ -176,13 +215,37 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Event Type:</span>
+              </label>
+              <label className="input-group">
+                <span>Event Type</span>
+                <select
+                  className="select w-md max-w-md"
+                  value={EventType}
+                  onChange={(e) => setEventType(e.target.value)}
+                >
+                  <option disabled selected>
+                    Select your event
+                  </option>
+                  <option>Wedding</option>
+                  <option>Party</option>
+                  <option>Conference</option>
+                </select>
+              </label>
+            </div>
+
+
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Venue:</span>
               </label>
               <label className="input-group">
                 <span>Venue</span>
-                <select className="select w-md max-w-xs">
-                value={Venue}
+                <select
+                  className="select w-md max-w-md"
+                  value={Venue}
                   onChange={(e) => setVenue(e.target.value)}
+                >
                   <option disabled selected>
                   Select the venue for your event
                   </option>
@@ -191,10 +254,11 @@ function Bookings() {
                   <option>Executive Boardroom</option>
                   <option>The garden venue hotel</option>
                   <option>The Natural Arch</option>
-                  <option>The Natural Arch</option>
+                  <option>The Sweett Arch</option>
                 </select>
               </label>
             </div>
+
 
             <div className="form-control">
               <label className="label">
@@ -202,14 +266,16 @@ function Bookings() {
               </label>
               <label className="input-group">
                 <span>Package</span>
-                <select className="select w-md max-w-xs">
-                value={Package}
+                <select
+                  className="select w-md max-w-xs"
+                  value={Package}
                   onChange={(e) => setPackage(e.target.value)}
+                >
                   <option disabled selected>
                     Select a Pactage
                   </option>
                   <option>Premium</option>
-                  <option>Classi</option>
+                  <option>Classic</option>
                   <option>Deluxe</option>
                   <option>Standard</option>
                   <option>Stay-Over</option>
