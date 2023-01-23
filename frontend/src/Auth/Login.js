@@ -148,9 +148,6 @@ const config = require('./config.json')
           </div>
         </form>
 
-
-
-
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           {" "}
           Don't have an account?{" "}

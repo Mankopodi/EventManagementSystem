@@ -7,10 +7,6 @@ const ForgotPasswordPage = () => {
     const forms = useRef();
     const emailInputRefs = useRef();
 
-
-
-
-
     async function forgot_Password  (e){
         e.preventDefault();
     
@@ -22,8 +18,6 @@ const ForgotPasswordPage = () => {
     
         console.log(data);
      
-    
-    
         axios
           .post(
             "http://localhost:1337/api/auth/forgot-password",

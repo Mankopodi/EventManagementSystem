@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import wedding from "../../assets/wedding.jpeg"
 import bookshop from "../../assets/bookshop.jpeg"
 import { MdDelete } from 'react-icons/md'
-import {AiOutlineEdit} from 'react-icons/ai'
+import {AiOutlineEdit} from 'react-icons/ai';
+import  Modal  from './Modal'
 
 const ProductReview1 = () => {
     const [menu, setMenu] = useState(true);
@@ -12,13 +13,15 @@ const ProductReview1 = () => {
             <div className="flex flex-col justify-start items-start w-full space-y-8">
                 <div className="flex justify-start items-start">
                     <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Reviews</p>
+                    
                 </div>
                 <div className="w-full flex justify-start items-start flex-col bg-gray-50 p-8">
                     <div className="flex flex-col md:flex-row justify-between w-full">
                         <div className="flex flex-row justify-between items-start">
                             <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800">What a Beatiful Event</p>
 
-                            <MdDelete className="text-2xl"/> <AiOutlineEdit className="text-2xl"/>
+                            <MdDelete className="text-2xl"/>
+                             <Modal /> 
                             
                             <button onClick={() => setMenu(!menu)} className="ml-4 md:hidden">
                                 <svg className={"transform " + (menu ? "rotate-180" : "rotate-0")} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,12 +106,9 @@ const ProductReview1 = () => {
                             <div>
                                 <img src={bookshop} alt="girl-avatar" />
                             </div>
-                            <
-                                div className="flex flex-col justify-start items-start space-y-2">
+                            <div className="flex flex-col justify-start items-start space-y-2">
                                 <p className="text-base font-medium leading-none text-gray-800">Rixongile</p>
                                 <p className="text-sm leading-none text-gray-600">02 September 2022</p>
-                              
-
                             </div>
                         </div>
                     </div>

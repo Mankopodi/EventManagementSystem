@@ -2,10 +2,7 @@ import React, { useRef, useState } from 'react'
 import './add.css'
 
 function CRUD() {
-    const list = [
-       
-      
-    ]
+    const list = []
     const [lists, setList] = useState(list)
     const [updateState, setUpdateState] = useState(-1)
     return(
