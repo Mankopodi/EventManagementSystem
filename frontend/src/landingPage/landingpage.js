@@ -6,7 +6,7 @@ import event from "../assets/images/event.jpeg";
 function landingpage() {
   return (
     <div>
-      <div className="navbar bg-base-200">
+      <div className="navbar ">
         <div className="navbar-start">
           <a href={landingpage} className="btn btn-accent normal-case text-xl">Event Management System</a>
         </div>
@@ -15,7 +15,7 @@ function landingpage() {
           <a href={landingpage} className="btn btn-accent">Signin</a>
         </div>
       </div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen ">
 
 
         <div className="hero-content flex-col lg:flex-row-reverse">

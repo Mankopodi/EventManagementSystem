@@ -1,11 +1,13 @@
 import React from 'react'
 
 function history() {
+
+  
   return (
     <div className='min-h-screen'>
       <div className="overflow-x-auto">
-        <h1 className='flex justify-center text-4xl font-bold mb-4'>Booking History</h1>
-        <table className="table w-full">
+        <h1 className='flex justify-center text-4xl font-bold mb-4' style={{ color: "white" }}>Booking History</h1>
+        <table className="table w-full" style={{ color: "white" }}>
 
           <thead>
             <tr>

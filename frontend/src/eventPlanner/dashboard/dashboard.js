@@ -60,38 +60,38 @@ function dashboard() {
             <ul className="menu p-4 overflow-y-auto w-80 bg-base-800 text-base-content colg">
               <div className=" push down"> 
                 <div className=" font-bold text-5xl named">
-                  <h1 className=' text-black-900'>Event Management System</h1>
+                  <h1 className=' text-black-900' style={{color:'white'}}>Event Management System</h1>
                  {/* EMS <SiEventstore style={{fontSize: "1.5em"}} /> */}
                 </div>
               <div className='mt-32'>
                 <li id="scroll">
                   <a href="reschedule" onClick={() => Reschedule()}>
-                  <TbBrandBooking style={{fontSize: "1.5em"}} />
-                    <b>Reschedule Booking</b>
+                  <TbBrandBooking style={{fontSize: "1.5em", color:"white"}} />
+                    <b style={{color:'white'}} >Reschedule Booking</b>
                   </a>
                 </li>
                 <li id="scroll">
                   <a href="notifications" onClick={() => Notigications()}>
-                  <IoIosNotifications style={{fontSize: "1.5em"}} />
-                    <b>Notifications</b>
+                  <IoIosNotifications style={{fontSize: "1.5em", color:"white"}} />
+                    <b style={{color:'white'}}>Notifications</b>
                   </a>
                 </li>
                 <li id="scroll">
                   <a href="email" onClick={() => Emails()}>
-                  <MdEmail style={{fontSize: "1.5em"}} />
-                    <b>Emails</b>
+                  <MdEmail style={{fontSize: "1.5em", color:"white"}} />
+                    <b style={{color:'white'}}>Emails</b>
                   </a>
                 </li>
                 <li id="scroll">
                   <a href="profile" onClick={() => Profile()}>
-                  <CgProfile style={{fontSize: "1.5em"}} />
-                    <b>Profile</b>
+                  <CgProfile style={{fontSize: "1.5em", color:"white"}} />
+                    <b style={{color:'white'}}>Profile</b>
                   </a>
                 </li>
                 <li id="scroll">
                   <a href="logout" onClick={() => Logout()}>
-                  <IoMdLogOut style={{fontSize: "1.5em"}} />
-                   <b>Logout</b> 
+                  <IoMdLogOut style={{fontSize: "1.5em", color:"white"}} />
+                   <b style={{color:'white'}}>Logout</b> 
                   </a>
                 </li>
                 </div>
