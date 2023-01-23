@@ -71,24 +71,29 @@ const config = require('./config.json')
   export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
 
+  // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
     e.preventDefault();
 
     const data = {
       identifier: email,
       password: password,
+      myUserRoles : role
     };
     console.log(data);
 
     await axios
       .post(`${config.dev_url}/api/auth/local`, {
-        identifier: email,
-        password: password,
+        identifier : email,
+        password : password,
+        myUserRoles : role
       })
       .then((response) => {
         console.log("Well done!");
         console.log("User profile", response.data.user);
+        localStorage.setItem("user_role: ", response.data.user.myUserRoles);
         console.log("User token", response.data.jwt);
       })
       .catch((error) => {
@@ -128,18 +133,23 @@ const config = require('./config.json')
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 btn-primary bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <Link  to={'/forgot-password'} className="text-xs text-black-900 hover:underline">
             Forget Password?
           </Link>
+
+      
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform btn-primary rounded-md hover:btn-primary focus:outline-none focus:btn-primary">
+            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn btn-primary mb1  bg-aqua focus:outline-none focus:btn btn-primary  bg-aqua">
               Login
             </button>
           </div>
         </form>
+
+
+
 
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           {" "}

@@ -5,49 +5,39 @@ const config = require('./config.json')
 
 
  export default function Registration() {
- const  [name, setName] = useState("")
+ const  [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
+ const [role, setRole] = useState("");
   
+
     const Register = async (e) => {
       e.preventDefault();
   
       const data = {
-        identifier: email,
+        username: name,
+        email: email,
         password: password,
-        name:name,
+        myUserRoles : role
+       
 
       };
       console.log(data);
   
       await axios
-        .post(`${config.dev_url}/api/auth/local`, {
-          identifier: email,
-          password: password,
-          name:name,
-
-        })
+        .post("http://localhost:1337/api/auth/local/register", data)
         .then((response) => {
-          console.log("Well done!");
+          console.log("Well done!" , response );
           console.log("User profile", response.data.user);
           console.log("User token", response.data.jwt);
+
+        
         })
         .catch((error) => {
           console.log("An error occurred:", error.response);
         });
     };
   
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
@@ -124,6 +114,29 @@ const config = require('./config.json')
                                 />
                             </div>
                         </div>
+
+
+{/*  */}
+<h3>Select Admin?</h3>
+
+<input type="radio" name="customer" value="customer" id="customer" 
+checked={role === "Customer"} 
+onChange={(e)=>{setRole(e.target.value)}}
+/>
+<label htmlFor="customer">Customer</label>
+
+<input type="radio" name="admin" value="Admin1" id="admin"
+ checked={role === "Admin1"} 
+ onChange={(e)=>{setRole(e.target.value)}}
+/>
+<label htmlFor="admin">Admin</label>
+
+<input type="radio" name="eventPlanner" value="Event_planner" id="eventPlanner"
+checked={role === "Event Planner"} 
+onChange={(e)=>{setRole(e.target.value)}}
+/>
+<label htmlFor="eventPlanner">Event Planner</label>
+{/*  */}
                         <div className="flex items-center justify-end mt-4">
                             <a
                                 className="text-sm text-gray-600 underline hover:text-gray-900"
