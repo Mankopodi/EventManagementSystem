@@ -8,11 +8,11 @@ function landingpage() {
     <div>
       <div className="navbar ">
         <div className="navbar-start">
-          <a href={landingpage} className="btn btn-accent normal-case text-xl">Event Management System</a>
+          <a href={landingpage} className="btn btn-accent normal-case text-xl" style={{color:'white'}}>Event Management System</a>
         </div>
 
         <div className="navbar-end">
-          <a href={landingpage} className="btn btn-accent">Signin</a>
+          <a href={landingpage} className="btn btn-accent" style={{color:'white'}}>Signin</a>
         </div>
       </div>
       <div className="hero min-h-screen ">
@@ -21,8 +21,8 @@ function landingpage() {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={event} className="max-w-lg rounded-lg shadow-2xl" alt="event"/>
           <div>
-            <h1 className="text-5xl font-bold">Looking For An Event Manager</h1>
-            <p className="py-6"> Event management is the process of creating and maintaining an
+            <h1 className="text-5xl font-bold" style={{color:'white'}}>Looking For An Event Manager</h1>
+            <p className="py-6" style={{color:'white'}}> Event management is the process of creating and maintaining an
               event. This process spans from the very beginning of planning all
               the way to post-event strategizing. At the start, an event manager
               makes planning decisions, such as the time, location, and theme of

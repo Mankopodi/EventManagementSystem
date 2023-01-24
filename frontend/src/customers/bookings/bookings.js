@@ -88,14 +88,14 @@ function Bookings() {
   };
 
   return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-screen" style={{color:'white'}}>
       <div className="card w-96 bg-base-100 shadow-xl  mt-8 ">
         <div className="card-body">
           <p>Please fill in this form to make your booking.</p>
           <form>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">First Name:</span>
+                <span className="label-text" style={{color:'white'}}>First Name:</span>
               </label>
               <label className="input-group">
                 <span>First Name</span>
@@ -112,7 +112,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Last Name:</span>
+                <span className="label-text" style={{color:'white'}}>Last Name:</span>
               </label>
               <label className="input-group">
                 <span>Last Name</span>
@@ -129,7 +129,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email:</span>
+                <span className="label-text" style={{color:'white'}}>Email:</span>
               </label>
               <label className="input-group">
                 <span>Email</span>
@@ -146,7 +146,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Phone Number:</span>
+                <span className="label-text" style={{color:'white'}}>Phone Number:</span>
               </label>
               <label className="input-group">
                 <span>Phone Number</span>
@@ -163,7 +163,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Group Name:</span>
+                <span className="label-text" style={{color:'white'}}>Group Name:</span>
               </label>
               <label className="input-group">
                 <span>Group Name</span>
@@ -181,7 +181,7 @@ function Bookings() {
            
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Number of Guests:</span>
+                <span className="label-text" style={{color:'white'}}>Number of Guests:</span>
               </label>
               <label className="input-group">
                 <span>Number of Guests</span>
@@ -198,7 +198,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Date:</span>
+                <span className="label-text" style={{color:'white'}}>Date:</span>
               </label>
               <label className="input-group">
                 <span>Date</span>
@@ -215,7 +215,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Event Type:</span>
+                <span className="label-text" style={{color:'white'}}>Event Type:</span>
               </label>
               <label className="input-group">
                 <span>Event Type</span>
@@ -237,7 +237,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Venue:</span>
+                <span className="label-text" style={{color:'white'}}>Venue:</span>
               </label>
               <label className="input-group">
                 <span>Venue</span>
@@ -262,7 +262,7 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Package:</span>
+                <span className="label-text" style={{color:'white'}}>Package:</span>
               </label>
               <label className="input-group">
                 <span>Package</span>
@@ -283,7 +283,7 @@ function Bookings() {
               </label>
             </div>
 
-            <button className="btn btn-primary mt-8" onClick={bookEvent}>
+            <button className="btn btn-primary mt-8" style={{color:'white'}} onClick={bookEvent}>
               Book
             </button>
           </form>
