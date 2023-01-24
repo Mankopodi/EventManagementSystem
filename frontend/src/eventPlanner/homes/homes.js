@@ -40,7 +40,7 @@ function homes() {
       </div>
 
       <div className="card w-96 bg-base-100  shadow-xl  mt-16">
-        <div className="card-body" style={{color:'white'}}>
+        <div className="card-body" >
           <h2 className="card-title">Event Packages</h2>
           <FiPackage  style={{fontSize: "2em"}} />
           <p>Find out more about Event packages that you might prefer depending on your event in details.</p>

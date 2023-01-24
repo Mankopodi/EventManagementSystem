@@ -47,12 +47,12 @@ function navbar() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <a className="btn btn-accent  normal-case text-xl" style={{color:'white'}}>
             Event Management System
           </a>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 font-bold">
+          <ul className="menu menu-horizontal px-1 font-bold" style={{color:'white'}}>
             <li>
               <a>Home</a>
             </li>
