@@ -1,5 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import CircleLoader from "react-spinners/CircleLoader";
 
 import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
@@ -26,8 +28,30 @@ import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
 
 function App() {
+
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() =>{
+      setLoading(false)
+
+    },5000)
+
+  },[ ])
   return (
     <div className="App">
+
+      {
+        loading?
+        <CircleLoader
+        color={"#308070"}
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        position="center"
+      />
+      :
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage/>}> </Route>
@@ -55,6 +79,9 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      }
+
+      
     </div>
   );
 }
