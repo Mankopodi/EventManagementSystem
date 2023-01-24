@@ -6,7 +6,7 @@ import PushNotification from './customers/pushNotification/pushNotification'
 function App() {
   return (
     <div className="App">
-      <Packages />
+      <Packages /> 
       <PushNotification />
      
     </div>
