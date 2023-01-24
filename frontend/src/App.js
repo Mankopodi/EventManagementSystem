@@ -76,19 +76,3 @@ function App() {
 }
 
 export default App;
-
-{/* 
-
-  //  <LandingPage />
-  //     <Dashboard />
-  //     <Homes />
-  //     <Bookings />
-  //     <Pack />
-  //     <History />
-  //     <Home />
-  //     <Navbar />
-  //     <Viewbookings />
-  //     <Registration/>
-  //     <ForgotPasswordPage/>
-  //     <Login/>
-  //     <CRUD/> */}
