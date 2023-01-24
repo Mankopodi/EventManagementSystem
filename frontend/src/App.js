@@ -1,23 +1,24 @@
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Login from "./Auth/Login";
+import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
+import Login from "./Auth/Login";
 import ForgotPasswordPage from "./Auth/forgot password";
 import InjectedCheckoutForm from "./customers/payment/payment";
 import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
-import  Modal from "./eventPlanner/ratings&Ratings/Modal";
+import Modal from "./eventPlanner/ratings&Ratings/Modal";
 
-import "./App.css";
-// import LandingPage from "./landingPage/landingpage";
-// import Dashboard from "./eventPlanner/dashboard/dashboard";
-// import Homes from "./eventPlanner/homes/homes";
-// import Bookings from "../src/customers/bookings/bookings";
-// import Pack from "./customers/pack/pack";
-// import History from "./customers/history/history";
-// import Navbar from "./customers/navbar/navbar";
-// import Home from "../src/customers/home/home";
-// import Viewbookings from "./customers/bookings/viewbookings";
+
+import Dashboard from "./eventPlanner/dashboard/dashboard";
+import Homes from "./eventPlanner/homes/homes";
+import Bookings from "../src/customers/bookings/bookings";
+import Pack from "./customers/pack/pack";
+import History from "./customers/history/history";
+import Navbar from "./customers/navbar/navbar";
+import Home from "../src/customers/home/home";
+import Viewbookings from "./customers/bookings/viewbookings";
 function App() {
   return (
     <div className="App">
@@ -37,23 +38,22 @@ function App() {
           </Route>
         </Routes>
       </Router>
+
+      <LandingPage />
+      <Dashboard />
+      <Homes />
+      <Bookings />
+      <Pack />
+      <History />
+      <Home />
+      <Navbar />
+      <Viewbookings />
+      <Registration />
+      <ForgotPasswordPage />
+      <Login />
+      <CRUD />
     </div>
   );
 }
 
 export default App;
-
-
-  // /* <LandingPage />
-  //     <Dashboard />
-  //     <Homes />
-  //     <Bookings />
-  //     <Pack />
-  //     <History />
-  //     <Home />
-  //     <Navbar />
-  //     <Viewbookings />
-  //     <Registration/>
-  //     <ForgotPasswordPage/>
-  //     <Login/>
-  //     <CRUD/>
