@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets",
+  "info": {
+    "singularName": "asset",
+    "pluralName": "assets",
+    "displayName": "Asset",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "model_number": {
+      "type": "biginteger"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "perishable",
+        "non-perishable"
+      ]
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true
+    },
+    "validity_period": {
+      "type": "datetime"
+    },
+    "is_expired": {
+      "type": "datetime"
+    }
+  }
+}

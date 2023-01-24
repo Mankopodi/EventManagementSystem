@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customize_events_packages",
+  "info": {
+    "singularName": "customize-events-package",
+    "pluralName": "customize-events-packages",
+    "displayName": "customizeEventsPackage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_package": {
+      "type": "richtext"
+    }
+  }
+}
