@@ -111,7 +111,7 @@ export default function Registration() {
             </div>
 
             {/*  */}
-            <h3 className="font-semibold text-black">Select Role</h3>
+            <h3 className="font-semibold text-black">Select Role:</h3>
 
             <input
               type="radio"
@@ -135,6 +135,7 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
+            
             <label htmlFor="admin" className="font-semibold text-black mr-4">Admin</label>
 
             <input 
@@ -147,11 +148,13 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
+
             <label htmlFor="eventPlanner" className="font-semibold text-black mr-4">Event Planner</label>
-            {/*  */}
+           
+
             <div className="flex items-center justify-end mt-4">
               <a
-                className="text-sm text-black underline hover:text-black cursor-pointer"
+                className="text-sm text-black underline hover:text-black cursor-pointer font-semibold"
                 onClick={() => navigate("/login", { replace: true })}
               >
                 Already registered?

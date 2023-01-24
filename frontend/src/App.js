@@ -13,8 +13,8 @@ import Bookings from "../src/customers/bookings/bookings";
 import Viewbookings from "./customers/bookings/viewbookings";
 import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
-import Ratings from './customers/ratings&Ratings/rating';
-import Packages from './customers/packages/packages';
+import Ratings from "./customers/ratings&Ratings/rating";
+import Packages from "./customers/packages/packages";
 
 import ForgotPasswordPage from "./Auth/forgot password";
 import InjectedCheckoutForm from "./customers/payment/payment";
@@ -28,60 +28,60 @@ import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
 
 function App() {
-
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() =>{
-      setLoading(false)
-
-    },5000)
-
-  },[ ])
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
   return (
     <div className="App">
-
-      {
-        loading?
+      {loading ? (
         <CircleLoader
-        color={"#308070"}
-        loading={loading}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-        position="center"
-      />
-      :
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage/>}> </Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/navbar" element={<Navbar />}></Route>
-          <Route path="home" element={<Home />}></Route>
-          <Route path="/viewbookings" element={<Viewbookings />}></Route>
-          <Route path="/bookings" element={<Bookings />}></Route>
-          <Route path="/pack" element={<Pack />}></Route>
-          <Route path="history" element={<History />}></Route>
-          <Route path="rating" element={<Ratings />}></Route>
-          <Route path="packages" element={<Packages />}></Route>
+          color={"#308070"}
+          loading={loading}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          position="center"
+        />
+      ) : (
+       
+        <Router>
+          <Routes>
+           {/* CUSTOMER ROUTES */}
+            <Route path="/" element={<LandingPage />}>
+              {" "}
+            </Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/navbar" element={<Navbar />}></Route>
+            <Route path="home" element={<Home />}></Route>
+            <Route path="/viewbookings" element={<Viewbookings />}></Route>
+            <Route path="/bookings" element={<Bookings />}></Route>
+            <Route path="/pack" element={<Pack />}></Route>
+            <Route path="history" element={<History />}></Route>
+            <Route path="rating" element={<Ratings />}></Route>
+            <Route path="packages" element={<Packages />}></Route>
 
+            {/* EVENT PLANNER */}
 
-          <Route
-            path="/forgot-password"
-            element={<ForgotPasswordPage />}
-          ></Route>
-          <Route path="/register" element={<Registration />}></Route>
-          <Route path="/payment" element={<InjectedCheckoutForm />}></Route>
-          <Route path="/review" element={<ProductReview1 />}></Route>
-          <Route path="/addreview" element={<CRUD />}></Route>
-          <Route path="/modal" element={<Modal />}>
-            Modal
-          </Route>
-        </Routes>
-      </Router>
-      }
+            <Route
+              path="/forgot-password"
+              element={<ForgotPasswordPage />}
+            ></Route>
+            <Route path="/register" element={<Registration />}></Route>
+            <Route path="/payment" element={<InjectedCheckoutForm />}></Route>
+            <Route path="/review" element={<ProductReview1 />}></Route>
+            <Route path="/addreview" element={<CRUD />}></Route>
+            <Route path="/modal" element={<Modal />}>
+              Modal
+            </Route>
 
-      
+            {/* ADMIN ROUTES */}
+          </Routes>
+        </Router>
+      )}
     </div>
   );
 }
