@@ -116,7 +116,7 @@ export default function Login() {
               htmlFor="email"
               className="block text-sm font-semibold text-black"
             >
-              Email
+              Email:
             </label>
             <input
               type="email"
@@ -130,7 +130,7 @@ export default function Login() {
               htmlFor="password"
               className="block text-sm font-semibold text-black"
             >
-              Password
+              Password:
             </label>
             <input
               type="password"

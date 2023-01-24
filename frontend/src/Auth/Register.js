@@ -50,7 +50,7 @@ export default function Registration() {
                 htmlFor="name"
                 className="block text-sm font-semibold text-black"
               >
-                Name
+                Name:
               </label>
               
                 <input
@@ -66,7 +66,7 @@ export default function Registration() {
                 htmlFor="email"
                 className="block text-sm font-semibold text-black undefined"
               >
-                Email
+                Email:
               </label>
               <div className="flex flex-col items-start">
                 <input
@@ -82,7 +82,7 @@ export default function Registration() {
                 htmlFor="password"
                 className="block text-sm font-semibold text-black undefined"
               >
-                Password
+                Password:
               </label>
               <div className="flex flex-col items-start">
                 <input
@@ -98,7 +98,7 @@ export default function Registration() {
                 htmlFor="password_confirmation"
                 className="block text-sm font-semibold text-black undefined"
               >
-                Confirm Password
+                Confirm Password:
               </label>
               <div className="flex flex-col items-start">
                 <input
@@ -137,7 +137,7 @@ export default function Registration() {
             />
             <label htmlFor="admin" className="font-semibold text-black mr-4">Admin</label>
 
-            <input
+            <input 
               type="radio"
               name="eventPlanner"
               value="Event_planner"
