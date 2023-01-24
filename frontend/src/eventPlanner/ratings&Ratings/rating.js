@@ -85,18 +85,9 @@ const ProductReview1 = () => {
 
 </p>
                         <div className="hidden md:flex mt-6 flex-row justify-start items-start space-x-4">
-                            <div>
-                                <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="chair-1" />
-                            </div>
-                            <div>
-                                <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="chair-2" />
-                            </div>
-                            <div className="hidden md:block">
-                                <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="chair-3" />
-                            </div>
-                            <div className="hidden md:block">
-                                <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="chair-4" />
-                            </div>
+                            
+                           
+                    
                         </div>
                         <div className="md:hidden carousel pt-8 cursor-none" data-flickity='{ "wrapAround": true,"pageDots": false }'>
                             
