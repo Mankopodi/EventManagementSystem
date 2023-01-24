@@ -1,25 +1,28 @@
 import React from "react";
 import "./landingpage.css";
-import event from "../assets/images/event.jpeg";
+import event from "../assets/images/event.png";
+import {useNavigate} from 'react-router-dom';
 
 
-function landingpage() {
+function Landingpage() {
+
+  const navigate = useNavigate();
   return (
     <div>
       <div className="navbar ">
         <div className="navbar-start">
-          <a href={landingpage} className="btn btn-accent normal-case text-xl" style={{color:'white'}}>Event Management System</a>
+          <a className="btn btn-accent normal-case text-xl" style={{color:'white'}}>Event Management System</a>
         </div>
 
         <div className="navbar-end">
-          <a href={landingpage} className="btn btn-accent" style={{color:'white'}}>Signin</a>
+          {/* <a className="btn btn-accent" >Signin</a> */}
         </div>
       </div>
       <div className="hero min-h-screen ">
 
 
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={event} className="max-w-lg rounded-lg shadow-2xl" alt="event"/>
+          <img src={event} className=" edit rounded-lg shadow-l" alt="event"/>
           <div>
             <h1 className="text-5xl font-bold" style={{color:'white'}}>Looking For An Event Manager</h1>
             <p className="py-6" style={{color:'white'}}> Event management is the process of creating and maintaining an
@@ -31,7 +34,7 @@ function landingpage() {
               managers are tasked with reviewing event data, submitting KPI and
               ROI findings, and staying on the ball for any post-event
               offerings.</p>
-            {/* <button className="btn btn-accent">Signin</button> */}
+            <button className="btn btn-accent" style={{color:'white'}} onClick={() => navigate("login",{replace:true})}>Signin</button>
           </div>
         </div>
       </div>
@@ -40,4 +43,4 @@ function landingpage() {
   );
 }
 
-export default landingpage;
+export default Landingpage;

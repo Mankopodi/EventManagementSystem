@@ -4,27 +4,44 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
 import Login from "./Auth/Login";
+//customer
+import Navbar from "./customers/navbar/navbar";
+import Home from "../src/customers/home/home";
+import Bookings from "../src/customers/bookings/bookings";
+import Viewbookings from "./customers/bookings/viewbookings";
+import Pack from "./customers/pack/pack";
+import History from "./customers/history/history";
+import Ratings from './customers/ratings&Ratings/rating';
+import Packages from './customers/packages/packages';
+
 import ForgotPasswordPage from "./Auth/forgot password";
 import InjectedCheckoutForm from "./customers/payment/payment";
+
 import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
 import Modal from "./eventPlanner/ratings&Ratings/Modal";
 
-
+// event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
-import Bookings from "../src/customers/bookings/bookings";
-import Pack from "./customers/pack/pack";
-import History from "./customers/history/history";
-import Navbar from "./customers/navbar/navbar";
-import Home from "../src/customers/home/home";
-import Viewbookings from "./customers/bookings/viewbookings";
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
+          <Route path="/" element={<LandingPage/>}> </Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/navbar" element={<Navbar />}></Route>
+          <Route path="home" element={<Home />}></Route>
+          <Route path="/viewbookings" element={<Viewbookings />}></Route>
+          <Route path="/bookings" element={<Bookings />}></Route>
+          <Route path="/pack" element={<Pack />}></Route>
+          <Route path="history" element={<History />}></Route>
+          <Route path="rating" element={<Ratings />}></Route>
+          <Route path="packages" element={<Packages />}></Route>
+
+
           <Route
             path="/forgot-password"
             element={<ForgotPasswordPage />}
@@ -38,20 +55,6 @@ function App() {
           </Route>
         </Routes>
       </Router>
-
-      <LandingPage />
-      <Dashboard />
-      <Homes />
-      <Bookings />
-      <Pack />
-      <History />
-      <Home />
-      <Navbar />
-      <Viewbookings />
-      <Registration />
-      <ForgotPasswordPage />
-      <Login />
-      <CRUD />
     </div>
   );
 }

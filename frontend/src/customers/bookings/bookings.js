@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
+import {useNavigate} from 'react-router-dom';
 
 function Bookings() {
+
+  const navigate = useNavigate();
+
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
   const [Email, setEmail] = useState("");
@@ -59,6 +63,7 @@ function Bookings() {
       .catch((err) => {
         console.log(err);
       });
+      
 
       axios
       .put("http://localhost:1337/api/bookings", bookingData, {
@@ -89,7 +94,7 @@ function Bookings() {
 
   return (
     <div className="hero min-h-screen" style={{color:'white'}}>
-      <div className="card w-96 bg-base-100 shadow-xl  mt-8 ">
+      <div className="card w-11/12  shadow-xl  mt-8 ">
         <div className="card-body">
           <p>Please fill in this form to make your booking.</p>
           <form>
@@ -104,7 +109,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={FirstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -121,7 +126,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={LastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -138,7 +143,7 @@ function Bookings() {
                   placeholder="info@site.com"
                   value={Email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -155,7 +160,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={PhoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -172,7 +177,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={GroupName}
                   onChange={(e) => setGroupName(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -190,7 +195,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={NumberOfGuests}
                   onChange={(e) => setNumberOfGuests(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -207,7 +212,7 @@ function Bookings() {
                   placeholder="Type here"
                   value={eventDate}
                   onChange={(e) => setDate(e.target.value)}
-                  className="input input-bordered input-md"
+                  className="input input-bordered w-full input-md"
                   required
                 />
               </label>
@@ -267,7 +272,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Package</span>
                 <select
-                  className="select w-md max-w-xs"
+                  className="select w-md  max-w-3xl"
                   value={Package}
                   onChange={(e) => setPackage(e.target.value)}
                 >
@@ -283,7 +288,8 @@ function Bookings() {
               </label>
             </div>
 
-            <button className="btn btn-primary mt-8" style={{color:'white'}} onClick={bookEvent}>
+            <button className="btn btn-primary mt-8" style={{color:'white'}} onClick={bookEvent} 
+>
               Book
             </button>
           </form>

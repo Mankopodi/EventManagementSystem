@@ -73,6 +73,8 @@ const config = require('./config.json')
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
+  const navigate = useNavigate();
+
   // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
     e.preventDefault();
@@ -104,7 +106,7 @@ const config = require('./config.json')
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-gray-700 underline">
+        <h1 className="text-3xl font-semibold text-center text-gray-700 ">
           Sign in
         </h1>
         <form className="mt-6" onSubmit={login}>
@@ -142,7 +144,7 @@ const config = require('./config.json')
 
       
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua">
+            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua" onClick={() => navigate("/home",{replace:true})}> 
               Login
             </button>
           </div>
