@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Venue": {
+      "type": "string"
+    },
+    "EventName": {
+      "type": "string"
+    },
+    "EventDate": {
+      "type": "date"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "TotalNumberOfGuests": {
+      "type": "integer"
+    },
+    "StatusOfEvent": {
+      "type": "string"
+    }
+  }
+}
