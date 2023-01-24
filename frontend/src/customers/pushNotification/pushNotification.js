@@ -110,26 +110,4 @@ export default PushNotification
 
 
 
-// const button = document.querySelector('button')
-
-//   button.addEventListener('click', ()=> {
-//     Notification.requestPermission().then(perm => {
-//       if (perm === "granted") {
-//         const notification = new Notification('Eamplenotification', {
-//           body: 'This is more text',
-//           data: {hello: ' world'},
-//           tag: 'welcome message', 
-//         })
-
-//         notification.addEventListener("error", e => {
-//           alert("error")
-//         })
-
-//       }
-//     })
-//   })
-//   return (
-//     <div>
-
-//     </div>
-//   )
+// 
