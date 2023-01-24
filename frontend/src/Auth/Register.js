@@ -117,25 +117,28 @@ const config = require('./config.json')
 
 
 {/*  */}
-<h3>Select Admin?</h3>
+<h3 className="text-gray-600" >Select Admin?</h3>
 
-<input type="radio" name="customer" value="customer" id="customer" 
-checked={role === "Customer"} 
-onChange={(e)=>{setRole(e.target.value)}}
-/>
-<label htmlFor="customer">Customer</label>
+<input type="radio" name="role" value="customer" id="customer" 
 
-<input type="radio" name="admin" value="Admin1" id="admin"
- checked={role === "Admin1"} 
- onChange={(e)=>{setRole(e.target.value)}}
+onChange={(e)=>{setRole(e.target.value)
+    console.log(role)}}
 />
-<label htmlFor="admin">Admin</label>
+<label className="text-gray-600" htmlFor="customer">Customer</label>
 
-<input type="radio" name="eventPlanner" value="Event_planner" id="eventPlanner"
-checked={role === "Event Planner"} 
-onChange={(e)=>{setRole(e.target.value)}}
+<input type="radio" name="role" value="Admin1" id="admin"
+
+ onChange={(e)=>{setRole(e.target.value)
+    console.log(role)}}
 />
-<label htmlFor="eventPlanner">Event Planner</label>
+<label className="text-gray-600" htmlFor="admin">Admin</label>
+
+<input type="radio" name="role" value="Event_planner" id="eventPlanner"
+
+onChange={(e)=>{setRole(e.target.value)
+ console.log(role)}}
+/>
+<label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label>
 {/*  */}
                         <div className="flex items-center justify-end mt-4">
                             <a
