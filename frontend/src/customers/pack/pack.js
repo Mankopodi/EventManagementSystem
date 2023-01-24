@@ -94,7 +94,7 @@ function pack() {
       <div className="flex justify-end mr-8 ">
         <button
           className="btn btn-active btn-accent mb-8"
-          style={{ color: "white" }}
+          style={{ color: "white" }} 
         >
           Customize your event package
         </button>
