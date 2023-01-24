@@ -106,15 +106,15 @@ export default function Login() {
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-gray-700 ">
+      <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center text-black ">
           Sign in
         </h1>
         <form className="mt-6" onSubmit={login}>
           <div className="mb-2">
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-sm font-semibold text-black"
             >
               Email
             </label>
@@ -122,13 +122,13 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
             <label
               htmlFor="password"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-sm font-semibold text-black"
             >
               Password
             </label>
@@ -136,19 +136,19 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block w-full px-4 py-2 mt-2 btn-primary bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 btn-primaryborder rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <Link
             to={"/forgot-password"}
-            className="text-xs text-black-900 hover:underline"
+            className="text-xs text-black hover:underline font-semibold"
           >
             Forget Password?
           </Link>
 
           <div className="mt-6">
             <button
-              className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua"
+              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
       
             >
               Login
@@ -156,12 +156,12 @@ export default function Login() {
           </div>
         </form>
 
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
+        <p className="mt-8 text-xs font-semibold text-center text-black">
           {" "}
           Don't have an account?{" "}
           <Link
             to={"/register"}
-            className="font-medium text-black-900 hover:underline"
+            className="font-semibold text-black hover:underline"
           >
             Sign up
           </Link>

@@ -37,34 +37,34 @@ export default function Registration() {
 
   return (
     <div className="min-h-screen">
-      <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 ">
+      <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 ">
         <div>
           <a href="/">
-            <h3 className="text-4xl font-bold text-gray-600" style={{color:'white'}}>Register</h3>
+            <h3 className="text-4xl font-bold text-black" style={{color:'white'}}>Register</h3>
           </a>
         </div>
-        <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
+        <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
           <form className="mt-6" onSubmit={Register}>
-            <div>
+            <div className="mb-2">
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-semibold text-black"
               >
                 Name
               </label>
-              <div className="flex flex-col items-start">
+              
                 <input
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
-                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full px-4 py-2 mt-2 text-black border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
-              </div>
+              
             </div>
             <div className="mt-4">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-semibold text-black undefined"
               >
                 Email
               </label>
@@ -73,14 +73,14 @@ export default function Registration() {
                   type="email"
                   name="email"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full px-4 py-2 mt-2 text-black border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
             <div className="mt-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-semibold text-black undefined"
               >
                 Password
               </label>
@@ -89,14 +89,14 @@ export default function Registration() {
                   type="password"
                   name="password"
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full px-4 py-2 mt-2 text-black border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
             <div className="mt-4">
               <label
                 htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-semibold text-black undefined"
               >
                 Confirm Password
               </label>
@@ -105,13 +105,13 @@ export default function Registration() {
                   type="password"
                   name="password_confirmation"
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full px-4 py-2 mt-2 text-black border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
 
             {/*  */}
-            <h3>Select Admin?</h3>
+            <h3 className="font-semibold text-black">Select Role</h3>
 
             <input
               type="radio"
@@ -123,7 +123,7 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
-            <label htmlFor="customer">Customer</label>
+            <label htmlFor="customer" className="font-semibold text-black mr-4">Customer</label>
 
             <input
               type="radio"
@@ -135,7 +135,7 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
-            <label htmlFor="admin">Admin</label>
+            <label htmlFor="admin" className="font-semibold text-black mr-4">Admin</label>
 
             <input
               type="radio"
@@ -147,18 +147,18 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
-            <label htmlFor="eventPlanner">Event Planner</label>
+            <label htmlFor="eventPlanner" className="font-semibold text-black mr-4">Event Planner</label>
             {/*  */}
             <div className="flex items-center justify-end mt-4">
               <a
-                className="text-sm text-gray-600 underline hover:text-gray-900 cursor-pointer"
+                className="text-sm text-black underline hover:text-black cursor-pointer"
                 onClick={() => navigate("/login", { replace: true })}
               >
                 Already registered?
               </a>
               <button
                 type="submit"
-                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
+                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-accent border border-transparent rounded-md active:btn-accent false"
               >
                 Register
               </button>

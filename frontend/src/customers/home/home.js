@@ -26,7 +26,7 @@ const navigate = useNavigate();
           </div>
         </div>
 
-        <div className="card w-96  shadow-xl i mt-16">
+        <div className="card w-96  shadow-xl mt-16">
           <div className="card-body" style={{color:'white'}}>
             <h2 className="card-title">Booking History</h2>
             <RiFolderHistoryFill style={{ fontSize: "2em" }} />
