@@ -15,12 +15,8 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-push-notification": "^1.3.0",
-=======
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
->>>>>>> bdd2872064fb757a619d01d101ffcec733854108
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
     "uuidv4": "^6.2.13",

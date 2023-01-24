@@ -22,7 +22,7 @@ function Landingpage() {
 
 
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={event} className=" edit rounded-lg shadow-l" alt="event"/>
+          <img src={event} className="rounded-lg shadow-l" alt="event"/>
           <div>
             <h1 className="text-5xl font-bold" style={{color:'white'}}>Looking For An Event Manager</h1>
             <p className="py-6" style={{color:'white'}}> Event management is the process of creating and maintaining an
