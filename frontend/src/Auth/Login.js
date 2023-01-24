@@ -142,7 +142,7 @@ const config = require('./config.json')
 
       
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn btn-primary mb1  bg-aqua focus:outline-none focus:btn btn-primary  bg-aqua">
+            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua">
               Login
             </button>
           </div>

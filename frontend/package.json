@@ -8,9 +8,17 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "axios": "^1.2.2",
     "daisyui": "^2.47.0",
+=======
+    "axios": "^1.2.3",
+    "bootstrap": "^5.2.3",
+    "bootstrap-validator": "^0.11.9",
+    "daisyui": "^2.46.1",
+>>>>>>> a4c35e0bbd3a3e0fdf74212326b2dad458d84138
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
