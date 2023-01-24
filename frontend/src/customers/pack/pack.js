@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function pack() {
+function Pack() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       <h1 className="text-center font-bold text-4xl" style={{ color: "white" }}>
@@ -94,7 +96,7 @@ function pack() {
       <div className="flex justify-end mr-8 ">
         <button
           className="btn btn-active btn-accent mb-8"
-          style={{ color: "white" }} 
+          style={{ color: "white" }} onClick={() => navigate("/packages",{replace:true})}
         >
           Customize your event package
         </button>
@@ -103,4 +105,4 @@ function pack() {
   );
 }
 
-export default pack;
+export default Pack;

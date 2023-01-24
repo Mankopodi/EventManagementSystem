@@ -66,9 +66,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-const config = require('./config.json')
+const config = require("./config.json");
 
-  export default function Login() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
@@ -82,21 +82,22 @@ const config = require('./config.json')
     const data = {
       identifier: email,
       password: password,
-      myUserRoles : role
+      myUserRoles: role,
     };
     console.log(data);
 
     await axios
       .post(`${config.dev_url}/api/auth/local`, {
-        identifier : email,
-        password : password,
-        myUserRoles : role
+        identifier: email,
+        password: password,
+        myUserRoles: role,
       })
       .then((response) => {
         console.log("Well done!");
         console.log("User profile", response.data.user);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
         console.log("User token", response.data.jwt);
+        navigate("/home", { replace: true });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
@@ -138,13 +139,18 @@ const config = require('./config.json')
               className="block w-full px-4 py-2 mt-2 btn-primary bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
-          <Link  to={'/forgot-password'} className="text-xs text-black-900 hover:underline">
+          <Link
+            to={"/forgot-password"}
+            className="text-xs text-black-900 hover:underline"
+          >
             Forget Password?
           </Link>
 
-      
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua" onClick={() => navigate("/home",{replace:true})}> 
+            <button
+              className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua"
+      
+            >
               Login
             </button>
           </div>
@@ -153,8 +159,10 @@ const config = require('./config.json')
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           {" "}
           Don't have an account?{" "}
-          <Link to={"/register"} className="font-medium text-black-900 hover:underline">
-            
+          <Link
+            to={"/register"}
+            className="font-medium text-black-900 hover:underline"
+          >
             Sign up
           </Link>
         </p>
