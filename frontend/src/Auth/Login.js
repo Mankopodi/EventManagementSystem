@@ -71,7 +71,7 @@ const config = require("./config.json");
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("customer");
 
   const navigate = useNavigate();
 
