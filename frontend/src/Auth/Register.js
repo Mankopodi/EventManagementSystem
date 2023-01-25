@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -35,12 +35,16 @@ export default function Registration() {
       });
   };
 
+  useEffect(()=>{
+    console.log(role)
+  },[role])
+
   return (
     <div className="min-h-screen">
       <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 ">
         <div>
           <a href="/">
-            <h3 className="text-4xl font-bold text-black" style={{color:'white'}}>Register</h3>
+            <h3 className="text-4xl font-bold text-black mt-20 " style={{color:'white'}}>Register</h3>
           </a>
         </div>
         <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
@@ -118,7 +122,8 @@ export default function Registration() {
               name="customer"
               value="customer"
               id="customer"
-              checked={role === "Customer"}
+             className="mask mask-circle"
+              // disabled={role !== ''}
               onChange={(e) => {
                 setRole(e.target.value);
               }}
@@ -128,9 +133,9 @@ export default function Registration() {
             <input
               type="radio"
               name="admin"
-              value="Admin1"
+              value="admin"
               id="admin"
-              checked={role === "Admin1"}
+              // disabled={role !== ''}
               onChange={(e) => {
                 setRole(e.target.value);
               }}
@@ -141,9 +146,9 @@ export default function Registration() {
             <input 
               type="radio"
               name="eventPlanner"
-              value="Event_planner"
+              value="eventplanner"
               id="eventPlanner"
-              checked={role === "Event Planner"}
+              // disabled={role !== ''}
               onChange={(e) => {
                 setRole(e.target.value);
               }}

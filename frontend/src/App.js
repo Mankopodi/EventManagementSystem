@@ -19,13 +19,19 @@ import Packages from "./customers/packages/packages";
 import ForgotPasswordPage from "./Auth/forgot password";
 import InjectedCheckoutForm from "./customers/payment/payment";
 
-import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
-import CRUD from "./eventPlanner/ratings&Ratings/addReview";
-import Modal from "./eventPlanner/ratings&Ratings/Modal";
-
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
+import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
+import CRUD from "./eventPlanner/ratings&Ratings/addReview";
+import Modal from "./eventPlanner/ratings&Ratings/Modal";
+import EventCrud from "./eventPlanner/eventCrud/eventCrud";
+import EmailCommunication from './eventPlanner/emailComunnication/emailComunnication';
+import ReportEvents from './eventPlanner/reportEvents/reportEvents';
+import ReportEventHall from './eventPlanner/reportEventsHalll/reportEventsHalll';
+import ViewBooks from './eventPlanner/viewBooks/viewBooking';
+import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -33,8 +39,9 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   }, []);
+
   return (
     <div className="App">
       {loading ? (
@@ -47,14 +54,21 @@ function App() {
           position="center"
         />
       ) : (
-       
         <Router>
           <Routes>
-           {/* CUSTOMER ROUTES */}
-            <Route path="/" element={<LandingPage />}>
-              {" "}
-            </Route>
+            {/* PUBLIC ROUTES*/}
+            <Route path="landingpage" element={<LandingPage />}></Route>
+
+            {/* AUTHENTICATION ROUTES */}
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Registration />}></Route>
+            <Route
+              path="/forgot-password"
+              element={<ForgotPasswordPage />}
+            ></Route>
+
+            {/* CUSTOMER ROUTES */}
+
             <Route path="/navbar" element={<Navbar />}></Route>
             <Route path="home" element={<Home />}></Route>
             <Route path="/viewbookings" element={<Viewbookings />}></Route>
@@ -65,18 +79,21 @@ function App() {
             <Route path="packages" element={<Packages />}></Route>
 
             {/* EVENT PLANNER */}
-
-            <Route
-              path="/forgot-password"
-              element={<ForgotPasswordPage />}
-            ></Route>
-            <Route path="/register" element={<Registration />}></Route>
             <Route path="/payment" element={<InjectedCheckoutForm />}></Route>
             <Route path="/review" element={<ProductReview1 />}></Route>
             <Route path="/addreview" element={<CRUD />}></Route>
-            <Route path="/modal" element={<Modal />}>
-              Modal
-            </Route>
+            <Route path="modal" element={<Modal />}></Route>
+            <Route
+              path="ViewRescheduleOfEvents"
+              element={<ViewRescheduleOfEvents />}
+            ></Route>
+            <Route path="dashboard" element={<Dashboard />}></Route>
+            <Route path="homes" element={<Homes />}></Route>
+            <Route path="eventCrud" element={<EventCrud />}></Route>
+            <Route path="emailcommunication" element={<EmailCommunication />}></Route>
+            <Route path="reportevents" element={<ReportEvents />}></Route>
+            <Route path="reporteventhall" element={<ReportEventHall />}></Route>
+            <Route path="viewbookings" element={<ViewBooks />}></Route>
 
             {/* ADMIN ROUTES */}
           </Routes>
