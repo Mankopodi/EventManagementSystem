@@ -1,18 +1,124 @@
-.form  {
-    width: 140%;
-}
+/* .main {
+    width: 100%;
+    border: 5px solid black;
+    
+}*/
+  .app, 
+  .todo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
 
-.todo_input {
+
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    min-width: 340px;
+    /* height: 25%; */
+    width: 90%;
+    
+  }
+
+  .edit {
+    width: 66px;
+    font-weight: 700;
+    background: rgb(93, 217, 165);
     border: none;
+    border-top-right-radius: 5px;
+    height: 33px;
+    border-bottom-right-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+  }
+  
+  .delete {
+    width: 66px;
+    font-weight: 700;
+    background: white;
+    border: 2px solid rgb(93, 217, 165);
+    color: rgb(93, 217, 165);
+    border-top-left-radius: 5px;
+    height: 33px;
+    border-bottom-left-radius: 5px;
+    font-size: medium;
+  }
+
+  .chanage-package {
+    width: 66px;
+    font-weight: 700;
+    background: rgb(93, 217, 165);
+    border: none;
+    border-top-right-radius: 5px;
+    height: 33px;
+    border-bottom-right-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+  }
+  
+ .form {
+    display: flex;
+    justify-content: center;
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+  
+  .name  {
+    width:80%;
+    height: 25%;
+    text-align: left;
+    color: white;
+    border: 2px solid rgb(93, 217, 165);
+    padding: 10px;
+    border-top-left-radius:10px;
+    border-bottom-left-radius: 10px;
+    
+  }
+
+  
+
+
+  .all_packages {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main {
     width: 60%;
-    height: 90%;
-}
+  } 
 
-.todo_button {
-    border: 2px solid ;
-}
+  .form {
+    display: flex;
+  }
 
-.all_packages {
-    border: 3px solid black;
+  .todo_input {
     width: 70%;
-}
+  }
+
+  .todo_button {
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    width: 20%;
+  }
+
+.changePackage {
+    width: 70%;
+    height: 16px;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  
+  /* .todo_button {
+    border: 2px solid blueviolet;
+    background-color: transparent;
+    height: 40px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  } */

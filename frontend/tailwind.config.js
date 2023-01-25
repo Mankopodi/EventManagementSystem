@@ -11,7 +11,7 @@ module.exports = {
 
           neutral: "#2F2339",
 
-          "base-100": "#6b7280",
+          "bgiase-100": "#6b7280",
 
           info: "#22d3ee",
 
