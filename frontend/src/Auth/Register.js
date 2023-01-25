@@ -5,11 +5,22 @@ const config = require('./config.json')
 
 
  export default function Registration() {
+
  const  [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
- const [role, setRole] = useState("");
-  
+ const [role, setRole] = React.useState("customer");
+ const [gender, setGender] = React.useState('male');
+
+ const handleChange = (event) => {  
+      
+    setRole(event.target.value)
+   console.log(event.target.value);
+ }
+
+
+
+
 
     const Register = async (e) => {
       e.preventDefault();
@@ -117,27 +128,83 @@ const config = require('./config.json')
 
 
 {/*  */}
+<div>
+
 <h3 className="text-gray-600" >Select Admin?</h3>
 
-<input type="radio" name="role" value="customer" id="customer" 
 
-onChange={(e)=>{setRole(e.target.value)
-    console.log(role)}}
+<div>
+
+
+</div>
+
+<div className="grid grid-rows-1 grid-flow-col gap-4">
+
+    <div>
+        <input
+          type="radio"
+          value="Customer"
+          checked={role === 'Customer'}
+          onChange={handleChange}
+        /> Customer
+      </div>
+      <div>
+        <input
+          type="radio"
+          value="Admin"
+          checked={role === 'Admin'}
+          onChange={handleChange}
+        /> Admin
+      </div>
+      <div>
+        <input
+          type="radio"
+          value="event_planner"
+          checked={role === 'event_planner'}
+          onChange={handleChange}
+        /> event_planner
+      </div>
+
+</div>
+
+    
+</div>
+
+
+{/*  */}
+{/* <h3 className="text-gray-600" >Select Admin?</h3>
+
+<input 
+        type="radio" 
+        name="role" 
+        value="customer" 
+        id="customer"
+        checked={this.role.value === "Customer"}
+        onChange={(e)=>{ this.handleRadioButton(e.target.value)
+        console.log(role)}}
 />
 <label className="text-gray-600" htmlFor="customer">Customer</label>
 
-<input type="radio" name="role" value="Admin1" id="admin"
-
- onChange={(e)=>{setRole(e.target.value)
+<input 
+    type="radio" 
+    name="role" 
+    value="Admin1" 
+    id="admin"
+    checked={this.role.value === "Admin1"}
+    onChange={(e)=>{this.handleRadioButton(e.target.value)
     console.log(role)}}
 />
 <label className="text-gray-600" htmlFor="admin">Admin</label>
 
-<input type="radio" name="role" value="Event_planner" id="eventPlanner"
-
-onChange={(e)=>{setRole(e.target.value)
- console.log(role)}}
-/>
+<input 
+    type="radio" 
+    name="role" 
+    value="Event_planner" 
+    id="eventPlanner"
+    checked={this.role.value === "Event_planner"}
+    onChange={(e)=>{this.handleRadioButton(e.target.value)
+    console.log(role)}}
+/> */}
 <label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label>
 {/*  */}
                         <div className="flex items-center justify-end mt-4">

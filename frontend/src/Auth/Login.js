@@ -71,7 +71,7 @@ const config = require('./config.json')
   export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("customer");
 
   // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
