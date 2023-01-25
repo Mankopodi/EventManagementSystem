@@ -71,7 +71,7 @@ const config = require("./config.json");
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("customer");
 
   const navigate = useNavigate();
 
@@ -149,7 +149,6 @@ export default function Login() {
           <div className="mt-6">
             <button
               className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
-      
             >
               Login
             </button>

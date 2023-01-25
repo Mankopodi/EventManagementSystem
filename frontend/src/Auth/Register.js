@@ -4,13 +4,20 @@ import { useNavigate } from "react-router-dom";
 
 const config = require("./config.json");
 
-export default function Registration() {
-  const navigate = useNavigate();
+ export default function Registration() {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+ const [name, setName] = useState("");
+ const [email, setEmail] = useState("");
+ const [password, setPassword] = useState("");
+ const [role, setRole] = React.useState("customer");
+ const [gender, setGender] = React.useState('male');
+
+ const handleChange = (event) => {  
+      
+    setRole(event.target.value)
+   console.log(event.target.value);
+ }
+
 
   const Register = async (e) => {
     e.preventDefault();
@@ -48,7 +55,9 @@ export default function Registration() {
           </a>
         </div>
         <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
+
           <form className="mt-6" onSubmit={Register}>
+
             <div className="mb-2">
               <label
                 htmlFor="name"
@@ -130,47 +139,63 @@ export default function Registration() {
             />
             <label htmlFor="customer" className="font-semibold text-black mr-4">Customer</label>
 
-            <input
-              type="radio"
-              name="admin"
-              value="admin"
-              id="admin"
-              // disabled={role !== ''}
-              onChange={(e) => {
-                setRole(e.target.value);
-              }}
-            />
-            
-            <label htmlFor="admin" className="font-semibold text-black mr-4">Admin</label>
+{/*  */}
+<div>
+    <h3 className="text-gray-600" >Select Admin?</h3>
+<div>
 
-            <input 
-              type="radio"
-              name="eventPlanner"
-              value="eventplanner"
-              id="eventPlanner"
-              // disabled={role !== ''}
-              onChange={(e) => {
-                setRole(e.target.value);
-              }}
-            />
 
-            <label htmlFor="eventPlanner" className="font-semibold text-black mr-4">Event Planner</label>
-           
+</div>
 
-            <div className="flex items-center justify-end mt-4">
-              <a
-                className="text-sm text-black underline hover:text-black cursor-pointer font-semibold"
-                onClick={() => navigate("/login", { replace: true })}
-              >
-                Already registered?
-              </a>
-              <button
-                type="submit"
-                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-accent border border-transparent rounded-md active:btn-accent false"
-              >
-                Register
-              </button>
-            </div>
+<div className="grid grid-rows-1 grid-flow-col gap-4">
+
+    <div>
+        <input
+          type="radio"
+          value="Customer"
+          checked={role === 'Customer'}
+          onChange={handleChange}
+        /> Customer
+      </div>
+      <div>
+        <input
+          type="radio"
+          value="Admin"
+          checked={role === 'Admin'}
+          onChange={handleChange}
+        /> Admin
+      </div>
+      <div>
+        <input
+          type="radio"
+          value="event_planner"
+          checked={role === 'event_planner'}
+          onChange={handleChange}
+        /> event_planner
+      </div>
+
+</div>
+
+    
+</div>
+
+<label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label>
+
+                        <div className="flex items-center justify-end mt-4">
+                            <a
+                                className="text-sm text-gray-600 underline hover:text-gray-900"
+                                href="#"
+                            >
+                                Already registered?
+                            </a>
+                            <button
+                                type="submit"
+                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
+                            >
+                                Register
+                            </button>
+                        </div>
+                    
           </form>
         </div>
       </div>
