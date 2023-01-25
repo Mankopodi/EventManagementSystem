@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './payment.css'
 
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
@@ -16,7 +17,7 @@ function Payment() {
   // }, []);
 
   useEffect(() => {
-    fetch("/create-payment-intent", {
+    fetch("http://localhost:5252/create-payment-intent", {
       method: "POST",
       body: JSON.stringify({}),
     }).then(async (result) => {

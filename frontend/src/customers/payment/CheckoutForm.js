@@ -1,6 +1,7 @@
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
+import './payment.css'
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -38,6 +39,7 @@ export default function CheckoutForm() {
   };
 
   return (
+    
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
       <button disabled={isProcessing || !stripe || !elements} id="submit">
