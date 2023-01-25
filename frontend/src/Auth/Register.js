@@ -160,7 +160,7 @@ export default function Registration() {
             <div className="flex items-center justify-end mt-4">
               <a
                 className="text-sm text-black underline hover:text-black cursor-pointer font-semibold"
-                onClick={() => navigate("/login", { replace: true })}
+               
               >
                 Already registered?
               </a>

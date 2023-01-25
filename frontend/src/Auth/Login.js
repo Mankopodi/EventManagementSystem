@@ -149,7 +149,6 @@ export default function Login() {
           <div className="mt-6">
             <button
               className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
-      
             >
               Login
             </button>
