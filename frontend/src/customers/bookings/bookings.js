@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
 //import {useNavigate} from 'react-router-dom';
+import Navbar from "../navbar/navbar";
 
 function Bookings() {
 
@@ -93,7 +94,11 @@ function Bookings() {
   };
 
   return (
+
+   
+
     <div className="hero min-h-screen" style={{color:'white'}}>
+       <Navbar />
       <div className="card w-11/12  shadow-xl  mt-8 ">
         <div className="card-body">
           <p>Please fill in this form to make your booking.</p>
