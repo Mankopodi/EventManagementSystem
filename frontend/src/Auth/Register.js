@@ -147,22 +147,6 @@ const config = require("./config.json");
 
 </div>
 
-<<<<<<< HEAD
-            <div className="flex items-center justify-end mt-4">
-              <a
-                className="text-sm text-black underline hover:text-black cursor-pointer font-semibold"
-               
-              >
-                Already registered?
-              </a>
-              <button
-                type="submit"
-                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-accent border border-transparent rounded-md active:btn-accent false"
-              >
-                Register
-              </button>
-            </div>
-=======
 <div className="grid grid-rows-1 grid-flow-col gap-4">
 
     <div>
@@ -212,7 +196,6 @@ const config = require("./config.json");
                             </button>
                         </div>
                     
->>>>>>> 168e5ebed31655c66944ff3565c4b68d6dcee99c
           </form>
         </div>
       </div>

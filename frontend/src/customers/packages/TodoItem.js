@@ -61,7 +61,7 @@ function TodoItem({ customizeEventsPackage, update }) {
             ? <div className="name">{customizeEventsPackage.attributes.event_package}</div>
             : <form onSubmit={changeTodo}>
                 <input className="todo_input" type="text" placeholder="Enter new todo" value={newCustomEventPackage} onChange={e => setNewCustomEventPackage(e.currentTarget.value)} />
-                <button className="todo_button" type="submit">Change todo</button>
+                <button className="chanage-package todo_button" type="submit">Change todo</button>
               </form>
         }
         <div>
