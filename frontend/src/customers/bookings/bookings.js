@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
-//import {useNavigate} from 'react-router-dom';
-import Navbar from "../navbar/navbar";
+import {useNavigate} from 'react-router-dom';
+
 
 function Bookings() {
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
@@ -35,6 +35,7 @@ function Bookings() {
         Venue: Venue,
         Package: Package,
       },
+
     };
 
     console.log(bookingData);
@@ -47,10 +48,13 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        navigate("/Payment")
       })
       .catch((err) => {
         console.log(err);
       });
+
+
 
       axios
       .get("http://localhost:1337/api/bookings", bookingData, {
@@ -60,37 +64,38 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        navigate("/Payment")
       })
       .catch((err) => {
         console.log(err);
       });
       
 
-      axios
-      .put("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .put("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
 
-      axios
-      .delete("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .delete("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
   };
 
   return (
@@ -98,7 +103,7 @@ function Bookings() {
    
 
     <div className="hero min-h-screen" style={{color:'white'}}>
-       <Navbar />
+     
       <div className="card w-11/12  shadow-xl  mt-8 ">
         <div className="card-body">
           <p>Please fill in this form to make your booking.</p>
@@ -110,6 +115,7 @@ function Bookings() {
               <label className="input-group">
                 <span>First Name</span>
                 <input
+                style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={FirstName}
@@ -127,6 +133,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Last Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={LastName}
@@ -144,6 +151,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Email</span>
                 <input
+                 style={{color:'black'}}
                   type="email"
                   placeholder="info@site.com"
                   value={Email}
@@ -161,6 +169,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Phone Number</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={PhoneNumber}
@@ -178,6 +187,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Group Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={GroupName}
@@ -196,6 +206,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Number of Guests</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={NumberOfGuests}
@@ -213,6 +224,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Date</span>
                 <input
+                 style={{color:'black'}}
                   type="date"
                   placeholder="Type here"
                   value={eventDate}
@@ -230,6 +242,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Event Type</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={EventType}
                   onChange={(e) => setEventType(e.target.value)}
@@ -252,6 +265,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Venue</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={Venue}
                   onChange={(e) => setVenue(e.target.value)}
@@ -277,6 +291,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Package</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md  max-w-3xl"
                   value={Package}
                   onChange={(e) => setPackage(e.target.value)}

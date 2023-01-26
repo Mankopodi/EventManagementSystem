@@ -8,7 +8,7 @@ import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
 import Login from "./Auth/Login";
 import ForgotPasswordPage from "./Auth/forgot password";
-import InjectedCheckoutForm from "./customers/payment/payment";
+// import InjectedCheckoutForm from "./customers/payment/payment";
 
 //customer
 import Navbar from "./customers/navbar/navbar";
@@ -85,7 +85,7 @@ function App() {
             <Route path="payment" element={<Payment />}></Route>
 
             {/* EVENT PLANNER */}
-            <Route path="payment" element={<InjectedCheckoutForm />}></Route>
+            {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
             <Route path="review" element={<ProductReview1 />}></Route>
             <Route path="addreview" element={<CRUD />}></Route>
             <Route path="modal" element={<Modal />}></Route>
