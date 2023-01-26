@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 :root {
   --light-grey: #F6F9FC;
@@ -93,4 +93,4 @@ fieldset, input, select {
   margin: 20px 0;
   border-radius: var(--radius);
   font-size:0.7em;
-} */
+}

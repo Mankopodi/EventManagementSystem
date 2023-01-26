@@ -32,12 +32,11 @@ function Viewbooking() {
     <div className="min-h-screen overflow-scroll">
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold bg-blend-color mb-4"
+          className="flex justify-center text-4xl font-bold bg-blend-color mb-4 mt-4"
          
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" >Make a booking</button>
         <table className="table w-full" >
           <thead>
             <tr>

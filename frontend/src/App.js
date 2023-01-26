@@ -8,7 +8,7 @@ import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
 import Login from "./Auth/Login";
 import ForgotPasswordPage from "./Auth/forgot password";
-// import InjectedCheckoutForm from "./customers/payment/payment";
+import InjectedCheckoutForm from "./customers/payment/payment";
 
 //customer
 import Navbar from "./customers/navbar/navbar";
@@ -19,7 +19,7 @@ import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
 import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
-// import Payment from "./customers/payment/Payment copy";
+import Payment from "./customers/payment/Payment copy";
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -82,10 +82,10 @@ function App() {
             <Route path="history" element={<History />}></Route>
             <Route path="rating" element={<Ratings />}></Route>
             <Route path="packages" element={<Packages />}></Route>
-            {/* <Route path="payment" element={<Payment />}></Route> */}
+            <Route path="payment" element={<Payment />}></Route>
 
             {/* EVENT PLANNER */}
-            {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
+            <Route path="payment" element={<InjectedCheckoutForm />}></Route>
             <Route path="review" element={<ProductReview1 />}></Route>
             <Route path="addreview" element={<CRUD />}></Route>
             <Route path="modal" element={<Modal />}></Route>
@@ -99,7 +99,7 @@ function App() {
             <Route path="emailcommunication" element={<EmailCommunication />}></Route>
             <Route path="reportevents" element={<ReportEvents />}></Route>
             <Route path="reporteventhall" element={<ReportEventHall />}></Route>
-            <Route path="viewbookings" element={<ViewBooks />}></Route>
+            <Route path="viewbooks" element={<ViewBooks />}></Route>
 
             {/* ADMIN ROUTES */}
           </Routes>
