@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
-import {useNavigate} from 'react-router-dom';
+//import {useNavigate} from 'react-router-dom';
 
 function Bookings() {
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");

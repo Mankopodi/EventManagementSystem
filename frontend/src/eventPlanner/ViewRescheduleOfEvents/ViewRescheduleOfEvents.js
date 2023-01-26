@@ -5,8 +5,9 @@ import { Token } from "../../tokens/constant";
 function ViewRescheduleOfEvents() {
   const [Bookings, setBookings] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
-  const [value, setValue] = useState(0);
+
   const [eventDate, setDate] = useState();
+  const [NumberOfGuests, setNumberOfGuests] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -34,14 +35,14 @@ function ViewRescheduleOfEvents() {
   }
   // updating function
   const updateDate = () => {
-
     const eventData = {
       data: {
-        eventDate: eventDate
+        NumberOfGuests: NumberOfGuests,
+        eventDate: eventDate,
       },
     };
-    console.log(selectedId)
-  
+    console.log(selectedId);
+
     axios
       .put(`http://localhost:1337/api/bookings/${selectedId}`, eventData, {
         headers: {
@@ -53,9 +54,10 @@ function ViewRescheduleOfEvents() {
       })
       .catch((err) => {
         console.log(err);
-      }).finally(()=>{
-        fetchData();
       })
+      .finally(() => {
+        fetchData();
+      });
   };
 
   return (
@@ -96,58 +98,78 @@ function ViewRescheduleOfEvents() {
                     <td>{book.attributes?.eventDate}</td>
                     <td>{book.attributes.Venue}</td>
                     <td>{book.attributes.Package}</td>
-                    {/* The button to open modal */}
-                    <label
-                      htmlFor="my-modal-6"
-                      className="btn btn-accent ml-1 mt-1"
-                      onClick={() => handleClick(book.id)}
-                    >
-                      Reschedule
-                    </label>
+                    <td>
+                      {/* The button to open modal */}
+                      <label
+                        htmlFor="my-modal-6"
+                        className="btn btn-accent ml-1 mt-1"
+                        onClick={() => handleClick(book.id)}
+                      >
+                        Reschedule
+                      </label>
 
-                    {/* Put this part before </body> tag */}
-                    <input
-                      type="checkbox"
-                      id="my-modal-6"
-                      className="modal-toggle"
-                    />
-                    <div className="modal modal-bottom sm:modal-middle shadow-xl">
-                      <div className="modal-box">
-                        <h3 className="font-bold text-lg">
-                          Reschedule the date for your event.
-                        </h3>
-                        <p className="py-4">
-                          <div className="form-control">
-                            <label className="label">
-                              <span
-                                className="label-text"
-                                style={{ color: "black" }}
-                              >
-                                Date:
-                              </span>
-                            </label>
-                            <label className="input-group">
-                              <span>Date</span>
-                              <input
-                                type="date"
-                                placeholder="10"
-                                onChange={(e) => setDate(e.target.value)}
-                                className="input input-bordered"
-                              />
+                      {/* Put this part before </body> tag */}
+                      <input
+                        type="checkbox"
+                        id="my-modal-6"
+                        className="modal-toggle"
+                      />
+                      <div className="modal modal-bottom sm:modal-middle">
+                        <div className="modal-box">
+                          <h3 className="font-bold text-lg">
+                            Reschedule the date for your event.
+                          </h3>
+                          <div className="space">
+                            <div className="form-control">
+                              <label className="label">
+                                <span className="label-text">
+                                  Number Of Guests
+                                </span>
+                              </label>
+                              <label className="input-group">
+                                <span>Number Of Guests</span>
+                                <input
+                                  type="text"
+                                  placeholder=""
+                                  onChange={(e) =>
+                                    setNumberOfGuests(e.target.value)
+                                  }
+                                  className="input input-bordered"
+                                />
+                              </label>
+                            </div>
+                            <div className="form-control">
+                              <label className="label">
+                                <span
+                                  className="label-text"
+                                  style={{ color: "black" }}
+                                >
+                                  Date:
+                                </span>
+                              </label>
+                              <label className="input-group">
+                                <span>Date</span>
+                                <input
+                                  type="date"
+                                  placeholder="10"
+                                  onChange={(e) => setDate(e.target.value)}
+                                  className="input input-bordered"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div className="modal-action">
+                            <label
+                              htmlFor="my-modal-6"
+                              className="btn btn-accent"
+                              onClick={updateDate}
+                            >
+                              UPDATE
                             </label>
                           </div>
-                        </p>
-                        <div className="modal-action">
-                          <label
-                            htmlFor="my-modal-6"
-                            className="btn btn-accent "
-                            onClick={updateDate}
-                          >
-                            Update
-                          </label>
                         </div>
                       </div>
-                    </div>
+                    </td>
                   </tr>
                 );
               })}
