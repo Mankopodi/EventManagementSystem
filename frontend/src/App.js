@@ -7,7 +7,9 @@
  import Registration from "./Auth/Register";
  import Login from "./Auth/Login";
  import ForgotPasswordPage from "./Auth/forgot password";
+
 //  import InjectedCheckoutForm from "./customers/payment/payment";
+
  //customer
  import Navbar from "./customers/navbar/navbar";
  import Home from "../src/customers/home/home";
@@ -17,6 +19,8 @@
  import History from "./customers/history/history";
  import Ratings from "./customers/ratings&Ratings/rating";
  import Packages from "./customers/packages/packages";
+ import Payment from "./customers/payment/Payment copy";
+
  // event planner
  import Dashboard from "./eventPlanner/dashboard/dashboard";
  import Homes from "./eventPlanner/homes/homes";
@@ -56,10 +60,12 @@
              {/* AUTHENTICATION ROUTES */}
              <Route path="login" element={<Login />}></Route>
              <Route path="register" element={<Registration />}></Route>
+             <Route path="Navbar" element={<Navbar />}> </Route>
              <Route
                path="forgot-password"
                element={<ForgotPasswordPage />}
              ></Route>
+             
              {/* CUSTOMER ROUTES */}
              <Route path="navbar" element={<Navbar />}></Route>
              <Route path="home" element={<Home />}></Route>
@@ -69,6 +75,8 @@
              <Route path="history" element={<History />}></Route>
              <Route path="rating" element={<Ratings />}></Route>
              <Route path="packages" element={<Packages />}></Route>
+             <Route path="Payment" element={<Payment />}></Route>
+
              {/* EVENT PLANNER */}
              {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
              <Route path="review" element={<ProductReview1 />}></Route>

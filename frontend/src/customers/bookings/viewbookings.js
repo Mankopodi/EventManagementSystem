@@ -2,10 +2,12 @@
 import axios from "axios";
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
 
+
 function Viewbookings() {
-  
+  const navigate = useNavigate();
   const [Bookings, setBookings] = useState([]);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function Viewbookings() {
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" >Make a booking</button>
+        <button className="btn btn-accent mb-8" onClick={()=> {navigate('/bookings', {replace:true})}} >Make a booking</button>
         <table className="table w-full" >
           <thead>
             <tr>
