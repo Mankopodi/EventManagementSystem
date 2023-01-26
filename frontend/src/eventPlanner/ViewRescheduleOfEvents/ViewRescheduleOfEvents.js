@@ -87,17 +87,17 @@ function ViewRescheduleOfEvents() {
             <tbody>
               {Bookings.map((book) => {
                 return (
-                  <tr>
-                    <td>{book.attributes.FirstName}</td>
-                    <td>{book.attributes.LastName}</td>
-                    <td>{book.attributes.Email}</td>
-                    <td>{book.attributes.PhoneNumber}</td>
-                    <td>{book.attributes.GroupName}</td>
-                    <td>{book.attributes.EventType}</td>
-                    <td>{book.attributes.NumberOfGuests}</td>
-                    <td>{book.attributes?.eventDate}</td>
-                    <td>{book.attributes.Venue}</td>
-                    <td>{book.attributes.Package}</td>
+                  <tr >
+                    <td className="text-black" >{book.attributes.FirstName}</td>
+                    <td className="text-black">{book.attributes.LastName}</td>
+                    <td className="text-black">{book.attributes.Email}</td>
+                    <td className="text-black">{book.attributes.PhoneNumber}</td>
+                    <td className="text-black">{book.attributes.GroupName}</td>
+                    <td className="text-black">{book.attributes.EventType}</td>
+                    <td className="text-black">{book.attributes.NumberOfGuests}</td>
+                    <td className="text-black">{book.attributes?.eventDate}</td>
+                    <td className="text-black">{book.attributes.Venue}</td>
+                    <td className="text-black">{book.attributes.Package}</td>
                     <td>
                       {/* The button to open modal */}
                       <label

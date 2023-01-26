@@ -1,5 +1,6 @@
 
 import axios from "axios";
+
 import React, { useState, useEffect } from "react";
 import { Token } from "../../tokens/constant";
 
@@ -31,16 +32,16 @@ function Viewbookings() {
     <div className="min-h-screen overflow-scroll">
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold mb-4"
+          className="flex justify-center text-4xl font-bold bg-blend-color mb-4"
          
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" style={{color:'white'}}>Make a booking</button>
+        <button className="btn btn-accent mb-8" >Make a booking</button>
         <table className="table w-full" >
           <thead>
             <tr>
-              <th>First Nmae</th>
+              <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
               <th>Phone Number</th>
@@ -56,17 +57,31 @@ function Viewbookings() {
           <tbody>
           {Bookings.map((book) => {
               return (
-                <tr>
-                  <td>{book.attributes.FirstName}</td>
-                  <td>{book.attributes.LastName}</td>
-                  <td>{book.attributes.Email}</td>
-                  <td>{book.attributes.PhoneNumber}</td>
-                  <td>{book.attributes.GroupName}</td>
-                  <td>{book.attributes.EventType}</td>
-                  <td>{book.attributes.NumberOfGuests}</td>
-                  <td>{book.attributes.eventDate}</td>
-                  <td>{book.attributes.Venue}</td>
-                  <td>{book.attributes.Package}</td>
+                <tr key={book.id} >
+                  <td className="text-black">{book.attributes.FirstName}</td>
+                  <td className="text-black">{book.attributes.LastName}</td>
+                  <td className="text-black">{book.attributes.Email}</td>
+                  <td className="text-black">{book.attributes.PhoneNumber}</td>
+                  <td className="text-black">{book.attributes.GroupName}</td>
+                  <td className="text-black">{book.attributes.EventType}</td>
+                  <td className="text-black">{book.attributes.NumberOfGuests}</td>
+                  <td className="text-black">{book.attributes.eventDate}</td>
+                  <td className="text-black">{book.attributes.Venue}</td>
+                  <td className="text-black">{book.attributes.Package}</td>
+                
+                  <td>
+                    <div className="form-control ">
+                      <label className="cursor-pointer label">
+                        <input
+                          type="checkbox"
+                          className="toggle toggle-primary  btn-accent"
+                          checked
+                        />
+                       
+                      </label>
+                    </div>
+                  </td>
+                 
                   
                 </tr>
               );

@@ -1,20 +1,12 @@
+
 import axios from "axios";
+
 import React, { useState, useEffect } from "react";
 import { Token } from "../../tokens/constant";
 
-function ViewBooking() {
+function Viewbooking() {
+  
   const [Bookings, setBookings] = useState([]);
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { isToggled: false };
-  //   this.handleToggle = this.handleToggle.bind(this);
-  // }
-
-  // handleToggle() {
-  //   this.setState(state => ({
-  //     isToggled: !state.isToggled
-  //   }));
-  // }
 
   useEffect(() => {
     fetchData();
@@ -34,19 +26,22 @@ function ViewBooking() {
       .catch((err) => {
         console.log(err);
       });
-  };
+    };
 
   return (
     <div className="min-h-screen overflow-scroll">
       <div className="overflow-x-auto">
-        <h1 className="flex justify-center text-4xl font-bold mt-4">
+        <h1
+          className="flex justify-center text-4xl font-bold bg-blend-color mb-4"
+         
+        >
           Bookings
         </h1>
-
-        <table className="table w-full mt-2">
+        <button className="btn btn-accent mb-8" >Make a booking</button>
+        <table className="table w-full" >
           <thead>
             <tr>
-              <th>First Nmae</th>
+              <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
               <th>Phone Number</th>
@@ -56,35 +51,23 @@ function ViewBooking() {
               <th>Date</th>
               <th>Venue</th>
               <th>Packages</th>
-              <th>Status</th>
+              
             </tr>
           </thead>
           <tbody>
-            {Bookings.map((book) => {
+          {Bookings.map((book) => {
               return (
-                <tr>
-                  <td>{book.attributes.FirstName}</td>
-                  <td>{book.attributes.LastName}</td>
-                  <td>{book.attributes.Email}</td>
-                  <td>{book.attributes.PhoneNumber}</td>
-                  <td>{book.attributes.GroupName}</td>
-                  <td>{book.attributes.EventType}</td>
-                  <td>{book.attributes.NumberOfGuests}</td>
-                  <td>{book.attributes.eventDate}</td>
-                  <td>{book.attributes.Venue}</td>
-                  <td>{book.attributes.Package}</td>
-                  <td>
-                    <div className="form-control ">
-                      <label className="cursor-pointer label">
-                        <input
-                          type="checkbox"
-                          className="toggle toggle-primary  btn-accent"
-                          checked
-                        />
-                       
-                      </label>
-                    </div>
-                  </td>
+                <tr key={book.id} >
+                  <td className="text-black">{book.attributes.FirstName}</td>
+                  <td className="text-black">{book.attributes.LastName}</td>
+                  <td className="text-black">{book.attributes.Email}</td>
+                  <td className="text-black">{book.attributes.PhoneNumber}</td>
+                  <td className="text-black">{book.attributes.GroupName}</td>
+                  <td className="text-black">{book.attributes.EventType}</td>
+                  <td className="text-black">{book.attributes.NumberOfGuests}</td>
+                  <td className="text-black">{book.attributes.eventDate}</td>
+                  <td className="text-black">{book.attributes.Venue}</td>
+                  <td className="text-black">{book.attributes.Package}</td>  
                 </tr>
               );
             })}
@@ -95,4 +78,4 @@ function ViewBooking() {
   );
 }
 
-export default ViewBooking;
+export default Viewbooking;
