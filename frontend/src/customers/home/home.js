@@ -5,7 +5,7 @@ import { MdReviews } from "react-icons/md";
 import { RiFolderHistoryFill } from "react-icons/ri";
 import {useNavigate} from 'react-router-dom';
 
-//import Navbar from '../navbar/navbar';
+// import Navbar from '../navbar/navbar';
 
 function Home() {
 
@@ -17,7 +17,7 @@ const navigate = useNavigate();
 
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
         <div className="card w-96  shadow-xl  mt-16">
-          <div className="card-body" style={{color:'white'}}>
+          <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Bookings</h2>
             <TbBrandBooking style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
@@ -28,7 +28,7 @@ const navigate = useNavigate();
         </div>
 
         <div className="card w-96  shadow-xl mt-16">
-          <div className="card-body" style={{color:'white'}}>
+          <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Booking History</h2>
             <RiFolderHistoryFill style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
@@ -39,7 +39,7 @@ const navigate = useNavigate();
         </div>
 
         <div className="card w-96 shadow-xl  mt-16">
-          <div className="card-body" style={{color:'white'}}>
+          <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Event Packages</h2>
             <FiPackage style={{ fontSize: "2em" }} />
             <p>
@@ -53,7 +53,7 @@ const navigate = useNavigate();
         </div>
 
         <div className="card w-96  shadow-xl  mt-16">
-          <div className="card-body" style={{color:'white'}}>
+          <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Review and Ratings</h2>
             <MdReviews style={{ fontSize: "2em" }} />
             <p>

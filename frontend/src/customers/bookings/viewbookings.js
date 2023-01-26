@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
+import {useNavigate} from 'react-router-dom';
 
 
 function Viewbookings() {
@@ -31,29 +32,29 @@ function Viewbookings() {
     };
 
   return (
-    <div className="min-h-screen overflow-scroll">
+    <div className="min-h-screen overflow-scroll ">
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold bg-blend-color mb-4"
+          className="flex justify-center text-4xl font-bold bg-blend-color text-white "
          
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" onClick={()=> {navigate('/bookings', {replace:true})}} >Make a booking</button>
-        <table className="table w-full" >
+        <button className="btn btn-accent mb-8 text-white " onClick={() => navigate("/bookings",{replace:true})} >Make a booking</button>
+        <table className="table " >
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Phone Number</th>
-              <th>Group Name</th>
-              <th>Event Type</th>
-              <th>Number of Guests</th>
-              <th>Date</th>
-              <th>Venue</th>
-              <th>Packages</th>
-              <th>Status</th>
+              <th className="text-white " >First Name</th>
+              <th className="text-white " >Last Name</th>
+              <th className="text-white " >Email</th>
+              <th className="text-white " >Phone Number</th>
+              <th className="text-white " >Group Name</th>
+              <th className="text-white " >Event Type</th>
+              <th className="text-white " >Number of Guests</th>
+              <th className="text-white " >Date</th>
+              <th className="text-white " >Venue</th>
+              <th className="text-white " >Packages</th>
+              <th className="text-white " >Status</th>
             </tr>
           </thead>
           <tbody>
