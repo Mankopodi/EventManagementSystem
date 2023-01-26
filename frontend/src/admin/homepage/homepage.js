@@ -2,38 +2,38 @@ import React from "react";
 import { TbBrandBooking } from "react-icons/tb";
 import { FiPackage } from "react-icons/fi";
 import { MdReviews } from "react-icons/md";
-import { RiFolderHistoryFill } from "react-icons/ri";
+import { HiDocumentReport } from "react-icons/hi";
 import {useNavigate} from 'react-router-dom';
 
-//import Navbar from '../navbar/navbar';
 
-function Home() {
+
+function Homepage() {
 
 const navigate = useNavigate();
 
   return (
     <div className="min-h-screen"> 
-    {/* <Navbar /> */}
+    
 
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
         <div className="card w-96  shadow-xl  mt-16">
           <div className="card-body" style={{color:'white'}}>
-            <h2 className="card-title">Bookings</h2>
+            <h2 className="card-title">Booked Events</h2>
             <TbBrandBooking style={{ fontSize: "2em" }} />
-            <p>Make a booking for your event.</p>
+            <p>History of events booked.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/pack",{replace:true})}>Book</button>
+              <button className="btn btn-accent" onClick={() => navigate("/bookings",{replace:true})}>Book</button>
             </div>
           </div>
         </div>
 
         <div className="card w-96  shadow-xl mt-16">
           <div className="card-body" style={{color:'white'}}>
-            <h2 className="card-title">Booking History</h2>
-            <RiFolderHistoryFill style={{ fontSize: "2em" }} />
-            <p>Make a booking for your event.</p>
+            <h2 className="card-title">Reports</h2>
+            <HiDocumentReport style={{ fontSize: "2em" }} />
+            <p>Reports of events.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/history",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/reports",{replace:true})}>View</button>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ const navigate = useNavigate();
             <FiPackage style={{ fontSize: "2em" }} />
             <p>
               Find out more about Event packages that you might prefer depending
-              on your event in details
+              on your event in details.
             </p>
             <div className="card-actions justify-end">
               <button className="btn btn-accent" onClick={() => navigate("/pack",{replace:true})}>View</button>
@@ -69,4 +69,4 @@ const navigate = useNavigate();
   );
 }
 
-export default Home;
+export default Homepage;

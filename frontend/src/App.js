@@ -112,19 +112,26 @@
 import "./App.css";
 //import { BrowserRouter as Router, Routes } from "react-router-dom";
 import React from "react";
- import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
+//import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
 //import History from "./customers/history/history";
-
+//import Viewbookings from "./customers/bookings/viewbookings";
+import ViewBooking from "./eventPlanner/viewBooks/viewBooking";
+//import Bookings from "./customers/bookings/bookings";
+//import Home from "./customers/home/home";
 
 function App() {
   return (
     <div className="App">
       {/* <History /> */}
-      
 
-          <ViewRescheduleOfEvents />
+      {/* <Bookings /> */}
 
-       
+      {/* <ViewRescheduleOfEvents /> */}
+
+      {/* <Viewbookings />  */}
+
+     <ViewBooking/>
+     {/* <Home /> */}
     </div>
   );
 }
