@@ -38,6 +38,7 @@ import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRe
 
 
 import Homepage from "./admin/homepage/homepage"
+import ManageEvent from "./admin/manageEvent/manageEvent"
 
 function App() {
 
@@ -107,6 +108,7 @@ function App() {
             <Route path="viewbooks" element={<ViewBooks />}></Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>
+            <Route path="ManageEvent" element={<ManageEvent />}></Route>
 
             {/* ADMIN ROUTES */}
           </Routes>
