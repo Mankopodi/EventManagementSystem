@@ -49,7 +49,7 @@ function Packages() {
   }
 
   return (
-    <div className="app">
+    <div className="min-h-screen">
       <main>
         {/* we centered the "main" tag in our style sheet*/}
 
