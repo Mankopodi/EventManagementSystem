@@ -21,6 +21,7 @@ import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
 import Payment from "./customers/payment/Payment copy";
 
+
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
@@ -33,6 +34,10 @@ import ReportEvents from './eventPlanner/reportEvents/reportEvents';
 import ReportEventHall from './eventPlanner/reportEventsHalll/reportEventsHalll';
 import ViewBooks from './eventPlanner/viewBooks/viewBooking';
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
+
+
+
+import Homepage from "./admin/homepage/homepage"
 
 function App() {
 
@@ -82,7 +87,7 @@ function App() {
             <Route path="history" element={<History />}></Route>
             <Route path="rating" element={<Ratings />}></Route>
             <Route path="packages" element={<Packages />}></Route>
-            <Route path="payment" element={<Payment />}></Route>
+            <Route path="Payment" element={<Payment />}></Route>
 
             {/* EVENT PLANNER */}
             {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
@@ -100,6 +105,8 @@ function App() {
             <Route path="reportevents" element={<ReportEvents />}></Route>
             <Route path="reporteventhall" element={<ReportEventHall />}></Route>
             <Route path="viewbooks" element={<ViewBooks />}></Route>
+
+            <Route path="Homepage" element={<Homepage />}></Route>
 
             {/* ADMIN ROUTES */}
           </Routes>

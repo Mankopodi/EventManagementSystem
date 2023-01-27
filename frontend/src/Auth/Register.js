@@ -129,6 +129,7 @@ const config = require("./config.json");
             <h3 className="font-semibold text-black">Select Role:</h3>
 
             <input
+            style={{ color: "black" }}
               type="radio"
               name="customer"
               value="customer"
@@ -144,15 +145,12 @@ const config = require("./config.json");
 {/*  */}
 <div>
     <h3 className="text-gray-600" >Select Admin?</h3>
-<div>
-
-
-</div>
 
 <div className="grid grid-rows-1 grid-flow-col gap-4">
 
     <div>
         <input
+        style={{ color: "black" }}
           type="radio"
           value="Customer"
           checked={role === 'Customer'}
@@ -161,6 +159,7 @@ const config = require("./config.json");
       </div>
       <div>
         <input
+        style={{ color: "black" }}
           type="radio"
           value="Admin"
           checked={role === 'Admin'}
@@ -169,6 +168,7 @@ const config = require("./config.json");
       </div>
       <div>
         <input
+        style={{ color: "black" }}
           type="radio"
           value="event_planner"
           checked={role === 'event_planner'}
@@ -192,7 +192,8 @@ const config = require("./config.json");
                             </a>
                             <button
                                 type="submit"
-                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false" onClick={()=> {navigate('/Home', {replace:true})}}
+                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
+                                onClick={() => navigate("/login",{replace:true})}
                             >
                                 Register
                             </button>

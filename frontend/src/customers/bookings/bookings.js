@@ -51,7 +51,6 @@ function Bookings() {
       .then((res) => {
         console.log(res);
         navigate("/Payment")
-        navigate("/viewbookings")
       })
       .catch((err) => {
         console.log(err);

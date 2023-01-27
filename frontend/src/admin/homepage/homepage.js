@@ -54,7 +54,7 @@ const navigate = useNavigate();
 
         <div className="card w-96  shadow-xl  mt-16">
           <div className="card-body" style={{color:'white'}}>
-            <h2 className="card-title">Review and Ratings</h2>
+            <h2 className="card-title">Manage customer</h2>
             <MdReviews style={{ fontSize: "2em" }} />
             <p>
               Checkout the Rate and Reviews for our event management system.
