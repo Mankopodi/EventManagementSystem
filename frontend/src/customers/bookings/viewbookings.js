@@ -39,8 +39,8 @@ function Viewbookings() {
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8 text-white " onClick={() => navigate("/bookings",{replace:true})} >Make a booking</button>
-        <table className="table " >
+        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/bookings",{replace:true})}>Make a booking</button>
+        <table className="table w-full" style={{ color: "white" }}>
           <thead>
             <tr>
               <th className="text-white " >First Name</th>
