@@ -46,50 +46,51 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        navigate("/viewbookings")
       })
       .catch((err) => {
         console.log(err);
       });
 
-      axios
-      .get("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .get("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
       
 
-      axios
-      .put("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .put("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
 
-      axios
-      .delete("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .delete("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
   };
 
   return (
@@ -105,6 +106,7 @@ function Bookings() {
               <label className="input-group">
                 <span>First Name</span>
                 <input
+                style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={FirstName}
@@ -122,6 +124,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Last Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={LastName}
@@ -139,6 +142,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Email</span>
                 <input
+                 style={{color:'black'}}
                   type="email"
                   placeholder="info@site.com"
                   value={Email}
@@ -156,6 +160,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Phone Number</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={PhoneNumber}
@@ -173,6 +178,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Group Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={GroupName}
@@ -191,6 +197,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Number of Guests</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={NumberOfGuests}
@@ -208,6 +215,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Date</span>
                 <input
+                 style={{color:'black'}}
                   type="date"
                   placeholder="Type here"
                   value={eventDate}
@@ -225,6 +233,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Event Type</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={EventType}
                   onChange={(e) => setEventType(e.target.value)}
@@ -247,6 +256,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Venue</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={Venue}
                   onChange={(e) => setVenue(e.target.value)}
@@ -272,6 +282,7 @@ function Bookings() {
               <label className="input-group">
                 <span>Package</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md  max-w-3xl"
                   value={Package}
                   onChange={(e) => setPackage(e.target.value)}

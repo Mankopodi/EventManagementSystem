@@ -1,25 +1,11 @@
 //import React, { useEffect } from "react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 //import axios from "axios";
 //import { Token } from "../../tokens/constant";
 
 function Viewbookings() {
-//   const Viewbookings = async() =>{
-//     axios.get("http://localhost:1337/api/bookings", {
-//       headers: {
-//         Authorization: `Bearer ${Token}`,
-//       },
-//     })
-//     .then((res) => {
-//       console.log(res);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-
-//   useEffect(() => {
-//     Viewbookings();
-//   }, []);
+const navigate = useNavigate();
 
   return (
     <div className="min-h-screen overflow-scroll">
@@ -30,7 +16,7 @@ function Viewbookings() {
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" style={{color:'white'}}>Make a booking</button>
+        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/bookings",{replace:true})}>Make a booking</button>
         <table className="table w-full" style={{ color: "white" }}>
           <thead>
             <tr>
