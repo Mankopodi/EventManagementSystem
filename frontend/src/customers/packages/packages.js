@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
-import '../../customers/packages/packages.css';
+// import '../../customers/packages/packages.css';
 
 function Packages() {
   const [customizeEventsPackages, setCustomizeEventsPackages] = useState([]);
