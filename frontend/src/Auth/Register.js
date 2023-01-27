@@ -12,6 +12,7 @@ const config = require("./config.json");
  const [role, setRole] = React.useState("customer");
  const [gender, setGender] = React.useState('male');
 
+ const navigate = useNavigate();
  const handleChange = (event) => {  
       
     setRole(event.target.value)
@@ -183,14 +184,14 @@ const config = require("./config.json");
 
                         <div className="flex items-center justify-end mt-4">
                             <a
-                                className="text-sm text-gray-600 underline hover:text-gray-900"
+                                className="text-sm text-gray-600 underline hover:text-gray-900" onClick={()=> {navigate('/Login', {replace:true})}}
                                 href="#"
                             >
                                 Already registered?
                             </a>
                             <button
                                 type="submit"
-                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
+                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false" onClick={()=> {navigate('/Home', {replace:true})}}
                             >
                                 Register
                             </button>

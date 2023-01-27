@@ -4,7 +4,7 @@ import React from "react";
 import Home from "../home/home";
 
 
-function navbar() {
+function Navbar() {
 
   //const navigate = useNavigate;
 
@@ -78,4 +78,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;
