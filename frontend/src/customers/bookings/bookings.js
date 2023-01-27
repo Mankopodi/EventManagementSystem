@@ -268,8 +268,11 @@ function Bookings() {
                   <option>Sunset Boardroom</option>
                   <option>Executive Boardroom</option>
                   <option>The garden venue hotel</option>
-                  <option>The Natural Arch</option>
-                  <option>The Sweett Arch</option>
+                  <option>Pheasant Hill</option>
+                  <option>The Sweet Arch</option>
+                  <option>Hakunamatata</option>
+                  <option>Verenda House</option>
+                  <option>Taboo</option>
                 </select>
               </label>
             </div>
@@ -295,6 +298,9 @@ function Bookings() {
                   <option>Deluxe</option>
                   <option>Standard</option>
                   <option>Stay-Over</option>
+                  <option>For Adults</option>
+                  <option>For Kids</option>
+                  <option>Baby/Bridal Shower</option>
                 </select>
               </label>
             </div>

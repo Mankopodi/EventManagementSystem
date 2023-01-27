@@ -1,11 +1,13 @@
 
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
 
 function History() {
 
   const [Bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -29,13 +31,16 @@ function History() {
 
   return (
     <div className="min-h-screen">
+      
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold mb-4"
+          className="flex justify-center text-4xl font-bold mB-1"
           style={{ color: "white" }}
         >
           Booking History
         </h1>
+        <button className="btn btn-primary mb-2" onClick={() => navigate("/home",{replace:true})}>BACK</button>
+
         <table className="table w-full">
           <thead>
             <tr>
@@ -55,16 +60,16 @@ function History() {
             {Bookings.map((book) => {
               return (
                 <tr>
-                  <td>{book.attributes.FirstName}</td>
-                  <td>{book.attributes.LastName}</td>
-                  <td>{book.attributes.Email}</td>
-                  <td>{book.attributes.PhoneNumber}</td>
-                  <td>{book.attributes.GroupName}</td>
-                  <td>{book.attributes.EventType}</td>
-                  <td>{book.attributes.NumberOfGuests}</td>
-                  <td>{book.attributes.eventDate}</td>
-                  <td>{book.attributes.Venue}</td>
-                  <td>{book.attributes.Package}</td>
+                  <td style={{ color: "black" }}>{book.attributes.FirstName}</td>
+                  <td style={{ color: "black" }}>{book.attributes.LastName}</td>
+                  <td style={{ color: "black" }}>{book.attributes.Email}</td>
+                  <td style={{ color: "black" }}>{book.attributes.PhoneNumber}</td>
+                  <td style={{ color: "black" }}>{book.attributes.GroupName}</td>
+                  <td style={{ color: "black" }}>{book.attributes.EventType}</td>
+                  <td style={{ color: "black" }}>{book.attributes.NumberOfGuests}</td>
+                  <td style={{ color: "black" }}>{book.attributes.eventDate}</td>
+                  <td style={{ color: "black" }}>{book.attributes.Venue}</td>
+                  <td style={{ color: "black" }}>{book.attributes.Package}</td>
                 </tr>
               );
             })}

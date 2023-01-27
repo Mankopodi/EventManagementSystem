@@ -129,25 +129,14 @@ const config = require("./config.json");
             {/*  */}
             <h3 className="font-semibold text-black">Select Role:</h3>
 
-            <input
-            style={{ color: "black" }}
-              type="radio"
-              name="customer"
-              value="customer"
-              id="customer"
-             className="mask mask-circle"
-              // disabled={role !== ''}
-              onChange={(e) => {
-                setRole(e.target.value);
-              }}
-            />
-            <label htmlFor="customer" className="font-semibold text-black mr-4">Customer</label>
+          
+            
 
-{/*  */}
+
 <div>
-    <h3 className="text-gray-600" >Select Admin?</h3>
+  
 
-<div className="grid grid-rows-1 grid-flow-col gap-4">
+<div className="grid grid-rows-1 grid-flow-col gap-4" style={{ color: "black" }}>
 
     <div>
         <input
@@ -174,7 +163,7 @@ const config = require("./config.json");
           value="event_planner"
           checked={role === 'event_planner'}
           onChange={handleChange}
-        /> event_planner
+        /> Event Planner 
       </div>
 
 </div>
@@ -182,7 +171,7 @@ const config = require("./config.json");
     
 </div>
 
-<label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label>
+
 
                         <div className="flex items-center justify-end mt-4">
                             <a
@@ -194,7 +183,7 @@ const config = require("./config.json");
                             <button
                                 type="submit"
                                 className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
-                                onClick={() => navigate("/login",{replace:true})}
+                                onClick={() => navigate("/home",{replace:true})}
                             >
                                 Register
                             </button>
