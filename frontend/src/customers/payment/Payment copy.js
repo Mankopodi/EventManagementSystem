@@ -19,7 +19,7 @@ function Payment() {
   useEffect(() => {
     fetch("http://localhost:5252/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({}),
+      bodys: JSON.stringify({}),
     }).then(async (result) => {
       var { clientSecret } = await result.json();
       setStripePromise(stripePromise)

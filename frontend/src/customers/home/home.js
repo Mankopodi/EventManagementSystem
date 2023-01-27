@@ -19,7 +19,7 @@ const navigate = useNavigate();
             <TbBrandBooking style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/pack",{replace:true})}>Book</button>
+              <button className="btn btn-accent" onClick={() => navigate("/viewbookings",{replace:true})}>Book</button>
             </div>
           </div>
         </div>

@@ -90,7 +90,7 @@ export default function Login() {
       .post(`${config.dev_url}/api/auth/local`, {
         identifier: email,
         password: password,
-        myUserRoles: role,
+        // myUserRoles: role,
       })
       .then((response) => {
         console.log("Well done!");

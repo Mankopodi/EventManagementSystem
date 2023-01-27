@@ -19,7 +19,7 @@ import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
 import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
-// import Payment from "./customers/payment/Payment copy";
+import Payment from "./customers/payment/Payment copy";
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -82,7 +82,7 @@ function App() {
             <Route path="history" element={<History />}></Route>
             <Route path="rating" element={<Ratings />}></Route>
             <Route path="packages" element={<Packages />}></Route>
-            {/* <Route path="Payment" element={<Payment />}></Route> */}
+            <Route path="Payment" element={<Payment />}></Route>
 
             {/* EVENT PLANNER */}
             {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
