@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 import React, { useState, useEffect } from "react";
@@ -39,7 +38,7 @@ function Viewbookings() {
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/bookings",{replace:true})}>Make a booking</button>
+        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/dash/bookings",{replace:true})}>Make a booking</button>
         <table className="table w-full" style={{ color: "white" }}>
           <thead>
             <tr>

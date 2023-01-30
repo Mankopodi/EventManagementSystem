@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -20,6 +25,10 @@ import History from "./customers/history/history";
 import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
 import Payment from "./customers/payment/Payment copy";
+import PushNotification from "./customers/pushNotification/pushNotification";
+import Contact from "./customers/contact us/contact";
+
+
 
 
 // event planner
@@ -29,19 +38,19 @@ import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
 import Modal from "./eventPlanner/ratings&Ratings/Modal";
 import EventCrud from "./eventPlanner/eventCrud/eventCrud";
-import EmailCommunication from './eventPlanner/emailComunnication/emailComunnication';
-import ReportEvents from './eventPlanner/reportEvents/reportEvents';
-import ReportEventHall from './eventPlanner/reportEventsHalll/reportEventsHalll';
-import ViewBooks from './eventPlanner/viewBooks/viewBooking';
+import EmailCommunication from "./eventPlanner/emailComunnication/emailComunnication";
+import ReportEvents from "./eventPlanner/reportEvents/reportEvents";
+import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll";
+import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
 
-
-
-import Homepage from "./admin/homepage/homepage"
+// admin
+import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
+import Admindashboard from "./admin/admindashboard/admindashboard";
+import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent"
 
 function App() {
-
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -52,7 +61,6 @@ function App() {
 
   return (
     <div className="App">
-
       {loading ? (
         <CircleLoader
           color={"#308070"}
@@ -65,7 +73,6 @@ function App() {
       ) : (
         <Router>
           <Routes>
-
             {/* PUBLIC ROUTES*/}
 
             <Route path="/" element={<LandingPage />}></Route>
@@ -80,37 +87,62 @@ function App() {
 
             {/* CUSTOMER ROUTES */}
 
-            <Route path="navbar" element={<Navbar />}></Route>
-            <Route path="home" element={<Home />}></Route>
-            <Route path="viewbookings" element={<Viewbookings />}></Route>
-            <Route path="bookings" element={<Bookings />}></Route>
-            <Route path="pack" element={<Pack />}></Route>
-            <Route path="history" element={<History />}></Route>
-            <Route path="rating" element={<Ratings />}></Route>
-            <Route path="packages" element={<Packages />}></Route>
-            <Route path="Payment" element={<Payment />}></Route>
+            <Route path="/dash" element={<Navbar />}>
+              <Route path="home" element={<Home />}></Route>
+              <Route path="viewbookings" element={<Viewbookings />}></Route>
+              <Route path="bookings" element={<Bookings />}></Route>
+              <Route path="pack" element={<Pack />}></Route>
+              <Route path="history" element={<History />}></Route>
+              <Route path="rating" element={<Ratings />}></Route>
+              <Route path="packages" element={<Packages />}></Route>
+              <Route path="Payment" element={<Payment />}></Route>
+              <Route
+                path="pushNotification"
+                element={<PushNotification />}
+              ></Route>
+               <Route path="contact" element={<Contact />}></Route>
+
+            </Route>
 
             {/* EVENT PLANNER */}
-            {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
-            <Route path="review" element={<ProductReview1 />}></Route>
-            <Route path="addreview" element={<CRUD />}></Route>
-            <Route path="modal" element={<Modal />}></Route>
-            <Route
-              path="ViewRescheduleOfEvents"
-              element={<ViewRescheduleOfEvents />}
-            ></Route>
-            <Route path="dashboard" element={<Dashboard />}></Route>
-            <Route path="homes" element={<Homes />}></Route>
-            <Route path="eventCrud" element={<EventCrud />}></Route>
-            <Route path="emailcommunication" element={<EmailCommunication />}></Route>
-            <Route path="reportevents" element={<ReportEvents />}></Route>
-            <Route path="reporteventhall" element={<ReportEventHall />}></Route>
-            <Route path="viewbooks" element={<ViewBooks />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="homes" element={<Homes />}></Route>
+              <Route path="review" element={<ProductReview1 />}></Route>
+              <Route path="addreview" element={<CRUD />}></Route>
+              <Route path="modal" element={<Modal />}></Route>
+              <Route
+                path="ViewRescheduleOfEvents"
+                element={<ViewRescheduleOfEvents />}
+              ></Route>
+
+              <Route path="eventCrud" element={<EventCrud />}></Route>
+              <Route
+                path="emailcommunication"
+                element={<EmailCommunication />}
+              ></Route>
+              <Route path="reportevents" element={<ReportEvents />}></Route>
+              <Route
+                path="reporteventhall"
+                element={<ReportEventHall />}
+              ></Route>
+              <Route path="viewbooks" element={<ViewBooks />}></Route>
+              <Route path="contact" element={<Contact />}></Route>
+            </Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>
             <Route path="ManageEvent" element={<ManageEvent />}></Route>
 
             {/* ADMIN ROUTES */}
+            <Route path="/admindash" element={<Admindashboard />}>
+              <Route
+                path="manageCustomerEventPlaner"
+                element={<ManageCustomerEventPlaner />}
+              ></Route>
+              <Route path="homepage" element={<Homepage />}></Route>
+              <Route path="viewbookings" element={<Viewbookings />}></Route>
+              <Route path="pack" element={<Pack />}></Route>
+              <Route path="rating" element={<Ratings />}></Route>
+            </Route>
           </Routes>
         </Router>
       )}

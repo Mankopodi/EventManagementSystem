@@ -4,6 +4,7 @@ import { FiPackage } from "react-icons/fi";
 import { MdReviews } from "react-icons/md";
 import { RiFolderHistoryFill } from "react-icons/ri";
 import {useNavigate} from 'react-router-dom';
+import Navbar from "../navbar/navbar";
 
 function Home() {
 
@@ -19,18 +20,18 @@ const navigate = useNavigate();
             <TbBrandBooking style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/viewbookings",{replace:true})}>Book</button>
+              <button className="btn btn-accent" onClick={() => navigate("/dash/viewbookings",{replace:true})}>Book</button>
             </div>
           </div>
         </div>
 
         <div className="card w-96  shadow-xl  mt-16">
-          <div className="card-body" style={{color:'white'}}>
+          <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Booking History</h2>
             <RiFolderHistoryFill style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/history",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/dash/history",{replace:true})}>View</button>
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@ const navigate = useNavigate();
               on your event in details
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/pack",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/dash/pack",{replace:true})}>View</button>
             </div>
           </div>
         </div>
@@ -57,7 +58,7 @@ const navigate = useNavigate();
               Checkout the Rate and Reviews for our event management system.
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/ratings",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/dash/rating",{replace:true})}>View</button>
             </div>
           </div>
         </div>

@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 function Pack() {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen">
-      <h1 className="text-center font-bold text-4xl" style={{ color: "black" }}>
+    <div className="min-h-screen" >
+      <h1 className="text-center font-bold text-4xl " style={{ color: "black" }}>
         Wedding Packages
       </h1>
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72 bg-base-100 shadow-xl ml-8 mt-8">
+        <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">PREMIUM</h2>
             <p>Food </p>
@@ -18,7 +18,7 @@ function Pack() {
           </div>
         </div>
 
-        <div className="card card-compact w-72 bg-base-100 shadow-xl ml-8 mt-8">
+        <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">DELUXE</h2>
             <p>Photography </p>
@@ -26,7 +26,7 @@ function Pack() {
           </div>
         </div>
 
-        <div className="card card-compact w-72 bg-base-100 shadow-xl ml-8 mt-8 ">
+        <div className="card card-compact w-72  shadow-xl ml-8 mt-8 ">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">CLASSIC</h2>
             <p>Food</p>
@@ -38,7 +38,7 @@ function Pack() {
         Parties Packages
       </h1>
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72  bg-base-100 shadow-xl ml-8 mt-8">
+        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">FOR KIDS</h2>
             <p> Jumping Castle.</p>
@@ -47,7 +47,7 @@ function Pack() {
           </div>
         </div>
 
-        <div className="card card-compact w-72  bg-base-100 shadow-xl ml-8 mt-8">
+        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">FOR ADULTS</h2>
             <p>Decor : Color of your choice. </p>
@@ -55,7 +55,7 @@ function Pack() {
           </div>
         </div>
 
-        <div className="card card-compact w-72  bg-base-100 shadow-xl ml-8 mt-8 ">
+        <div className="card card-compact w-72   shadow-xl ml-8 mt-8 ">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">BABY/BRIDAL SHOWER</h2>
             <p> Ballons.</p>
@@ -72,7 +72,7 @@ function Pack() {
         Conference Packages
       </h1>
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72 bg-base-100 shadow-xl ml-8 mt-8">
+        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">STANDARD</h2>
             <p>On Arrival: Hot and Cold Buffet Breakfast (7:00am-9:30am)</p>
@@ -83,7 +83,7 @@ function Pack() {
           </div>
         </div>
 
-        <div className="card card-compact w-72 bg-base-100 shadow-xl ml-8 mt-8 mb-8">
+        <div className="card card-compact w-72  shadow-xl ml-8 mt-8 mb-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
             <h2 className="card-title underline">STAY-OVER</h2>
             <p>Dinner.</p>
@@ -96,7 +96,7 @@ function Pack() {
       <div className="flex justify-end mr-8 ">
         <button
           className="btn btn-active btn-accent mb-8"
-          style={{ color: "black" }} onClick={() => navigate("/packages",{replace:true})}
+          style={{ color: "black" }} onClick={() => navigate("/dash/packages",{replace:true})}
         >
           Customize your event package
         </button>

@@ -22,7 +22,7 @@ const navigate = useNavigate();
             <TbBrandBooking style={{ fontSize: "2em" }} />
             <p>History of events booked.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/bookings",{replace:true})}>Book</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/viewbookings",{replace:true})}>view</button>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@ const navigate = useNavigate();
             <HiDocumentReport style={{ fontSize: "2em" }} />
             <p>Reports of events.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/reports",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/reports",{replace:true})}>View</button>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ const navigate = useNavigate();
               on your event in details.
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/pack",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/pack",{replace:true})}>View</button>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ const navigate = useNavigate();
               Checkout the Rate and Reviews for our event management system.
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/ratings",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/ratings",{replace:true})}>View</button>
             </div>
           </div>
         </div>

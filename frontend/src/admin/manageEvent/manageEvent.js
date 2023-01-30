@@ -57,7 +57,7 @@ function ManageEvent() {
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
                             <td  style={{color:'black'}}><button class="btn btn-warning">Suspend</button></td>
-                            <td  style={{color:'black'}}><button class="btn btn-active btn-danger" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
+                            <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}
 
