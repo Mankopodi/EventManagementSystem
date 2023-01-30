@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const config = require("./config.json");
 
  export default function Registration() {
+  const notify = () => toast("You have successfully registered!");
 
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
@@ -14,7 +16,6 @@ const config = require("./config.json");
  const [gender, setGender] = React.useState('male');
 
  const navigate = useNavigate();
-
  const handleChange = (event) => {  
       
     setRole(event.target.value)
@@ -39,6 +40,7 @@ const config = require("./config.json");
         console.log("Well done!", response);
         console.log("User profile", response.data.user);
         console.log("User token", response.data.jwt);
+        navigate("/home", { replace: true });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
@@ -97,6 +99,7 @@ const config = require("./config.json");
               <label
                 htmlFor="password"
                 className="block text-sm font-semibold text-black undefined"
+              
               >
                 Password:
               </label>
@@ -175,18 +178,19 @@ const config = require("./config.json");
 
                         <div className="flex items-center justify-end mt-4">
                             <a
-                                className="text-sm text-gray-600 underline hover:text-gray-900"
+                                className="text-sm text-gray-600 underline hover:text-gray-900" onClick={()=> {navigate('/Login', {replace:true})}}
                                 href="#"
                             >
                                 Already registered?
                             </a>
                             <button
                                 type="submit"
-                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
-                                onClick={() => navigate("/home",{replace:true})}
+                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false" 
+                                onClick={notify}
                             >
                                 Register
                             </button>
+                            <ToastContainer />
                         </div>
                     
           </form>

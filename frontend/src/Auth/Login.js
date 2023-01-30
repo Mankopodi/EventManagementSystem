@@ -66,14 +66,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const config = require("./config.json");
 
 export default function Login() {
+
+  const notify = () => toast("You have successfully logged in!");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("customer");
 
   const navigate = useNavigate();
+  
 
   // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
@@ -97,7 +102,7 @@ export default function Login() {
         console.log("User profile", response.data.user);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
         console.log("User token", response.data.jwt);
-        navigate("/home", { replace: true });
+        navigate("/admindash/homepage", { replace: true });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
@@ -147,11 +152,13 @@ export default function Login() {
           </Link>
 
           <div className="mt-6">
-            <button
-              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
+            <button 
+              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent" 
+              onClick={notify}
             >
               Login
             </button>
+            <ToastContainer />
           </div>
         </form>
 
