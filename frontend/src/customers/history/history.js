@@ -1,11 +1,13 @@
 
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
 
 function History() {
 
   const [Bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -29,13 +31,16 @@ function History() {
 
   return (
     <div className="min-h-screen">
+      
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold mb-4"
+          className="flex justify-center text-4xl font-bold mB-1"
           style={{ color: "white" }}
         >
           Booking History
         </h1>
+        <button className="btn btn-primary mb-2" onClick={() => navigate("/dash/home",{replace:true})}>BACK</button>
+
         <table className="table w-full">
           <thead>
             <tr>

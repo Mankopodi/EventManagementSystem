@@ -121,20 +121,21 @@ function ViewRescheduleOfEvents() {
                           </h3>
                           <div className="space">
                             <div className="form-control">
-                              <label className="label">
+                              <label className="label ">
                                 <span className="label-text">
                                   Number Of Guests
                                 </span>
                               </label>
                               <label className="input-group">
+                                
                                 <span>Number Of Guests</span>
                                 <input
-                                  type="text"
+                                  type="number"
                                   placeholder=""
                                   onChange={(e) =>
                                     setNumberOfGuests(e.target.value)
                                   }
-                                  className="input input-bordered"
+                                  className="input input-bordered" style={{color:'black'}}
                                 />
                               </label>
                             </div>
@@ -153,7 +154,7 @@ function ViewRescheduleOfEvents() {
                                   type="date"
                                   placeholder="10"
                                   onChange={(e) => setDate(e.target.value)}
-                                  className="input input-bordered"
+                                  className="input input-bordered" style={{color:'black'}}
                                 />
                               </label>
                             </div>
@@ -161,7 +162,7 @@ function ViewRescheduleOfEvents() {
                           <div className="modal-action">
                             <label
                               htmlFor="my-modal-6"
-                              className="btn btn-accent"
+                              className="btn btn-accent" style={{color:'black'}}
                               onClick={updateDate}
                             >
                               UPDATE

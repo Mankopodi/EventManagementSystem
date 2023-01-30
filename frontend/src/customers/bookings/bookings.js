@@ -50,24 +50,27 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
-        navigate("/Payment")
+        navigate("/dash/Payment")
       })
       .catch((err) => {
         console.log(err);
       });
 
-      // axios
-      // .get("http://localhost:1337/api/bookings", bookingData, {
-      //   headers: {
-      //     Authorization: `Bearer ${Token}`,
-      //   },
-      // })
-      // .then((res) => {
-      //   console.log(res);
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
+
+
+      axios
+      .get("http://localhost:1337/api/bookings", bookingData, {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        navigate("/dash/Payment")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
       
 
       // axios
@@ -271,12 +274,15 @@ function Bookings() {
                   <option disabled selected>
                     Select the venue for your event
                   </option>
-                  <option style={{ color: 'black' }} >Conference Kraal 3</option>
-                  <option style={{ color: 'black' }} >Sunset Boardroom</option>
-                  <option style={{ color: 'black' }} >Executive Boardroom</option>
-                  <option style={{ color: 'black' }} >The garden venue hotel</option>
-                  <option style={{ color: 'black' }} >The Natural Arch</option>
-                  <option style={{ color: 'black' }} >The Sweett Arch</option>
+                  <option>Conference Kraal 3</option>
+                  <option>Sunset Boardroom</option>
+                  <option>Executive Boardroom</option>
+                  <option>The garden venue hotel</option>
+                  <option>Pheasant Hill</option>
+                  <option>The Sweet Arch</option>
+                  <option>Hakunamatata</option>
+                  <option>Verenda House</option>
+                  <option>Taboo</option>
                 </select>
               </label>
             </div>
@@ -297,11 +303,14 @@ function Bookings() {
                   <option disabled selected>
                     Select a Package
                   </option>
-                  <option style={{ color: 'black' }} >Premium</option>
-                  <option style={{ color: 'black' }} >Classic</option>
-                  <option style={{ color: 'black' }} >Deluxe</option>
-                  <option style={{ color: 'black' }} >Standard</option>
-                  <option style={{ color: 'black' }} >Stay-Over</option>
+                  <option>Premium</option>
+                  <option>Classic</option>
+                  <option>Deluxe</option>
+                  <option>Standard</option>
+                  <option>Stay-Over</option>
+                  <option>For Adults</option>
+                  <option>For Kids</option>
+                  <option>Baby/Bridal Shower</option>
                 </select>
               </label>
             </div>
