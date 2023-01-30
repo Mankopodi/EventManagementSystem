@@ -56,21 +56,18 @@ function Bookings() {
         console.log(err);
       });
 
-
-
-      axios
-      .get("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        navigate("/Payment")
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .get("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
       
 
       // axios
@@ -298,7 +295,7 @@ function Bookings() {
                   onChange={(e) => setPackage(e.target.value)}
                 >
                   <option disabled selected>
-                    Select a Pactage
+                    Select a Package
                   </option>
                   <option style={{ color: 'black' }} >Premium</option>
                   <option style={{ color: 'black' }} >Classic</option>

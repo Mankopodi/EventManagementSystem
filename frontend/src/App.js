@@ -82,7 +82,7 @@ function App() {
             <Route path="history" element={<History />}></Route>
             <Route path="rating" element={<Ratings />}></Route>
             <Route path="packages" element={<Packages />}></Route>
-            <Route path="payment" element={<Payment />}></Route>
+            <Route path="Payment" element={<Payment />}></Route>
 
             {/* EVENT PLANNER */}
             {/* <Route path="payment" element={<InjectedCheckoutForm />}></Route> */}
@@ -110,4 +110,3 @@ function App() {
 }
 
 export default App;
-
