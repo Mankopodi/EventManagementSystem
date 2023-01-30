@@ -4,23 +4,36 @@ import TodoItem from './TodoItem';
 import axios from 'axios';
 
 function ManageEvent() {
-    const [customizeEventsPackage, setCustomizeEventsPackages] = useState([]);
+    const [user, setUser] = useState([]);
     // const [newCustomizeEventsPackage, setNewCustomizeEventsPackage] = useState("");
 
     useEffect(() => {
-       axios.get(`http://localhost:1337/api/customize-events-packages`)
-       .then((res)=>{
-            console.log(res);
-               setCustomizeEventsPackages(res.data.data);
-       })
-       .catch(error=>{
-        console.log(error);
-       })
-       
-           //console.log(res);
-        
-
+       getUsers();
     }, []);
+
+    function getUsers() {
+        fetch(`http://localhost:1337/api/users`)
+          .then(res => res.json())
+          .then(user => {
+            setUser(user);
+            console.log(user)
+          })
+      }
+
+
+    function deleteTodo(id) {
+
+       
+        // console.log(pos, 'id: ');
+        console.log( 'getting user: ', id)
+     
+        axios.delete(`http://localhost:1337/api/users/${id}`)
+          .then((res) => {
+            console.log(res);
+            getUsers();
+          })
+          console.log( 'getting user: ', id)
+      }
 
 
     return (
@@ -31,19 +44,20 @@ function ManageEvent() {
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
+                            <th ><h1>User Name</h1></th>
+                            <th> Email</th>
                             <th></th>
-                            <th colSpan={2}>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* <!-- row 1 --> */}
-                        {customizeEventsPackage.map((customizeEventsPackage) => (
-                        <tr key={customizeEventsPackage.id}>
-                            <td>{customizeEventsPackage.attributes.event_package} </td>
-                            <td>Suspend</td>
-                            <td>Delete</td>
+                        {user?.map((user) => (
+                        <tr key={user.id}>
+                            <td  style={{color:'black'}}>{user.username} </td>
+                            <td  style={{color:'black'}}>{user.email} </td>
+                            <td  style={{color:'black'}}><button class="btn btn-warning">Suspend</button></td>
+                            <td  style={{color:'black'}}><button class="btn btn-active btn-danger" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}
 
