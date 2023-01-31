@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import TodoItem from './TodoItem';
 import axios from 'axios';
 
 function ManageEvent() {
@@ -22,8 +21,6 @@ function ManageEvent() {
 
 
     function deleteTodo(id) {
-
-       
         // console.log(pos, 'id: ');
         console.log( 'getting user: ', id)
      

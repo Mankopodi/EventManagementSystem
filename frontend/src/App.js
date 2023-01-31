@@ -94,7 +94,7 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="history" element={<History />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
-              <Route path="packages" element={<Packages />}></Route>
+              <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
               <Route
                 path="pushNotification"
