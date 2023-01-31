@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
-import '../../customers/packages/packages.css';
+// import '../../customers/packages/packages.css';
 
 function Packages() {
   const [customizeEventsPackages, setCustomizeEventsPackages] = useState([]);
@@ -49,7 +49,7 @@ function Packages() {
   }
 
   return (
-    <div className="app">
+    <div className="min-h-screen">
       <main>
         {/* we centered the "main" tag in our style sheet*/}
 

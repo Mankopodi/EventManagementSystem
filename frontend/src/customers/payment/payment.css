@@ -7,22 +7,22 @@
   --radius: 3px;
 }
 
-body {
+/* body {
   padding: 20px;
   font-family: 'Raleway';
   display: flex;
   justify-content: center;
   font-size: 1.2em;
   color: var(--dark-terminal-color);
-}
+} */
 
 main {
   width: 480px;
 }
 
-form > * {
+/* form > * {
   margin: 10px 0;
-}
+} */
 
 button {
   background-color: var(--accent-color);
