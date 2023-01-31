@@ -3,14 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.6",
     "@stripe/react-stripe-js": "^1.16.3",
-=======
-    "@stripe/react-stripe-js": "^1.16.4",
->>>>>>> 13e0b3fe27b1c04d2f829ad16468757922beeedc
     "@stripe/stripe-js": "^1.46.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
