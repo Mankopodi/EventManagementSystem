@@ -66,12 +66,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-const config = require('./config.json')
+const config = require("./config.json");
 
-  export default function Login() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+
+  const navigate = useNavigate();
 
   // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
@@ -80,21 +82,22 @@ const config = require('./config.json')
     const data = {
       identifier: email,
       password: password,
-      myUserRoles : role
+      myUserRoles: role,
     };
     console.log(data);
 
     await axios
       .post(`${config.dev_url}/api/auth/local`, {
-        identifier : email,
-        password : password,
-        myUserRoles : role
+        identifier: email,
+        password: password,
+        myUserRoles: role,
       })
       .then((response) => {
         console.log("Well done!");
         console.log("User profile", response.data.user);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
         console.log("User token", response.data.jwt);
+        navigate("/home", { replace: true });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
@@ -103,56 +106,63 @@ const config = require('./config.json')
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-gray-700 underline">
+      <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center text-black ">
           Sign in
         </h1>
         <form className="mt-6" onSubmit={login}>
           <div className="mb-2">
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-sm font-semibold text-black"
             >
-              Email
+              Email:
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
             <label
               htmlFor="password"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-sm font-semibold text-black"
             >
-              Password
+              Password:
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block w-full px-4 py-2 mt-2 btn-primary bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 btn-primaryborder rounded-md focus:border-black focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
-          <Link  to={'/forgot-password'} className="text-xs text-black-900 hover:underline">
+          <Link
+            to={"/forgot-password"}
+            className="text-xs text-black hover:underline font-semibold"
+          >
             Forget Password?
           </Link>
 
-      
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btn-rose focus:outline-none focus:btn btn-primary  bg-aqua">
+            <button
+              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
+      
+            >
               Login
             </button>
           </div>
         </form>
 
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
+        <p className="mt-8 text-xs font-semibold text-center text-black">
           {" "}
           Don't have an account?{" "}
-          <Link to={"/register"} className="font-medium text-black-900 hover:underline">
-            
+          <Link
+            to={"/register"}
+            className="font-semibold text-black hover:underline"
+          >
             Sign up
           </Link>
         </p>
