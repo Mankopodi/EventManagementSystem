@@ -80,7 +80,7 @@ function Navbar() {
           </div>
           
           <a
-            className="btn btn-accent normal-case text-xl ml-2 "
+            className="btn btn-ghost normal-case text-xl ml-2 "
             style={{ color: "black" }}
           >
             Event Management System

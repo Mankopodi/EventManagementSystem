@@ -11,16 +11,19 @@ function Pack() {
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
         <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">PREMIUM</h2>
+            <h2 className="card-title underline font-semibold">PREMIUM</h2>
             <p>Food </p>
             <p>Photography</p>
             <p>Decor</p>
           </div>
+          <div>
+          <p className="font-bold" style={{ color: "black" }}>Amount:</p>
+            </div>
         </div>
 
         <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">DELUXE</h2>
+            <h2 className="card-title underline font-semibold">DELUXE</h2>
             <p>Photography </p>
             <p>Food</p>
           </div>
@@ -28,7 +31,7 @@ function Pack() {
 
         <div className="card card-compact w-72  shadow-xl ml-8 mt-8 ">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">CLASSIC</h2>
+            <h2 className="card-title underline font-semibold">CLASSIC</h2>
             <p>Food</p>
           </div>
         </div>
@@ -40,7 +43,7 @@ function Pack() {
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
         <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">FOR KIDS</h2>
+            <h2 className="card-title underline  font-semibold">FOR KIDS</h2>
             <p> Jumping Castle.</p>
             <p> Bubble Machine.</p>
             <p> Party Boxes: Snacks,Sweets and More.</p>
@@ -49,7 +52,7 @@ function Pack() {
 
         <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">FOR ADULTS</h2>
+            <h2 className="card-title underline font-semibold">FOR ADULTS</h2>
             <p>Decor : Color of your choice. </p>
             <p>Alcohol: Your choice.</p>
           </div>
@@ -57,7 +60,7 @@ function Pack() {
 
         <div className="card card-compact w-72   shadow-xl ml-8 mt-8 ">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">BABY/BRIDAL SHOWER</h2>
+            <h2 className="card-title underline font-semibold">BABY/BRIDAL SHOWER</h2>
             <p> Ballons.</p>
             <p>Attire.</p>
             <p>Food.</p>
@@ -74,7 +77,7 @@ function Pack() {
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
         <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">STANDARD</h2>
+            <h2 className="card-title underline font-semibold">STANDARD</h2>
             <p>On Arrival: Hot and Cold Buffet Breakfast (7:00am-9:30am)</p>
             <p>Morning Break: Coffee, Tea, Juice and Bottled Water.</p>
             <p>Lunch: Three Course Buffet.</p>
@@ -85,7 +88,7 @@ function Pack() {
 
         <div className="card card-compact w-72  shadow-xl ml-8 mt-8 mb-8">
           <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline">STAY-OVER</h2>
+            <h2 className="card-title underline font-semibold">STAY-OVER</h2>
             <p>Dinner.</p>
             <p>Single Accommodation.</p>
             <p>Sharing Accommodation.</p>

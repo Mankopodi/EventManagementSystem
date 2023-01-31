@@ -1,11 +1,9 @@
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import jwt_decode from "jwt-decode";
 const config = require("./config.json");
 
 
@@ -39,59 +37,46 @@ export default function Login() {
         // myUserRoles: role,
       })
       .then((response) => {
+
+
         console.log("Well done!");
-        console.log("User profile", response.data.user);
+        console.log("User profile", response);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
-        console.log("User token", response.data.jwt);
-        navigate("/admindash/homepage", { replace: true });
+        // console.log("User token", response.data.jwt);
+        // navigate("/admindash/homepage", { replace: true });
+        // const { jwt, user } = response.data.data;
+        let jwt = response.data.jwt
+         
+          console.log(jwt);
+          // setToken(jwt);
+          // const token = localStorage.getItem("jwt");
+          let decoded = jwt_decode(jwt);
+          let ID = decoded.id;
+
+          axios
+            .get(`${config.dev_url}/api/users/${ID}?populate=*`)
+            .then((data) => {
+              console.log("role ", data.data.role.id);
+
+              if (data.data.role.id === 4) {
+                navigate("../dash/home");
+              }
+              if (data.data.role.id === 5) {
+                navigate("/dashboard/homes");
+              }
+              if (data.data.role.id === 3) {
+                navigate("/admindash/homepage", { replace: true });
+              }
+             
+            })
+            .catch((error) => {
+              console.log(error);
+            });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
       });
   };
-
-  // const data = await response.json();
-  // if (data?.error) {
-  //       throw data?.error;
-  //     } else {
-  //       console.log(data.user.userType === "customer");
-  //       if (data.user.userType === "customer") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         // message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/dash/home", { replace: true });
-
-
-  //       } else if (data.user.userType === "event planner") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         //message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/dashboard/homes", { replace: true });
-
-
-  //       } else if (data.user.userType === "admin") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         // message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/admindash/homepage", { replace: true });
-  //       }
-  //     }
-
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
