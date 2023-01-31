@@ -8,8 +8,6 @@ function TodoItem({ customizeEventsPackage, update }) {
       const [edit, setEdit] = useState(false);
       const [newCustomEventPackage, setNewCustomEventPackage] = useState("");
     
-
-
       // This function changes the to-do that
       // is rendered in this component.
       // This function is called when the
@@ -37,8 +35,6 @@ function TodoItem({ customizeEventsPackage, update }) {
           })
       }
     
-
-
       // This function deletes the to-do that
       // is rendered in this component.
       // This function is called when the
@@ -46,7 +42,6 @@ function TodoItem({ customizeEventsPackage, update }) {
       function deleteTodo(e) {
         e.preventDefault();
         let pos = customizeEventsPackage.id;
-        
      
         fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
           method: "DELETE"
@@ -81,7 +76,7 @@ function TodoItem({ customizeEventsPackage, update }) {
             // value in the element, so they don't have to write it again
             setNewCustomEventPackage(customizeEventsPackage.attributes.event_package)
           }}>edit</button>
-        </div> 
+        </div>
       </div>
 
 }

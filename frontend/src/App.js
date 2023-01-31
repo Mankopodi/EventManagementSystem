@@ -27,6 +27,10 @@ import Packages from "./customers/packages/packages";
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
+import EditUser from "./customers/packages/EditUser"
+
+
+
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -47,6 +51,7 @@ import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRe
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
 import Admindashboard from "./admin/admindashboard/admindashboard";
 import Homepage from "./admin/homepage/homepage";
+import ManageEvent from "./admin/manageEvent/manageEvent"
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -92,8 +97,9 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="history" element={<History />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
-              <Route path="packages" element={<Packages />}></Route>
+              <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
+              <Route path="EditUser" element={ <EditUser />}></Route>
               <Route
                 path="pushNotification"
                 element={<PushNotification />}
@@ -130,6 +136,9 @@ function App() {
               <Route path="report" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
             </Route>
+
+            <Route path="Homepage" element={<Homepage />}></Route>
+            <Route path="ManageEvent" element={<ManageEvent />}></Route>
 
             {/* ADMIN ROUTES */}
             <Route path="/admindash" element={<Admindashboard />}>
