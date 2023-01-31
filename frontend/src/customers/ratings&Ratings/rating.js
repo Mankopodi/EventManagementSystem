@@ -2,7 +2,7 @@ import React from 'react'
 
 function rating() {
   return (
-    <div>rating</div>
+    <div className="min-h-screen">rating</div>
   )
 }
 

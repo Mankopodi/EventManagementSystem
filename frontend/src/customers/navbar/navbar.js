@@ -1,10 +1,10 @@
 import React from "react";
-import { BsHouse } from "react-icons/bs";
-import { MdNotificationsNone } from "react-icons/md";
+import { TbHome2 } from "react-icons/tb";
+// import { MdNotificationsNone } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { CgLogOut } from "react-icons/cg";
 import { Outlet } from "react-router-dom";
-import {HiOutlineMailOpen} from 'react-icons/hi';
+import {MdOutlineContactPhone} from 'react-icons/md';
 
 import { useNavigate } from "react-router-dom";
 // import Home from "../home/home";
@@ -43,36 +43,36 @@ function Navbar() {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
             >
               <li onClick={() => navigate("/dash/home")}>
-                <a>
-                  <BsHouse style={{ fontSize: "1.5rem" }} />
+                <a className="text-black">
+                  <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                   Home
                 </a>
               </li>
               
-              <li onClick={() => navigate("/dash/pushNotification")}>
+              {/* <li onClick={() => navigate("/dash/pushNotification")}>
                 <a>
                   <MdNotificationsNone style={{ fontSize: "1.5rem" }} />
                   Notifications
                 </a>
-              </li>
+              </li> */}
 
               <li onClick={() => navigate("/dash/contact")}>
-              <a>
-                <HiOutlineMailOpen style={{ fontSize: "1.5rem" }} />
-                Email
+              <a className="text-black">
+                <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
+                Contact
               </a>
             </li>
 
               <li onClick={() => navigate("/dash/profile")}>
-                <a>
-                  <CgProfile style={{ fontSize: "1.5rem" }} />
+                <a className="text-black">
+                  <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                   Profile
                 </a>
               </li>
 
               <li>
-                <a>
-                  <CgLogOut style={{ fontSize: "1.5rem" }} />
+                <a className="text-black">
+                  <CgLogOut style={{ fontSize: "1.5rem", color: "black" }} />
                   Logout
                 </a>
               </li>
@@ -81,7 +81,7 @@ function Navbar() {
           
           <a
             className="btn btn-accent normal-case text-xl ml-2 "
-            style={{ color: "white" }}
+            style={{ color: "black" }}
           >
             Event Management System
           </a>
@@ -90,36 +90,36 @@ function Navbar() {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 justify-end">
             <li onClick={() => navigate("/dash/home")}>
-              <a>
-                <BsHouse style={{ fontSize: "1.5rem" }} />
+              <a className="text-black">
+                <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                 Home
               </a>
             </li>
 
-            <li onClick={() => navigate("/dash/pushNotification")}>
+            {/* <li onClick={() => navigate("/dash/pushNotification")}>
               <a>
                 <MdNotificationsNone style={{ fontSize: "1.5rem" }} />
                 Notifications
               </a>
-            </li>
+            </li> */}
 
             <li onClick={() => navigate("/dash/contact")}>
-              <a>
-                <HiOutlineMailOpen style={{ fontSize: "1.5rem" }} />
-                Email
+              <a className="text-black">
+                <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
+                Contact 
               </a>
             </li>
 
             <li onClick={() => navigate("/dash/profile")}>
-              <a>
-                <CgProfile style={{ fontSize: "1.5rem" }} />
+              <a className="text-black">
+                <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                 Profile
               </a>
             </li>
 
             <li>
-              <a>
-                <CgLogOut style={{ fontSize: "1.5rem" }} />
+              <a className="text-black">
+                <CgLogOut style={{ fontSize: "1.5rem" ,color: "black" }} />
                 Logout
               </a>
             </li>
