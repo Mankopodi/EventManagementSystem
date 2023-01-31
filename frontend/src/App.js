@@ -91,7 +91,7 @@ function App() {
               <Route path="bookings" element={<Bookings />}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="history" element={<History />}></Route>
-              <Route path="rating" element={<Ratings />}></Route>
+              <Route path="review" element={<ProductReview1 />}></Route>
               <Route path="packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
               <Route
@@ -105,7 +105,7 @@ function App() {
             {/* EVENT PLANNER */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="homes" element={<Homes />}></Route>
-              <Route path="review" element={<ProductReview1 />}></Route>
+              
               <Route path="addreview" element={<CRUD />}></Route>
               <Route path="modal" element={<Modal />}></Route>
               <Route
