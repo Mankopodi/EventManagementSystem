@@ -129,6 +129,10 @@ function App() {
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="report" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
+            
+
+
+
             </Route>
 
             {/* ADMIN ROUTES */}
