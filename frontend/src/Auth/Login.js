@@ -1,74 +1,9 @@
-// import React, { useState } from 'react'
-// // import {Button, Col, Container, Row ,Form} from 'react-bootstrap';
-// import axios from 'axios';
-// import {Button, Col, Container, Row ,Form} from 'react-bootstrap';
-// import "./login.css";
-
-// const config = require('./config.json')
-
-// export default function Login() {
-//     const [identifier, setIdentifier] = useState('');
-// const [password, setPassword] = useState('');
-
-// let login = ()=>{
-//     console.log('password');
-//     console.log('identifier');
-
-//     axios.post(`${ config.dev_url}/api/auth/local`, {
-//       identifier: identifier,
-//       password: password
-//     })
-//     .then(response => {
-
-//       console.log('Well done!');
-//       console.log('User profile', response.data.user);
-//       console.log('User token', response.data.jwt);
-//     })
-//     .catch(error => {
-
-//       console.log('An error occurred:', error.response);
-//     });
-
-// }
-
-//     return (
-
-// <Container>
-//     <Row>
-//       <Col>
-//       <Form>
-//       <Form.Group className="mb-3" controlId="formBasicEmail">
-//         <Form.Label>Email address</Form.Label>
-//         <Form.Control type="email" name="identifier" value= {identifier} onChange={(e)=>{ setIdentifier(e.target.value) }} placeholder="Enter email" />
-//         <Form.Text className="text-muted">
-//           We'll never share your email with anyone else.
-//         </Form.Text>
-//       </Form.Group>
-
-//       <Form.Group className="mb-3" controlId="formBasicPassword">
-//         <Form.Label>Password</Form.Label>
-//         <Form.Control type="password" name = "password" value= {password} onChange={(e)=>{ setPassword(e.target.value)}} placeholder="Password" />
-//       </Form.Group>
-//       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-//         <Form.Check type="checkbox" label="Check me out" />
-//       </Form.Group>
-//       <Button variant="primary" type="button" onClick={ ()=>{ login() } }>
-//         Submit
-//       </Button>
-//     </Form>
-//       </Col>
-//     </Row>
-//   </Container>
-
-//     )
-// }
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import jwt_decode from "jwt-decode";
 const config = require("./config.json");
 
 
@@ -102,59 +37,46 @@ export default function Login() {
         // myUserRoles: role,
       })
       .then((response) => {
+
+
         console.log("Well done!");
-        console.log("User profile", response.data.user);
+        console.log("User profile", response);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
-        console.log("User token", response.data.jwt);
-        navigate("/admindash/homepage", { replace: true });
+        // console.log("User token", response.data.jwt);
+        // navigate("/admindash/homepage", { replace: true });
+        // const { jwt, user } = response.data.data;
+        let jwt = response.data.jwt
+         
+          console.log(jwt);
+          // setToken(jwt);
+          // const token = localStorage.getItem("jwt");
+          let decoded = jwt_decode(jwt);
+          let ID = decoded.id;
+
+          axios
+            .get(`${config.dev_url}/api/users/${ID}?populate=*`)
+            .then((data) => {
+              console.log("role ", data.data.role.id);
+
+              if (data.data.role.id === 4) {
+                navigate("../dash/home");
+              }
+              if (data.data.role.id === 5) {
+                navigate("/dashboard/homes");
+              }
+              if (data.data.role.id === 3) {
+                navigate("/admindash/homepage", { replace: true });
+              }
+             
+            })
+            .catch((error) => {
+              console.log(error);
+            });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
       });
   };
-
-  // const data = await response.json();
-  // if (data?.error) {
-  //       throw data?.error;
-  //     } else {
-  //       console.log(data.user.userType === "customer");
-  //       if (data.user.userType === "customer") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         // message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/dash/home", { replace: true });
-
-
-  //       } else if (data.user.userType === "event planner") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         //message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/dashboard/homes", { replace: true });
-
-
-  //       } else if (data.user.userType === "admin") {
-  //         // set the token
-  //         setToken(data.jwt);
-
-  //         // set the user
-  //         setUser(data.user);
-
-  //         // message.success(Welcome back ${data.user.username}!);
-
-  //         navigate("/admindash/homepage", { replace: true });
-  //       }
-  //     }
-
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
