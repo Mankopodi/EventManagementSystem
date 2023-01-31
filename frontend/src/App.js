@@ -27,6 +27,7 @@ import Packages from "./customers/packages/packages";
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
+import EditUser from "./customers/packages/EditUser"
 
 
 
@@ -97,6 +98,7 @@ function App() {
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
+              <Route path="EditUser" element={ <EditUser />}></Route>
               <Route
                 path="pushNotification"
                 element={<PushNotification />}
