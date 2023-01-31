@@ -33,12 +33,12 @@ function Viewbookings() {
     <div className="min-h-screen overflow-scroll ">
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold bg-blend-color text-white "
+          className="flex justify-center text-4xl font-bold bg-blend-color text-black "
          
         >
           Bookings
         </h1>
-        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/dash/bookings",{replace:true})}>Make a booking</button>
+        <button className="btn btn-accent mb-8" style={{color:'black'}} onClick={() => navigate("/dash/bookings",{replace:true})}>Make a booking</button>
         <table className="table w-full" style={{ color: "white" }}>
           <thead>
             <tr>

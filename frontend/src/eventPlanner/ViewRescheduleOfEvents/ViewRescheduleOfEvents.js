@@ -64,7 +64,7 @@ function ViewRescheduleOfEvents() {
     <div>
       <div className="min-h-screen overflow-scroll ">
         <div className="overflow-x-auto ">
-          <h1 className="flex justify-center text-4xl font-bold mb-4">
+          <h1 className="flex justify-center text-4xl font-bold mb-4 text-black">
             Bookings
           </h1>
           {/* <button className="btn btn-accent mb-8" style={{color:'white'}}>booking</button> */}
@@ -122,13 +122,14 @@ function ViewRescheduleOfEvents() {
                           <div className="space">
                             <div className="form-control">
                               <label className="label ">
-                                <span className="label-text">
-                                  Number Of Guests
+                                <span className="label-text"
+                                style={{ color: "black" }}>
+                                  Number Of Guests:
                                 </span>
                               </label>
                               <label className="input-group">
                                 
-                                <span>Number Of Guests</span>
+                                <span className="label-text" >Number Of Guests</span>
                                 <input
                                   type="number"
                                   placeholder=""

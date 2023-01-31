@@ -68,7 +68,9 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const config = require("./config.json");
+
 
 export default function Login() {
 
@@ -78,6 +80,8 @@ export default function Login() {
   const [role, setRole] = useState("customer");
 
   const navigate = useNavigate();
+
+
   
 
   // console.log(`email ${email} password ${password} user role ${role}`);
@@ -108,6 +112,49 @@ export default function Login() {
         console.log("An error occurred:", error.response);
       });
   };
+
+  // const data = await response.json();
+  // if (data?.error) {
+  //       throw data?.error;
+  //     } else {
+  //       console.log(data.user.userType === "customer");
+  //       if (data.user.userType === "customer") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         // message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/dash/home", { replace: true });
+
+
+  //       } else if (data.user.userType === "event planner") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         //message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/dashboard/homes", { replace: true });
+
+
+  //       } else if (data.user.userType === "admin") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         // message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/admindash/homepage", { replace: true });
+  //       }
+  //     }
+
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">

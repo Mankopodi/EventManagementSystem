@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsHouse } from "react-icons/bs";
+import { TbHome2 } from "react-icons/tb";
 import {HiOutlineUsers} from 'react-icons/hi';
 import { CgProfile } from "react-icons/cg";
 import {CgLogOut} from 'react-icons/cg';
@@ -43,7 +43,7 @@ function Admindashboard() {
           >
             <li onClick={() => navigate("/admindash/homepage")}>
               <a>
-                <BsHouse style={{ fontSize: "1.5rem" }} />
+                <TbHome2 style={{ fontSize: "1.5rem" }} />
                 Home
               </a>
             </li>
@@ -77,7 +77,7 @@ function Admindashboard() {
         <ul className="menu menu-horizontal px-1 justify-end">
           <li onClick={() => navigate("/admindash/homepage")}>
             <a>
-              <BsHouse style={{ fontSize: "1.5rem" }} />
+              <TbHome2 style={{ fontSize: "1.5rem" }} />
               Home
             </a>
           </li>
