@@ -16,6 +16,9 @@ function Pack() {
             <p>Photography</p>
             <p>Decor</p>
           </div>
+          <div>
+          <p className="font-bold" style={{ color: "black" }}>Amount:</p>
+            </div>
         </div>
 
         <div className="card card-compact w-72 shadow-xl ml-8 mt-8">

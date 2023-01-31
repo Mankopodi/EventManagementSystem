@@ -70,8 +70,8 @@ function Bookings() {
   };
 
   return (
-    <div className="hero min-h-screen font-bold" style={{ color: "white" }}>
-      <div className="card w-11/12  shadow-xl  mt-8 ">
+    <div className="hero min-h-screen font-bold " style={{ color: "white" }}>
+      <div className="card w-11/12  shadow-xl  mt-8 bg-green-00">
         <div className="card-body">
           <p className="color" style={{ color: "black" }}>
             Please fill in this form to make your booking.

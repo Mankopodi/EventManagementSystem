@@ -16,7 +16,7 @@ function Homes() {
           <HiDocumentReport  style={{fontSize: "2em"}} />
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent"  onClick={() => navigate("/dashboard/reportEvents",{replace:true})}>View</button>
+            <button className="btn btn-accent"  onClick={() => navigate("/dashboard/report",{replace:true})}>View</button>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ function Homes() {
           <HiDocumentReport  style={{fontSize: "2em"}} />
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent"  onClick={() => navigate("/dashboard/reportEventsHalll",{replace:true})}>View</button>
+            <button className="btn btn-accent"  onClick={() => navigate("/dashboard/reporthall",{replace:true})}>View</button>
           </div>
         </div>
       </div>
