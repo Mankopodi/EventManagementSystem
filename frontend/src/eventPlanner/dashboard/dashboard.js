@@ -1,107 +1,112 @@
-import React from 'react';
-import {TbBrandBooking} from 'react-icons/tb';
-import {IoIosNotifications} from 'react-icons/io';
-import { CgProfile} from 'react-icons/cg';
-import {IoMdLogOut} from 'react-icons/io';
-import {MdEmail} from 'react-icons/md';
-//import { GiHamburgerMenu} from 'react-icons/gi';
+import React from "react";
+import { TbHome2 } from "react-icons/tb";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import {CgLogOut} from 'react-icons/cg';
+import {BsBookmarkCheckFill} from 'react-icons/bs';
+import { Outlet } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
 
+function Dashboard() {
 
+  const navigate = useNavigate();
 
-function dashboard() {
-
-  function Reschedule() {
-    document
-      .getElementById("reschedule")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  function Notigications() {
-    document
-      .getElementById("resume")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  function Emails() {
-    document
-      .getElementById("skills")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  function Profile() {
-    document
-      .getElementById("contact")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  function Logout() {
-    document
-      .getElementById("contact")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
+  // function logout() {
+  //   removeToken();
+  //   navigate("/login/", { replace: true });
+  // }
 
   return (
-    <div>
-       <section>
-        <div className="flex justify-end">
-          <label htmlFor="my-drawer-2" className="btn btn-green drawer-button lg:hidden nav"  ></label>
-          
-        </div>
+    <div className="min-h-screen">
+      <div className="navbar">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
+            >
+              <li onClick={() => navigate("/dashboard/homes")}>
+                <a className="text-black">
+                  <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
+                  Home
+                </a>
+              </li>
 
-        <div className="drawer drawer-mobile">
-          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content flex flex-col  justify-center">
-          {/* <main>
-            <section id="home"><Home /></section>
-            </main> */}
-          </div>
+              <li onClick={() => navigate("/dashboard/ViewRescheduleOfEvents")}>
+              <a className="text-black">
+                <BsBookmarkCheckFill style={{ fontSize: "1.5rem", color:"black" }} />
+                Reschedule Booking
+              </a>
+            </li>
 
-          <div className="drawer-side ">
-            <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            
-            <ul className="menu p-4 overflow-y-auto w-80 bg-base-800 text-base-content colg">
-              <div className=" push down"> 
-                <div className=" font-bold text-5xl named">
-                  <h1 className=' text-black-900' style={{color:'white'}}>Event Management System</h1>
-                 {/* EMS <SiEventstore style={{fontSize: "1.5em"}} /> */}
-                </div>
-              <div className='mt-32'>
-                <li id="scroll">
-                  <a href="reschedule" onClick={() => Reschedule()}>
-                  <TbBrandBooking style={{fontSize: "1.5em", color:"white"}} />
-                    <b style={{color:'white'}} >Reschedule Booking</b>
-                  </a>
-                </li>
-                <li id="scroll">
-                  <a href="notifications" onClick={() => Notigications()}>
-                  <IoIosNotifications style={{fontSize: "1.5em", color:"white"}} />
-                    <b style={{color:'white'}}>Notifications</b>
-                  </a>
-                </li>
-                <li id="scroll">
-                  <a href="email" onClick={() => Emails()}>
-                  <MdEmail style={{fontSize: "1.5em", color:"white"}} />
-                    <b style={{color:'white'}}>Emails</b>
-                  </a>
-                </li>
-                <li id="scroll">
-                  <a href="profile" onClick={() => Profile()}>
-                  <CgProfile style={{fontSize: "1.5em", color:"white"}} />
-                    <b style={{color:'white'}}>Profile</b>
-                  </a>
-                </li>
-                <li id="scroll">
-                  <a href="logout" onClick={() => Logout()}>
-                  <IoMdLogOut style={{fontSize: "1.5em", color:"white"}} />
-                   <b style={{color:'white'}}>Logout</b> 
-                  </a>
-                </li>
-                </div>
-              </div>
+              <li onClick={() => navigate("/dashboard/contact")}>
+                <a className="text-black">
+                  <HiOutlineMailOpen style={{ fontSize: "1.5rem", color:"black" }} />
+                  Email
+                </a>
+              </li>
+
+              <li className="text-black" >
+                <a>
+                <CgLogOut style={{ fontSize: "1.5rem", color:"black" }} />
+                  Logout</a>
+              </li>
             </ul>
           </div>
+          <a className="btn btn-ghost normal-case text-xl ml-2" style={{ color:"black" }}>
+            Event Management System
+          </a>
         </div>
-      </section>
+        <div className="navbar-end hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 justify-end">
+            <li onClick={() => navigate("/dashboard/homes")}>
+              <a className="text-black">
+                <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
+                Home
+              </a>
+            </li>
+
+            <li onClick={() => navigate("/dashboard/ViewRescheduleOfEvents")}>
+              <a className="text-black">
+                <BsBookmarkCheckFill style={{ fontSize: "1.5rem",color:"black" }} />
+                Reschedule Booking
+              </a>
+            </li>
+
+            <li onClick={() => navigate("/dashboard/contact")}>
+           
+              <a className="text-black">
+              <HiOutlineMailOpen style={{ fontSize: "1.5rem",color:"black" }} />
+              Email</a>
+            </li>
+
+            <li >
+              <a className="text-black">
+              <CgLogOut style={{ fontSize: "1.5rem", color:"black" }} />
+              Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <Outlet/>
     </div>
-  )
+  );
 }
 
-export default dashboard
+export default Dashboard;

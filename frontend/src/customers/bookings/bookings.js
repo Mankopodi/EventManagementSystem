@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
 import {useNavigate} from 'react-router-dom';
+
 
 function Bookings() {
 
@@ -17,6 +18,7 @@ function Bookings() {
   const [eventDate, setDate] = useState("");
   const [Venue, setVenue] = useState("");
   const [Package, setPackage] = useState("");
+  const [bookingData, setBookingData] = useState("");
 
   const bookEvent = (e) => {
     e.preventDefault();
@@ -34,9 +36,11 @@ function Bookings() {
         Venue: Venue,
         Package: Package,
       },
+
     };
 
     console.log(bookingData);
+
 
     axios
       .post("http://localhost:1337/api/bookings", bookingData, {
@@ -46,10 +50,13 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        navigate("/dash/Payment")
       })
       .catch((err) => {
         console.log(err);
       });
+
+
 
       axios
       .get("http://localhost:1337/api/bookings", bookingData, {
@@ -59,52 +66,57 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        navigate("/dash/Payment")
       })
       .catch((err) => {
         console.log(err);
       });
       
 
-      axios
-      .put("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .put("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
 
-      axios
-      .delete("http://localhost:1337/api/bookings", bookingData, {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // axios
+      // .delete("http://localhost:1337/api/bookings", bookingData, {
+      //   headers: {
+      //     Authorization: `Bearer ${Token}`,
+      //   },
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
   };
 
   return (
+
+
     <div className="hero min-h-screen" style={{color:'white'}}>
+     
       <div className="card w-11/12  shadow-xl  mt-8 ">
         <div className="card-body">
           <p>Please fill in this form to make your booking.</p>
           <form>
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>First Name:</span>
+                <span className="label-text" style={{ color: 'white' }}>First Name:</span>
               </label>
               <label className="input-group">
                 <span>First Name</span>
                 <input
+                style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={FirstName}
@@ -117,11 +129,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Last Name:</span>
+                <span className="label-text" style={{ color: 'white' }}>Last Name:</span>
               </label>
               <label className="input-group">
                 <span>Last Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={LastName}
@@ -134,11 +147,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Email:</span>
+                <span className="label-text" style={{ color: 'white' }}>Email:</span>
               </label>
               <label className="input-group">
                 <span>Email</span>
                 <input
+                 style={{color:'black'}}
                   type="email"
                   placeholder="info@site.com"
                   value={Email}
@@ -151,11 +165,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Phone Number:</span>
+                <span className="label-text" >Phone Number:</span>
               </label>
               <label className="input-group">
                 <span>Phone Number</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={PhoneNumber}
@@ -168,11 +183,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Group Name:</span>
+                <span className="label-text" >Group Name:</span>
               </label>
               <label className="input-group">
                 <span>Group Name</span>
                 <input
+                 style={{color:'black'}}
                   type="text"
                   placeholder="Type here"
                   value={GroupName}
@@ -183,14 +199,15 @@ function Bookings() {
               </label>
             </div>
 
-           
+
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Number of Guests:</span>
+                <span className="label-text" style={{ color: 'black' }}>Number of Guests:</span>
               </label>
               <label className="input-group">
                 <span>Number of Guests</span>
                 <input
+                 style={{color:'black'}}
                   type="number"
                   placeholder="Type here"
                   value={NumberOfGuests}
@@ -203,11 +220,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Date:</span>
+                <span className="label-text" style={{ color: 'white' }}>Date:</span>
               </label>
               <label className="input-group">
                 <span>Date</span>
                 <input
+                 style={{color:'black'}}
                   type="date"
                   placeholder="Type here"
                   value={eventDate}
@@ -220,11 +238,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Event Type:</span>
+                <span className="label-text" style={{ color: 'white' }}>Event Type:</span>
               </label>
               <label className="input-group">
                 <span>Event Type</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={EventType}
                   onChange={(e) => setEventType(e.target.value)}
@@ -232,9 +251,9 @@ function Bookings() {
                   <option disabled selected>
                     Select your event
                   </option>
-                  <option>Wedding</option>
-                  <option>Party</option>
-                  <option>Conference</option>
+                  <option style={{ color: 'black' }} >Wedding</option>
+                  <option style={{ color: 'black' }} >Party</option>
+                  <option style={{ color: 'black' }} >Conference</option>
                 </select>
               </label>
             </div>
@@ -242,24 +261,28 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Venue:</span>
+                <span className="label-text" style={{ color: 'white' }}>Venue:</span>
               </label>
               <label className="input-group">
                 <span>Venue</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md max-w-md"
                   value={Venue}
                   onChange={(e) => setVenue(e.target.value)}
                 >
                   <option disabled selected>
-                  Select the venue for your event
+                    Select the venue for your event
                   </option>
                   <option>Conference Kraal 3</option>
                   <option>Sunset Boardroom</option>
                   <option>Executive Boardroom</option>
                   <option>The garden venue hotel</option>
-                  <option>The Natural Arch</option>
-                  <option>The Sweett Arch</option>
+                  <option>Pheasant Hill</option>
+                  <option>The Sweet Arch</option>
+                  <option>Hakunamatata</option>
+                  <option>Verenda House</option>
+                  <option>Taboo</option>
                 </select>
               </label>
             </div>
@@ -267,11 +290,12 @@ function Bookings() {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text" style={{color:'white'}}>Package:</span>
+                <span className="label-text" style={{ color: 'white' }}>Package:</span>
               </label>
               <label className="input-group">
                 <span>Package</span>
                 <select
+                 style={{color:'black'}}
                   className="select w-md  max-w-3xl"
                   value={Package}
                   onChange={(e) => setPackage(e.target.value)}
@@ -284,12 +308,15 @@ function Bookings() {
                   <option>Deluxe</option>
                   <option>Standard</option>
                   <option>Stay-Over</option>
+                  <option>For Adults</option>
+                  <option>For Kids</option>
+                  <option>Baby/Bridal Shower</option>
                 </select>
               </label>
             </div>
 
-            <button className="btn btn-primary mt-8" style={{color:'white'}} onClick={bookEvent} 
->
+            <button className="btn btn-primary mt-8" style={{ color: 'white' }} onClick={bookEvent}
+            >
               Book
             </button>
           </form>

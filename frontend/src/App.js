@@ -1,11 +1,20 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
+// public
 import LandingPage from "./landingPage/landingpage";
 import Registration from "./Auth/Register";
 import Login from "./Auth/Login";
+import ForgotPasswordPage from "./Auth/forgot password";
+// import InjectedCheckoutForm from "./customers/payment/payment";
+
 //customer
 import Navbar from "./customers/navbar/navbar";
 import Home from "../src/customers/home/home";
@@ -15,9 +24,12 @@ import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
 import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
+import Payment from "./customers/payment/Payment copy";
+import PushNotification from "./customers/pushNotification/pushNotification";
+import Contact from "./customers/contact us/contact";
+import EditUser from "./customers/packages/EditUser"
 
-import ForgotPasswordPage from "./Auth/forgot password";
-import InjectedCheckoutForm from "./customers/payment/payment";
+
 
 import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
@@ -27,6 +39,22 @@ import ProfilePage from "./eventPlanner/profile/profile";
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
 import Homes from "./eventPlanner/homes/homes";
+import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
+import CRUD from "./eventPlanner/ratings&Ratings/addReview";
+import Modal from "./eventPlanner/ratings&Ratings/Modal";
+import EventCrud from "./eventPlanner/eventCrud/eventCrud";
+import EmailCommunication from "./eventPlanner/emailComunnication/emailComunnication";
+import ReportEvents from "./eventPlanner/reportEvents/reportEvents";
+import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll";
+import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
+import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
+
+
+// admin
+import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
+import Admindashboard from "./admin/admindashboard/admindashboard";
+import Homepage from "./admin/homepage/homepage";
+import ManageEvent from "./admin/manageEvent/manageEvent"
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -34,8 +62,9 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
   }, []);
+
   return (
     <div className="App">
       {loading ? (
@@ -48,27 +77,17 @@ function App() {
           position="center"
         />
       ) : (
-       
         <Router>
           <Routes>
-           {/* CUSTOMER ROUTES */}
-            <Route path="/" element={<LandingPage />}>
-              {" "}
-            </Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/navbar" element={<Navbar />}></Route>
-            <Route path="home" element={<Home />}></Route>
-            <Route path="/viewbookings" element={<Viewbookings />}></Route>
-            <Route path="/bookings" element={<Bookings />}></Route>
-            <Route path="/pack" element={<Pack />}></Route>
-            <Route path="history" element={<History />}></Route>
-            <Route path="rating" element={<Ratings />}></Route>
-            <Route path="packages" element={<Packages />}></Route>
+            {/* PUBLIC ROUTES*/}
 
-            {/* EVENT PLANNER */}
+            <Route path="/" element={<LandingPage />}></Route>
 
+            {/* AUTHENTICATION ROUTES */}
+            <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Registration />}></Route>
             <Route
-              path="/forgot-password"
+              path="forgot-password"
               element={<ForgotPasswordPage />}
             ></Route>
             <Route path="/register" element={<Registration />}></Route>
@@ -78,7 +97,47 @@ function App() {
             <Route path="/modal" element={<Modal />}></Route>
             <Route path="profile" element={< ProfilePage/>}></Route>
 
+            {/* EVENT PLANNER */}
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="homes" element={<Homes />}></Route>
+              <Route path="review" element={<ProductReview1 />}></Route>
+              <Route path="addreview" element={<CRUD />}></Route>
+              <Route path="modal" element={<Modal />}></Route>
+              <Route
+                path="ViewRescheduleOfEvents"
+                element={<ViewRescheduleOfEvents />}
+              ></Route>
+
+              <Route path="eventCrud" element={<EventCrud />}></Route>
+              <Route
+                path="emailcommunication"
+                element={<EmailCommunication />}
+              ></Route>
+              <Route path="reportevents" element={<ReportEvents />}></Route>
+              <Route
+                path="reporteventhall"
+                element={<ReportEventHall />}
+              ></Route>
+              <Route path="viewbooks" element={<ViewBooks />}></Route>
+              <Route path="contact" element={<Contact />}></Route>
+              <Route path="pack" element={<Pack />}></Route>
+              <Route path="rating" element={<Ratings />}></Route>
+            </Route>
+
+            <Route path="Homepage" element={<Homepage />}></Route>
+            <Route path="ManageEvent" element={<ManageEvent />}></Route>
+
             {/* ADMIN ROUTES */}
+            <Route path="/admindash" element={<Admindashboard />}>
+              <Route
+                path="manageCustomerEventPlaner"
+                element={<ManageCustomerEventPlaner />}
+              ></Route>
+              <Route path="homepage" element={<Homepage />}></Route>
+              <Route path="viewbookings" element={<Viewbookings />}></Route>
+              <Route path="pack" element={<Pack />}></Route>
+              <Route path="rating" element={<Ratings />}></Route>
+            </Route>
           </Routes>
         </Router>
       )}

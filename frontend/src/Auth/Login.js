@@ -66,14 +66,23 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const config = require("./config.json");
 
+
 export default function Login() {
+
+  const notify = () => toast("You have successfully logged in!");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("customer");
 
   const navigate = useNavigate();
+
+
+  
 
   // console.log(`email ${email} password ${password} user role ${role}`);
   const login = async (e) => {
@@ -90,19 +99,62 @@ export default function Login() {
       .post(`${config.dev_url}/api/auth/local`, {
         identifier: email,
         password: password,
-        myUserRoles: role,
+        // myUserRoles: role,
       })
       .then((response) => {
         console.log("Well done!");
         console.log("User profile", response.data.user);
         localStorage.setItem("user_role: ", response.data.user.myUserRoles);
         console.log("User token", response.data.jwt);
-        navigate("/home", { replace: true });
+        navigate("/admindash/homepage", { replace: true });
       })
       .catch((error) => {
         console.log("An error occurred:", error.response);
       });
   };
+
+  // const data = await response.json();
+  // if (data?.error) {
+  //       throw data?.error;
+  //     } else {
+  //       console.log(data.user.userType === "customer");
+  //       if (data.user.userType === "customer") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         // message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/dash/home", { replace: true });
+
+
+  //       } else if (data.user.userType === "event planner") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         //message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/dashboard/homes", { replace: true });
+
+
+  //       } else if (data.user.userType === "admin") {
+  //         // set the token
+  //         setToken(data.jwt);
+
+  //         // set the user
+  //         setUser(data.user);
+
+  //         // message.success(Welcome back ${data.user.username}!);
+
+  //         navigate("/admindash/homepage", { replace: true });
+  //       }
+  //     }
+
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -147,12 +199,13 @@ export default function Login() {
           </Link>
 
           <div className="mt-6">
-            <button
-              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent"
-      
+            <button 
+              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent" 
+              onClick={notify}
             >
               Login
             </button>
+            <ToastContainer />
           </div>
         </form>
 
