@@ -185,13 +185,8 @@ const config = require("./config.json");
                             </a>
                             <button
                                 type="submit"
-<<<<<<< HEAD
-                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
-                                onClick={() => navigate("/login",{replace:true})}
-=======
                                 className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false" 
                                 onClick={notify}
->>>>>>> 3fc8b1860297f227c38d83c4ef4f3f5aec2b1ab7
                             >
                                 Register
                             </button>

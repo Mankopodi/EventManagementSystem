@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-//import React, { useEffect } from "react";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-//import axios from "axios";
-//import { Token } from "../../tokens/constant";
-
-function Viewbookings() {
-const navigate = useNavigate();
-=======
 import axios from "axios";
 
 import React, { useState, useEffect } from "react";
@@ -38,7 +28,6 @@ function Viewbookings() {
         console.log(err);
       });
     };
->>>>>>> 3fc8b1860297f227c38d83c4ef4f3f5aec2b1ab7
 
   return (
     <div className="min-h-screen overflow-scroll ">
@@ -49,11 +38,7 @@ function Viewbookings() {
         >
           Bookings
         </h1>
-<<<<<<< HEAD
-        <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/bookings",{replace:true})}>Make a booking</button>
-=======
         <button className="btn btn-accent mb-8" style={{color:'white'}} onClick={() => navigate("/dash/bookings",{replace:true})}>Make a booking</button>
->>>>>>> 3fc8b1860297f227c38d83c4ef4f3f5aec2b1ab7
         <table className="table w-full" style={{ color: "white" }}>
           <thead>
             <tr>
