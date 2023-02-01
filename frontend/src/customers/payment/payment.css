@@ -20,9 +20,9 @@ main {
   width: 480px;
 }
 
-form > * {
+/* form > * {
   margin: 10px 0;
-}
+} */
 
 button {
   background-color: var(--accent-color);

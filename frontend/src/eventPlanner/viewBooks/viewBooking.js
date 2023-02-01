@@ -28,12 +28,26 @@ function Viewbooking() {
       });
     };
 
+    function deleteBooking(id) {
+      
+      console.log( 'delete booking:', id)
+   
+      axios.delete(`http://localhost:1337/api/bookings/${id}`)
+        .then((res) => {
+          console.log(res);
+          setBookings();
+        })
+        console.log( 'delete booking: ', id)
+    }
+
+
+
   return (
-    <div className="min-h-screen overflow-scroll">
+    <div className="  min-h-screen overflow-scroll">
       <div className="overflow-x-auto">
         <h1
           className="flex justify-center text-4xl font-bold bg-blend-color mb-4 mt-4"
-         
+          style={{ color: "black" }}
         >
           Bookings
         </h1>
@@ -50,6 +64,8 @@ function Viewbooking() {
               <th>Date</th>
               <th>Venue</th>
               <th>Packages</th>
+              <th>Delete</th>
+            
               
             </tr>
           </thead>
@@ -66,7 +82,8 @@ function Viewbooking() {
                   <td className="text-black">{book.attributes.NumberOfGuests}</td>
                   <td className="text-black">{book.attributes.eventDate}</td>
                   <td className="text-black">{book.attributes.Venue}</td>
-                  <td className="text-black">{book.attributes.Package}</td>  
+                  <td className="text-black">{book.attributes.Package}</td> 
+                  <td  style={{color:'black'}}><button class="btn btn-error" style={{color:'black'}} onClick={()=> deleteBooking(Bookings.id)}>Delete</button></td> 
                 </tr>
               );
             })}

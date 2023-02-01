@@ -34,12 +34,12 @@ function History() {
       
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold mB-1"
-          style={{ color: "white" }}
+          className="flex justify-center text-4xl font-bold mb-1"
+          style={{ color: "black" }}
         >
           Booking History
         </h1>
-        <button className="btn btn-primary mb-2" onClick={() => navigate("/dash/home",{replace:true})}>BACK</button>
+        {/* <button className="btn btn-primary mb-2" onClick={() => navigate("/dash/home",{replace:true})}>BACK</button> */}
 
         <table className="table w-full">
           <thead>

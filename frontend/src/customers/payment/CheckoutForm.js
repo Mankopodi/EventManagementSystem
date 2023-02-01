@@ -45,7 +45,7 @@ export default function CheckoutForm() {
     
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
-      <button disabled={isProcessing || !stripe || !elements} id="submit" onClick={() => navigate("/viewbookings",{replace:true})}>
+      <button disabled={isProcessing || !stripe || !elements} id="submit" onClick={() => navigate("/dash/viewbookings",{replace:true})}>
         <span id="button-text">
         
           {isProcessing ? "Processing ... " : "Pay now"}
