@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
@@ -27,10 +27,7 @@ import Packages from "./customers/packages/packages";
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
-import EditUser from "./customers/packages/EditUser"
-
-
-
+import EditUser from "./customers/packages/EditUser";
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -45,14 +42,11 @@ import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll"
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
 
-
-
-
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
 import Admindashboard from "./admin/admindashboard/admindashboard";
 import Homepage from "./admin/homepage/homepage";
-import ManageEvent from "./admin/manageEvent/manageEvent"
+import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
 
 function App() {
@@ -101,14 +95,13 @@ function App() {
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
-              <Route path="EditUser" element={ <EditUser />}></Route>
-              <Route path="ProductReview1" element={ <ProductReview1 />}></Route>
+              <Route path="EditUser" element={<EditUser />}></Route>
+              <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route
                 path="pushNotification"
                 element={<PushNotification />}
               ></Route>
-               <Route path="contact" element={<Contact />}></Route>
-
+              <Route path="contact" element={<Contact />}></Route>
             </Route>
 
             {/* EVENT PLANNER */}
@@ -139,11 +132,10 @@ function App() {
               <Route path="report" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
-              <Route path="ProductReview1" element={ <ProductReview1 />}></Route>
+              <Route path="ProductReview1" element={<ProductReview1 />}></Route>
             </Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>
-           
 
             {/* ADMIN ROUTES */}
             <Route path="/admindash" element={<Admindashboard />}>
@@ -152,11 +144,12 @@ function App() {
                 element={<ManageCustomerEventPlaner />}
               ></Route>
               <Route path="homepage" element={<Homepage />}></Route>
-              <Route path="viewbooks" element={<ViewBooks/>}></Route>
-              <Route path="profile" element={<Profile/>}></Route>
+              <Route path="viewbooks" element={<ViewBooks />}></Route>
+              <Route path="profile" element={<Profile />}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
+              <Route path="report" element={<ReportEvents />}></Route>
             </Route>
           </Routes>
         </Router>

@@ -33,7 +33,7 @@ const navigate = useNavigate();
             <HiDocumentReport style={{ fontSize: "2em" }} />
             <p>Reports of events.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/admindash/reports",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/report",{replace:true})}>View</button>
             </div>
           </div>
         </div>
