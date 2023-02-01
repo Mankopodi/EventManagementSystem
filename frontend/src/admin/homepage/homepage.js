@@ -22,7 +22,7 @@ const navigate = useNavigate();
             <TbBrandBooking style={{ fontSize: "2em" }} />
             <p>History of events booked.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/admindash/viewbookings",{replace:true})}>view</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/viewbooks",{replace:true})}>view</button>
             </div>
           </div>
         </div>

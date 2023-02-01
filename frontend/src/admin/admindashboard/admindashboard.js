@@ -4,17 +4,17 @@ import {HiOutlineUsers} from 'react-icons/hi';
 import { CgProfile } from "react-icons/cg";
 import {CgLogOut} from 'react-icons/cg';
 import { Outlet } from 'react-router-dom';
-
+import { removeToken } from '../../helpers';
 import { useNavigate } from "react-router-dom";
 
 
 function Admindashboard() {
 
   const navigate = useNavigate();
-    // function logout() {
-  //   removeToken();
-  //   navigate("/login/", { replace: true });
-  // }
+    function logout() {
+    removeToken();
+    navigate("/login/", { replace: true });
+  }
 
   return (
     <div className="min-h-screen">
@@ -42,60 +42,60 @@ function Admindashboard() {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
           >
             <li onClick={() => navigate("/admindash/homepage")}>
-              <a className="text-black">
+              <a href="gh" className="text-black">
                 <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                 Home
               </a>
             </li>
 
             <li onClick={() => navigate("/admindash/profile")}>
-              <a className="text-black">
+              <a href="hj" className="text-black">
                 <CgProfile style={{ fontSize: "1.5rem", color:"black"  }} />
                 Profile
               </a>
             </li>
 
-            <li onClick={() => navigate("/admindash/users")}>
-              <a className="text-black"> 
+            <li onClick={() => navigate("/admindash/ManageEvent")}>
+              <a href="bn" className="text-black"> 
               <HiOutlineUsers style={{ fontSize: "1.5rem", color:"black" }} />
                 Users
               </a>
             </li>
 
-            <li >
-              <a className="text-black">
+            <li onClick={logout}>
+              <a href="bn" className="text-black">
               <CgLogOut style={{ fontSize: "1.5rem", color:"black" }} />
                 Logout</a>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl ml-2" style = {{color:"black"}}>
+        <a href="gh" className="btn btn-ghost normal-case text-xl ml-2" style = {{color:"black"}} onClick={() => navigate("/")}>
           Event Management System
         </a>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 justify-end">
           <li onClick={() => navigate("/admindash/homepage")}>
-            <a className="text-black">
+            <a href="gh" className="text-black">
               <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
               Home
             </a>
           </li>
 
           <li onClick={() => navigate("/admindash/profile")}>
-           <a className="text-black">
+           <a href="hjk" className="text-black">
             <CgProfile style={{ fontSize: "1.5rem", color:"black" }} />
             profile</a>
           </li>
 
           <li onClick={() => navigate("/admindash/users")}>
-            <a className="text-black">
+            <a href="ghj" className="text-black">
             <HiOutlineUsers style={{ fontSize: "1.5rem", color:"black"}} />
             Users</a>
           </li>
 
-          <li >
-            <a className="text-black">
+          <li onClick={logout}>
+            <a href="bnm" className="text-black">
             <CgLogOut style={{ fontSize: "1.5rem",color:"black"  }} />
             Logout</a>
           </li>

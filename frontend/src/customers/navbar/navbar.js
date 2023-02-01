@@ -1,21 +1,20 @@
 import React from "react";
 import { TbHome2 } from "react-icons/tb";
-// import { MdNotificationsNone } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { CgLogOut } from "react-icons/cg";
 import { Outlet } from "react-router-dom";
 import {MdOutlineContactPhone} from 'react-icons/md';
-
+import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
-// import Home from "../home/home";
+
 
 function Navbar() {
   const navigate = useNavigate();
 
-  // function logout() {
-  //   removeToken();
-  //   navigate("/login/", { replace: true });
-  // }
+  function logout() {
+    removeToken();
+    navigate("/login/", { replace: true });
+  }
 
   return (
     <div className="">
@@ -43,35 +42,29 @@ function Navbar() {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
             >
               <li onClick={() => navigate("/dash/home")}>
-                <a className="text-black">
+                <a href="hnm" className="text-black">
                   <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                   Home
                 </a>
               </li>
               
-              {/* <li onClick={() => navigate("/dash/pushNotification")}>
-                <a>
-                  <MdNotificationsNone style={{ fontSize: "1.5rem" }} />
-                  Notifications
-                </a>
-              </li> */}
 
               <li onClick={() => navigate("/dash/contact")}>
-              <a className="text-black">
+              <a href="hj" className="text-black">
                 <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
                 Contact
               </a>
             </li>
 
               <li onClick={() => navigate("/dash/profile")}>
-                <a className="text-black">
+                <a href="gh" className="text-black">
                   <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                   Profile
                 </a>
               </li>
 
-              <li>
-                <a className="text-black">
+              <li onClick={logout}>
+                <a href="gh"  className="text-black">
                   <CgLogOut style={{ fontSize: "1.5rem", color: "black" }} />
                   Logout
                 </a>
@@ -79,9 +72,9 @@ function Navbar() {
             </ul>
           </div>
           
-          <a
+          <a href="ghj"
             className="btn btn-ghost normal-case text-xl ml-2 "
-            style={{ color: "black" }}
+            style={{ color: "black" }} onClick={() => navigate("/")}
           >
             Event Management System
           </a>
@@ -90,35 +83,28 @@ function Navbar() {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 justify-end">
             <li onClick={() => navigate("/dash/home")}>
-              <a className="text-black">
+              <a href="gh" className="text-black">
                 <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                 Home
               </a>
             </li>
 
-            {/* <li onClick={() => navigate("/dash/pushNotification")}>
-              <a>
-                <MdNotificationsNone style={{ fontSize: "1.5rem" }} />
-                Notifications
-              </a>
-            </li> */}
-
             <li onClick={() => navigate("/dash/contact")}>
-              <a className="text-black">
+              <a href="bn" className="text-black">
                 <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
                 Contact 
               </a>
             </li>
 
             <li onClick={() => navigate("/dash/profile")}>
-              <a className="text-black">
+              <a href="bn" className="text-black">
                 <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                 Profile
               </a>
             </li>
 
-            <li>
-              <a className="text-black">
+            <li onClick={logout}>
+              <a href="gh" className="text-black">
                 <CgLogOut style={{ fontSize: "1.5rem" ,color: "black" }} />
                 Logout
               </a>
