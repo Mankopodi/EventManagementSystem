@@ -104,11 +104,7 @@ const ProductReview1 = () => {
                         </div>
                     </div>
                     <div className="w-full flex justify-start items-start flex-col bg-gray-50 md:px-8 py-8">
-<<<<<<< HEAD
-                        <div className=" flex-col md:flex-row flex justify-between w-full">
-=======
                         <div className="flex-col md:flex-row flex justify-between w-full">
->>>>>>> 3fc8b1860297f227c38d83c4ef4f3f5aec2b1ab7
                             <div className="flex flex-row justify-between items-start">
                                 <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800">Everything was extremely well organized</p>
                                 <MdDelete className="text-5xl"/> <AiOutlineEdit className="text-5xl"/>

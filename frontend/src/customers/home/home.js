@@ -26,11 +26,7 @@ const navigate = useNavigate();
         </div>
 
         <div className="card w-96  shadow-xl  mt-16">
-<<<<<<< HEAD
           <div className="card-body" style={{color:'white'}}>
-=======
-          <div className="card-body" style={{color:'black'}}>
->>>>>>> 3fc8b1860297f227c38d83c4ef4f3f5aec2b1ab7
             <h2 className="card-title">Booking History</h2>
             <RiFolderHistoryFill style={{ fontSize: "2em" }} />
             <p>Make a booking for your event.</p>
