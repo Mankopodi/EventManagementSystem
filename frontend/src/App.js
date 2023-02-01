@@ -142,7 +142,7 @@ function App() {
             </Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>
-            
+           
 
             {/* ADMIN ROUTES */}
             <Route path="/admindash" element={<Admindashboard />}>
@@ -151,11 +151,11 @@ function App() {
                 element={<ManageCustomerEventPlaner />}
               ></Route>
               <Route path="homepage" element={<Homepage />}></Route>
-              <Route path="viewbookings" element={<Viewbookings />}></Route>
+              <Route path="viewbooks" element={<ViewBooks/>}></Route>
+              
               <Route path="pack" element={<Pack />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
-              <Route path="ProductReview1" element={ <ProductReview1 />}></Route>
             </Route>
           </Routes>
         </Router>
