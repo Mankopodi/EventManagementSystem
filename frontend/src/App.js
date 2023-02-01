@@ -53,6 +53,7 @@ import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manage
 import Admindashboard from "./admin/admindashboard/admindashboard";
 import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent"
+import Profile from "./admin/profile/profile";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -152,7 +153,7 @@ function App() {
               ></Route>
               <Route path="homepage" element={<Homepage />}></Route>
               <Route path="viewbooks" element={<ViewBooks/>}></Route>
-              
+              <Route path="profile" element={<Profile/>}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
