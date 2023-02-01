@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./manage.css"
 
 function ManageEvent() {
     const [user, setUser] = useState([]);
@@ -34,17 +35,18 @@ function ManageEvent() {
 
 
     return (
-        <div className="app">
+        <div className='container' >
 
-            <div className="overflow-x-auto">
+            <div className="manageEVent overflow-x-auto">
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th ><h1>User Name</h1></th>
+                            <th >User Name</th>
                             <th> Email</th>
                             <th></th>
                             <th></th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +55,7 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button class="btn btn-warning">Suspend</button></td>
+                            <td  style={{color:'black'}}><button class="btn btn-warning">Suspend</button></td> 
                             <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}

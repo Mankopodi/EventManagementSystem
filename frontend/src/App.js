@@ -47,6 +47,7 @@ import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRe
 
 
 
+
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
 import Admindashboard from "./admin/admindashboard/admindashboard";
@@ -100,6 +101,7 @@ function App() {
               <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
               <Route path="EditUser" element={ <EditUser />}></Route>
+              <Route path="ProductReview1" element={ <ProductReview1 />}></Route>
               <Route
                 path="pushNotification"
                 element={<PushNotification />}
@@ -135,6 +137,8 @@ function App() {
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="report" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
+              <Route path="reporthall" element={<ReportEventHall />}></Route>
+              <Route path="ProductReview1" element={ <ProductReview1 />}></Route>
             </Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>

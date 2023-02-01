@@ -29,7 +29,7 @@ function Payment() {
   }, []);
   return (
     <>
-      <div>
+      <div className="container">
         <SiEventbrite style={{ fontSize: "2em" }} />
         <h1 className="flex justify-start font-bold ml-5 ">
           Event Management System
