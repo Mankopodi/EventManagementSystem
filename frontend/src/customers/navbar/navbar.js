@@ -42,7 +42,7 @@ function Navbar() {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
             >
               <li onClick={() => navigate("/dash/home")}>
-                <a href="hnm" className="text-black">
+                <a className="text-black">
                   <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                   Home
                 </a>
@@ -50,21 +50,21 @@ function Navbar() {
               
 
               <li onClick={() => navigate("/dash/contact")}>
-              <a href="hj" className="text-black">
+              <a  className="text-black">
                 <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
                 Contact
               </a>
             </li>
 
               <li onClick={() => navigate("/dash/profile")}>
-                <a href="gh" className="text-black">
+                <a  className="text-black">
                   <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                   Profile
                 </a>
               </li>
 
               <li onClick={logout}>
-                <a href="gh"  className="text-black">
+                <a  className="text-black">
                   <CgLogOut style={{ fontSize: "1.5rem", color: "black" }} />
                   Logout
                 </a>
@@ -72,7 +72,7 @@ function Navbar() {
             </ul>
           </div>
           
-          <a href="ghj"
+          <a 
             className="btn btn-ghost normal-case text-xl ml-2 "
             style={{ color: "black" }} onClick={() => navigate("/")}
           >
@@ -83,28 +83,28 @@ function Navbar() {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 justify-end">
             <li onClick={() => navigate("/dash/home")}>
-              <a href="gh" className="text-black">
+              <a  className="text-black">
                 <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
                 Home
               </a>
             </li>
 
             <li onClick={() => navigate("/dash/contact")}>
-              <a href="bn" className="text-black">
+              <a  className="text-black">
                 <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
                 Contact 
               </a>
             </li>
 
             <li onClick={() => navigate("/dash/profile")}>
-              <a href="bn" className="text-black">
+              <a  className="text-black">
                 <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
                 Profile
               </a>
             </li>
 
             <li onClick={logout}>
-              <a href="gh" className="text-black">
+              <a className="text-black">
                 <CgLogOut style={{ fontSize: "1.5rem" ,color: "black" }} />
                 Logout
               </a>
