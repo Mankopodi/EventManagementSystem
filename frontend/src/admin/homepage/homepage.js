@@ -16,7 +16,7 @@ const navigate = useNavigate();
     
 
       <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
-        <div className="card w-96  shadow-xl  mt-16">
+        <div className="card w-96  shadow-2xl  mt-16">
           <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Booked Events</h2>
             <TbBrandBooking style={{ fontSize: "2em" }} />
@@ -27,18 +27,18 @@ const navigate = useNavigate();
           </div>
         </div>
 
-        <div className="card w-96  shadow-xl mt-16">
+        <div className="card w-96  shadow-2xl mt-16">
           <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Reports</h2>
             <HiDocumentReport style={{ fontSize: "2em" }} />
             <p>Reports of events.</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/admindash/reports",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/admindash/report",{replace:true})}>View</button>
             </div>
           </div>
         </div>
 
-        <div className="card w-96 shadow-xl  mt-16">
+        <div className="card w-96 shadow-2xl  mt-16">
           <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Event Packages</h2>
             <FiPackage style={{ fontSize: "2em" }} />
@@ -52,7 +52,7 @@ const navigate = useNavigate();
           </div>
         </div>
 
-        <div className="card w-96  shadow-xl  mt-16">
+        <div className="card w-96  shadow-2xl  mt-16">
           <div className="card-body" style={{color:'black'}}>
             <h2 className="card-title">Review and Ratings</h2>
             <MdReviews style={{ fontSize: "2em" }} />

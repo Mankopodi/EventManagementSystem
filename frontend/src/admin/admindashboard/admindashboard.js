@@ -76,7 +76,7 @@ function Admindashboard() {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 justify-end">
           <li onClick={() => navigate("/admindash/homepage")}>
-            <a href="gh" className="text-black">
+            <a  className="text-black">
               <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
               Home
             </a>
@@ -88,7 +88,7 @@ function Admindashboard() {
             profile</a>
           </li>
 
-          <li onClick={() => navigate("/admindash/users")}>
+          <li onClick={() => navigate("/admindash/ManageEvent")}>
             <a className="text-black">
             <HiOutlineUsers style={{ fontSize: "1.5rem", color:"black"}} />
             Users</a>

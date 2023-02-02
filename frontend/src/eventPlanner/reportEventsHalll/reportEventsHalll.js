@@ -1,27 +1,116 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Token } from "../../tokens/constant";
+import { HiPhone } from "react-icons/hi";
+import { BiRename } from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
 
-function reportEventsHalll() {
+function ReportEventsHalll() {
+  const [Bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .get("http://localhost:1337/api/bookings", {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data.data);
+        setBookings(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div>
-      <div className="min-h-screen justify-center">
-      <div className="  justify-center card w-96 bg-base-100 shadow-xl ">
-        <div className="card-body"  style={{color:'black'}}>
-          <h2 className="card-title"  style={{color:'black'}}>Report for Event Hall</h2>
-          <p>Name of the Event: </p>
-          <p>Date of the Event: </p>
-          <p>Venue of the Event: </p>
-          <p>Total number of Guests: </p>
-          <div className="objective">
-
-          </div>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Download</button>
-          </div>
+    <div className="min-h-screen ">
+      <form>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text font-bold" style={{ color: "black" }}>
+              Name of the event:
+            </span>
+          </label>
+          <label className="label">
+           
+            <input
+              type="text"
+              placeholder=""
+              className="input input-bordered input-primary w-full"
+            />
+          </label>
         </div>
-      </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text font-bold" style={{ color: "black" }}>
+              Date of the event:
+            </span>
+          </label>
+          <label className="label">
+          
+            <input
+              type="text"
+              placeholder=""
+              className="input input-bordered input-primary "
+            />
+          </label>
+        </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text font-bold" style={{ color: "black" }}>
+              Venue of the Event:
+            </span>
+          </label>
+          <label className="label">
+           
+            <input
+              type="text"
+              placeholder=""
+              className="input input-bordered input-primary w-full"
+            />
+          </label>
+        </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text font-bold" style={{ color: "black" }}>
+              Total number of Guests:
+            </span>
+          </label>
+          <label className="label">
+          
+            <input
+              type="tel"
+              placeholder=""
+              className="input input-bordered input-primary w-full"
+            />
+          </label>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-tex font-bold" style={{ color: "black" }}>
+              Objective of the event
+            </span>
+          </label>
+          <label className="label">
+            <input
+              type="email"
+              placeholder=""
+              className="input input-bordered input-primary w-full"
+            />
+          </label>
+        </div>
+      </form>
     </div>
-    </div>
-  )
+  );
 }
 
-export default reportEventsHalll
+export default ReportEventsHalll;

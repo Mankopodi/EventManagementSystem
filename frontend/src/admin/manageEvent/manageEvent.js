@@ -62,10 +62,10 @@ function ManageEvent() {
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th >User Name</th>
-                            <th> Email</th>
-                            <th></th>
-                            <th></th>
+                            <th  style={{color:'white'}}>User Name</th>
+                            <th style={{color:'white'}}> Email</th>
+                            <th style={{color:'white'}}> Block</th>
+                            <th style={{color:'white'}}> Delete</th>
                             
                         </tr>
                     </thead>
@@ -90,7 +90,6 @@ function ManageEvent() {
 }
 
 export default ManageEvent
-
 
 
 

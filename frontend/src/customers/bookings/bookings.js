@@ -273,7 +273,7 @@ function Bookings() {
                   onChange={(e) => setPackage(e.target.value)}
                 >
                   <option disabled selected>
-                    Select a Pactage
+                    Select a Package
                   </option>
                   <option>Premium</option>
                   <option>Classic</option>
@@ -292,7 +292,7 @@ function Bookings() {
               style={{ color: "black" }}
               onClick={bookEvent}
               
-              onClick={notify}
+              // onClick={notify}
             >
               Book
             </button>
