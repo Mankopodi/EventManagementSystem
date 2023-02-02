@@ -42,6 +42,7 @@ import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll"
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
 
+
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
 import Admindashboard from "./admin/admindashboard/admindashboard";
@@ -61,6 +62,7 @@ function App() {
   return (
     <div className="App">
       {loading ? (
+        <div className="loader">
         <CircleLoader
           color={"#308070"}
           loading={loading}
@@ -69,6 +71,8 @@ function App() {
           data-testid="loader"
           position="center"
         />
+        </div>
+
       ) : (
         <Router>
           <Routes>
@@ -97,6 +101,7 @@ function App() {
               <Route path="Payment" element={<Payment />}></Route>
               <Route path="EditUser" element={<EditUser />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
+              <Route path="profile" element={<Profile />}></Route>
               <Route
                 path="pushNotification"
                 element={<PushNotification />}
@@ -121,6 +126,7 @@ function App() {
                 element={<EmailCommunication />}
               ></Route>
               <Route path="reportevents" element={<ReportEvents />}></Route>
+              
               <Route
                 path="reporteventhall"
                 element={<ReportEventHall />}
@@ -133,6 +139,7 @@ function App() {
               <Route path="reporthall" element={<ReportEventHall />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
+              <Route path="profile" element={<Profile />}></Route>
             </Route>
 
             <Route path="Homepage" element={<Homepage />}></Route>
