@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jwt_decode from "jwt-decode";
+import { SUCCESS,ERROR } from "../enviroments/toast";
+
 const config = require("./config.json");
+
 
 
 export default function Login() {
 
-  const notify = () => toast("You have successfully logged in!");
+  // const notify = () => toast("You have successfully logged in!");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("customer");
@@ -46,13 +49,13 @@ export default function Login() {
         // navigate("/admindash/homepage", { replace: true });
         // const { jwt, user } = response.data.data;
         let jwt = response.data.jwt
-         
+         SUCCESS("You have succesfully logged in")
           console.log(jwt);
           // setToken(jwt);
           // const token = localStorage.getItem("jwt");
           let decoded = jwt_decode(jwt);
           let ID = decoded.id;
-
+        
           axios
             .get(`${config.dev_url}/api/users/${ID}?populate=*`)
             .then((data) => {
@@ -71,6 +74,7 @@ export default function Login() {
             })
             .catch((error) => {
               console.log(error);
+              ERROR("You have entered a wrong password or email ")
             });
       })
       .catch((error) => {
@@ -123,7 +127,7 @@ export default function Login() {
           <div className="mt-6">
             <button 
               className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent" 
-              onClick={notify}
+              
             >
               Login
             </button>
