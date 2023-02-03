@@ -27,7 +27,7 @@ function Packages() {
 
   return (
     <>
-    <div className='customCard'> 
+    <div className='customCard min-h-screen'> 
   {customizeEventsPackages.map((customizeEventsPackage) => (
       <div class="card w-96 bg-base-100 shadow-xl" key={customizeEventsPackage.id}>
       {/* <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}

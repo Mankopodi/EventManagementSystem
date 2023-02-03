@@ -8,9 +8,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 function Profile() {
   
-   
-
-
+  
   return (
     <div>
       <ToastContainer />

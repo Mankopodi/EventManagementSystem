@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -37,11 +32,11 @@ import CRUD from "./eventPlanner/ratings&Ratings/addReview";
 import Modal from "./eventPlanner/ratings&Ratings/Modal";
 import EventCrud from "./eventPlanner/eventCrud/eventCrud";
 import EmailCommunication from "./eventPlanner/emailComunnication/emailComunnication";
-import ReportEvents from "./eventPlanner/reportEvents/reportEvents";
+import ReportEvents from "./eventPlanner/reportEvents/eventreport";
 import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll";
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
-
+import Report from "./eventPlanner/reports/reportEvents";
 
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
@@ -63,16 +58,15 @@ function App() {
     <div className="App">
       {loading ? (
         <div className="loader">
-        <CircleLoader
-          color={"#308070"}
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-          position="center"
-        />
+          <CircleLoader
+            color={"#308070"}
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            position="center"
+          />
         </div>
-
       ) : (
         <Router>
           <Routes>
@@ -126,7 +120,7 @@ function App() {
                 element={<EmailCommunication />}
               ></Route>
               <Route path="reportevents" element={<ReportEvents />}></Route>
-              
+
               <Route
                 path="reporteventhall"
                 element={<ReportEventHall />}
@@ -135,9 +129,9 @@ function App() {
               <Route path="contact" element={<Contact />}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
-              <Route path="report" element={<ReportEvents />}></Route>
+              <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
-              <Route path="reporthall" element={<ReportEventHall />}></Route>
+              <Route path="report" element={<Report  />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
             </Route>
@@ -156,7 +150,7 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
-              <Route path="report" element={<ReportEvents />}></Route>
+              {/* <Route path="report" element={<ReportEvents />}></Route> */}
             </Route>
           </Routes>
         </Router>
