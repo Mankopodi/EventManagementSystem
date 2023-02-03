@@ -292,7 +292,7 @@ function Bookings() {
               style={{ color: "black" }}
               onClick={bookEvent}
               
-              onClick={notify}
+              // onClick={notify}
             >
               Book
             </button>

@@ -2,6 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./manage.css"
+// import { Button } from 'reactstrap';
+// import BlockUi from 'react-block-ui';
+// import 'react-block-ui/style.css';
 
 function ManageEvent() {
     const [user, setUser] = useState([]);
@@ -10,6 +13,22 @@ function ManageEvent() {
     useEffect(() => {
        getUsers();
     }, []);
+
+
+
+    // constructor(props) {
+    //   super(props);
+  
+    //   this.toggleBlocking = this.toggleBlocking.bind(this);
+    //   this.state = {
+    //     blocking: false,
+    //   };
+    // }
+  
+    // toggleBlocking() {
+    //   this.setState({blocking: !this.state.blocking});
+    // }
+
 
     function getUsers() {
         fetch(`http://localhost:1337/api/users`)
@@ -38,6 +57,7 @@ function ManageEvent() {
         <div className='container' >
 
             <div className="manageEVent overflow-x-auto">
+            
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
@@ -55,13 +75,14 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button class="btn btn-warning">Suspend</button></td> 
-                            <td  style={{color:'black'}}><button class="btn btn-error" style={{color:'black'}} onClick={()=> deleteTodo(user.id)}>Delete</button></td>
+                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary">Toggle Block</button></td> 
+                            <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}
 
                     </tbody>
                 </table>
+                
             </div>
 
         </div>
