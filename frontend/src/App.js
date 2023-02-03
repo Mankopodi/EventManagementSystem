@@ -128,7 +128,7 @@ function App() {
               <Route path="viewbooks" element={<ViewBooks />}></Route>
               <Route path="contact" element={<Contact />}></Route>
               <Route path="pack" element={<Pack />}></Route>
-              <Route path="rating" element={<Ratings />}></Route>
+              {/* <Route path="rating" element={<Ratings />}></Route> */}
               <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
               <Route path="report" element={<Report  />}></Route>
@@ -148,7 +148,8 @@ function App() {
               <Route path="viewbooks" element={<ViewBooks />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route path="pack" element={<Pack />}></Route>
-              <Route path="rating" element={<Ratings />}></Route>
+              {/* <Route path="rating" element={<Ratings />}></Route> */}
+              <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
               {/* <Route path="report" element={<ReportEvents />}></Route> */}
             </Route>

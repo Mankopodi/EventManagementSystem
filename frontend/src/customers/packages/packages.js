@@ -28,6 +28,7 @@ function Packages() {
   return (
     <>
       <div className="customCard min-h-screen">
+        <h1 className=" flex justify-center font-bold text-3xl" style={{ color: "black" }}> Customize your own package</h1>
         <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
           {customizeEventsPackages.map((customizeEventsPackage) => (
             <div
