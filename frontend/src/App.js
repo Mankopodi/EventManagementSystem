@@ -49,6 +49,7 @@ import Admindashboard from "./admin/admindashboard/admindashboard";
 import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
+import Addpackage from './customers/packages/addpackage'
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -100,6 +101,7 @@ function App() {
               <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
               <Route path="EditUser" element={<EditUser />}></Route>
+              <Route path="Addpackage" element={ <Addpackage />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route
