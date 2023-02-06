@@ -61,10 +61,10 @@ function ViewRescheduleOfEvents() {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="min-h-screen overflow-scroll ">
         <div className="overflow-x-auto ">
-          <h1 className="flex justify-center text-4xl font-bold mb-4 text-black">
+          <h1 className="flex justify-center text-4xl font-bold mb-4 text-black" style={{ color: "black" }}>
             Bookings
           </h1>
           {/* <button className="btn btn-accent mb-8" style={{color:'white'}}>booking</button> */}
@@ -79,8 +79,8 @@ function ViewRescheduleOfEvents() {
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
-                <th>Venue</th>
-                <th>Packages</th>
+                
+               
                 <th>Reschedule</th>
               </tr>
             </thead>
@@ -96,8 +96,7 @@ function ViewRescheduleOfEvents() {
                     <td className="text-black">{book.attributes.EventType}</td>
                     <td className="text-black">{book.attributes.NumberOfGuests}</td>
                     <td className="text-black">{book.attributes?.eventDate}</td>
-                    <td className="text-black">{book.attributes.Venue}</td>
-                    <td className="text-black">{book.attributes.Package}</td>
+                   
                     <td>
                       {/* The button to open modal */}
                       <label

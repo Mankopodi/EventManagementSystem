@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { SUCCESS } from "../../enviroments/toast";
 
 function Bookings() {
   const navigate = useNavigate();
+  const notify = () => toast("Your booking has been successfully booked!");
 
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
@@ -46,6 +50,7 @@ function Bookings() {
       })
       .then((res) => {
         console.log(res);
+        SUCCESS('Your booking has been successfully booked!')
         navigate("/dash/Payment");
       })
       .catch((err) => {
@@ -70,6 +75,8 @@ function Bookings() {
   };
 
   return (
+    <div>
+      <ToastContainer />
     <div className="hero min-h-screen font-bold " style={{ color: "white" }}>
       <div className="card w-11/12  shadow-xl  mt-8 bg-green-00">
         <div className="card-body">
@@ -266,7 +273,7 @@ function Bookings() {
                   onChange={(e) => setPackage(e.target.value)}
                 >
                   <option disabled selected>
-                    Select a Pactage
+                    Select a Package
                   </option>
                   <option>Premium</option>
                   <option>Classic</option>
@@ -284,12 +291,16 @@ function Bookings() {
               className="btn btn-primary mt-8"
               style={{ color: "black" }}
               onClick={bookEvent}
+              
+              // onClick={notify}
             >
               Book
             </button>
+            <ToastContainer />
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }

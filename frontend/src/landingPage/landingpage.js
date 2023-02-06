@@ -11,7 +11,7 @@ function Landingpage() {
     <div>
       <div className="navbar ">
         <div className="navbar-start">
-          <a className="btn btn-accent normal-case text-xl" style={{color:'black'}}>Event Management System</a>
+          <a className="btn btn-ghost normal-case text-xl" style={{color:'black'}}>Event Management System</a>
         </div>
 
         <div className="navbar-end">

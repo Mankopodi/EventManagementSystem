@@ -30,7 +30,7 @@ function Viewbookings() {
     };
 
   return (
-    <div className="min-h-screen overflow-scroll ">
+    <div className="  min-h-screen overflow-scroll ">
       <div className="overflow-x-auto">
         <h1
           className="flex justify-center text-4xl font-bold bg-blend-color text-black "

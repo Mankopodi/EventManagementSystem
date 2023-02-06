@@ -9,8 +9,9 @@ function Homes() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen">    <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
-      <div className="card w-96   shadow-xl  mt-16">
+    <div className="min-h-screen">    
+    <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
+      <div className="card w-96   shadow-2xl  mt-16">
         <div className="card-body" style={{color:'black'}}>
           <h2 className="card-title">Report for All Events</h2>
           <HiDocumentReport  style={{fontSize: "2em"}} />
@@ -21,7 +22,7 @@ function Homes() {
         </div>
       </div>
 
-      <div className="card w-96  shadow-xl  mt-16">
+      <div className="card w-96  shadow-2xl  mt-16">
         <div className="card-body" style={{color:'black'}}>
           <h2 className="card-title">Report for All Venues</h2>
           <HiDocumentReport  style={{fontSize: "2em"}} />
@@ -32,7 +33,7 @@ function Homes() {
         </div>
       </div>
 
-      <div className="card w-96  shadow-xl mt-16">
+      <div className="card w-96  shadow-2xl mt-16">
         <div className="card-body" style={{color:'black'}}>
           <h2 className="card-title">Review and Ratings</h2>
           <MdReviews  style={{fontSize: "2em"}} />
@@ -43,7 +44,7 @@ function Homes() {
         </div>
       </div>
 
-      <div className="card w-96   shadow-xl  mt-16">
+      <div className="card w-96   shadow-2xl  mt-16">
         <div className="card-body" style={{color:'black'}}>
           <h2 className="card-title">Event Packages</h2>
           <FiPackage  style={{fontSize: "2em"}} />

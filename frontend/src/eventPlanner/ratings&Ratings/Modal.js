@@ -193,7 +193,7 @@ function Modal() {
                   <div className="p-2 ">
                     <label
                       for="message"
-                      class="flex justify-center self-center block mb-2 ml-8 md:my-8 text-sm font-medium text-gray-900 dark:text-gray-400"
+                      class="flex justify-center self-center  mb-2 ml-8 md:my-8 text-sm font-medium text-gray-900 dark:text-gray-400"
                     >
                       Your comment..?(optional)
                     </label>
