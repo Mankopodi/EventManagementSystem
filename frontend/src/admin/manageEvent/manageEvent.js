@@ -15,21 +15,6 @@ function ManageEvent() {
     }, []);
 
 
-
-    // constructor(props) {
-    //   super(props);
-  
-    //   this.toggleBlocking = this.toggleBlocking.bind(this);
-    //   this.state = {
-    //     blocking: false,
-    //   };
-    // }
-  
-    // toggleBlocking() {
-    //   this.setState({blocking: !this.state.blocking});
-    // }
-
-
     function getUsers() {
         fetch(`http://localhost:1337/api/users`)
           .then(res => res.json())
@@ -75,7 +60,7 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary">Toggle Block</button></td> 
+                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary">Suspend</button></td> 
                             <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}
@@ -93,3 +78,15 @@ export default ManageEvent
 
 
 
+ // constructor(props) {
+    //   super(props);
+  
+    //   this.toggleBlocking = this.toggleBlocking.bind(this);
+    //   this.state = {
+    //     blocking: false,
+    //   };
+    // }
+  
+    // toggleBlocking() {
+    //   this.setState({blocking: !this.state.blocking});
+    // }

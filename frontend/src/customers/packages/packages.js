@@ -28,16 +28,13 @@ function Packages() {
       })
   }
 
-  function deleteTodo(id) {
-    // console.log(pos, 'id: ');
-    console.log( 'getting user: ', id)
- 
+
+
+  const deletePackage = (id) => {
     axios.delete(`http://localhost:1337/api/customize-events-packages/${id}`)
-      .then((res) => {
-        // console.log(res);
-        getCustomizeEventsPackages();
-      })
-      console.log( 'getting user: ', id)
+    .then(() => {
+      getCustomizeEventsPackages();
+    })
   }
 
 
@@ -50,13 +47,17 @@ function Packages() {
           <div class="card w-96 shadow-xl" key={customizeEventsPackage.id}>
             {/* <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
             <div class="card-body">
-              <h2 class="card-title"> {customizeEventsPackage.attributes.packageName} </h2>
-              <p style={{ color: 'black' }}> {customizeEventsPackage.attributes.package_description}  </p>
+              <h2 style={{ color: 'black' }} class="card-title">Name {customizeEventsPackage.attributes.packageName} </h2>
+              <p style={{ color: 'black' }}>description {customizeEventsPackage.attributes.package_description}  </p>
               <p style={{ color: 'black' }}>R {customizeEventsPackage.attributes.Price} </p>
+              <p style={{ color: 'black' }}>createdAt {customizeEventsPackage.attributes.createdAt} </p>
+              <p style={{ color: 'black' }}>updatedAt: {customizeEventsPackage.attributes.updatedAt} </p>
+              <p style={{ color: 'black' }}>Id: {customizeEventsPackage.id} </p>
               <div class="card-actions justify-end">
                 {/* <!-- The button to open modal --> */}
                 <label for="my-modal-5" class="btn" onClick={() => navigate("/dash/EditUser/" + customizeEventsPackage.id, { replace: true })}> <FaEdit /> </label>
-                <label for="my-modal-5" class="btn" onClick={ deleteTodo()}> 
+
+                <label for="my-modal-5" class="btn" onClick={ () => deletePackage(customizeEventsPackage.id)}> 
 
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -72,7 +73,7 @@ function Packages() {
 </div>
       </div>
 
-      <button class="btn btn-info" onClick={() => navigate("/dash/addpackage/", { replace: true })}>Info</button>
+      <button class="btn btn-info" onClick={() => navigate("/dash/addpackage/", { replace: true })}>Add package</button>
 
 
     </>
@@ -84,3 +85,14 @@ export default Packages
 
 
 
+  // function deleteTodo(id) {
+  //   // console.log(pos, 'id: ');
+  //   // console.log( 'getting user: ', id)
+ 
+  //   axios.delete(`http://localhost:1337/api/customize-events-packages/${id}`)
+  //     .then((res) => {
+  //       // console.log(res);
+  //       getCustomizeEventsPackages();
+  //     })
+  //     console.log( 'getting user: ', id)
+  // }
