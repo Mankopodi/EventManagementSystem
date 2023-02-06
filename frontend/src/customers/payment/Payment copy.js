@@ -31,8 +31,8 @@ function Payment() {
     <>
       <div className="container">
         <SiEventbrite style={{ fontSize: "2em" }} />
-        <h1 className="flex justify-start font-bold ml-5 ">
-          Event Management System
+        <h1 className="flex justify-start font-bold ml-5 "  style={{ color: "black" }}>
+          EMS
         </h1>
       </div>
 

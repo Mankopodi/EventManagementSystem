@@ -58,12 +58,12 @@ function Viewbooking() {
               <th>Last Name</th>
               <th>Email</th>
               <th>Phone Number</th>
-              <th>Group Name</th>
+             
               <th>Event Type</th>
               <th>Number of Guests</th>
               <th>Date</th>
               <th>Venue</th>
-              <th>Packages</th>
+             
               <th>Delete</th>
             
               
@@ -77,12 +77,12 @@ function Viewbooking() {
                   <td className="text-black">{book.attributes.LastName}</td>
                   <td className="text-black">{book.attributes.Email}</td>
                   <td className="text-black">{book.attributes.PhoneNumber}</td>
-                  <td className="text-black">{book.attributes.GroupName}</td>
+                
                   <td className="text-black">{book.attributes.EventType}</td>
                   <td className="text-black">{book.attributes.NumberOfGuests}</td>
                   <td className="text-black">{book.attributes.eventDate}</td>
                   <td className="text-black">{book.attributes.Venue}</td>
-                  <td className="text-black">{book.attributes.Package}</td> 
+                 
                   <td  style={{color:'black'}}><button class="btn btn-error" style={{color:'black'}} onClick={()=> deleteBooking(Bookings.id)}>Delete</button></td> 
                 </tr>
               );
