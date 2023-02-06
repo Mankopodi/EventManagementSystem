@@ -75,7 +75,7 @@ function ViewRescheduleOfEvents() {
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Group Name</th>
+               
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -92,7 +92,7 @@ function ViewRescheduleOfEvents() {
                     <td className="text-black">{book.attributes.LastName}</td>
                     <td className="text-black">{book.attributes.Email}</td>
                     <td className="text-black">{book.attributes.PhoneNumber}</td>
-                    <td className="text-black">{book.attributes.GroupName}</td>
+                   
                     <td className="text-black">{book.attributes.EventType}</td>
                     <td className="text-black">{book.attributes.NumberOfGuests}</td>
                     <td className="text-black">{book.attributes?.eventDate}</td>

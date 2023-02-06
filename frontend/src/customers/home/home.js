@@ -1,70 +1,29 @@
 import React from "react";
-import { TbBrandBooking } from "react-icons/tb";
-import { FiPackage } from "react-icons/fi";
-import { MdReviews } from "react-icons/md";
-import { RiFolderHistoryFill } from "react-icons/ri";
-import {useNavigate} from 'react-router-dom';
-//import Navbar from "../navbar/navbar";
 
-function Home() {
-
-const navigate = useNavigate();
-
+function home() {
   return (
-    <div className="min-h-screen"> 
-
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-2 gap-2 first-letter:justify-center justify-items-center">
-        <div className="card w-96  shadow-2xl  mt-16">
-          <div className="card-body" style={{color:'black'}}>
-            <h2 className="card-title">Bookings</h2>
-            <TbBrandBooking style={{ fontSize: "2em" }} />
-            <p>Make a booking for your event.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/dash/viewbookings",{replace:true})}>Book</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96  shadow-2xl  mt-16">
-          <div className="card-body" style={{color:'black'}}>
-            <h2 className="card-title">Booking History</h2>
-            <RiFolderHistoryFill style={{ fontSize: "2em" }} />
-            <p>Make a booking for your event.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/dash/history",{replace:true})}>View</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96 shadow-2xl  mt-16">
-          <div className="card-body" style={{color:'black'}}>
-            <h2 className="card-title">Event Packages</h2>
-            <FiPackage style={{ fontSize: "2em" }} />
-            <p>
-              Find out more about Event packages that you might prefer depending
-              on your event in details
+    
+      <div
+        className="hero min-h-screen"
+        style={{
+          backgroundImage: `url("/images/stock/photo-1507358522600-9f71e620c44e.jpg")`,
+        }}
+      >
+        <div className="hero-overlay "></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+            <p className="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
             </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/dash/pack",{replace:true})}>View</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96  shadow-2xl  mt-16">
-          <div className="card-body" style={{color:'black'}}>
-            <h2 className="card-title">Review and Ratings</h2>
-            <MdReviews style={{ fontSize: "2em" }} />
-            <p>
-              Checkout the Rate and Reviews for our event management system.
-            </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/dash/ProductReview1",{replace:true})}>View</button>
-            </div>
+            
           </div>
         </div>
       </div>
-    </div>
+   
   );
 }
 
-export default Home;
+export default home;

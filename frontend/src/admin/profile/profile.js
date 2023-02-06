@@ -3,7 +3,7 @@ import { IoCall } from "react-icons/io5";
 import { BiRename } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "./profile.css";
-import { RiLockPasswordFill } from "react-icons/ri";
+
 //import { useState, useEffect } from "react";
 
 function Profile() {
@@ -109,9 +109,7 @@ function Profile() {
                 <button className="btn btn-primary " >
                   Update
                 </button>
-                <label htmlFor="my-modal-3" className="btn btn-primary">
-                  Change password
-                </label>
+               
               </div>
             </form>
           </div>
@@ -130,67 +128,7 @@ function Profile() {
           </label>
           <h3 className="text-lg font-bold">Change your password</h3>
 
-          <form>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Current password</span>
-              </label>
-              <label className="input-group">
-                <span>
-                  <RiLockPasswordFill style={{ fontSize: "1.5rem" }} />
-                </span>
-                <input
-                  type="password"
-                  placeholder="*****************"
-                  className="input input-bordered input-primary w-full"
-                 
-                 
-                />
-              </label>
-            </div>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">New password</span>
-              </label>
-              <label className="input-group">
-                <span>
-                  <RiLockPasswordFill style={{ fontSize: "1.5rem" }} />
-                </span>
-                <input
-                  type="password"
-                  placeholder="*****************"
-                  className="input input-bordered input-primary w-full"
-                  
-                
-                />
-              </label>
-            </div>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Confirm password</span>
-              </label>
-              <label className="input-group">
-                <span>
-                  <RiLockPasswordFill style={{ fontSize: "1.5rem" }} />
-                </span>
-                <input
-                  type="password"
-                  placeholder="*****************"
-                  className="input input-bordered input-primary w-full"
-                 
-                 
-                />
-              </label>
-            </div>
-
-            <div className="flex justify-end mt-9 space-x-2">
-              <button className="btn btn-primary" >
-                Change
-              </button>
-            </div>
-          </form>
+         
         </div>
       </div>
     </div>

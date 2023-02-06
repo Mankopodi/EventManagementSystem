@@ -30,6 +30,10 @@
     animation: loading 0.75s ease infinite;
   } */
 
+  /* .logout {
+    margin-top: 39%;
+  } */
+
   @keyframes loading {
     from {
       transform: rotate(0turn);

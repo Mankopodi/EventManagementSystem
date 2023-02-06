@@ -43,7 +43,7 @@ function ReportEvents() {
         <table className="table w-full" >
           <thead>
             <tr>
-              <th>Group Name</th>
+             
               <th>Event Type</th>
               <th>Number of Guests</th>
               <th>Date</th>
@@ -55,7 +55,7 @@ function ReportEvents() {
           {Bookings.map((book) => {
               return (
                 <tr key={book.id} >
-                  <td className="text-black">{book.attributes.GroupName}</td>
+                 
                   <td className="text-black">{book.attributes.EventType}</td>
                   <td className="text-black">{book.attributes.NumberOfGuests}</td>
                   <td className="text-black">{book.attributes.eventDate}</td>
