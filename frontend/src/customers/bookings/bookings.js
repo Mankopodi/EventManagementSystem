@@ -156,23 +156,6 @@ function Bookings() {
               </label>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span style={{ color: "black" }}>Group Name:</span>
-              </label>
-              <label className="label">
-             
-                <input
-                  style={{ color: "black" }}
-                  type="text"
-                  placeholder="Type here"
-                  value={GroupName}
-                  onChange={(e) => setGroupName(e.target.value)}
-                  className="input input-bordered "
-                  required
-                />
-              </label>
-            </div>
 
             <div className="form-control">
               <label className="label">

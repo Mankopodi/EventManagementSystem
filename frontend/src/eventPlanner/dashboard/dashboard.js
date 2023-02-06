@@ -63,7 +63,7 @@ function Dashboard() {
                     Email
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/reportevent")} >
+                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/report")} >
                   <a >
                   <HiOutlineDocumentReport style={{fontSize: "1.5em"}} />
                   Report for all Events
