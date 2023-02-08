@@ -8,19 +8,18 @@ import { SUCCESS } from "../../enviroments/toast";
 
 function Bookings() {
   const navigate = useNavigate();
-  const notify = () => toast("Your booking has been successfully booked!");
+  //\const notify = () => toast("Your booking has been successfully booked!");
 
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
   const [Email, setEmail] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState(0);
-  const [GroupName, setGroupName] = useState("");
   const [EventType, setEventType] = useState("");
   const [NumberOfGuests, setNumberOfGuests] = useState(0);
   const [eventDate, setDate] = useState("");
   const [Venue, setVenue] = useState("");
   const [Package, setPackage] = useState("");
-  const [bookingData, setBookingData] = useState("");
+  //const [bookingData, setBookingData] = useState("");
 
   const bookEvent = (e) => {
     e.preventDefault();
@@ -31,7 +30,6 @@ function Bookings() {
         LastName: LastName,
         Email: Email,
         PhoneNumber: PhoneNumber,
-        GroupName: GroupName,
         EventType: EventType,
         NumberOfGuests: NumberOfGuests,
         eventDate: eventDate,
