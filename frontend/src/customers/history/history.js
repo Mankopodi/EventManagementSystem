@@ -34,7 +34,7 @@ function History() {
       
       <div className="overflow-x-auto">
         <h1
-          className="flex justify-center text-4xl font-bold mb-1"
+          className="flex justify-center text-4xl font-bold mt-2 mb-1"
           style={{ color: "black" }}
         >
           Booking History
@@ -51,8 +51,9 @@ function History() {
               <th className="text-white ">Event Type</th>
               <th className="text-white ">Number of Guests</th>
               <th className="text-white ">Date</th>
-              <th className="text-white ">Venue</th>
-              <th className="text-white ">Packages</th>
+              {/* <th className="text-white ">Venue</th> */}
+              {/* <th className="text-white ">Packages</th> */}
+              <th className="text-white ">Reviews </th>
             </tr>
           </thead>
           <tbody>
@@ -66,8 +67,9 @@ function History() {
                   <td className="text-black">{book.attributes.EventType}</td>
                   <td className="text-black">{book.attributes.NumberOfGuests}</td>
                   <td className="text-black">{book.attributes.eventDate}</td>
-                  <td className="text-black">{book.attributes.Venue}</td>
-                  <td className="text-black">{book.attributes.Package}</td>
+                  {/* <td className="text-black">{book.attributes.Venue}</td> */}
+                  {/* <td className="text-black">{book.attributes.Package}</td> */}
+                  <td><button className="btn btn-accent" onClick={() => navigate("/admindash/ProductReview1/", { replace: true })}>view Review</button></td>
                 </tr>
               );
             })}
