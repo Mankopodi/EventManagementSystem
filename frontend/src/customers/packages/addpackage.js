@@ -7,36 +7,23 @@ export default function Addpackage() {
 
     let navigate = useNavigate();
 
-  const [customizeEventsPackages, setCustomizeEventsPackages] = useState({
-    data:{
-      packageName: "",
-      package_description: "",
-      Price: "",
-      }
-  });
-
-  
-
-  const { packageName, package_description, Price } = customizeEventsPackages;
-
-  const onInputChange = (e) => {
-    setCustomizeEventsPackages({ ...customizeEventsPackages, [e.target.packageName]: e.target.value });
-  };
+  const [packageName, setPackageName] = useState()
+  const [packageDescription, setPackageDescription] = useState()
+  const [price, setPrice] = useState()
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:1337/api/customize-events-packages`, {
-      data:{
-        packageName,
-        package_description,
-        Price,
-        }
-    }).then ( res => console.log('posting data', )).catch(err => console.log(err))
+    let customizeEventsPackages = {data: {
+      packageName: packageName,
+      package_description: packageDescription,
+      Price:price,
+    }}
+    await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
 
     
     navigate("/dash/packages");
+    
   };
-
   return (
     <div className="container">
       <div className="row">
@@ -49,12 +36,12 @@ export default function Addpackage() {
               package name
               </label>
               <input
-                type={"text"}
+                type="text"
                 className="form-control"
                 placeholder="Enter your package name"
                 name="name"
                 value={packageName}
-                onChange={(e) => customizeEventsPackages(e.target.value)}
+                onChange={(e) => setPackageName(e.target.value)}
               />
             </div>
             <div className="mb-3">
@@ -65,9 +52,9 @@ export default function Addpackage() {
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your decription"
-                name="Package descriptione"
-                value={package_description  }
-                onChange={(e) => customizeEventsPackages(e.target.value)}
+                name="descriptione"
+                value={packageDescription}
+                onChange={(e) => setPackageDescription(e.target.value)}
               />
             </div>
             <div className="mb-3">
@@ -79,8 +66,8 @@ export default function Addpackage() {
                 className="form-control"
                 placeholder="Enter your price"
                 name="price"
-                value={Price}
-                onChange={(e) => customizeEventsPackages(e.target.value)}
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
               />
             </div>
             <button type="submit" className="btn btn-outline-primary">
