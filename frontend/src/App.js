@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -45,6 +45,7 @@ import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
 import Addpackage from './customers/packages/addpackage'
+import { getToken } from "./helpers";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -140,7 +141,7 @@ function App() {
             <Route path="Homepage" element={<Homepage />}></Route>
 
             {/* ADMIN ROUTES */}
-            <Route path="/admindash" element={<Admindashboard />}>
+            <Route path="/admindash" element={!getToken() ? <Admindashboard /> : <Navigate to={"/login"}/>}>
               <Route
                 path="manageCustomerEventPlaner"
                 element={<ManageCustomerEventPlaner />}
@@ -151,6 +152,7 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
+              <Route path="reportevent" element={<ReportEvents />}></Route>
             </Route>
           </Routes>
         </Router>
