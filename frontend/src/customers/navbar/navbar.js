@@ -1,119 +1,104 @@
+
+
 import React from "react";
-import { TbHome2 } from "react-icons/tb";
+import { AiOutlineHome } from "react-icons/ai";
+import { FiPackage } from "react-icons/fi";
+import { RiFileHistoryLine } from "react-icons/ri";
+import { TbBrandBooking } from "react-icons/tb";
+import { MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { CgLogOut } from "react-icons/cg";
+import { BiLogOut } from "react-icons/bi";
+import { BsTelephoneForward } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
-import {MdOutlineContactPhone} from 'react-icons/md';
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 
-
 function Navbar() {
   const navigate = useNavigate();
-
   function logout() {
     removeToken();
     navigate("/login/", { replace: true });
   }
-
   return (
-    <div className="">
-      <div className="navbar">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-accent lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <div>
+      <section>
+        <div className="flex justify-end">
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-ghost drawer-button lg:hidden nav"
+          ></label>
+        </div>
+
+        <div className="drawer drawer-mobile">
+          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content flex flex-col  justify-center">
+            <Outlet />
+          </div>
+
+          <div className="drawer-side ">
+            <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+            <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
+              <div
+                className="flex justify-center font-bold text-4xl named mb-24"
+                style={{ color: "black" }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
-            >
-              <li onClick={() => navigate("/dash/home")}>
-                <a className="text-black">
-                  <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
-                  Home
-                </a>
-              </li>
-              
+                Event Management System
+              </div>
 
-              <li onClick={() => navigate("/dash/contact")}>
-              <a  className="text-black">
-                <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
-                Contact
-              </a>
-            </li>
-
-              <li onClick={() => navigate("/dash/profile")}>
-                <a  className="text-black">
-                  <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
-                  Profile
-                </a>
-              </li>
-
-              <li onClick={logout}>
-                <a  className="text-black">
-                  <CgLogOut style={{ fontSize: "1.5rem", color: "black" }} />
-                  Logout
-                </a>
-              </li>
+              <div className="down">
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/home")}>
+                  <a>
+                    <AiOutlineHome style={{ fontSize: "1.5em" }} />
+                    Home
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/pack")}>
+                  <a>
+                    <FiPackage style={{ fontSize: "1.5em" }} />
+                    Event Packages
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/history")}>
+                  <a>
+                    <RiFileHistoryLine style={{ fontSize: "1.5em" }} />
+                    Booked History
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/bookings")}>
+                  <a>
+                    <TbBrandBooking style={{ fontSize: "1.5em" }} />
+                    Bookings
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/contact")}>
+                  <a>
+                    <BsTelephoneForward style={{ fontSize: "1.5em" }} />
+                    Contact
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/ProductReview1")}>
+                  <a>
+                    <MdReviews style={{ fontSize: "1.5em" }} />
+                    Reviews & Ratings
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/profile")}>
+                  <a>
+                    <CgProfile style={{ fontSize: "1.5em" }} />
+                    Profile
+                  </a>
+                </li>
+                <li style={{ color: "black" }} onClick={logout}>
+                  <a>
+                    <BiLogOut style={{ fontSize: "1.5em" }} />
+                    Logout
+                  </a>
+                </li>
+              </div>
             </ul>
           </div>
-          
-          <a 
-            className="btn btn-ghost normal-case text-xl ml-2 "
-            style={{ color: "black" }} onClick={() => navigate("/")}
-          >
-            Event Management System
-          </a>
         </div>
-
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 justify-end">
-            <li onClick={() => navigate("/dash/home")}>
-              <a  className="text-black">
-                <TbHome2 style={{ fontSize: "1.5rem", color:"black" }} />
-                Home
-              </a>
-            </li>
-
-            <li onClick={() => navigate("/dash/contact")}>
-              <a  className="text-black">
-                <MdOutlineContactPhone style={{ fontSize: "1.5rem", color: "black" }} />
-                Contact 
-              </a>
-            </li>
-
-            <li onClick={() => navigate("/dash/profile")}>
-              <a  className="text-black">
-                <CgProfile style={{ fontSize: "1.5rem", color: "black" }} />
-                Profile
-              </a>
-            </li>
-
-            <li onClick={logout}>
-              <a className="text-black">
-                <CgLogOut style={{ fontSize: "1.5rem" ,color: "black" }} />
-                Logout
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-     <Outlet/>
-
+      </section>
     </div>
   );
 }

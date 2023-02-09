@@ -1,109 +1,136 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Token1 } from "../../tokens/constant";
 import { useNavigate } from "react-router-dom";
+import "../pack/pack.css";
 
 function Pack() {
+  function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  const [Pack, setPack] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchData();
+    document.getElementById("defaultOpen").click();
+  }, []);
+
+  const fetchData = async () => {
+    axios
+      .get("http://localhost:1337/api/packs", {
+        headers: {
+          Authorization: `Bearer ${Token1}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data.data);
+        setPack(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className="min-h-screen" >
-      <h1 className="text-center font-bold text-4xl " style={{ color: "black" }}>
-        Wedding Packages
-      </h1>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">PREMIUM</h2>
-            <p>Food </p>
-            <p>Photography</p>
-            <p>Decor</p>
-          </div>
-          <div>
-          <p className="font-bold" style={{ color: "black" }}>Amount:</p>
-            </div>
-        </div>
-
-        <div className="card card-compact w-72 shadow-xl ml-8 mt-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">DELUXE</h2>
-            <p>Photography </p>
-            <p>Food</p>
-          </div>
-        </div>
-
-        <div className="card card-compact w-72  shadow-xl ml-8 mt-8 ">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">CLASSIC</h2>
-            <p>Food</p>
-          </div>
-        </div>
-      </div>
-
-      <h1 className="text-center font-bold text-4xl" style={{ color: "black" }}>
-        Parties Packages
-      </h1>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline  font-semibold">FOR KIDS</h2>
-            <p> Jumping Castle.</p>
-            <p> Bubble Machine.</p>
-            <p> Party Boxes: Snacks,Sweets and More.</p>
-          </div>
-        </div>
-
-        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">FOR ADULTS</h2>
-            <p>Decor : Color of your choice. </p>
-            <p>Alcohol: Your choice.</p>
-          </div>
-        </div>
-
-        <div className="card card-compact w-72   shadow-xl ml-8 mt-8 ">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">BABY/BRIDAL SHOWER</h2>
-            <p> Ballons.</p>
-            <p>Attire.</p>
-            <p>Food.</p>
-          </div>
-        </div>
-      </div>
-
-      <h1
-        className="text-center font-bold text-4xl mt-8"
+    <div className="overflow-x-auto min-h-screen">
+      <h2
+        className=" flex justify-center text-4xl font-bold mt-2 mb-2"
         style={{ color: "black" }}
       >
-        Conference Packages
-      </h1>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3 gap-2 ">
-        <div className="card card-compact w-72  shadow-xl ml-8 mt-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">STANDARD</h2>
-            <p>On Arrival: Hot and Cold Buffet Breakfast (7:00am-9:30am)</p>
-            <p>Morning Break: Coffee, Tea, Juice and Bottled Water.</p>
-            <p>Lunch: Three Course Buffet.</p>
-            <p>Afternoon Break: Tea, Coffee and Tea Time Treats.</p>
-            <p> Venue: Flipchart with Markers, Notepads and Pens Free Wi-Fi</p>
-          </div>
-        </div>
-
-        <div className="card card-compact w-72  shadow-xl ml-8 mt-8 mb-8">
-          <div className="card-body font-bold" style={{ color: "black" }}>
-            <h2 className="card-title underline font-semibold">STAY-OVER</h2>
-            <p>Dinner.</p>
-            <p>Single Accommodation.</p>
-            <p>Sharing Accommodation.</p>
-            <p>Breakfast the next Morning.</p>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-end mr-8 ">
+        Packages
+      </h2>
+      <div class="tab">
         <button
-          className="btn btn-active btn-accent mb-8"
-          style={{ color: "black" }} onClick={() => navigate("/dash/packages",{replace:true})}
+          class="btn btn-accent tablinks"
+          onClick={(e) => openCity(e, "London")}
+          id="defaultOpen"
         >
-          Customize your event package
+          Wedding Packages
         </button>
+        <button
+          class="btn btn-accent tablinks"
+          onClick={(e) => openCity(e, "Paris")}
+        >
+          Party Packages
+        </button>
+        <button
+          class="btn btn-accent tablinks"
+          onClick={(e) => openCity(e, "Tokyo")}
+        >
+          Conference Packages
+        </button>
+        <hr></hr>
       </div>
+      {/* <!-- Tab content --> */}
+      <div id="London" class="tabcontent">
+        <h3 className=" flex justify-center text-1xl font-semibold" style={{ color: "black" }}>Weddings</h3>
+        <p>
+          <div className="overflow-x-auto">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  
+                  <th style={{ color: "white" }}>Premium</th>
+                  <th style={{ color: "white" }}>Deluxe</th>
+                  <th style={{ color: "white" }}>Classic </th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </p>
+      </div>
+      <div id="Paris" class="tabcontent">
+        <h3 className=" flex justify-center text-1xl font-semibold"  style={{ color: "black" }}>Parties</h3>
+        <p><div className="overflow-x-auto">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  
+                  <th style={{ color: "white" }}>For Adults</th>
+                  <th style={{ color: "white" }}>For Kids</th>
+                  <th style={{ color: "white" }}>Baby/Bridal Shower</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div></p>
+      </div>
+      <div id="Tokyo" class="tabcontent">
+        <h3 className=" flex justify-center text-1xl font-semibold"  style={{ color: "black" }}>Conferences</h3>
+        <p><div className="overflow-x-auto">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  
+                  <th style={{ color: "white" }}>Standard</th>
+                  <th style={{ color: "white" }}>Stay-over</th>
+              
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div></p>
+      </div>{" "}
     </div>
   );
 }
