@@ -1,7 +1,11 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import "./manage.css"
+
+//import "./manage.css"
+import React_App_URl from '../../'
+import { Token } from '../../tokens/constant';
+import { ERROR, SUCCESS } from '../../enviroments/toast';
 // import { Button } from 'reactstrap';
 // import BlockUi from 'react-block-ui';
 // import 'react-block-ui/style.css';
@@ -9,6 +13,7 @@ import "./manage.css"
 function ManageEvent() {
     const [user, setUser] = useState([]);
     // const [newCustomizeEventsPackage, setNewCustomizeEventsPackage] = useState("");
+    const userID = useRef();
 
     useEffect(() => {
        getUsers();
@@ -23,6 +28,38 @@ function ManageEvent() {
             console.log(user)
           })
       }
+
+
+
+      const blockingUser = (user) => {
+        
+        userID.current = user.id;
+        let newBlock = !user.blocked;
+    
+        const blocked = {
+          blocked: newBlock,
+        };
+
+        axios
+          .put(`${'localhost:1337/api/users'}/users/${userID.current}`, blocked, {
+            headers: {
+              Authorization: `Bearer ${Token}`,
+            },
+          })
+          .then((user) => {
+            if (newBlock) {
+              SUCCESS("Blocked");
+            } else {
+              SUCCESS("Unblocked");
+            }
+          })
+          .catch((error) => {
+            ERROR(error.response.user.error.message);
+          })
+          .finally(() => {
+            getUsers();
+          });
+      };
 
 
     function deleteTodo(id) {
@@ -60,7 +97,7 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary">Suspend</button></td> 
+                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary" onClick={()=> blockingUser(user)}>Suspend</button></td> 
                             <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}

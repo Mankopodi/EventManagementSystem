@@ -18,7 +18,7 @@ export default function Addpackage() {
       package_description: packageDescription,
       Price:price,
     }}
-    await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
+    await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', res)).catch(err => console.log(err))
 
     
     navigate("/dash/packages");

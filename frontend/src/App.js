@@ -96,7 +96,7 @@ function App() {
               <Route path="rating" element={<Ratings />}></Route>
               <Route path="Packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
-              <Route path="EditUser" element={<EditUser />}></Route>
+              <Route path="EditUser/:id" element={<EditUser />}></Route>
               <Route path="Addpackage" element={ <Addpackage />}></Route>
               <Route path="Addpackage" element={ <Addpackage />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>

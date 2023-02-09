@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
+import { useNavigate } from "react-router-dom";
 //import { HiPhone } from "react-icons/hi";
 //import { BiRename } from "react-icons/bi";
 //import { MdEmail } from "react-icons/md";
 
 function ReportEventsHalll() {
   const [Bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -30,85 +32,44 @@ function ReportEventsHalll() {
 
   return (
     <div className="min-h-screen ">
-      <form>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-bold" style={{ color: "black" }}>
-              Name of the event:
-            </span>
-          </label>
-          <label className="label">
-           
-            <input
-              type="text"
-              placeholder=""
-              className="input input-bordered input-primary w-full"
-            />
-          </label>
-        </div>
+      <div className="  min-h-screen overflow-scroll">
+      <div className="overflow-x-auto">
+        <h1
+          className="flex justify-center text-4xl font-bold bg-blend-color mb-4 mt-4"
+          style={{ color: "black" }}
+        >
+          Get Reports
+        </h1>
+        <table className="table w-full" >
+          <thead>
+            <tr>
+              <th>Group Name</th>
+              <th>Event Type</th>
+              <th>Number of Guests</th>
+              <th>Date</th>
+              <th>Venue</th>
+              <th>Report</th>
+            </tr>
+          </thead>
+          <tbody>
+          {Bookings.map((book) => {
+              return (
+                <tr key={book.id} >
+                  <td className="text-black">{book.attributes.GroupName}</td>
+                  <td className="text-black">{book.attributes.EventType}</td>
+                  <td className="text-black">{book.attributes.NumberOfGuests}</td>
+                  <td className="text-black">{book.attributes.eventDate}</td>
+                  <td className="text-black">{book.attributes.Venue}</td>
+                  <td  style={{color:'black'}}><button class="btn btn-accent" style={{color:'black'}}   onClick={() => navigate("/dashboard/report")}>Report</button></td>
+                  </tr>
+                 
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-bold" style={{ color: "black" }}>
-              Date of the event:
-            </span>
-          </label>
-          <label className="label">
-          
-            <input
-              type="text"
-              placeholder=""
-              className="input input-bordered input-primary "
-            />
-          </label>
-        </div>
-
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-bold" style={{ color: "black" }}>
-              Venue of the Event:
-            </span>
-          </label>
-          <label className="label">
-           
-            <input
-              type="text"
-              placeholder=""
-              className="input input-bordered input-primary w-full"
-            />
-          </label>
-        </div>
-
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-bold" style={{ color: "black" }}>
-              Total number of Guests:
-            </span>
-          </label>
-          <label className="label">
-          
-            <input
-              type="tel"
-              placeholder=""
-              className="input input-bordered input-primary w-full"
-            />
-          </label>
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-tex font-bold" style={{ color: "black" }}>
-              Objective of the event
-            </span>
-          </label>
-          <label className="label">
-            <input
-              type="email"
-              placeholder=""
-              className="input input-bordered input-primary w-full"
-            />
-          </label>
-        </div>
-      </form>
     </div>
   );
 }
