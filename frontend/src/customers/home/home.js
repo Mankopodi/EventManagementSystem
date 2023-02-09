@@ -58,7 +58,7 @@ const navigate = useNavigate();
               Checkout the Rate and Reviews for our event management system.
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-accent" onClick={() => navigate("/dash/rating",{replace:true})}>View</button>
+              <button className="btn btn-accent" onClick={() => navigate("/dash/ProductReview1",{replace:true})}>View</button>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
-import { HiPhone } from "react-icons/hi";
-import { BiRename } from "react-icons/bi";
-import { MdEmail } from "react-icons/md";
+//import { HiPhone } from "react-icons/hi";
+//import { BiRename } from "react-icons/bi";
+//import { MdEmail } from "react-icons/md";
 
 function ReportEventsHalll() {
   const [Bookings, setBookings] = useState([]);

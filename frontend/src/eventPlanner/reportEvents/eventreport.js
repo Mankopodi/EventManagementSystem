@@ -1,39 +1,21 @@
 import React from 'react'
-import 
+
 
 function eventreport() {
   return (
     <div className='min-h-screen'>
       <form>
-              <div className="form-control">
-                <label className="label" >
-                  <span className="label-text" style={{color:'black'}}>Your Email</span>
-                </label>
-                <label className="input-group">
-                  <span>
-                    <MdEmail style={{ fontSize: "1.5rem" }} />
-                  </span>
-                  <input
-                    type="email"
-                    placeholder="info@site.com"
-                    className="input input-bordered input-primary w-full"
-                   
-                   
-                  />
-                </label>
-              </div>
+            
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your username</span>
+                  <span className="label-text font-bold" style={{color:'black'}}>Name of the Event:</span>
                 </label>
-                <label className="input-group">
-                  <span>
-                    <BiRename style={{ fontSize: "1.5rem" }} />
-                  </span>
+                <label className="label">
+                 
                   <input
                     type="text"
-                    placeholder="e.g. John Doe"
+                    placeholder=""
                     className="input input-bordered input-primary w-full"
                     
                   />
@@ -42,15 +24,13 @@ function eventreport() {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your firstname</span>
+                  <span className="label-text font-bold" style={{color:'black'}}>Date of the event:</span>
                 </label>
-                <label className="input-group">
-                  <span>
-                    <BiRename style={{ fontSize: "1.5rem" }} />
-                  </span>
+                <label className="label">
+                  
                   <input
                     type="text"
-                    placeholder="e.g. John Doe"
+                    placeholder=""
                     className="input input-bordered input-primary w-full"
                 
                   />
@@ -59,15 +39,13 @@ function eventreport() {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your lastname</span>
+                  <span className="label-text font-bold" style={{color:'black'}}>Venue of the Event:</span>
                 </label>
-                <label className="input-group">
-                  <span>
-                    <BiRename style={{ fontSize: "1.5rem" }} />
-                  </span>
+                <label className="label">
+                  
                   <input
                     type="text"
-                    placeholder="e.g. John Doe"
+                    placeholder=""
                     className="input input-bordered input-primary w-full"
                     
                   />
@@ -76,27 +54,16 @@ function eventreport() {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your Cellphone</span>
+                  <span className="label-text font-bold" style={{color:'black'}}>Total number of Guests:</span>
                 </label>
-                <label className="input-group">
-                  <span>
-                    <IoCall style={{ fontSize: "1.5rem" }} />
-                  </span>
+                <label className="label">
+              
                   <input
                     type="tel"
-                    placeholder="e.g 0712345678"
+                    placeholder=""
                     className="input input-bordered input-primary w-full"
                    
                   />
-                </label>
-              </div>
-
-              <div className="flex justify-end mt-9 space-x-2">
-                <button className="btn btn-primary " >
-                  Update
-                </button>
-                <label htmlFor="my-modal-3" className="btn btn-primary">
-                  Change password
                 </label>
               </div>
             </form>

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
+import { useNavigate } from "react-router-dom";
 
 
 function ReportEvents() {
+
+  const navigate = useNavigate();
   const [Bookings, setBookings] = useState([]);
 
   useEffect(() => {
@@ -57,7 +60,7 @@ function ReportEvents() {
                   <td className="text-black">{book.attributes.NumberOfGuests}</td>
                   <td className="text-black">{book.attributes.eventDate}</td>
                   <td className="text-black">{book.attributes.Venue}</td>
-                  <td  style={{color:'black'}}><button class="btn btn-accent" style={{color:'black'}} >Report</button></td>
+                  <td  style={{color:'black'}}><button class="btn btn-accent" style={{color:'black'}} onClick={() => navigate("/dashboard/reportevent",{replace:true})}>Report</button></td>
                   </tr>
                  
               );
