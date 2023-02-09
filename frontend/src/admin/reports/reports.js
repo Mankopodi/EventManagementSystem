@@ -184,7 +184,7 @@ const initDAta = {
               Objective of the event
             </h1>
 
-           <h1 style={{Color: 'black'}}>
+           <h1 className="text-black" style={{Color: 'black'}}>
                {reports.attributes.Description}
            </h1>
 

@@ -185,7 +185,7 @@ let data ={
               {/* {rep?.attributes?.Description} */}
             </textarea>
           </div>
-          <button onClick={poster}>uyedssss</button>
+          <button className="" onClick={poster}>submit</button>
         </div>
       </div>
     </div>
