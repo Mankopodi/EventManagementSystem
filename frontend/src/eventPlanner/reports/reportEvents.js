@@ -1,4 +1,4 @@
-import axios from "axios";
+////import axios from "axios";
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -19,17 +19,18 @@ function ReportEvents() {
       </div>
       <div className="info mt-4">
         <h1 className="font-semibold ml-20" style={{ color: "black" }}>
-          Name of the Event:
+          Name of the Event: 
         </h1>
         <h1 className="font-semibold ml-20" style={{ color: "black" }}>
-          Date of the Event:
+          Date of the Event: 
         </h1>
         <h1 className="font-semibold ml-20" style={{ color: "black" }}>
           Venue of the Event:
+          
         </h1>
         <h1 className="font-semibold ml-20" style={{ color: "black" }}>
           {" "}
-          Total Number Of Guests:
+          Total Number Of Guests: 
         </h1>
       </div>
 
@@ -40,10 +41,15 @@ function ReportEvents() {
         >
           Objective of the event
         </h1>
-        <textarea className="flex justify-center ml-56 max-h-64 mt-2" style={{ color: "black" }} id="w3review" name="w3review" rows="4" cols="110">
-         
-        </textarea>
-       
+
+        <textarea
+          className="flex justify-center textarea textarea-accent ml-20"
+          style={{ color: "black" }}
+          id="w3review"
+          name="w3review"
+          rows="15"
+          cols="100"
+        ></textarea>
       </div>
     </div>
   );
