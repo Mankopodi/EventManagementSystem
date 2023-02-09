@@ -7,6 +7,8 @@ import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
 
+
+
 function Report() {
   //Download
   function printDocument() {
@@ -22,10 +24,19 @@ function Report() {
 
   const [Bookings, setBookings] = useState([]);
   const [getBook, setIndivBook] = useState();
-//   const [report setReport] = useState();
+    const [report, setReport] = useState();
   // variable for Getting the users data
   const [data, setData] = useState({});
 
+
+
+const initDAta = {
+    id: '',
+    attributes:{
+        Description:""
+    }
+}
+  const [reports, getReports]= useState(initDAta)
   // variable for getting users description
   const [rep, setRep] = useState({});
 
@@ -57,11 +68,12 @@ function Report() {
     axios
       .get("http://localhost:1337/api/reports", {
         headers: {
-          Authorization: `Bearer ${Description}`,
+          Authorization: `Bearer e5ed32fc8c4b1937dd99c1b5b8980f636c274368bcab44ff2b2465d6be5ecc36ffd7792fb24c5277eab871de142c102f3a10b7ef64d7d441730b2cf7e0dc06c896350ae80b5aa295404abb4966897c361b591fcfeb53290307ded37c524090e190f67ab1c6dfa585ed92a09fd222cc8f05f7cbc76244ab98ae8b7928313c5479`,
+         
         },
       })
       .then((res) => {
-        console.log(res.data.data);
+        console.log(' data , ' , res.data.data);
         setReport(res.data.data);
       })
       .catch((err) => {
@@ -70,10 +82,18 @@ function Report() {
   };
 
   const getBookDetails = (params) => {
+      console.log(1);
     console.log(params);
     setIndivBook(params);
     setData(params);
     setRep(params);
+    console.log(report);
+    report.map((element)=>{
+        if (element.id === params.id) {
+            getReports(element)
+        }
+    })
+    console.log('it works, ',reports);
   };
 
   console.log(getBook);
@@ -110,7 +130,7 @@ function Report() {
                     <td className="text-black">{book.attributes.Venue}</td>
                     <td style={{ color: "black" }}>
                       <button
-                        class="btn btn-accent"
+                        className="btn btn-accent"
                         style={{ color: "black" }}
                         onClick={() => getBookDetails(book)}
                       >
@@ -138,7 +158,7 @@ function Report() {
           </div>
           <div className="info mt-4">
             <h1 className="font-semibold ml-20" style={{ color: "black" }}>
-              Name of the Event: 
+              Name of the Event:
               {data?.attributes?.EventType}
             </h1>
             <h1 className="font-semibold ml-20" style={{ color: "black" }}>
@@ -164,7 +184,10 @@ function Report() {
               Objective of the event
             </h1>
 
-        
+           <h1 style={{Color: 'black'}}>
+               {reports.attributes.Description}
+           </h1>
+
           </div>
         </div>
       </div>

@@ -45,6 +45,7 @@ import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
 import Addpackage from './customers/packages/addpackage'
+import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
 
 function App() {
@@ -153,6 +154,7 @@ function App() {
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>
+              <Route path="report" element={<Reports />}></Route>
             </Route>
           </Routes>
         </Router>
