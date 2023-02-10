@@ -19,10 +19,12 @@ import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
 import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
+import EditUser from "./customers/packages/EditUser";
+
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
-import EditUser from "./customers/packages/EditUser";
+
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -94,7 +96,8 @@ function App() {
               <Route path="review" element={<ProductReview1 />}></Route>
               <Route path="packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
-              <Route path="EditUser" element={<EditUser />}></Route>
+              <Route path="EditUser/:id" element={<EditUser />}></Route>
+              <Route path="Addpackage" element={ <Addpackage />}></Route>
               <Route path="Addpackage" element={ <Addpackage />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
