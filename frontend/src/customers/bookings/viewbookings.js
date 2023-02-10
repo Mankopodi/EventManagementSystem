@@ -68,6 +68,8 @@ function Viewbookings() {
                   <td className="text-black">{book.attributes.Venue}</td>
                   <td className="text-black">{book.attributes.Package}</td>
                 
+                {/* cancellation button  */}
+                
                   <td>
                     <div className="form-control ">
                       <label className="cursor-pointer label">

@@ -11,11 +11,13 @@ import { BiLogOut} from 'react-icons/bi';
 import { Outlet } from 'react-router-dom';
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+import { AUTH_TOKEN } from '../../tokens/constant';
 
 function Admindashboard() {
   const navigate = useNavigate();
   function logout() {
-        removeToken();
+        // removeToken();
+        localStorage.removeItem(AUTH_TOKEN);
         navigate("/login/", { replace: true });
       }
 
@@ -42,43 +44,43 @@ function Admindashboard() {
                 
               <div className="down">
                 
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/homepage")}>
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/homepage")}>
                   <a>
                    <AiOutlineHome style={{fontSize: "1.5em"}} />
                     Home
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/pack")}>
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/pack")}>
                   <a >
                   <FiPackage style={{fontSize: "1.5em"}} />
                     Event Packages
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/history")}>
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/history")}>
                   <a >
                   <TbBrandBooking style={{fontSize: "1.5em"}} />
                     Booked Events
                   </a>
                 </li>
-                <li  style={{color:'black'}}  onClick={() => navigate("/dashboard/reportevent")}>
+                <li  style={{color:'black'}}  onClick={() => navigate("/admindash/reportevent")}>
                   <a >
                   <HiDocumentReport style={{fontSize: "1.5em"}} />
                     Reports
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/ManageEvent")} >
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/ManageEvent")} >
                   <a >
                   <FiUsers style={{fontSize: "1.5em"}} />
                   Users
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/ProductReview1")} >
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/ProductReview1")} >
                   <a >
                   <MdReviews style={{fontSize: "1.5em"}} />
                     Reviews & Ratings
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/dashboard/profile")} >
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/profile")} >
                   <a>
                   <CgProfile style={{fontSize: "1.5em"}} />
                     Profile

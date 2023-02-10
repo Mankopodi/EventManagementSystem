@@ -2,13 +2,26 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Token } from "../../tokens/constant";
 import { useNavigate } from "react-router-dom";
-//import { HiPhone } from "react-icons/hi";
-//import { BiRename } from "react-icons/bi";
-//import { MdEmail } from "react-icons/md";
+// import jsPDF from 'jspdf';
+// import pdfMake from 'pdfmake';
+// import pdfFonts from 'pdfmake/build/vfs_fonts';
+// import htmlToPdfmake from 'html-to-pdfmake';
 
 function ReportEventsHalll() {
   const [Bookings, setBookings] = useState([]);
   const navigate = useNavigate();
+  //Download 
+  // function printDocument(){
+  //   const doc = new jsPDF(); 
+  //   //get Data html
+  //   const pdfTable = document.getElementById('divToPrint');
+  //   //html to pdf format
+  //   var html = htmlToPdfmake(pdfTable.innerHTML);
+  //   const documentDefinition = { content: html };
+  //   pdfMake.vfs = pdfFonts.pdfMake.vfs;
+  //   pdfMake.createPdf(documentDefinition).open();
+// }
+
 
   useEffect(() => {
     fetchData();
