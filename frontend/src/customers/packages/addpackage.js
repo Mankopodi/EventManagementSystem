@@ -13,12 +13,21 @@ export default function Addpackage() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    // let customizeEventsPackages = {data: {
+    //     data:{	      
+    //       packageName: packageName,
+    //       package_description: packageDescription,
+    //   	  Price:price,
+    //         }}}
+    //       await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
+      
     let customizeEventsPackages = {data: {
       packageName: packageName,
       package_description: packageDescription,
       Price:price,
     }}
     await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', res)).catch(err => console.log(err))
+
 
     
     navigate("/dash/packages");
@@ -52,7 +61,7 @@ export default function Addpackage() {
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your decription"
-                name="descriptione"
+                name="description"
                 value={packageDescription}
                 onChange={(e) => setPackageDescription(e.target.value)}
               />

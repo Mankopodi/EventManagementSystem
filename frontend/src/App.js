@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -38,7 +38,6 @@ import ReportEvents from "./eventPlanner/reportEvents/eventreport";
 import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll";
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
-import Report from "./eventPlanner/reports/reportEvents";
 
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
@@ -47,6 +46,8 @@ import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
 import Addpackage from './customers/packages/addpackage'
+import Reports from "./admin/reports/reports";
+import { getToken } from "./helpers";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -135,7 +136,7 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
-              <Route path="report" element={<Report  />}></Route>
+              
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
             </Route>
@@ -143,7 +144,7 @@ function App() {
             <Route path="Homepage" element={<Homepage />}></Route>
 
             {/* ADMIN ROUTES */}
-            <Route path="/admindash" element={<Admindashboard />}>
+            <Route path="/admindash" element={!getToken() ? <Admindashboard /> : <Navigate to={"/login"}/>}>
               <Route
                 path="manageCustomerEventPlaner"
                 element={<ManageCustomerEventPlaner />}
@@ -151,9 +152,12 @@ function App() {
               <Route path="homepage" element={<Homepage />}></Route>
               <Route path="viewbooks" element={<ViewBooks />}></Route>
               <Route path="profile" element={<Profile />}></Route>
+              <Route path="history" element={<History />}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
+              <Route path="reportevent" element={<ReportEvents />}></Route>
+              <Route path="report" element={<Reports />}></Route>
             </Route>
           </Routes>
         </Router>
