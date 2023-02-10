@@ -5,6 +5,8 @@ import jsPDF from "jspdf";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
+import {TiTick} from 'react-icons/ti'
+import './report.css';
 
 function Eventreport() {
  
@@ -97,9 +99,10 @@ let data ={
           >
             Get Reports
           </h1>
-          <table className="table w-full">
+          <table className="table w-full mr-8 ml-4">
             <thead>
               <tr>
+              <th>First Name</th>
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -111,6 +114,7 @@ let data ={
               {Bookings.map((book) => {
                 return (
                   <tr key={book.id}>
+                     <td className="text-black">{book.attributes.FirstName}</td>
                     <td className="text-black">{book.attributes.EventType}</td>
                     <td className="text-black">
                       {book.attributes.NumberOfGuests}
@@ -174,18 +178,24 @@ let data ={
             </h1>
 
             <textarea
-              className="flex justify-center textarea textarea-accent ml-20 mt-4"
+              className="flex justify-center textarea textarea-accent ml-4 mt-4"
               style={{ color: "black" }}
               id="w3review"
               name="w3review"
               rows="15"
-              cols="150"
+              cols="130"
               onChange={(e)=>{setArea(e.target.value)}}
             >
               {/* {rep?.attributes?.Description} */}
             </textarea>
           </div>
-          <button className="" onClick={poster}>submit</button>
+          <button className=" ml-6 btn btn-accent" onClick={poster}>submit</button>
+          <div className="popup">
+            < TiTick style={{ fontSize: "1.5em", color: 'black' }} />
+            <h2 style={{ color: "black" }} >Your report had been submitted.</h2>
+            <p>Admin can now review the report.</p>
+            <button type="button" style={{ color: "black" }} >OK</button>
+          </div>
         </div>
       </div>
     </div>

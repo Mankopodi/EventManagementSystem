@@ -62,7 +62,7 @@ function Admindashboard() {
                     Booked Events
                   </a>
                 </li>
-                <li  style={{color:'black'}}  onClick={() => navigate("/admindash/report")}>
+                <li  style={{color:'black'}}  onClick={() => navigate("/admindash/reportevent")}>
                   <a >
                   <HiDocumentReport style={{fontSize: "1.5em"}} />
                     Reports

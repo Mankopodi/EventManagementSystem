@@ -46,43 +46,43 @@ function Navbar() {
               </div>
 
               <div className="down">
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/home")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/home")}>
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
                     Home
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/pack")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/pack")}>
                   <a>
                     <FiPackage style={{ fontSize: "1.5em" }} />
                     Event Packages
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/history")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/history")}>
                   <a>
                     <RiFileHistoryLine style={{ fontSize: "1.5em" }} />
                     Booked History
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/bookings")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/bookings")}>
                   <a>
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/contact")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/contact")}>
                   <a>
                     <BsTelephoneForward style={{ fontSize: "1.5em" }} />
                     Contact
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/ProductReview1")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/ProductReview1")}>
                   <a>
                     <MdReviews style={{ fontSize: "1.5em" }} />
                     Reviews & Ratings
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dashboard/profile")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/profile")}>
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
                     Profile
