@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Description, Token } from "../../tokens/constant";
-
+import {Token } from "../../tokens/constant";
 import jsPDF from "jspdf";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
@@ -11,15 +10,26 @@ import htmlToPdfmake from "html-to-pdfmake";
 
 function Report() {
   //Download
-  function printDocument() {
+  async function printDocument(params) {
+    setIndivBook(params);
+    setData(params);
+    setRep(params);
+    console.log(report);
+    report.map((element)=>{
+        if (element.id === params.id) {
+            getReports(element)
+        }
+    })
+
+
     const doc = new jsPDF();
     //get Data html
     const pdfTable = document.getElementById("divToPrint");
     //html to pdf format
     var html = htmlToPdfmake(pdfTable.innerHTML);
     const documentDefinition = { content: html };
-    pdfMake.vfs = pdfFonts.pdfMake.vfs;
-    pdfMake.createPdf(documentDefinition).open();
+    await (pdfMake.vfs = pdfFonts.pdfMake.vfs);
+    await pdfMake.createPdf(documentDefinition).open();
   }
 
   const [Bookings, setBookings] = useState([]);
@@ -81,20 +91,7 @@ const initDAta = {
       });
   };
 
-  const getBookDetails = (params) => {
-      console.log(1);
-    console.log(params);
-    setIndivBook(params);
-    setData(params);
-    setRep(params);
-    console.log(report);
-    report.map((element)=>{
-        if (element.id === params.id) {
-            getReports(element)
-        }
-    })
-    console.log('it works, ',reports);
-  };
+  
 
   console.log(getBook);
 
@@ -111,7 +108,7 @@ const initDAta = {
           <table className="table w-full mr-4 ml-4">
             <thead>
               <tr>
-              <th>First Name Type</th>
+              <th>First Name </th>
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -134,7 +131,7 @@ const initDAta = {
                       <button
                         className="btn btn-accent"
                         style={{ color: "black" }}
-                        onClick={() => getBookDetails(book)}
+                        onClick={() => printDocument(book)}
                       >
                         Report
                       </button>
@@ -148,7 +145,7 @@ const initDAta = {
       </div>
 
       {/* Donwload individual data */}
-      <div>
+      <div id="divToPrint">
         <div className="min-h-screen">
           <div>
             <h1

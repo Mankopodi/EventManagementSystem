@@ -92,7 +92,7 @@ function Dashboard() {
                 </li>
                 <li
                   style={{ color: "black" }}
-                  onClick={() => navigate("/dashboard/report")}
+                  onClick={() => navigate("/dashboard/reportevent")}
                 >
                   <a>
                     <HiOutlineDocumentReport style={{ fontSize: "1.5em" }} />

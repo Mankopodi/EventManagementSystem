@@ -5,7 +5,7 @@ import jsPDF from "jspdf";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
-import {TiTick} from 'react-icons/ti'
+//import {TiTick} from 'react-icons/ti'
 import './report.css';
 
 function Eventreport() {
@@ -190,12 +190,12 @@ let data ={
             </textarea>
           </div>
           <button className=" ml-6 btn btn-accent" onClick={poster}>submit</button>
-          <div className="popup">
-            < TiTick style={{ fontSize: "1.5em", color: 'black' }} />
-            <h2 style={{ color: "black" }} >Your report had been submitted.</h2>
-            <p>Admin can now review the report.</p>
+          {/* <div className="popup" id="popup">
+            < TiTick style={{ fontSize: "1.5em", color: 'black' }}/>
+            <h2 style={{ color: "black" }} >Thank You.</h2>
+            <p>Your report has been successfully submitted. Thanks</p>
             <button type="button" style={{ color: "black" }} >OK</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
