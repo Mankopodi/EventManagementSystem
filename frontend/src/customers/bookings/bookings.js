@@ -76,11 +76,12 @@ function Bookings() {
     <div>
       <ToastContainer />
     <div className="hero min-h-screen font-bold " style={{ color: "white" }}>
-      <div className="card w-11/12  shadow-xl  mt-8 bg-green-00">
-        <div className="card-body">
+      <div className="card  w-11/12 shadow-xl  mt-8 bg-green-00">
+        <div className="card-body mt-4">
           <p className="color" style={{ color: "black" }}>
             Please fill in this form to make your booking.
           </p>
+          <div className="mt-72">
           <form>
             <div className="form-control">
               <label className="label">
@@ -279,6 +280,7 @@ function Bookings() {
             </button>
             <ToastContainer />
           </form>
+          </div>
         </div>
       </div>
     </div>

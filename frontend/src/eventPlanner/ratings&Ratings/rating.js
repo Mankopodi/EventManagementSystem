@@ -8,6 +8,18 @@ import Modal from "./Modal";
 const ProductReview1 = () => {
   const [menu, setMenu] = useState(true);
   const [menu1, setMenu1] = useState(false);
+
+
+  function getDate(){
+    
+  var date = new Date();
+	var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+
+    console.log(date)
+  }
+
+  getDate();
+
   return (
     <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
       <div className="flex flex-col justify-start items-start w-full space-y-8">
