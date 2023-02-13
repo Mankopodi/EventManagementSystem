@@ -181,13 +181,13 @@ const initDAta = {
 
           <div className="desc mt-8">
             <h1
-              className="flex justify-center font-bold text-3xl "
+              className="flex justify-center font-bold text-3xl mt-4 underline"
               style={{ color: "black" }}
             >
               Objective of the event
             </h1>
 
-           <h1 className="text-black" style={{Color: 'black'}}>
+           <h1 className="text-black mb-4 " style={{Color: 'black'}}>
                {reports.attributes.Description}
            </h1>
 

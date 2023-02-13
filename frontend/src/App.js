@@ -17,7 +17,7 @@ import Bookings from "../src/customers/bookings/bookings";
 import Viewbookings from "./customers/bookings/viewbookings";
 import Pack from "./customers/pack/pack";
 import History from "./customers/history/history";
-import Ratings from "./customers/ratings&Ratings/rating";
+//import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
 import EditUser from "./customers/packages/EditUser";
 

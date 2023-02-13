@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
-import Modal from "./modal";
+//import Modal from "./modal";
 
 function History() {
   const [Bookings, setBookings] = useState([]);
@@ -42,7 +42,7 @@ function History() {
         <table className="table w-full">
           <thead>
             <tr>
-              <th className="text-white ">Event Name</th>
+              {/* <th className="text-white ">Event Name</th> */}
               <th className="text-white ">First Name</th>
               <th className="text-white ">Last Name</th>
               <th className="text-white ">Email</th>
@@ -50,8 +50,7 @@ function History() {
               <th className="text-white ">Event Type</th>
               <th className="text-white ">Number of Guests</th>
               <th className="text-white ">Date</th>
-              {/* <th className="text-white ">Venue</th> */}
-              {/* <th className="text-white ">Packages</th> */}
+              <th className="text-white"> Cancellation</th>
               <th className="text-white ">Reviews </th>
             </tr>
           </thead>
@@ -59,7 +58,7 @@ function History() {
             {Bookings.map((book) => {
               return (
                 <tr>
-                  <td className="text-black">{book.attributes.EventName}</td>
+                  {/* <td className="text-black">{book.attributes.EventName}</td> */}
                   <td className="text-black">{book.attributes.FirstName}</td>
                   <td className="text-black">{book.attributes.LastName}</td>
                   <td className="text-black">{book.attributes.Email}</td>
@@ -68,13 +67,13 @@ function History() {
                   <td className="text-black">
                     {book.attributes.NumberOfGuests}
                   </td>
-                  <td className="text-black">{book.attributes.EventDate}</td>
-                  {/* <td className="text-black">{book.attributes.Venue}</td> */}
-                  {/* <td className="text-black">{book.attributes.Package}</td> */}
-                  <td>
+                  <td className="text-black">{book.attributes.eventDate}</td>
+                  <th><input type="checkbox" className="toggle toggle-success" checked /></th>
+                  <td> 
                     <label htmlFor="my-modal" className="btn btn-accent">
                       view Review
                     </label>
+                    </td>
 
                     {/* Put this part before </body> tag */}
                     <input
@@ -85,18 +84,37 @@ function History() {
                     <div className="modal modal-bottom sm:modal-middle">
                       <div className="modal-box">
                         <p className="font-bold text-lg">
-                          {book.attributes.EventName.toUpperCase()}
+                          {book.attributes.EventName}
                         </p>
 
-
-<div className="rating rating-lg">
-  <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked />
-  <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-</div>
-                       
+                        <div className="rating rating-lg">
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                            checked
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                        </div>
 
                         <div tabindex="0" class="collapse">
                           <div class="collapse-title text-xl font-medium">
@@ -120,7 +138,7 @@ function History() {
                         </div>
                       </div>
                     </div>
-                  </td>
+                  
                 </tr>
               );
             })}
