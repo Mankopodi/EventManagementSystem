@@ -9,40 +9,46 @@ export default function EditUser() {
   const [name, setName] = useState()
   const [decription, setDescription] = useState()
   const [price, setPrice] = useState()
+  const params = useParams();
+useEffect(() => {
+  // console.log(id);
+  console.log(params.id)
+  
+}, [])
 
   function onSubmit(e) {
-        e.preventDefault();
-        let pos = [name.id, decription.id, price.id]
-        let body = {
-          data: {
-            packageName: name,
-            package_description: decription,
-            Price:price,
-          }
-        };
-    
-        fetch(`http://localhost:1337/api/customize-events-packages`, {   //${id}
-          method: "PUT",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(body)
-        })
-          .then(() => {
-            setName(false);
-            setDescription(false);
-            setPrice(false);
-            // update();
+          e.preventDefault();
+          // let item = newTodo;
+          let pos = params.id;
+          console.log(pos)
+          let body = {
+            data: {
+                  packageName: name,
+                  package_description: decription,
+                  Price:price,
+                }
+          };
+      
+          fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
+            method: "PUT",
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(body)
           })
-      }
-    
+            .then((res) => {
+              setCustomizeEventsPackages();
+              // update();
+              console.log(res);
+            })
+        }
   
   
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Register User</h2>
+          <h2 className="text-center m-4">Edit User Package</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">

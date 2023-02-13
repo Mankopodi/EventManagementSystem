@@ -39,7 +39,7 @@ function ManageEvent() {
         };
 
         axios
-          .put(`localhost:1337/api/users/${userID.current}`, blocked, {
+          .put(`http://localhost:1337/api/users/${userID.current}`, blocked, {
             headers: {
               Authorization: `Bearer ${Token}`,
             },
