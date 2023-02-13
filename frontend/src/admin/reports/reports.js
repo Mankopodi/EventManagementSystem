@@ -111,6 +111,7 @@ const initDAta = {
           <table className="table w-full">
             <thead>
               <tr>
+                <th>First Name</th>
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -122,6 +123,7 @@ const initDAta = {
               {Bookings.map((book) => {
                 return (
                   <tr key={book.id}>
+                      <td className="text-black">{book.attributes.FirstName}</td>
                     <td className="text-black">{book.attributes.EventType}</td>
                     <td className="text-black">
                       {book.attributes.NumberOfGuests}
@@ -157,6 +159,10 @@ const initDAta = {
             </h1>
           </div>
           <div className="info mt-4">
+              <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+                  First Name :
+                  {data?.attributes?.FirstName}
+              </h1>
             <h1 className="font-semibold ml-20" style={{ color: "black" }}>
               Name of the Event:
               {data?.attributes?.EventType}
