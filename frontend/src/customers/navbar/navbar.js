@@ -64,7 +64,7 @@ function Navbar() {
                     Booked History
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/bookings")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/form")}>
                   <a>
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings

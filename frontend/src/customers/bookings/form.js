@@ -199,7 +199,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             value={formData.Email}
             onChange={handleChange}
           />
-          {/* {emailError && <p className="text-red-500 text-sm">{emailError}</p>} */}
+          
           <label htmlFor="PhoneNumber" style={{ color: "black" }}>
             Phone number:
           </label>
@@ -222,7 +222,6 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             </button>
           </div>
         </div>
-        {/* {phoneError && <p className="text-red-500 text-sm">{phoneError}</p>} */}
       </div>
     </div>
   );

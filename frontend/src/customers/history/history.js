@@ -26,6 +26,14 @@ function History() {
       .catch((err) => {
         console.log(err);
       });
+      function getButtonState(bookingCancelled) {
+        if (bookingCancelled) {
+          return <button className="btn btn-danger">Booking Cancelled</button>;
+        } else {
+          return <button className="btn btn-primary">Cancel Booking</button>;
+        }
+      }
+      
   };
 
   return (
@@ -42,11 +50,9 @@ function History() {
         <table className="table w-full">
           <thead>
             <tr>
-              {/* <th className="text-white ">Event Name</th> */}
               <th className="text-white ">First Name</th>
               <th className="text-white ">Last Name</th>
               <th className="text-white ">Email</th>
-              {/* <th className="text-white ">Phone Number</th> */}
               <th className="text-white ">Event Type</th>
               <th className="text-white ">Number of Guests</th>
               <th className="text-white ">Date</th>
@@ -58,17 +64,15 @@ function History() {
             {Bookings.map((book) => {
               return (
                 <tr>
-                  {/* <td className="text-black">{book.attributes.EventName}</td> */}
                   <td className="text-black">{book.attributes.FirstName}</td>
                   <td className="text-black">{book.attributes.LastName}</td>
                   <td className="text-black">{book.attributes.Email}</td>
-                  {/* <td className="text-black">{book.attributes.PhoneNumber}</td> */}
                   <td className="text-black">{book.attributes.EventType}</td>
                   <td className="text-black">
                     {book.attributes.NumberOfGuests}
                   </td>
                   <td className="text-black">{book.attributes.eventDate}</td>
-                  <th><input type="checkbox" className="toggle toggle-success" checked /></th>
+                  <th><button className="btn btn-outline btn-success">Booked</button></th>
                   <td> 
                     <label htmlFor="my-modal" className="btn btn-accent">
                       view Review
