@@ -2,7 +2,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Token } from "../../tokens/constant";
-//import Modal from "./modal";
+import {Space, Switch,} from "antd";
+//import { CheckOutlined,CloseOutlined } from '@ant-design/icons'
+import Modal from "./modal";
 
 function History() {
   const [Bookings, setBookings] = useState([]);
@@ -68,7 +70,19 @@ function History() {
                     {book.attributes.NumberOfGuests}
                   </td>
                   <td className="text-black">{book.attributes.eventDate}</td>
-                  <th><input type="checkbox" className="toggle toggle-success" checked /></th>
+                  <td>
+                  <Space>
+                    <Switch
+                    defaultChecked ={true} 
+                    // checkedChildren ={<CheckOutlined />}
+                    // unCheckedChildren={<CloseOutlined />}
+                    onChange={(checked) =>{
+                      console.log("switch is checked", checked)
+                    }}
+                    />
+                  </Space>
+                  </td>
+                 
                   <td> 
                     <label htmlFor="my-modal" className="btn btn-accent">
                       view Review

@@ -20,7 +20,6 @@ import History from "./customers/history/history";
 //import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
 import EditUser from "./customers/packages/EditUser";
-
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
@@ -48,6 +47,7 @@ import Profile from "./admin/profile/profile";
 import Addpackage from './customers/packages/addpackage'
 import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -91,6 +91,7 @@ function App() {
             <Route path="/dash" element={<Navbar />}>
               <Route path="home" element={<Home />}></Route>
               <Route path="viewbookings" element={<Viewbookings />}></Route>
+              <Route path="multiform" element={<multStep />}></Route>
               <Route path="bookings" element={<Bookings />}></Route>
               <Route path="pack" element={<Pack />}></Route>
               <Route path="history" element={<History />}></Route>
