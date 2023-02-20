@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -20,11 +25,10 @@ import History from "./customers/history/history";
 //import Ratings from "./customers/ratings&Ratings/rating";
 import Packages from "./customers/packages/packages";
 import EditUser from "./customers/packages/EditUser";
-
+import Form from "./customers/bookings/form";
 import Payment from "./customers/payment/Payment copy";
 import PushNotification from "./customers/pushNotification/pushNotification";
 import Contact from "./customers/contact us/contact";
-
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
@@ -45,7 +49,7 @@ import Admindashboard from "./admin/admindashboard/admindashboard";
 import Homepage from "./admin/homepage/homepage";
 import ManageEvent from "./admin/manageEvent/manageEvent";
 import Profile from "./admin/profile/profile";
-import Addpackage from './customers/packages/addpackage'
+import Addpackage from "./customers/packages/addpackage";
 import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
 
@@ -90,6 +94,7 @@ function App() {
 
             <Route path="/dash" element={<Navbar />}>
               <Route path="home" element={<Home />}></Route>
+              <Route path="form" element={<Form />}></Route>
               <Route path="viewbookings" element={<Viewbookings />}></Route>
               <Route path="bookings" element={<Bookings />}></Route>
               <Route path="pack" element={<Pack />}></Route>
@@ -98,8 +103,8 @@ function App() {
               <Route path="packages" element={<Packages />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
               <Route path="EditUser/:id" element={<EditUser />}></Route>
-              <Route path="Addpackage" element={ <Addpackage />}></Route>
-              <Route path="Addpackage" element={ <Addpackage />}></Route>
+              <Route path="Addpackage" element={<Addpackage />}></Route>
+              <Route path="Addpackage" element={<Addpackage />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route
@@ -112,7 +117,7 @@ function App() {
             {/* EVENT PLANNER */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="homes" element={<Homes />}></Route>
-              
+
               <Route path="addreview" element={<CRUD />}></Route>
               <Route path="modal" element={<Modal />}></Route>
               <Route
@@ -136,7 +141,7 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
-              
+
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
             </Route>
@@ -144,7 +149,12 @@ function App() {
             <Route path="Homepage" element={<Homepage />}></Route>
 
             {/* ADMIN ROUTES */}
-            <Route path="/admindash" element={!getToken() ? <Admindashboard /> : <Navigate to={"/login"}/>}>
+            <Route
+              path="/admindash"
+              element={
+                !getToken() ? <Admindashboard /> : <Navigate to={"/login"} />
+              }
+            >
               <Route
                 path="manageCustomerEventPlaner"
                 element={<ManageCustomerEventPlaner />}

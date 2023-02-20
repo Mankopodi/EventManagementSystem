@@ -66,18 +66,21 @@ function Pack() {
         >
           Wedding Packages
         </button>
+        
         <button
           class="btn btn-accent tablinks"
           onClick={(e) => openCity(e, "Paris")}
         >
           Party Packages
         </button>
+
         <button
           class="btn btn-accent tablinks"
           onClick={(e) => openCity(e, "Tokyo")}
         >
           Conference Packages
         </button>
+        
         <hr></hr>
       </div>
       {/* <!-- Tab content --> */}
@@ -94,7 +97,13 @@ function Pack() {
                   <th style={{ color: "white" }}>Classic </th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </p>
@@ -105,13 +114,18 @@ function Pack() {
             <table className="table w-full">
               <thead>
                 <tr>
-                  
                   <th style={{ color: "white" }}>For Adults</th>
                   <th style={{ color: "white" }}>For Kids</th>
                   <th style={{ color: "white" }}>Baby/Bridal Shower</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              <tr>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                </tr>
+              </tbody>
             </table>
           </div></p>
       </div>
@@ -127,7 +141,13 @@ function Pack() {
               
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              <tr>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                <td  style={{ color: "black" }}>jhgfd</td>
+                
+                </tr>
+              </tbody>
             </table>
           </div></p>
       </div>{" "}

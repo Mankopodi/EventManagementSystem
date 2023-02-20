@@ -189,9 +189,6 @@ let data ={
               {/* {rep?.attributes?.Description} */}
             </textarea>
           </div>
-<<<<<<< HEAD
-          <button onClick={poster}>uyedssss</button>
-=======
           <button className=" ml-6 btn btn-accent" onClick={poster}>submit</button>
           {/* <div className="popup" id="popup">
             < TiTick style={{ fontSize: "1.5em", color: 'black' }}/>
@@ -199,7 +196,6 @@ let data ={
             <p>Your report has been successfully submitted. Thanks</p>
             <button type="button" style={{ color: "black" }} >OK</button>
           </div> */}
->>>>>>> 5c784a0b149196acc527c11683628285a788bb9e
         </div>
       </div>
     </div>

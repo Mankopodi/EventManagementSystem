@@ -108,11 +108,7 @@ const initDAta = {
           <table className="table w-full mr-4 ml-4">
             <thead>
               <tr>
-<<<<<<< HEAD
-                <th>First Name</th>
-=======
               <th>First Name </th>
->>>>>>> 5c784a0b149196acc527c11683628285a788bb9e
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -124,11 +120,7 @@ const initDAta = {
               {Bookings.map((book) => {
                 return (
                   <tr key={book.id}>
-<<<<<<< HEAD
-                      <td className="text-black">{book.attributes.FirstName}</td>
-=======
                     <td className="text-black">{book.attributes.FirstName}</td>
->>>>>>> 5c784a0b149196acc527c11683628285a788bb9e
                     <td className="text-black">{book.attributes.EventType}</td>
                     <td className="text-black">
                       {book.attributes.NumberOfGuests}
@@ -164,17 +156,10 @@ const initDAta = {
             </h1>
           </div>
           <div className="info mt-4">
-<<<<<<< HEAD
-              <h1 className="font-semibold ml-20" style={{ color: "black" }}>
-                  First Name :
-                  {data?.attributes?.FirstName}
-              </h1>
-=======
           <h1 className="font-semibold ml-20" style={{ color: "black" }}>
               First Name:
               {data?.attributes?.FirstName}
             </h1>
->>>>>>> 5c784a0b149196acc527c11683628285a788bb9e
             <h1 className="font-semibold ml-20" style={{ color: "black" }}>
               Name of the Event:
               {data?.attributes?.EventType}
