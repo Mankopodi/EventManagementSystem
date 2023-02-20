@@ -32,16 +32,14 @@ function ManageEvent() {
 
 
       const blockingUser = (user) => {
-        
         userID.current = user.id;
         let newBlock = !user.blocked;
-    
         const blocked = {
           blocked: newBlock,
         };
 
         axios
-          .put(`${'localhost:1337/api/users'}/users/${userID.current}`, blocked, {
+          .put(`http://localhost:1337/api/users/${userID.current}`, blocked, {
             headers: {
               Authorization: `Bearer ${Token}`,
             },
@@ -53,9 +51,9 @@ function ManageEvent() {
               SUCCESS("Unblocked");
             }
           })
-          .catch((error) => {
-            ERROR(error.response.user.error.message);
-          })
+          // .catch((error) => {
+          //   ERROR(error.response.user.error.message);
+          // })
           .finally(() => {
             getUsers();
           });
@@ -97,7 +95,19 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary" onClick={()=> blockingUser(user)}>Suspend</button></td> 
+                            {/* <td  style={{color:'black'}}><button  class="btn btn-warning" color="primary" onClick={()=> blockingUser(user)}>Suspend</button></td>  */}
+                            
+                            <td> 
+                                <button  className={
+                                  user.blocked
+                                    ? "btn btn-outline btn-success btn-xs"
+                                    : "btn btn-outline btn-warning btn-xs"
+                                } onClick={() => blockingUser(user)} >
+                                {user.blocked ? "Unblock" : "Block"}
+                              </button>
+
+                            </td>
+
                             <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}

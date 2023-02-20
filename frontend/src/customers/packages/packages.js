@@ -54,9 +54,9 @@ import { FaEdit } from 'react-icons/fa';
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>createdAt</th>
+                {/* <th>createdAt</th>
                 <th>updatedAt</th>
-                <th>ID</th>
+                <th>ID</th> */}
                 <th>Edit</th>
                 <th>Delete</th>
 
@@ -71,12 +71,12 @@ import { FaEdit } from 'react-icons/fa';
                   <td style={{ color: 'black' }} >{customizeEventsPackage.attributes.packageName}</td>
                   <td style={{ color: 'black' }} > {customizeEventsPackage.attributes.package_description} </td>
                   <td style={{ color: 'black' }} > {customizeEventsPackage.attributes.Price} </td>
-                  <td style={{ color: 'black' }} > {customizeEventsPackage.attributes.createdAt} </td>
+                  {/* <td style={{ color: 'black' }} > {customizeEventsPackage.attributes.createdAt} </td>
                   <td style={{ color: 'black' }} > {customizeEventsPackage.attributes.updatedAt} </td>
-                  <td style={{ color: 'black' }} > {customizeEventsPackage.id} </td>
+                  <td style={{ color: 'black' }} > {customizeEventsPackage.id} </td> */}
 
                   <td style={{ color: 'black' }} >
-                    <label for="my-modal-5" class="btn" onClick={() => navigate("/dash/EditUser/:id" + customizeEventsPackage.id, { replace: true })}> <FaEdit /> </label>
+                    <label for="my-modal-5" class="btn" onClick={() => navigate("/dash/EditUser/" + customizeEventsPackage.id, { replace: true })}> <FaEdit /> </label>
                   </td>
 
                   <td>
