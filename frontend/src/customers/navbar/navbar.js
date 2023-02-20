@@ -80,8 +80,8 @@ function Navbar() {
                   <a>
                     <MdReviews style={{ fontSize: "1.5em" }} />
                     Reviews & Ratings
-                  </a> */}
-                </li>
+                  </a> 
+                </li> */}
                 <li style={{ color: "black" }} onClick={() => navigate("/dash/profile")}>
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
