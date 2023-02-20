@@ -99,7 +99,7 @@ function Dashboard() {
                     Report for all Events Venues
                   </a>
                 </li>
-                <li
+                {/* <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/ProductReview1")}
                 >
@@ -107,7 +107,7 @@ function Dashboard() {
                     <MdReviews style={{ fontSize: "1.5em" }} />
                     Reviews & Ratings
                   </a>
-                </li>
+                </li> */}
                 <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/profile")}
