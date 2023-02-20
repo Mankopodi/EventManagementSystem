@@ -2,68 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-.app {
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
+    /* background: #333333; */
+    /* transition: opacity 0.75s, visibility 0.75s; */
   }
-  
-  .todo_input {
-    height: 16px;
-    padding: 10px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border: 2px solid blueviolet;
+
+  .loader--hidden {
+    opacity: 0;
+    visibility: hidden;
   }
-  
-  .todo_button {
-    border: 2px solid blueviolet;
-    background-color: transparent;
-    height: 40px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-  
-  .todo {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    min-width: 340px;
-  }
-  
-  .edit {
-    width: 66px;
-    font-weight: 700;
-    background: blueviolet;
-    border: none;
-    border-top-right-radius: 5px;
-    height: 33px;
-    border-bottom-right-radius: 5px;
-    color: white;
-    font-size: medium;
-  }
-  
-  .delete {
-    width: 66px;
-    font-weight: 700;
-    background: white;
-    border: 2px solid blueviolet;
-    border-top-left-radius: 5px;
-    height: 33px;
-    color: blueviolet;
-    border-bottom-left-radius: 5px;
-    font-size: medium;
-  }
-  
-  .form {
-    padding-top: 27px;
-    padding-bottom: 27px;
-  }
-  
-  .name {
-    max-width: 190.34px;
-    text-align: left;
-    border: 2px solid green;
+
+  /* .loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #009578;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+  } */
+
+  /* .logout {
+    margin-top: 39%;
+  } */
+
+  @keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
+    }
   }

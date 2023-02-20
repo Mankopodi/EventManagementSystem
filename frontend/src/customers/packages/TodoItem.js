@@ -8,6 +8,8 @@ function TodoItem({ customizeEventsPackage, update }) {
       const [edit, setEdit] = useState(false);
       const [newCustomEventPackage, setNewCustomEventPackage] = useState("");
     
+
+
       // This function changes the to-do that
       // is rendered in this component.
       // This function is called when the
@@ -35,6 +37,8 @@ function TodoItem({ customizeEventsPackage, update }) {
           })
       }
     
+
+
       // This function deletes the to-do that
       // is rendered in this component.
       // This function is called when the
@@ -42,6 +46,7 @@ function TodoItem({ customizeEventsPackage, update }) {
       function deleteTodo(e) {
         e.preventDefault();
         let pos = customizeEventsPackage.id;
+        
      
         fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
           method: "DELETE"
@@ -61,7 +66,7 @@ function TodoItem({ customizeEventsPackage, update }) {
             ? <div className="name">{customizeEventsPackage.attributes.event_package}</div>
             : <form onSubmit={changeTodo}>
                 <input className="todo_input" type="text" placeholder="Enter new todo" value={newCustomEventPackage} onChange={e => setNewCustomEventPackage(e.currentTarget.value)} />
-                <button className="todo_button" type="submit">Change todo</button>
+                <button className="chanage-package todo_button" type="submit">Change todo</button>
               </form>
         }
         <div>
@@ -76,7 +81,7 @@ function TodoItem({ customizeEventsPackage, update }) {
             // value in the element, so they don't have to write it again
             setNewCustomEventPackage(customizeEventsPackage.attributes.event_package)
           }}>edit</button>
-        </div>
+        </div> 
       </div>
 
 }
