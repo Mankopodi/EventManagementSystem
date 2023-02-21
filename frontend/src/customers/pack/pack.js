@@ -66,18 +66,21 @@ function Pack() {
         >
           Wedding Packages
         </button>
+        
         <button
           class="btn btn-accent tablinks"
           onClick={(e) => openCity(e, "Paris")}
         >
           Party Packages
         </button>
+
         <button
           class="btn btn-accent tablinks"
           onClick={(e) => openCity(e, "Tokyo")}
         >
           Conference Packages
         </button>
+        
         <hr></hr>
       </div>
       {/* <!-- Tab content --> */}
@@ -94,7 +97,23 @@ function Pack() {
                   <th style={{ color: "white" }}>Classic </th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr>
+                <td  style={{ color: "black" }}>Photography</td>
+                <td  style={{ color: "black" }}>Food</td>
+                <td  style={{ color: "black" }}>Photography</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Food</td>
+                <td  style={{ color: "black" }}>Decor</td>
+                <td  style={{ color: "black" }}></td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Decor</td>
+                <td  style={{ color: "black" }}></td>
+                <td  style={{ color: "black" }}></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </p>
@@ -105,13 +124,28 @@ function Pack() {
             <table className="table w-full">
               <thead>
                 <tr>
-                  
                   <th style={{ color: "white" }}>For Adults</th>
                   <th style={{ color: "white" }}>For Kids</th>
                   <th style={{ color: "white" }}>Baby/Bridal Shower</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              <tr>
+                <td  style={{ color: "black" }}>Alcohol</td>
+                <td  style={{ color: "black" }}>Snacks</td>
+                <td  style={{ color: "black" }}>Decor</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Food</td>
+                <td  style={{ color: "black" }}>Jumping Castle</td>
+                <td  style={{ color: "black" }}>Cake</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Games</td>
+                <td  style={{ color: "black" }}>Cake</td>
+                <td  style={{ color: "black" }}>Photography</td>
+                </tr>
+              </tbody>
             </table>
           </div></p>
       </div>
@@ -127,10 +161,28 @@ function Pack() {
               
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              <tr>
+                <td  style={{ color: "black" }}>On Arrival: Hot and Cold Buffet Breakfast</td>
+                <td  style={{ color: "black" }}>Dinner</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Morning Break: Coffee, Tea, Juice and Bottled Water</td>
+                <td  style={{ color: "black" }}>Single Accommodation</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Lunch: Three Course Buffet</td>
+                <td  style={{ color: "black" }}>Sharing Accommodation</td>
+                </tr>
+                <tr>
+                <td  style={{ color: "black" }}>Afternoon Break: Tea, Coffee and Tea Time Treats</td>
+                <td  style={{ color: "black" }}>Breakfast the next Morning</td>
+                </tr>
+              </tbody>
             </table>
           </div></p>
       </div>{" "}
+      <button className="btn btn-accent mt-20">customize event package</button>
     </div>
   );
 }

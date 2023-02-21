@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Description, Token } from "../../tokens/constant";
-
+import {Token } from "../../tokens/constant";
 import jsPDF from "jspdf";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
@@ -11,15 +10,26 @@ import htmlToPdfmake from "html-to-pdfmake";
 
 function Report() {
   //Download
-  function printDocument() {
+  async function printDocument(params) {
+    setIndivBook(params);
+    setData(params);
+    setRep(params);
+    console.log(report);
+    report.map((element)=>{
+        if (element.id === params.id) {
+            getReports(element)
+        }
+    })
+
+
     const doc = new jsPDF();
     //get Data html
     const pdfTable = document.getElementById("divToPrint");
     //html to pdf format
     var html = htmlToPdfmake(pdfTable.innerHTML);
     const documentDefinition = { content: html };
-    pdfMake.vfs = pdfFonts.pdfMake.vfs;
-    pdfMake.createPdf(documentDefinition).open();
+    await (pdfMake.vfs = pdfFonts.pdfMake.vfs);
+    await pdfMake.createPdf(documentDefinition).open();
   }
 
   const [Bookings, setBookings] = useState([]);
@@ -81,20 +91,7 @@ const initDAta = {
       });
   };
 
-  const getBookDetails = (params) => {
-      console.log(1);
-    console.log(params);
-    setIndivBook(params);
-    setData(params);
-    setRep(params);
-    console.log(report);
-    report.map((element)=>{
-        if (element.id === params.id) {
-            getReports(element)
-        }
-    })
-    console.log('it works, ',reports);
-  };
+  
 
   console.log(getBook);
 
@@ -111,7 +108,7 @@ const initDAta = {
           <table className="table w-full mr-4 ml-4">
             <thead>
               <tr>
-              <th>First Name Type</th>
+              <th>First Name </th>
                 <th>Event Type</th>
                 <th>Number of Guests</th>
                 <th>Date</th>
@@ -134,7 +131,7 @@ const initDAta = {
                       <button
                         className="btn btn-accent"
                         style={{ color: "black" }}
-                        onClick={() => getBookDetails(book)}
+                        onClick={() => printDocument(book)}
                       >
                         Report
                       </button>
@@ -148,7 +145,7 @@ const initDAta = {
       </div>
 
       {/* Donwload individual data */}
-      <div>
+      <div id="divToPrint">
         <div className="min-h-screen">
           <div>
             <h1
@@ -158,24 +155,24 @@ const initDAta = {
               Report of the event
             </h1>
           </div>
-          <div className="info mt-4">
-          <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+          <div className="info mt-12">
+          <h1 className="ml-20 gap-1" style={{ color: "black" }}>
               First Name:
               {data?.attributes?.FirstName}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 " style={{ color: "black" }}>
               Name of the Event:
               {data?.attributes?.EventType}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Date of the Event:
               {data?.attributes?.eventDate}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Venue of the Event:
               {data?.attributes?.Venue}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 mt-10" style={{ color: "black" }}>
               {" "}
               Total Number Of Guests:
               {data?.attributes?.NumberOfGuests}
@@ -184,14 +181,14 @@ const initDAta = {
 
           <div className="desc mt-8">
             <h1
-              className="flex justify-center font-bold text-3xl "
+              className="flex justify-center font-bold text-3xl mt-4 underline"
               style={{ color: "black" }}
             >
               Objective of the event
             </h1>
 
-           <h1 className="text-black" style={{Color: 'black'}}>
-               {reports.attributes.Description}
+           <h1 className="text-black mb-4 " style={{Color: 'black'}}>
+               {report?.attributes.Description}
            </h1>
 
           </div>
