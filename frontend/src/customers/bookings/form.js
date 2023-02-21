@@ -17,6 +17,7 @@ function MultiStepForm() {
     NumberOfGuests: "",
     eventDate: "",
     Venue: "",
+    Package: "",
   });
 
   const [count, setCount] = useState(0);
@@ -36,7 +37,8 @@ function MultiStepForm() {
         NumberOfGuests: formData.NumberOfGuests,
         eventDate: formData.EventDate,
         EventType: formData.EventType,
-        Venue: formData.Venue
+        Venue: formData.Venue,
+        Package: formData.Package,
      }
       
     }
@@ -321,6 +323,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
           {EventTypeError && (
             <span className="text-red-500">Please select an event type</span>
           )}
+
           <div>
             <label htmlFor="Venue" style={{ color: "black" }}>
               Venue:
@@ -351,6 +354,33 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
             {venueError && (
               <span className="text-red-500">Please select a venue</span>
             )}
+          </div>
+
+          <div>
+            <label htmlFor="Venue" style={{ color: "black" }}>
+              Package:
+            </label>
+            <select
+              style={{ color: "black" }}
+              className="select select-primary w-full"
+              onChange={handleChange}
+              name="Venue"
+              id="Venue"
+              value={formData.Venue}
+            >
+              <option disabled value="">
+                Select the package for your event
+              </option>
+              <option>Premium</option>
+                  <option>Classic</option>
+                  <option>Deluxe</option>
+                  <option>Standard</option>
+                  <option>Stay-Over</option>
+                  <option>For Adults</option>
+                  <option>For Kids</option>
+                  <option>Baby/Bridal Shower</option>
+            </select>
+          
           </div>
 
           <div className="flex gap-1">

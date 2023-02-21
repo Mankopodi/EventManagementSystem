@@ -182,6 +182,7 @@ function Pack() {
             </table>
           </div></p>
       </div>{" "}
+      <button className="btn btn-accent mt-20">customize event package</button>
     </div>
   );
 }

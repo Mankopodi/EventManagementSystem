@@ -188,7 +188,7 @@ const initDAta = {
             </h1>
 
            <h1 className="text-black mb-4 " style={{Color: 'black'}}>
-               {reports?.attributes.Description}
+               {report?.attributes.Description}
            </h1>
 
           </div>
