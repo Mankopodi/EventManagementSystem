@@ -5,11 +5,14 @@ import jsPDF from "jspdf";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 //import {TiTick} from 'react-icons/ti'
 import './report.css';
 
 function Eventreport() {
- 
+  const navigate = useNavigate();
+
   //Download
   function printDocument() {
     const doc = new jsPDF();
@@ -69,11 +72,13 @@ let data ={
       },
     })
     .then((res) => {
+      navigate("/dashboard/reportevent");
       console.log(res.data.data);
       setReport(res.data.data);
     })
     .catch((err) => {
       console.log(err);
+      swal("Success!", "Your report submission was successful.", "success");
     });
  }
    

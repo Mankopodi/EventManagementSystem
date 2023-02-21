@@ -155,24 +155,24 @@ const initDAta = {
               Report of the event
             </h1>
           </div>
-          <div className="info mt-4">
-          <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+          <div className="info mt-12">
+          <h1 className="ml-20 gap-1" style={{ color: "black" }}>
               First Name:
               {data?.attributes?.FirstName}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 " style={{ color: "black" }}>
               Name of the Event:
               {data?.attributes?.EventType}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Date of the Event:
               {data?.attributes?.eventDate}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Venue of the Event:
               {data?.attributes?.Venue}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 mt-10" style={{ color: "black" }}>
               {" "}
               Total Number Of Guests:
               {data?.attributes?.NumberOfGuests}
@@ -188,7 +188,7 @@ const initDAta = {
             </h1>
 
            <h1 className="text-black mb-4 " style={{Color: 'black'}}>
-               {reports.attributes.Description}
+               {reports?.attributes.Description}
            </h1>
 
           </div>
