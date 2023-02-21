@@ -1,124 +1,128 @@
-// import React, { useState } from "react";
-// import { Notifications } from 'react-push-notification';
-// import addNotification from 'react-push-notification';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Token } from "../../tokens/constant";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-// function PushNotification() {
+// import '../../eventPlanner/reportEvents/report.css';
 
-//   const [name,setName] = useState("");
-  
-//   function warningNotification (){
-//     addNotification({
-//       title: 'Warning',
-//       subtitle: 'Please fill it',
-//       message: 'You have to enter name',
-//       theme: 'red',
-//       closeButton:"X",
-//     })
-//   };
-  
-//   function successNotification (){
-//     addNotification({
-//       title: 'Success',
-//       subtitle: 'You have successfully submitted',
-//       message: 'Welcome to GeeksforGeeks',
-//       theme: 'light',
-//       closeButton:"X",
-//       backgroundTop:"green",
-//       backgroundBottom:"yellowgreen"
-//     })
-//   };
-  
-//   function handleSubmit(e){
-//     e.preventDefault();
-//     if(name === "")
-//       warningNotification();
-//     else
-//       successNotification()
-//   }
-   
-//   return (
-//     <div className="App">
-//       <Notifications />
-//       <h1>Hey Geek!</h1>
-//       <form >
-//         <label>Name:</label>
-//         <input name="name" value={name}
-//           onChange={(e) => setName(e.target.value)}
-//         />
-//         <button onClick={handleSubmit} 
-//           type="submit">Submit
-//         </button>
-//       </form>
-//     </div>
-//   );
+function PushNotification() {
 
-  
-// }
+    const [Bookings, setBookings] = useState([]);
+    const [getBook, setIndivBook] = useState();
+    const [area, setArea] = useState()
+    const [getReport, setReport] = useState();
+    const [id, setId] = useState();
+    const params = useParams();
 
 
-// export default PushNotification
+    const [data, setData] = useState({})
+    const array=[];
+    
 
 
-// // const [name,setName] = useState("");
-  
-// //   function warningNotification (){
-// //     addNotification({
-// //       title: 'Warning',
-// //       subtitle: 'Please fill it',
-// //       message: 'You have to enter name',
-// //       theme: 'red',
-// //       closeButton:"X",
-// //     })
-// //   };
-  
-// //   function successNotification (){
-// //     addNotification({
-// //       title: 'Success',
-// //       subtitle: 'You have successfully submitted',
-// //       message: 'Welcome to GeeksforGeeks',
-// //       theme: 'light',
-// //       closeButton:"X",
-// //       backgroundTop:"green",
-// //       backgroundBottom:"yellowgreen"
-// //     })
-// //   };
-  
-// //   function handleSubmit(e){
-// //     e.preventDefault();
-// //     if(name === "")
-// //       warningNotification();
-// //     else
-// //       successNotification()
-// //   }
-   
-// //   return (
-// //     <div className="App">
-// //       <Notifications />
-// //       <h1>Hey Geek!</h1>
-// //       <form >
-// //         <label>Name:</label>
-// //         <input name="name" value={name}
-// //           onChange={(e) => setName(e.target.value)}
-// //         />
-// //         <button onClick={handleSubmit} 
-// //           type="submit">Submit
-// //         </button>
-// //       </form>
-// //     </div>
-// //   );
+    useEffect(
+        ()=>{
+            fetchData()
+        },[]
+    )
+
+    const fetchData = async () => {
+        axios
+            .get("http://localhost:1337/api/bookings", {
+                headers: {
+                    Authorization: `Bearer ${Token}`,
+                },
+            })
+            .then((res) => {
+                console.log(res.data.data, "res");
+                console.table(res.data.data.map((item) => item.attributes.FirstName))
+                const myArray = res.data.data;
+                const filteredArray = [];
+                
+                myArray.forEach((element) => {
+                    console.log(element);
+                  if (element.attributes.seen  === false) {
+                    filteredArray.push(element);
+                    setBookings(filteredArray)
+                  }
+                });
+                
+                console.log(filteredArray,"tested data");
+                
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    };
 
 
+    function upadateSeen(id)  {
+            // e.preventDefault();
+          
+            console.log(id)
+            let body = {
+              data: {
+                    seen: true,
+                  }
+            };
+        
+            fetch(`http://localhost:1337/api/bookings/${id}`, {
+              method: "PUT",
+              headers: {
+                'Content-type': 'application/json'
+              },
+              body: JSON.stringify(body)
+            })
+              .then((res) => {
+                setBookings();
+                // update();
+                console.log(res);
+              })
+    }
 
+    // useEffect(() => {
+    //     fetchData();
+    //     console.log(Bookings, "Bookings");
+    // }, [Bookings]);
 
-// // 
-import React from 'react'
+    return (
+        <div className="min-h-screen">
+            <div className="  min-h-screen overflow-scroll">
+                <div className="overflow-x-auto">
+                    <h1
+                        className="flex justify-center text-4xl font-bold bg-blend-color mb-4 mt-4"
+                        style={{ color: "black" }}
+                    >
+                        Get Notifications
+                    </h1>
 
-function pushNotification() {
-  return (
-    <div>
-      theutktuker
-    </div>
-  )
+                   <div className="flex justify-center text-1xl font-bold bg-blend-color mb-4 mt-4">
+                    {Bookings.map((book) => {
+                        return (
+                            
+                                <div className="card w-96 bg-neutral text-neutral-content m-4 font-bold bg-blend-color" key={book.id} >
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">{book.attributes.FirstName}</h2>
+                                        <p>{}</p>
+                                        <div className="card-actions justify-end">
+                                            <button className="btn btn-primary" 
+                                            onClick={()=>{upadateSeen(book.id) }}
+                                            >Accept</button>
+                                            <button className="btn btn-ghost">Deny</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        )
+                    })}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default pushNotification
+export default PushNotification;
+

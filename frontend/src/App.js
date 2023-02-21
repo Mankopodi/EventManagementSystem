@@ -48,6 +48,7 @@ import Profile from "./admin/profile/profile";
 import Addpackage from './customers/packages/addpackage'
 import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
+// import  PushNotification  from "./customers/pushNotification/pushNotification";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -157,6 +158,7 @@ function App() {
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>
+              <Route path="notifications" element={<PushNotification />}></Route>
               <Route path="report" element={<Reports />}></Route>
             </Route>
           </Routes>

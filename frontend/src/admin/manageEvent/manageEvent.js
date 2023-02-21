@@ -74,6 +74,8 @@ function ManageEvent() {
 
 
     return (
+
+      
         <div className='container' >
 
             <div className="manageEVent overflow-x-auto">
@@ -117,7 +119,16 @@ function ManageEvent() {
                 
             </div>
 
+
+
+
+
+            
+
         </div>
+
+
+
     )
 }
 

@@ -10,6 +10,7 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+import PushNotification from "../../customers/pushNotification/pushNotification";
 
 function Dashboard() {
   const navigate = useNavigate();
