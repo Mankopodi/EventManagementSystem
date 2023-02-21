@@ -62,7 +62,7 @@ function Admindashboard() {
                     Booked Events
                   </a>
                 </li>
-                <li  style={{color:'black'}}  onClick={() => navigate("/admindash/reportevent")}>
+                <li  style={{color:'black'}}  onClick={() => navigate("/admindash/report")}>
                   <a >
                   <HiDocumentReport style={{fontSize: "1.5em"}} />
                     Reports
@@ -74,12 +74,12 @@ function Admindashboard() {
                   Users
                   </a>
                 </li>
-                <li style={{color:'black'}}  onClick={() => navigate("/admindash/ProductReview1")} >
+                {/* <li style={{color:'black'}}  onClick={() => navigate("/admindash/ProductReview1")} >
                   <a >
                   <MdReviews style={{fontSize: "1.5em"}} />
                     Reviews & Ratings
                   </a>
-                </li>
+                </li> */}
                 <li style={{color:'black'}}  onClick={() => navigate("/admindash/profile")} >
                   <a>
                   <CgProfile style={{fontSize: "1.5em"}} />

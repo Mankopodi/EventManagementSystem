@@ -64,7 +64,7 @@ function Navbar() {
                     Booked History
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/bookings")}>
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/form")}>
                   <a>
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings
@@ -76,12 +76,12 @@ function Navbar() {
                     Contact
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/ProductReview1")}>
+                {/* <li style={{ color: "black" }} onClick={() => navigate("/dash/ProductReview1")}>
                   <a>
                     <MdReviews style={{ fontSize: "1.5em" }} />
                     Reviews & Ratings
-                  </a>
-                </li>
+                  </a> 
+                </li> */}
                 <li style={{ color: "black" }} onClick={() => navigate("/dash/profile")}>
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
