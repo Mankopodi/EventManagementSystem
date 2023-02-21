@@ -7891,9 +7891,4 @@
     "zen-observable" "0.8.15"
 
 "zen-observable@0.8.15":
-<<<<<<< HEAD
-  "integrity" "sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ=="
-  "resolved" "https://registry.npmjs.org/zen-observable/-/zen-observable-0.8.15.tgz"
-=======
->>>>>>> 109896af48cb6dfd5aef6131894f4c67f2ea6d77
   "version" "0.8.15"
