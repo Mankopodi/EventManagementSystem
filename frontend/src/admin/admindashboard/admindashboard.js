@@ -80,7 +80,7 @@ function Admindashboard() {
                     Reviews & Ratings
                   </a>
                 </li> */}
-                <li style={{color:'black'}}  onClick={() => navigate("/admindash/profile")} >
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/notifications")} >
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
                     Notification
