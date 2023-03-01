@@ -41,7 +41,7 @@ function MultiStepForm() {
       
     }
     axios
-      .post("http://localhost:1337/api/bookings",data, {
+      .post(`${process.env.React_App_URl}/api/bookings`,data, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },

@@ -20,7 +20,7 @@ import { FaEdit } from 'react-icons/fa';
     }, []);
 
     function getCustomizeEventsPackages() {
-      fetch(`http://localhost:1337/api/customize-events-packages`)
+      fetch(`process.env.React_App_URl/api/customize-events-packages`)
         .then(res => res.json())
         .then(customizeEventsPackages => {
           setCustomizeEventsPackages(customizeEventsPackages.data);
@@ -32,7 +32,7 @@ import { FaEdit } from 'react-icons/fa';
 
 
     const deletePackage = (id) => {
-      axios.delete(`http://localhost:1337/api/customize-events-packages/${id}`)
+      axios.delete(`process.env.React_App_URl/api/customize-events-packages/${id}`)
         .then(() => {
           getCustomizeEventsPackages();
         })

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 //import "./manage.css"
-import React_App_URl from '../../'
+// import process.env.React_App_URl from '../../'
 import { Token } from '../../tokens/constant';
 import { ERROR, SUCCESS } from '../../enviroments/toast';
 // import { Button } from 'reactstrap';
@@ -22,7 +22,7 @@ function ManageEvent() {
 
 
     function getUsers() {
-        fetch(`http://localhost:1337/api/users`)
+        fetch(`process.env.React_App_URl/api/users`)
           .then(res => res.json())
           .then(user => {
             setUser(user);
@@ -40,7 +40,7 @@ function ManageEvent() {
         };
 
         axios
-          .put(`http://localhost:1337/api/users/${userID.current}`, blocked, {
+          .put(`process.env.React_App_URl/api/users/${userID.current}`, blocked, {
             headers: {
               Authorization: `Bearer ${Token}`,
             },
@@ -65,7 +65,7 @@ function ManageEvent() {
         // console.log(pos, 'id: ');
         console.log( 'getting user: ', id)
      
-        axios.delete(`http://localhost:1337/api/users/${id}`)
+        axios.delete(`process.env.React_App_URl/api/users/${id}`)
           .then((res) => {
             console.log(res);
             getUsers();

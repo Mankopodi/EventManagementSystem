@@ -8,7 +8,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 // import '../../eventPlanner/reportEvents/report.css';
 
+
+
 function PushNotification() {
+
+// const url = process.env.process.env.React_App_URl;
 
     const [Bookings, setBookings] = useState([]);
     const [Bkings, setBkings] = useState([]);
@@ -36,7 +40,7 @@ function PushNotification() {
 
     const fetchData = async () => {
         await axios
-            .get("http://localhost:1337/api/bookings", {
+            .get(`${process.env.React_App_URl}/api/bookings`, {
                 headers: {
                     Authorization: `Bearer ${Token}`,
                 },
@@ -79,7 +83,7 @@ function PushNotification() {
             }
         };
 
-        fetch(`http://localhost:1337/api/bookings/${id}`, {
+        fetch(`process.env.React_App_URl/api/bookings/${id}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'

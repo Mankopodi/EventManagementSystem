@@ -18,7 +18,7 @@ function History() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings?sort[1]=id%3AASC", {
+      .get(`${process.env.React_App_URl}/api/bookings?sort[1]=id%3AASC`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -37,7 +37,7 @@ function History() {
   }, []);
 
   function getBook() {
-    fetch("http://localhost:1337/api/bookings")
+    fetch(`${process.env.React_App_URl}/api/bookings`)
       .then((res) => res.json())
       .then((book) => {
         setBook(book);
@@ -62,7 +62,7 @@ function History() {
     console.log(book.attributes.Status)
 
     axios
-      .put(`http://localhost:1337/api/bookings/${bookid.current}`, blocked, {
+      .put(`process.env.React_App_URl/api/bookings/${bookid.current}`, blocked, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },

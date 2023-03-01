@@ -29,7 +29,7 @@ function ReportEventsHalll() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings", {
+      .get(`${process.env.React_App_URl}/api/bookings`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },

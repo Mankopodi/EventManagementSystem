@@ -24,7 +24,7 @@ function TodoItem({ customizeEventsPackage, update }) {
           }
         };
     
-        fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
+        fetch(`process.env.React_App_URl/api/customize-events-packages/${pos}`, {
           method: "PUT",
           headers: {
             'Content-type': 'application/json'
@@ -48,7 +48,7 @@ function TodoItem({ customizeEventsPackage, update }) {
         let pos = customizeEventsPackage.id;
         
      
-        fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
+        fetch(`process.env.React_App_URl/api/customize-events-packages/${pos}`, {
           method: "DELETE"
         })
           .then(() => {

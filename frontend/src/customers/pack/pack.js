@@ -36,7 +36,7 @@ function Pack() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/packs", {
+      .get(`${process.env.React_App_URl}/api/packs`, {
         headers: {
           Authorization: `Bearer ${Token1}`,
         },

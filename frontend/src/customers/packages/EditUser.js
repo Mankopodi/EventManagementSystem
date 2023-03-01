@@ -29,7 +29,7 @@ useEffect(() => {
                 }
           };
       
-          fetch(`http://localhost:1337/api/customize-events-packages/${pos}`, {
+          fetch(`${process.env.React_App_URl}/api/customize-events-packages/${pos}`, {
             method: "PUT",
             headers: {
               'Content-type': 'application/json'
@@ -115,7 +115,7 @@ useEffect(() => {
 // const editTodoItem = async (customizeEventsPackages) => {
   //   const newTodoText = prompt("Enter new todo text or description:");
   //   if (newTodoText != null) {
-  //     const result = await axios.put("http://localhost:1337/api/customize-events-packages/" + todo.id, {
+  //     const result = await axios.put("React_App_URl/api/customize-events-packages/" + todo.id, {
   //       todoText: newTodoText,
   //     });
   //     const moddedTodos = todos.map((_customizeEventsPackages) => {
@@ -139,7 +139,7 @@ useEffect(() => {
       //     package_description: packageDescription,
       //     Price:price,
       //   }}
-      //   await axios.put(`http://localhost:1337/api/customize-events-packages`, 
+      //   await axios.put(`React_App_URl/api/customize-events-packages`, 
       //   customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
       //   navigate("/dash/packages");
         
@@ -163,7 +163,7 @@ useEffect(() => {
 //       }
 //     };
 
-//     fetch(`http://localhost:1337/api/customize-events-packages`, {   //${id}
+//     fetch(`React_App_URl/api/customize-events-packages`, {   //${id}
 //       method: "PUT",
 //       headers: {
 //         'Content-type': 'application/json'
@@ -185,7 +185,7 @@ useEffect(() => {
   //     package_description: packageDescription,
   //     Price:price,
   //   }}
-  //   await axios.put(`http://localhost:1337/api/customize-events-packages`, 
+  //   await axios.put(`React_App_URl/api/customize-events-packages`, 
   //   customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
   //   navigate("/dash/packages");
     

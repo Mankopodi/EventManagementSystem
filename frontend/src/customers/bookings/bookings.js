@@ -41,7 +41,7 @@ function Bookings() {
     console.log(bookingData);
 
     axios
-      .post("http://localhost:1337/api/bookings", bookingData, {
+      .post(`${process.env.React_App_URl}/api/bookings`, bookingData, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -56,7 +56,7 @@ function Bookings() {
       });
 
     axios
-      .get("http://localhost:1337/api/bookings", bookingData, {
+      .get(`${process.env.React_App_URl}/api/bookings`, bookingData, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },

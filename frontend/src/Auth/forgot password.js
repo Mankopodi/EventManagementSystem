@@ -20,7 +20,7 @@ const ForgotPasswordPage = () => {
      
         axios
           .post(
-            "http://localhost:1337/api/auth/forgot-password",
+            `${process.env.React_App_URl}/api/auth/forgot-password`,
             data,
             {
               headers: {
