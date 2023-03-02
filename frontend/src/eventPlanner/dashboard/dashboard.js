@@ -11,6 +11,7 @@ import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import PushNotification from "../../customers/pushNotification/pushNotification";
+import { GrNotification } from "react-icons/gr";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -116,6 +117,13 @@ function Dashboard() {
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
                     Profile
+                  </a>
+                </li>
+
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/notifications")} >
+                  <a>
+                    <GrNotification style={{ fontSize: "1.5em" }} />
+                    Notification
                   </a>
                 </li>
                 <li

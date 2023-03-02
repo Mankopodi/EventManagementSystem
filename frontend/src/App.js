@@ -144,11 +144,9 @@ function App() {
               <Route path="pack" element={<Pack />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="reporthall" element={<ReportEventHall />}></Route>
-
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
             </Route>
-
             <Route path="Homepage" element={<Homepage />}></Route>
 
             {/* ADMIN ROUTES */}

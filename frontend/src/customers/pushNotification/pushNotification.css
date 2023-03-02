@@ -1,0 +1,11 @@
+.cardBody   {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+   
+}
+
+.card {
+    background-color: rgb(133, 194, 180);
+    width: 60%;
+}

@@ -12,6 +12,7 @@ import { Outlet } from 'react-router-dom';
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import { AUTH_TOKEN } from '../../tokens/constant';
+import { GrNotification } from "react-icons/gr";
 
 function Admindashboard() {
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ function Admindashboard() {
                 </li> */}
                 <li style={{color:'black'}}  onClick={() => navigate("/admindash/notifications")} >
                   <a>
-                    <CgProfile style={{ fontSize: "1.5em" }} />
+                    <GrNotification style={{ fontSize: "1.5em" }} />
                     Notification
                   </a>
                 </li>
