@@ -2,11 +2,7 @@ import React from "react";
 import "./landingpage.css";
 import event from "../assets/images/event.png";
 import {useNavigate} from 'react-router-dom';
-<<<<<<< HEAD
 import land from '../assets/images/land.jpeg';
-=======
-import one from "../assets/images/one.jpeg";
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
 
 
 function Landingpage() {
@@ -16,16 +12,10 @@ function Landingpage() {
     <div
     className="bg_image"
     style={{
-<<<<<<< HEAD
       backgroundImage: "url(" + land + ")",
       backgroundSize: "cover",
       height: "100vh",
       color: "#f5f5f5",
-=======
-      backgroundImage: "url(" + one + ")",
-      backgroundSize: "cover",
-      color: "#000000",
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
     }}
   >
       <div className="navbar ">

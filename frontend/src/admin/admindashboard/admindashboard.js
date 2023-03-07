@@ -5,17 +5,16 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { FiPackage, FiUsers } from 'react-icons/fi';
 import { TbBrandBooking } from 'react-icons/tb';
 import { HiDocumentReport } from 'react-icons/hi';
-import { MdReviews } from 'react-icons/md';
+//import { MdReviews } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 import { Outlet } from 'react-router-dom';
-import { removeToken } from "../../helpers";
+//import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import { AUTH_TOKEN } from '../../tokens/constant';
 import { GrNotification } from "react-icons/gr";
 
-
-import './admindashboard.css'
+import ok from "../../assets/ok.jpeg";
 
 function Admindashboard() {
   const navigate = useNavigate();
@@ -26,7 +25,14 @@ function Admindashboard() {
   }
 
   return (
-    <div className=''>
+    <div
+    className="bg_image"
+    style={{
+      backgroundImage: "url(" + ok + ")",
+      backgroundSize: "cover",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}>
       <section>
         <div className="flex justify-end">
           <label htmlFor="my-drawer-2" className="btn btn-ghost drawer-button lg:hidden nav" ></label>
@@ -39,7 +45,7 @@ function Admindashboard() {
 
           </div>
 
-          <div className="admindashboard drawer-side ">
+          <div className="drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div className="flex justify-center font-bold text-4xl named mb-24" style={{ color: 'black' }}>
@@ -51,10 +57,10 @@ function Admindashboard() {
                 <li style={{ color: 'black' }} onClick={() => navigate("/admindash/homepage")}>
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
-                    Home
+                    Stats
                   </a>
                 </li>
-                <li style={{ color: 'black' }} onClick={() => navigate("/admindash/pack")}>
+                <li style={{ color: 'black' }} onClick={() => navigate("/admindash/packs")}>
                   <a >
                     <FiPackage style={{ fontSize: "1.5em" }} />
                     Event Packages

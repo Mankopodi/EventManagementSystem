@@ -52,6 +52,7 @@ import Profile from "./admin/profile/profile";
 import Addpackage from "./customers/packages/addpackage";
 import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
+import Packs from "./admin/packs/packs";
 // import  PushNotification  from "./customers/pushNotification/pushNotification";
 
 
@@ -170,6 +171,7 @@ function App() {
               <Route path="reportevent" element={<ReportEvents />}></Route>
               <Route path="notifications" element={<PushNotification />}></Route>
               <Route path="report" element={<Reports />}></Route>
+              <Route path="packs" element={<Packs />}></Route>
             </Route>
           </Routes>
         </Router>

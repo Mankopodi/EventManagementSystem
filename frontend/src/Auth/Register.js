@@ -3,13 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-<<<<<<< HEAD
 import land from '../assets/images/land.jpeg';
-=======
-
-import y from "../assets/images/y.jpeg";
-
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
 const config = require("./config.json");
 
 export default function Registration() {
@@ -60,33 +54,19 @@ export default function Registration() {
 
   return (
     <div
-<<<<<<< HEAD
     className="bg_image"
     style={{
       backgroundImage: "url(" + land + ")",
       backgroundSize: "cover",
       height: "100vh",
       color: "#f5f5f5",
-=======
-    className="bg_image min-h-screen"
-    style={{
-      backgroundImage: "url(" + y + ")",
-      backgroundSize: "cover",
-      color: "#000000",
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
     }}
   >
       <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 ">
         <div>
-<<<<<<< HEAD
           
             <h3 className="text-4xl font-bold text-black mt-20 " style={{ color: 'black' }}>Register</h3>
          
-=======
-          <a href="/">
-            <h3 className="text-4xl font-bold text-black mt-20 " style={{ color: 'black' }}>Register</h3>
-          </a>
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
         </div>
         <div className="w-full p-6 m-auto rounded-xl shadow-2xl lg:max-w-xl">
 
@@ -199,13 +179,8 @@ onChange={(e)=>{setRole(e.target.value)
 {/*  */}
                         <div className="flex items-center justify-end mt-4">
                             <a
-<<<<<<< HEAD
                                 className="text-sm text-black underline hover:text-gray-900" onClick={() => navigate("login",{replace:true})}
                               
-=======
-                                className="text-sm text-gray-600 underline hover:text-gray-900" onClick={navigate("/login")}
-                                
->>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
                             >
                                 Already registered?
                             </a>

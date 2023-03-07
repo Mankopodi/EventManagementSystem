@@ -44,7 +44,7 @@ function Navbar() {
             <Outlet />
           </div>
 
-          <div className="navcolor drawer-side ">
+          <div className="drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div
@@ -76,7 +76,7 @@ function Navbar() {
                     Booked History
                   </a>
                 </li>
-                <li
+                {/* <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dash/form")}
                 >
@@ -84,7 +84,7 @@ function Navbar() {
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings
                   </a>
-                </li>
+                </li> */}
                 <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dash/contact")}

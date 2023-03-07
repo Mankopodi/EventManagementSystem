@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { SUCCESS } from "../../enviroments/toast";
 
-import customer from "../../assets/images/customer.jpeg";
+
 
 function MultiStepForm() {
   const [step, setStep] = useState(1);
@@ -111,15 +111,8 @@ function Step1({ formData, setFormData, onNext }) {
   };
 
   return (
-    <div
-    className="bg_image min-h-screen"
-    style={{
-      backgroundImage: "url(" + customer + ")",
-      backgroundSize: "cover",
-      color: "#000000",
-    }}
-  >
-    <div className="flex justify-center">
+  
+    <div className="flex justify-center ">
       <div className="card back card-compact w-3/4">
         <div className="card-body">
           <h1 className="text-3xl font-bold " style={{ color: "black" }}>
@@ -158,7 +151,7 @@ function Step1({ formData, setFormData, onNext }) {
         </div>
       </div>
     </div>
-    </div>
+   
   );
 }
 
@@ -195,7 +188,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card back card-compact w-3/4">
+      <div className="card  card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Contact Details
@@ -247,7 +240,7 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card back card-compact w-3/4">
+      <div className="card  card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
@@ -308,7 +301,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card back card-compact w-3/4">
+      <div className="card  card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
