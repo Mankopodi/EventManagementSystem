@@ -13,8 +13,9 @@ import { useNavigate } from "react-router-dom";
 //import PushNotification from "../../customers/pushNotification/pushNotification";
 import { GrNotification } from "react-icons/gr";
 
+import ev from "../../assets/ev.jpeg";
 
-import './dashboard.css'
+
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -24,7 +25,14 @@ function Dashboard() {
   }
 
   return (
-    <div>
+    <div
+    className="bg_image"
+    style={{
+      backgroundImage: "url(" + ev + ")",
+      backgroundSize: "cover",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}>
       <section>
         <div className="flex justify-end">
           <label
@@ -39,7 +47,7 @@ function Dashboard() {
             <Outlet />
           </div>
 
-          <div className="eventbgColor drawer-side ">
+          <div className="drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div
