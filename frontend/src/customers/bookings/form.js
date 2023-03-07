@@ -296,7 +296,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
   return (
     <div className="flex justify-center">
       <div className="card bg-base-100 card-compact w-3/4">
-        <div className="card-body">
+        <div className="card-body flex justify-center">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
           </h1>
