@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import y from "../assets/images/y.jpeg";
+
 const config = require("./config.json");
 
 export default function Registration() {
@@ -52,11 +54,18 @@ export default function Registration() {
   }, [role])
 
   return (
-    <div className="min-h-screen">
+    <div
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + y + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
       <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 ">
         <div>
           <a href="/">
-            <h3 className="text-4xl font-bold text-black mt-20 " style={{ color: 'white' }}>Register</h3>
+            <h3 className="text-4xl font-bold text-black mt-20 " style={{ color: 'black' }}>Register</h3>
           </a>
         </div>
         <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
@@ -130,7 +139,7 @@ export default function Registration() {
             </div>
 
             {/*  */}
-            <h3 className="font-semibold text-black">Select Role:</h3>
+            {/* <h3 className="font-semibold text-black">Select Role:</h3>
 
             <input
               type="radio"
@@ -142,10 +151,10 @@ export default function Registration() {
                 setRole(e.target.value);
               }}
             />
-            <label htmlFor="customer" className="font-semibold text-black mr-4">Customer</label>
+            <label htmlFor="customer" className="font-semibold text-black mr-4">Customer</label> */}
 
 {/*  */}
-<h3 className="text-gray-600" >Select Admin?</h3>
+{/* <h3 className="text-gray-600" >Select Admin?</h3>
 
 <input type="radio" name="role" value={4} id="customer" 
 
@@ -166,18 +175,18 @@ onChange={(e)=>{setRole(e.target.value)
 onChange={(e)=>{setRole(e.target.value)
  console.log(role)}}
 />
-<label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label>
+<label className="text-gray-600" htmlFor="eventPlanner">Event Planner</label> */}
 {/*  */}
                         <div className="flex items-center justify-end mt-4">
                             <a
-                                className="text-sm text-gray-600 underline hover:text-gray-900"
-                                href="#"
+                                className="text-sm text-gray-600 underline hover:text-gray-900" onClick={navigate("/login")}
+                                
                             >
                                 Already registered?
                             </a>
                             <button
                                 type="submit"
-                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
+                                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-black uppercase transition duration-150 ease-in-out btn-primary border border-transparent rounded-md active:btn-primary false"
                             >
                                 Register
                             </button>

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { SUCCESS } from "../../enviroments/toast";
 
+import customer from "../../assets/images/customer.jpeg";
+
 function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -19,7 +21,7 @@ function MultiStepForm() {
     Venue: "",
   });
 
-  const [count, setCount] = useState(0);
+  //const [count, setCount] = useState(0);
 
   const navigate = useNavigate();
 
@@ -109,8 +111,16 @@ function Step1({ formData, setFormData, onNext }) {
   };
 
   return (
+    <div
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + customer + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card  card-compact w-3/4 mt-40">
         <div className="card-body">
           <h1 className="text-3xl font-bold " style={{ color: "black" }}>
             Personal details
@@ -120,7 +130,7 @@ function Step1({ formData, setFormData, onNext }) {
             First Name
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             type="text"
             id="FirstName"
             name="FirstName"
@@ -132,7 +142,7 @@ function Step1({ formData, setFormData, onNext }) {
             Last Name
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             type="text"
             id="LastName"
             name="LastName"
@@ -140,11 +150,12 @@ function Step1({ formData, setFormData, onNext }) {
             onChange={handleChange}
             required
           />
-          <button className="btn btn-primary" onClick={onNext}>
+          <button className="btn glass text-black" onClick={onNext}>
             Next
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
@@ -182,7 +193,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card  card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Contact Details
@@ -191,7 +202,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             Email:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             id="Email"
             name="Email"
             type="text"
@@ -204,7 +215,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             Phone number:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             id="PhoneNumber"
             name="PhoneNumber"
             type="tel"
@@ -213,11 +224,11 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             onChange={handleChange}
           />
 
-          <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+          <div className="flex gap-2">
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onNext}>
+            <button className="btn glass text-black" onClick={onNext}>
               Next
             </button>
           </div>
@@ -272,10 +283,10 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
             />
           </div>
           <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onNext}>
+            <button className="btn glass text-black" onClick={onNext}>
               Next
             </button>
           </div>
@@ -355,10 +366,10 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
           </div>
 
           <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onSubmit}>
+            <button className="btn glass text-black" onClick={onSubmit}>
               Submit
             </button>
           </div>

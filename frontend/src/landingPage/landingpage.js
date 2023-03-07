@@ -2,13 +2,21 @@ import React from "react";
 import "./landingpage.css";
 import event from "../assets/images/event.png";
 import {useNavigate} from 'react-router-dom';
+import one from "../assets/images/one.jpeg";
 
 
 function Landingpage() {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <div
+    className="bg_image"
+    style={{
+      backgroundImage: "url(" + one + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
       <div className="navbar ">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl" style={{color:'black'}}>Event Management System</a>
@@ -25,7 +33,7 @@ function Landingpage() {
           <img src={event} className="rounded-lg shadow-l" alt="event"/>
           <div>
             <h1 className="text-5xl font-bold" style={{color:'black'}}>Looking For An Event Manager</h1>
-            <p className="py-6" style={{color:'black'}}> Event management is the process of creating and maintaining an
+            <p className="py-6 font-bold" style={{color:'black'}}> Event management is the process of creating and maintaining an
               event. This process spans from the very beginning of planning all
               the way to post-event strategizing. At the start, an event manager
               makes planning decisions, such as the time, location, and theme of

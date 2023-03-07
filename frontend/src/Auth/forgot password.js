@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { React, useRef } from "react";
 import axios from "axios";
+import y from "../assets/images/y.jpeg";
 
 const ForgotPasswordPage = () => {
     const forms = useRef();
@@ -43,6 +44,14 @@ const ForgotPasswordPage = () => {
       };
     
   return (
+    <div
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + y + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
     <section className="bg-ct-blue-600 min-h-screen grid place-items-center">
       <div className="w-full">
         <h1 className="text-4xl xl:text-6xl text-center font-[600] text-ct-yellow-600 mb-7">
@@ -66,6 +75,7 @@ const ForgotPasswordPage = () => {
        
       </div>
     </section>
+    </div>
   );
 };
 

@@ -1,17 +1,18 @@
 
 
 import React from "react";
-import { AiOutlineHome } from "react-icons/ai";
+
 import { FiPackage } from "react-icons/fi";
 import { RiFileHistoryLine } from "react-icons/ri";
-import { TbBrandBooking } from "react-icons/tb";
-import { MdReviews } from "react-icons/md";
+
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { BsTelephoneForward } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+
+import customer from "../../assets/images/customer.jpeg";
 
 import './navbar.css'
 
@@ -22,7 +23,14 @@ function Navbar() {
     navigate("/login/", { replace: true });
   }
   return (
-    <div >
+    <div
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + customer + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
       <section>
         <div className="flex justify-end">
           <label
@@ -48,12 +56,12 @@ function Navbar() {
               </div>
 
               <div className="down">
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/home")}>
+                {/* <li style={{ color: "black" }} onClick={() => navigate("/dash/home")}>
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
                     Home
                   </a>
-                </li>
+                </li> */}
                 <li style={{ color: "black" }} onClick={() => navigate("/dash/pack")}>
                   <a>
                     <FiPackage style={{ fontSize: "1.5em" }} />
@@ -66,12 +74,12 @@ function Navbar() {
                     Booked History
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/form")}>
+                {/* <li style={{ color: "black" }} onClick={() => navigate("/dash/form")}>
                   <a>
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings
                   </a>
-                </li>
+                </li> */}
                 <li style={{ color: "black" }} onClick={() => navigate("/dash/contact")}>
                   <a>
                     <BsTelephoneForward style={{ fontSize: "1.5em" }} />
