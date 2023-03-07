@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { React, useRef } from "react";
 import axios from "axios";
+<<<<<<< HEAD
 import land from "../assets/images/land.jpeg";
+=======
+import y from "../assets/images/y.jpeg";
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
 
 const ForgotPasswordPage = () => {
   const forms = useRef();
@@ -76,6 +80,7 @@ const ForgotPasswordPage = () => {
 >>>>>>> 4e595be9a71273e4a314bb1889aa887ea24d1940
   return (
     <div
+<<<<<<< HEAD
       className="bg_image"
       style={{
         backgroundImage: "url(" + land + ")",
@@ -84,6 +89,16 @@ const ForgotPasswordPage = () => {
         color: "#f5f5f5",
       }}
     >
+=======
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + y + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
+    <section className="bg-ct-blue-600 min-h-screen grid place-items-center">
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
       <div className="w-full">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="hero min-h-screen w-screen">
@@ -110,6 +125,10 @@ const ForgotPasswordPage = () => {
         </div>
       </div>
       </div>
+<<<<<<< HEAD
+=======
+    </section>
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
     </div>
   );
 };

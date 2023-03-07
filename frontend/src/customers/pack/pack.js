@@ -52,6 +52,9 @@ function Pack() {
 
   return (
     <div className="overflow-x-auto min-h-screen">
+
+<button className="btn btn-accent mt-20 ml-8" onClick={ navigate("/dash/packages")}>Customize Package</button>
+<button className="btn btn-accent mt-20 ml-8" onClick={ navigate("/dash/form")}>Make a Booking</button>
       <h2
         className=" flex justify-center text-4xl font-bold mt-2 mb-2"
         style={{ color: "black" }}
@@ -182,9 +185,9 @@ function Pack() {
             </table>
           </div></p>
       </div>{" "}
-      <button className="btn btn-accent mt-20" onClick={ navigate("/dash/packages")}>customize event package</button>
+     
     </div>
   );
 }
 
-export default Pack;
+export default Pack; 

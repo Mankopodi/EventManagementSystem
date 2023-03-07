@@ -3,14 +3,14 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FiPackage } from "react-icons/fi";
 import { RiFileHistoryLine } from "react-icons/ri";
 import { BsTelephoneInbound } from "react-icons/bs";
-import { MdReviews } from "react-icons/md";
+//import { MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
-import PushNotification from "../../customers/pushNotification/pushNotification";
+//import PushNotification from "../../customers/pushNotification/pushNotification";
 import { GrNotification } from "react-icons/gr";
 
 

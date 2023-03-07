@@ -78,6 +78,7 @@ let data ={
     })
     .catch((err) => {
       console.log(err);
+      
       swal("Success!", "Your report submission was successful.", "success");
     });
  }

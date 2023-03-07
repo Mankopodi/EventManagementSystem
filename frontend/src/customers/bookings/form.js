@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { SUCCESS } from "../../enviroments/toast";
 
+import customer from "../../assets/images/customer.jpeg";
+
 function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -19,7 +21,7 @@ function MultiStepForm() {
     Venue: "",
   });
 
-  const [count, setCount] = useState(0);
+  //const [count, setCount] = useState(0);
 
   const navigate = useNavigate();
 
@@ -109,6 +111,14 @@ function Step1({ formData, setFormData, onNext }) {
   };
 
   return (
+    <div
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + customer + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+    }}
+  >
     <div className="flex justify-center">
       <div className="card back card-compact w-3/4">
         <div className="card-body">
@@ -147,6 +157,7 @@ function Step1({ formData, setFormData, onNext }) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
@@ -193,7 +204,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             Email:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             id="Email"
             name="Email"
             type="text"
@@ -206,7 +217,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             Phone number:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full font-bold"
             id="PhoneNumber"
             name="PhoneNumber"
             type="tel"

@@ -1,8 +1,7 @@
 import React from "react";
-import { AiOutlineHome } from "react-icons/ai";
+
 import { FiPackage } from "react-icons/fi";
 import { RiFileHistoryLine } from "react-icons/ri";
-import { TbBrandBooking } from "react-icons/tb";
 
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
@@ -10,6 +9,8 @@ import { BsTelephoneForward } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+
+import customer from "../../assets/images/customer.jpeg";
 
 import './navbar.css'
 
@@ -54,19 +55,13 @@ function Navbar() {
               </div>
 
               <div className="down">
-                <li
-                  style={{ color: "black" }}
-                  onClick={() => navigate("/dash/home")}
-                >
+                {/* <li style={{ color: "black" }} onClick={() => navigate("/dash/home")}>
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
                     Home
                   </a>
-                </li>
-                <li
-                  style={{ color: "black" }}
-                  onClick={() => navigate("/dash/pack")}
-                >
+                </li> */}
+                <li style={{ color: "black" }} onClick={() => navigate("/dash/pack")}>
                   <a>
                     <FiPackage style={{ fontSize: "1.5em" }} />
                     Event Packages

@@ -5,7 +5,12 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jwt_decode from "jwt-decode";
 import { SUCCESS,ERROR } from "../enviroments/toast";
+<<<<<<< HEAD
 import land from '../assets/images/land.jpeg';
+=======
+import y from "../assets/images/y.jpeg";
+
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
 const config = require("./config.json");
 
 
@@ -84,12 +89,20 @@ export default function Login() {
 
   return (
     <div
+<<<<<<< HEAD
     className="bg_image"
     style={{
       backgroundImage: "url(" + land + ")",
       backgroundSize: "cover",
       height: "100vh",
       color: "#f5f5f5",
+=======
+    className="bg_image min-h-screen"
+    style={{
+      backgroundImage: "url(" + y + ")",
+      backgroundSize: "cover",
+      color: "#000000",
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
     }}
   >
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -135,7 +148,11 @@ export default function Login() {
 
           <div className=" flex justify-center mt-6">
             <button 
+<<<<<<< HEAD
               className="px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent w-60" 
+=======
+              className="w-full px-4 py-2 tracking-wide text-black  transform rounded-md  focus:outline-none btn btn-accent" 
+>>>>>>> 8c6c2eab843f59d92328279b58cb3bbe421c6f75
               
             >
               Login
