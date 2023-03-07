@@ -3,13 +3,18 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FiPackage } from "react-icons/fi";
 import { RiFileHistoryLine } from "react-icons/ri";
 import { BsTelephoneInbound } from "react-icons/bs";
-import { MdReviews } from "react-icons/md";
+//import { MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+//import PushNotification from "../../customers/pushNotification/pushNotification";
+import { GrNotification } from "react-icons/gr";
+
+
+import './dashboard.css'
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -34,7 +39,7 @@ function Dashboard() {
             <Outlet />
           </div>
 
-          <div className="drawer-side ">
+          <div className="eventbgColor drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div
@@ -115,6 +120,13 @@ function Dashboard() {
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
                     Profile
+                  </a>
+                </li>
+
+                <li style={{color:'black'}}  onClick={() => navigate("/admindash/notifications")} >
+                  <a>
+                    <GrNotification style={{ fontSize: "1.5em" }} />
+                    Notification
                   </a>
                 </li>
                 <li

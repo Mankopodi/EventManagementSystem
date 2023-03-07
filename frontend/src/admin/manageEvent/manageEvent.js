@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 //import "./manage.css"
-import React_App_URl from '../../'
+// import process.env.React_App_URl from '../../'
 import { Token } from '../../tokens/constant';
 import { ERROR, SUCCESS } from '../../enviroments/toast';
 // import { Button } from 'reactstrap';
@@ -22,7 +22,7 @@ function ManageEvent() {
 
 
     function getUsers() {
-        fetch(`http://localhost:1337/api/users`)
+        fetch(`${process.env.React_App_URl}/api/users`)
           .then(res => res.json())
           .then(user => {
             setUser(user);
@@ -33,16 +33,14 @@ function ManageEvent() {
 
 
       const blockingUser = (user) => {
-        
         userID.current = user.id;
         let newBlock = !user.blocked;
-    
         const blocked = {
           blocked: newBlock,
         };
 
         axios
-          .put(`${'localhost:1337/api/users'}/users/${userID.current}`, blocked, {
+          .put(`${process.env.React_App_URl}/api/users/${userID.current}`, blocked, {
             headers: {
               Authorization: `Bearer ${Token}`,
             },
@@ -54,9 +52,9 @@ function ManageEvent() {
               SUCCESS("Unblocked");
             }
           })
-          .catch((error) => {
-            ERROR(error.response.user.error.message);
-          })
+          // .catch((error) => {
+          //   ERROR(error.response.user.error.message);
+          // })
           .finally(() => {
             getUsers();
           });
@@ -67,7 +65,7 @@ function ManageEvent() {
         // console.log(pos, 'id: ');
         console.log( 'getting user: ', id)
      
-        axios.delete(`http://localhost:1337/api/users/${id}`)
+        axios.delete(`${process.env.React_App_URl}/api/users/${id}`)
           .then((res) => {
             console.log(res);
             getUsers();
@@ -77,6 +75,8 @@ function ManageEvent() {
 
 
     return (
+
+      
         <div className='container' >
 
             <div className="manageEVent overflow-x-auto">
@@ -98,7 +98,19 @@ function ManageEvent() {
                         <tr key={user.id}>
                             <td  style={{color:'black'}}>{user.username} </td>
                             <td  style={{color:'black'}}>{user.email} </td>
-                            <td  style={{color:'black'}}><button  class="btn btn-warn" color="primary" onClick={()=> blockingUser(user)}>Suspend</button></td> 
+                            {/* <td  style={{color:'black'}}><button  class="btn btn-warning" color="primary" onClick={()=> blockingUser(user)}>Suspend</button></td>  */}
+                            
+                            <td> 
+                                <button  className={
+                                  user.blocked
+                                    ? "btn btn-outline btn-success btn-xs"
+                                    : "btn btn-outline btn-warning btn-xs"
+                                } onClick={() => blockingUser(user)} >
+                                {user.blocked ? "Unblock" : "Block"}
+                              </button>
+
+                            </td>
+
                             <td  style={{color:'black'}}><button class="btn btn-error" onClick={()=> deleteTodo(user.id)}>Delete</button></td>
                         </tr>
                         ))}
@@ -108,7 +120,16 @@ function ManageEvent() {
                 
             </div>
 
+
+
+
+
+            
+
         </div>
+
+
+
     )
 }
 

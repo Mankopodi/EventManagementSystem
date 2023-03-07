@@ -15,7 +15,7 @@ function ViewRescheduleOfEvents() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings", {
+      .get(`${process.env.React_App_URl}/api/bookings`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -44,7 +44,7 @@ function ViewRescheduleOfEvents() {
     console.log(selectedId);
 
     axios
-      .put(`http://localhost:1337/api/bookings/${selectedId}`, eventData, {
+      .put(`process.env.React_App_URl/api/bookings/${selectedId}`, eventData, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },

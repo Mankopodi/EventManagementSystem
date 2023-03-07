@@ -36,7 +36,7 @@ function Pack() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/packs", {
+      .get(`${process.env.React_App_URl}/api/packs`, {
         headers: {
           Authorization: `Bearer ${Token1}`,
         },
@@ -182,7 +182,7 @@ function Pack() {
             </table>
           </div></p>
       </div>{" "}
-      <button className="btn btn-accent mt-20" onClick={ navigate("/dash/Addpackage")}>customize event package</button>
+      <button className="btn btn-accent mt-20" onClick={ navigate("/dash/packages")}>customize event package</button>
     </div>
   );
 }

@@ -13,6 +13,8 @@ import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 
+import './navbar.css'
+
 function Navbar() {
   const navigate = useNavigate();
   function logout() {
@@ -20,7 +22,7 @@ function Navbar() {
     navigate("/login/", { replace: true });
   }
   return (
-    <div>
+    <div >
       <section>
         <div className="flex justify-end">
           <label
@@ -35,7 +37,7 @@ function Navbar() {
             <Outlet />
           </div>
 
-          <div className="drawer-side ">
+          <div className="navcolor drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div

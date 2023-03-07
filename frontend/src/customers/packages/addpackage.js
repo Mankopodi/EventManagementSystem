@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import './packages.css'
 
 export default function Addpackage() {
 
@@ -13,12 +14,21 @@ export default function Addpackage() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    // let customizeEventsPackages = {data: {
+    //     data:{	      
+    //       packageName: packageName,
+    //       package_description: packageDescription,
+    //   	  Price:price,
+    //         }}}
+    //       await axios.post(`process.env.React_App_URl/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', )).catch(err => console.log(err))
+      
     let customizeEventsPackages = {data: {
       packageName: packageName,
       package_description: packageDescription,
       Price:price,
     }}
-    await axios.post(`http://localhost:1337/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', res)).catch(err => console.log(err))
+    await axios.post(`${process.env.React_App_URl}/api/customize-events-packages`, customizeEventsPackages).then ( res => console.log('posting data', res)).catch(err => console.log(err))
+    
 
     
     navigate("/dash/packages");
@@ -26,14 +36,14 @@ export default function Addpackage() {
   };
   return (
     <div className="container">
-      <div className="row">
+      <div className=" cardinput row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Register User</h2>
+          <h2 className="text-center m-4">Add Package</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Name" className="form-label">
-              package name
+             
               </label>
               <input
                 type="text"
@@ -46,20 +56,20 @@ export default function Addpackage() {
             </div>
             <div className="mb-3">
               <label htmlFor="Username" className="form-label">
-                Package description
+                
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your decription"
-                name="descriptione"
+                name="description"
                 value={packageDescription}
                 onChange={(e) => setPackageDescription(e.target.value)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Email" className="form-label">
-                Price
+                
               </label>
               <input
                 type={"text"}

@@ -12,7 +12,7 @@
 //     async function fetchData() {
 //       try {
 //         // Make a GET request to the Strapi backend
-//         const response = await axios.get(`http://localhost:1337/api/users-details`);
+//         const response = await axios.get(`process.env.React_App_URl/api/users-details`);
 //         setLoader(true);
 //         setUser(response.data.data);
 //         console.log(users)
