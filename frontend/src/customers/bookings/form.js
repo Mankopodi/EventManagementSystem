@@ -110,17 +110,17 @@ function Step1({ formData, setFormData, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card back card-compact w-3/4">
         <div className="card-body">
           <h1 className="text-3xl font-bold " style={{ color: "black" }}>
             Personal details
           </h1>
 
-          <label htmlFor="FirstName" style={{ color: "black" }}>
-            First Name
+          <label htmlFor="FirstName"  className="font-bold" style={{ color: "black" }}>
+            First Name:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full "
             type="text"
             id="FirstName"
             name="FirstName"
@@ -128,11 +128,11 @@ function Step1({ formData, setFormData, onNext }) {
             onChange={handleChange}
             required
           />
-          <label htmlFor="LastName" style={{ color: "black" }}>
-            Last Name
+          <label htmlFor="LastName" className="font-bold"  style={{ color: "black" }}>
+            Last Name:
           </label>
           <input
-            className="input input-bordered input-primary w-full"
+            className="input input-bordered input-primary w-full "
             type="text"
             id="LastName"
             name="LastName"
@@ -140,9 +140,11 @@ function Step1({ formData, setFormData, onNext }) {
             onChange={handleChange}
             required
           />
-          <button className="btn btn-primary" onClick={onNext}>
+          <div className="flex justify-start">
+          <button className="btn glass w-40 text-black" onClick={onNext}>
             Next
           </button>
+          </div>
         </div>
       </div>
     </div>
@@ -182,12 +184,12 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card back card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Contact Details
           </h1>
-          <label htmlFor="Email" style={{ color: "black" }}>
+          <label htmlFor="Email" className="font-bold"  style={{ color: "black" }}>
             Email:
           </label>
           <input
@@ -200,7 +202,7 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             onChange={handleChange}
           />
           
-          <label htmlFor="PhoneNumber" style={{ color: "black" }}>
+          <label htmlFor="PhoneNumber" className="font-bold"  style={{ color: "black" }}>
             Phone number:
           </label>
           <input
@@ -213,11 +215,11 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             onChange={handleChange}
           />
 
-          <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+          <div className="flex gap-4">
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onNext}>
+            <button className="btn glass text-black " onClick={onNext}>
               Next
             </button>
           </div>
@@ -234,7 +236,7 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card back card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
@@ -271,11 +273,11 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
               onChange={handleChange}
             />
           </div>
-          <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+          <div className="flex gap-4">
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onNext}>
+            <button className="btn glass text-black" onClick={onNext}>
               Next
             </button>
           </div>
@@ -295,7 +297,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 card-compact w-3/4">
+      <div className="card back card-compact w-3/4">
         <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
@@ -353,11 +355,11 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
             )}
           </div>
 
-          <div className="flex gap-1">
-            <button className="btn btn-primary" onClick={onPrevious}>
+          <div className="flex gap-4">
+            <button className="btn glass text-black" onClick={onPrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={onSubmit}>
+            <button className="btn glass text-black" onClick={onSubmit}>
               Submit
             </button>
           </div>

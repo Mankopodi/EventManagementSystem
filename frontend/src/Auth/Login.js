@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jwt_decode from "jwt-decode";
 import { SUCCESS,ERROR } from "../enviroments/toast";
-
+import land from '../assets/images/land.jpeg';
 const config = require("./config.json");
 
 
@@ -83,10 +83,19 @@ export default function Login() {
   };
 
   return (
+    <div
+    className="bg_image"
+    style={{
+      backgroundImage: "url(" + land + ")",
+      backgroundSize: "cover",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}
+  >
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 m-auto rounded-xl shadow-xl lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-black ">
-          Sign in
+      <div className="w-full p-6 m-auto rounded-xl shadow-2xl lg:max-w-xl">
+        <h1 className="text-3xl font-bold text-center text-black ">
+          Login Now
         </h1>
         <form className="mt-6" onSubmit={login}>
           <div className="mb-2">
@@ -124,9 +133,9 @@ export default function Login() {
             Forget Password?
           </Link>
 
-          <div className="mt-6">
+          <div className=" flex justify-center mt-6">
             <button 
-              className="w-full px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent" 
+              className="px-4 py-2 tracking-wide text-white  transform rounded-md  focus:outline-none btn btn-accent w-60" 
               
             >
               Login
@@ -146,6 +155,7 @@ export default function Login() {
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 }

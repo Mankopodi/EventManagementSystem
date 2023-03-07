@@ -1,17 +1,17 @@
-
-
 import React from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import { FiPackage } from "react-icons/fi";
 import { RiFileHistoryLine } from "react-icons/ri";
 import { TbBrandBooking } from "react-icons/tb";
-import { MdReviews } from "react-icons/md";
+
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { BsTelephoneForward } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
 import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
+
+import customer from "../../assets/customer.jpeg"
 
 function Navbar() {
   const navigate = useNavigate();
@@ -20,7 +20,15 @@ function Navbar() {
     navigate("/login/", { replace: true });
   }
   return (
-    <div>
+    <div
+    className="bg_image"
+    style={{
+      backgroundImage: "url(" + customer + ")",
+      backgroundSize: "cover",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}
+  >
       <section>
         <div className="flex justify-end">
           <label
@@ -46,43 +54,56 @@ function Navbar() {
               </div>
 
               <div className="down">
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/home")}>
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/home")}
+                >
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
                     Home
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/pack")}>
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/pack")}
+                >
                   <a>
                     <FiPackage style={{ fontSize: "1.5em" }} />
                     Event Packages
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/history")}>
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/history")}
+                >
                   <a>
                     <RiFileHistoryLine style={{ fontSize: "1.5em" }} />
                     Booked History
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/form")}>
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/form")}
+                >
                   <a>
                     <TbBrandBooking style={{ fontSize: "1.5em" }} />
                     Bookings
                   </a>
                 </li>
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/contact")}>
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/contact")}
+                >
                   <a>
                     <BsTelephoneForward style={{ fontSize: "1.5em" }} />
                     Contact
                   </a>
                 </li>
-                {/* <li style={{ color: "black" }} onClick={() => navigate("/dash/ProductReview1")}>
-                  <a>
-                    <MdReviews style={{ fontSize: "1.5em" }} />
-                    Reviews & Ratings
-                  </a> 
-                </li> */}
-                <li style={{ color: "black" }} onClick={() => navigate("/dash/profile")}>
+
+                <li
+                  style={{ color: "black" }}
+                  onClick={() => navigate("/dash/profile")}
+                >
                   <a>
                     <CgProfile style={{ fontSize: "1.5em" }} />
                     Profile
