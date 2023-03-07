@@ -58,7 +58,7 @@ function Dashboard() {
               </div>
 
               <div className="down">
-                <li
+                {/* <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/homes")}
                 >
@@ -66,7 +66,7 @@ function Dashboard() {
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
                     Home
                   </a>
-                </li>
+                </li> */}
                 <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/pack")}
@@ -87,7 +87,7 @@ function Dashboard() {
                 </li>
                 <li
                   style={{ color: "black" }}
-                  onClick={() => navigate("/dashboard/contact")}
+                  onClick={() => navigate("/dashboard/contacts")}
                 >
                   <a>
                     <BsTelephoneInbound style={{ fontSize: "1.5em" }} />
@@ -100,10 +100,10 @@ function Dashboard() {
                 >
                   <a>
                     <HiOutlineDocumentReport style={{ fontSize: "1.5em" }} />
-                    Report for all Events
+                    Reports
                   </a>
                 </li>
-                <li
+                {/* <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/reportevent")}
                 >
@@ -111,7 +111,7 @@ function Dashboard() {
                     <HiOutlineDocumentReport style={{ fontSize: "1.5em" }} />
                     Report for all Events Venues
                   </a>
-                </li>
+                </li> */}
                 {/* <li
                   style={{ color: "black" }}
                   onClick={() => navigate("/dashboard/ProductReview1")}

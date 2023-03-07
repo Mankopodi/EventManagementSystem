@@ -14,7 +14,7 @@ function Profile() {
     <div>
       <ToastContainer />
       <div className="hero min-h-screen flex justify-center align-middle">
-        <div className="card w-96 card-compact  shadow-2xl">
+        <div className="card pack w-96 card-compact  shadow-2xl">
         
         
           <div className="card-body">

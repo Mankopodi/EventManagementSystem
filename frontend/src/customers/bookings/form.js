@@ -113,8 +113,8 @@ function Step1({ formData, setFormData, onNext }) {
   return (
   
     <div className="flex justify-center ">
-      <div className="card back card-compact w-3/4">
-        <div className="card-body">
+      <div className="card pack card-compact w-3/4">
+        <div className="card-body pack">
           <h1 className="text-3xl font-bold " style={{ color: "black" }}>
             Personal details
           </h1>
@@ -188,8 +188,8 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card  card-compact w-3/4">
-        <div className="card-body">
+      <div className="card pack card-compact w-3/4">
+        <div className="card-body pack">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Contact Details
           </h1>
@@ -240,13 +240,13 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card  card-compact w-3/4">
-        <div className="card-body">
+      <div className="card pack card-compact w-3/4">
+        <div className="card-body pack">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
           </h1>
           <div className="form-control">
-            <label className="label">
+            <label className="label font-bold">
               <span style={{ color: "black" }}>Number of Guests:</span>
             </label>
             <label className="label">
@@ -264,7 +264,7 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
             </label>
           </div>
           <div>
-            <label htmlFor="EventDate" style={{ color: "black" }}>
+            <label htmlFor="EventDate" className="font-bold" style={{ color: "black" }}>
               Date:
             </label>
             <input
@@ -301,12 +301,12 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
 
   return (
     <div className="flex justify-center">
-      <div className="card  card-compact w-3/4">
-        <div className="card-body">
+      <div className="card pack card-compact w-3/4">
+        <div className="card-body pack">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
           </h1>
-          <label htmlFor="EventType" style={{ color: "black" }}>
+          <label htmlFor="EventType" className="font-bold" style={{ color: "black" }}>
             Event Type:
           </label>
           <select
@@ -329,7 +329,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
           )}
           
           <div>
-            <label htmlFor="Venue" style={{ color: "black" }}>
+            <label htmlFor="Venue" className="font-bold" style={{ color: "black" }}>
               Venue:
             </label>
             <select

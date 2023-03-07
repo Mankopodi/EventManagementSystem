@@ -37,11 +37,12 @@ import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
 import Modal from "./eventPlanner/ratings&Ratings/Modal";
 import EventCrud from "./eventPlanner/eventCrud/eventCrud";
-import EmailCommunication from "./eventPlanner/emailComunnication/emailComunnication";
 import ReportEvents from "./eventPlanner/reportEvents/eventreport";
 import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll";
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
+import Contacts from "./eventPlanner/contacts/contact";
+//import  PushNotifications  from "./eventPlanner/pushNotifications/pushNotifications";
 
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
@@ -53,7 +54,7 @@ import Addpackage from "./customers/packages/addpackage";
 import Reports from "./admin/reports/reports";
 import { getToken } from "./helpers";
 import Packs from "./admin/packs/packs";
-// import  PushNotification  from "./customers/pushNotification/pushNotification";
+
 
 
 function App() {
@@ -130,10 +131,7 @@ function App() {
               ></Route>
 
               <Route path="eventCrud" element={<EventCrud />}></Route>
-              <Route
-                path="emailcommunication"
-                element={<EmailCommunication />}
-              ></Route>
+              
               <Route path="reportevents" element={<ReportEvents />}></Route>
 
               <Route
@@ -147,6 +145,11 @@ function App() {
               <Route path="reporthall" element={<ReportEventHall />}></Route>
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
+              <Route path="contacts" element={<Contacts />}></Route>
+              {/* <Route
+                path="pushNotifications"
+                element={<PushNotifications />}
+              ></Route> */}
             </Route>
             <Route path="Homepage" element={<Homepage />}></Route>
 
@@ -172,6 +175,7 @@ function App() {
               <Route path="notifications" element={<PushNotification />}></Route>
               <Route path="report" element={<Reports />}></Route>
               <Route path="packs" element={<Packs />}></Route>
+             
             </Route>
           </Routes>
         </Router>
