@@ -14,7 +14,7 @@ function Viewbooking() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings", {
+      .get(`${process.env.React_App_URl}/api/bookings`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -32,7 +32,7 @@ function Viewbooking() {
       
       console.log( 'delete booking:', id)
    
-      axios.delete(`http://localhost:1337/api/bookings/${id}`)
+      axios.delete(`process.env.React_App_URl/api/bookings/${id}`)
         .then((res) => {
           console.log(res);
           setBookings();

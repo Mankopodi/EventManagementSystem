@@ -10,6 +10,7 @@ function History() {
   const navigate = useNavigate();
   const bookid = useRef();
   const [book, setBook] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -17,7 +18,7 @@ function History() {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings", {
+      .get(`${process.env.React_App_URl}/api/bookings?sort[1]=id%3AASC`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -36,7 +37,7 @@ function History() {
   }, []);
 
   function getBook() {
-    fetch("http://localhost:1337/api/bookings")
+    fetch(`${process.env.React_App_URl}/api/bookings`)
       .then((res) => res.json())
       .then((book) => {
         setBook(book);
@@ -46,19 +47,22 @@ function History() {
   // cancelling a booking
 
   const cancelBooking = (book) => {
+    setLoading(true);
     bookid.current = book.id;
-    let newBlock = !book.blocked;
+    let newBlock = !book.attributes.Status;
 
     const blocked = {
       data: {
-        blocked: newBlock,
+        Status: newBlock,
       },
     };
 
-    // console.log(newBlock);
+    console.log(newBlock);
+    console.log(book)
+    console.log(book.attributes.Status)
 
     axios
-      .put(`http://localhost:1337/api/bookings/${bookid.current}`, blocked, {
+      .put(`process.env.React_App_URl/api/bookings/${bookid.current}`, blocked, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -69,18 +73,21 @@ function History() {
         } else {
           SUCCESS("unBooking");
         }
+  
       })
       .catch((error) => {
         // ERROR(error.response.book.error.message);
         console.log(error);
       })
       .finally(() => {
-        getBook();
+        fetchData();
+        setLoading(false)
       });
   };
 
   return (
     <div className="min-h-screen">
+      <div>{loading ? 'loading.....': ''}</div>
       <div className="overflow-x-auto">
         <h1
           className="flex justify-center text-4xl font-bold mt-2 mb-1"
@@ -100,6 +107,7 @@ function History() {
               <th className="text-white ">Number of Guests</th>
               <th className="text-white ">Date</th>
               <th className="text-white"> Cancellation</th>
+          
               <th className="text-white ">Reviews </th>
             </tr>
           </thead>
@@ -116,16 +124,28 @@ function History() {
                   </td>
                   <td className="text-black">{book.attributes.eventDate}</td>
                   <th>
-                    <button
-                      className="btn btn-outline btn-success"
-                      onClick={() => cancelBooking(book)}
-                    >
-                      Booked
-                    </button>
+                    {book.attributes.Status ? (
+                      <button
+                        className="btn btn-outline btn-error"
+                        onClick={() => cancelBooking(book)}
+                      >
+                        Canceled
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-outline btn-success"
+                        onClick={() => cancelBooking(book)}
+                      >
+                        Booked
+                      </button>
+                    )}
+
+                    {/* */}
                   </th>
+                  
                   <td>
                     <label htmlFor="my-modal" className="btn btn-accent">
-                      view Review
+                      Review
                     </label>
                   </td>
 
@@ -137,57 +157,52 @@ function History() {
                   />
                   <div className="modal modal-bottom sm:modal-middle">
                     <div className="modal-box">
-                      
-
-              
                       <div tabindex="0" class=" justify-items-center">
-                   
-                   
-
-                      <div className="rating rating-lg ">
-                        <input
-                          type="radio"
-                          name="rating-8"
-                          className="mask mask-star-2 bg-orange-400"
-                        />
-                        <input
-                          type="radio"
-                          name="rating-8"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                        <input
-                          type="radio"
-                          name="rating-8"
-                          className="mask mask-star-2 bg-orange-400"
-                        />
-                        <input
-                          type="radio"
-                          name="rating-8"
-                          className="mask mask-star-2 bg-orange-400"
-                        />
-                        <input
-                          type="radio"
-                          name="rating-8"
-                          className="mask mask-star-2 bg-orange-400"
-                        />
-                      </div>
-
                         <div className="collapse-title text-xl font-medium ">
-                          <p className="uppercase">{book.attributes.EventType}</p>
-                          
+                          <p className="uppercase">
+                            {book.attributes.EventType}
+                          </p>
                         </div>
-                        <div >
+
+                        <div className="rating rating-lg flex justify-center ">
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                            checked
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                          <input
+                            type="radio"
+                            name="rating-8"
+                            className="mask mask-star-2 bg-orange-400"
+                          />
+                        </div>
+
+                        <div>
                           <textarea
-                            className="textarea textarea-info w-96"
+                            className="textarea textarea-info w-96 flex justify-center"
                             placeholder="Add Comment Optional..!"
                           ></textarea>
-                        
                         </div>
                       </div>
                       <div className="modal-action">
                         <label htmlFor="my-modal" className="btn">
-                          Close!
+                          post!
                         </label>
                       </div>
                     </div>

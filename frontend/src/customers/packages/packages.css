@@ -123,3 +123,10 @@
   .customCard {
     display: flex;
   }
+
+  .cardinput {
+    
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }

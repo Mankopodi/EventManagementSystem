@@ -41,7 +41,7 @@ function MultiStepForm() {
       
     }
     axios
-      .post("http://localhost:1337/api/bookings",data, {
+      .post(`${process.env.React_App_URl}/api/bookings`,data, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -49,7 +49,7 @@ function MultiStepForm() {
       .then((res) => {
         console.log(res);
         SUCCESS("Your booking has been successfully booked!");
-        // navigate("/dash/Payment");
+        navigate("/dash/history");
       })
       .catch((err) => {
         console.log(err);
@@ -323,6 +323,7 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
           {EventTypeError && (
             <span className="text-red-500">Please select an event type</span>
           )}
+          
           <div>
             <label htmlFor="Venue" style={{ color: "black" }}>
               Venue:

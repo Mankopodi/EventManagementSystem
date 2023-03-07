@@ -56,7 +56,7 @@ const initDAta = {
 
   const fetchData = async () => {
     axios
-      .get("http://localhost:1337/api/bookings", {
+      .get(`${process.env.React_App_URl}/api/bookings`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -76,7 +76,7 @@ const initDAta = {
 
   const fetchDatas = async () => {
     axios
-      .get("http://localhost:1337/api/reports", {
+      .get(`${process.env.React_App_URl}/api/reports`, {
         headers: {
           Authorization: `Bearer e5ed32fc8c4b1937dd99c1b5b8980f636c274368bcab44ff2b2465d6be5ecc36ffd7792fb24c5277eab871de142c102f3a10b7ef64d7d441730b2cf7e0dc06c896350ae80b5aa295404abb4966897c361b591fcfeb53290307ded37c524090e190f67ab1c6dfa585ed92a09fd222cc8f05f7cbc76244ab98ae8b7928313c5479`,
          
@@ -155,24 +155,24 @@ const initDAta = {
               Report of the event
             </h1>
           </div>
-          <div className="info mt-4">
-          <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+          <div className="info mt-12">
+          <h1 className="ml-20 gap-1" style={{ color: "black" }}>
               First Name:
               {data?.attributes?.FirstName}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 " style={{ color: "black" }}>
               Name of the Event:
               {data?.attributes?.EventType}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Date of the Event:
               {data?.attributes?.eventDate}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1" style={{ color: "black" }}>
               Venue of the Event:
               {data?.attributes?.Venue}
             </h1>
-            <h1 className="font-semibold ml-20" style={{ color: "black" }}>
+            <h1 className=" ml-20 gap-1 mt-10" style={{ color: "black" }}>
               {" "}
               Total Number Of Guests:
               {data?.attributes?.NumberOfGuests}
@@ -188,7 +188,7 @@ const initDAta = {
             </h1>
 
            <h1 className="text-black mb-4 " style={{Color: 'black'}}>
-               {reports.attributes.Description}
+               {report?.attributes.Description}
            </h1>
 
           </div>

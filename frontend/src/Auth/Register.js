@@ -36,7 +36,7 @@ export default function Registration() {
     console.log(data);
 
     await axios
-      .post("http://localhost:1337/api/users", data)
+      .post(`${process.env.React_App_URl}/api/users`, data)
       .then((response) => {
         console.log("Well done!", response);
         console.log("User profile", response.data.user);
