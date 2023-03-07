@@ -14,6 +14,9 @@ import { useNavigate } from "react-router-dom";
 import { AUTH_TOKEN } from '../../tokens/constant';
 import { GrNotification } from "react-icons/gr";
 
+
+import './admindashboard.css'
+
 function Admindashboard() {
   const navigate = useNavigate();
   function logout() {
@@ -23,7 +26,7 @@ function Admindashboard() {
   }
 
   return (
-    <div>
+    <div className=''>
       <section>
         <div className="flex justify-end">
           <label htmlFor="my-drawer-2" className="btn btn-ghost drawer-button lg:hidden nav" ></label>
@@ -36,7 +39,7 @@ function Admindashboard() {
 
           </div>
 
-          <div className="drawer-side ">
+          <div className="admindashboard drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div className="flex justify-center font-bold text-4xl named mb-24" style={{ color: 'black' }}>

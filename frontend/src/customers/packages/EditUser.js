@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import './packages.css'
+
 export default function EditUser() {
   let navigate = useNavigate();
 
@@ -41,19 +43,21 @@ useEffect(() => {
               // update();
               console.log(res);
             })
+
+            navigate("/dash/packages");
         }
   
   
   return (
     <div className="container">
-      <div className="row">
+      <div className=" cardinput row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Edit User Package</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Name" className="form-label">
-              package name
+              
               </label>
               <input
                 type="text"
@@ -66,7 +70,7 @@ useEffect(() => {
             </div>
             <div className="mb-3">
               <label htmlFor="Username" className="form-label">
-                Package description
+               
               </label>
               <input
                 type={"text"}
@@ -79,7 +83,7 @@ useEffect(() => {
             </div>
             <div className="mb-3">
               <label htmlFor="Email" className="form-label">
-                Price
+                
               </label>
               <input
                 type={"text"}
@@ -190,3 +194,6 @@ useEffect(() => {
   //   navigate("/dash/packages");
     
   // };
+
+
+

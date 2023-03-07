@@ -13,6 +13,9 @@ import { useNavigate } from "react-router-dom";
 import PushNotification from "../../customers/pushNotification/pushNotification";
 import { GrNotification } from "react-icons/gr";
 
+
+import './dashboard.css'
+
 function Dashboard() {
   const navigate = useNavigate();
   function logout() {
@@ -36,7 +39,7 @@ function Dashboard() {
             <Outlet />
           </div>
 
-          <div className="drawer-side ">
+          <div className="eventbgColor drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div

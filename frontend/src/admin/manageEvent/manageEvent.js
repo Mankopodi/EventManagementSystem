@@ -22,7 +22,7 @@ function ManageEvent() {
 
 
     function getUsers() {
-        fetch(`process.env.React_App_URl/api/users`)
+        fetch(`${process.env.React_App_URl}/api/users`)
           .then(res => res.json())
           .then(user => {
             setUser(user);
@@ -40,7 +40,7 @@ function ManageEvent() {
         };
 
         axios
-          .put(`process.env.React_App_URl/api/users/${userID.current}`, blocked, {
+          .put(`${process.env.React_App_URl}/api/users/${userID.current}`, blocked, {
             headers: {
               Authorization: `Bearer ${Token}`,
             },
@@ -65,7 +65,7 @@ function ManageEvent() {
         // console.log(pos, 'id: ');
         console.log( 'getting user: ', id)
      
-        axios.delete(`process.env.React_App_URl/api/users/${id}`)
+        axios.delete(`${process.env.React_App_URl}/api/users/${id}`)
           .then((res) => {
             console.log(res);
             getUsers();
