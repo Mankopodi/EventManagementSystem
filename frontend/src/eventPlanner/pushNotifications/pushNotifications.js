@@ -9,7 +9,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 import '../../eventPlanner/reportEvents/report.css';
-import './pushNotification.css';
+import './pushNotifications.css';
 
 
 function PushNotifications() {

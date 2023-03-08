@@ -42,7 +42,7 @@ import ReportEventHall from "./eventPlanner/reportEventsHalll/reportEventsHalll"
 import ViewBooks from "./eventPlanner/viewBooks/viewBooking";
 import ViewRescheduleOfEvents from "./eventPlanner/ViewRescheduleOfEvents/ViewRescheduleOfEvents";
 import Contacts from "./eventPlanner/contacts/contact";
-//import  PushNotifications  from "./eventPlanner/pushNotifications/pushNotifications";
+import  PushNotifications  from "./eventPlanner/pushNotifications/pushNotifications";
 
 // admin
 import ManageCustomerEventPlaner from "./admin/manageCustomer&EventPlaner/manageCustomerEventPlaner";
@@ -146,10 +146,10 @@ function App() {
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route path="contacts" element={<Contacts />}></Route>
-              {/* <Route
+              <Route
                 path="pushNotifications"
                 element={<PushNotifications />}
-              ></Route> */}
+              ></Route>
             </Route>
             <Route path="Homepage" element={<Homepage />}></Route>
 
