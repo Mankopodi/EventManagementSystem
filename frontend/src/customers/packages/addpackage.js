@@ -47,7 +47,7 @@ export default function Addpackage() {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-black"
                 placeholder="Enter your package name"
                 name="name"
                 value={packageName}
@@ -55,12 +55,12 @@ export default function Addpackage() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="Username" className="form-label">
+              <label htmlFor="Username" className="form-label text-black">
                 
               </label>
               <input
                 type={"text"}
-                className="form-control"
+                className="form-control text-black"
                 placeholder="Enter your decription"
                 name="description"
                 value={packageDescription}
@@ -73,7 +73,7 @@ export default function Addpackage() {
               </label>
               <input
                 type={"text"}
-                className="form-control"
+                className="form-control text-black"
                 placeholder="Enter your price"
                 name="price"
                 value={price}

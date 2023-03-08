@@ -65,7 +65,7 @@ export default function Login() {
                 navigate("../dash/pack");
               }
               if (data.data.role.id === 5) {
-                navigate("/dashboard/packs");
+                navigate("/dashboard/pack");
               }
               if (data.data.role.id === 3) {
                 navigate("/admindash/homepage", { replace: true });
