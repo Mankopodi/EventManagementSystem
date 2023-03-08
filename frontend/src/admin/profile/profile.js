@@ -4,25 +4,46 @@ import { BiRename } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "./profile.css";
 
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+
 //import { useState, useEffect } from "react";
 
 function Profile() {
+
+  const [user, setUser] = useState([]);
+  // const [newCustomizeEventsPackage, setNewCustomizeEventsPackage] = useState("");
+  const userID = useRef();
+
+  useEffect(() => {
+     getUsers();
+  }, []);
   
-  
+  function getUsers() {
+    fetch(`${process.env.React_App_URl}/api/users`)
+      .then(res => res.json())
+      .then(user => {
+        setUser(user);
+        console.log(user)
+      })
+  }
   
   return (
     <div>
       <ToastContainer />
       <div className="hero min-h-screen flex justify-center align-middle">
         <div className="card pack w-96 card-compact  shadow-2xl">
-        
+       
         
           <div className="card-body">
-            <h1 className="text-center text-5xl font-bold" style={{color:'black'}}>Profile</h1>
-            <form>
+          {user?.map((user) => (
+            <>
+            <h1 className="text-center text-5xl font-bold" style={{ color: 'black' }}>Profile</h1>
+            <form >
+
               <div className="form-control">
-                <label className="label" >
-                  <span className="label-text" style={{color:'black'}}>Your Email</span>
+                <label className="label">
+                  <span className="label-text" style={{ color: 'black' }}>Your Email</span>
                 </label>
                 <label className="input-group">
                   <span>
@@ -30,17 +51,30 @@ function Profile() {
                   </span>
                   <input
                     type="email"
-                    placeholder="info@site.com"
-                    className="input input-bordered input-primary w-full"
-                   
-                   
-                  />
+                    placeholder={user.email} 
+                    className="input input-bordered input-primary w-full" />
+
                 </label>
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your username</span>
+                  <span className="label-text" style={{ color: 'black' }}>Your username</span>
+                </label>
+                <label className="input-group">
+                  <span>
+                    <BiRename style={{ fontSize: "1.5rem" }} />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder={user.username}
+                    className="input input-bordered input-primary w-full" />
+                </label>
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text" style={{ color: 'black' }}>Your firstname</span>
                 </label>
                 <label className="input-group">
                   <span>
@@ -49,15 +83,13 @@ function Profile() {
                   <input
                     type="text"
                     placeholder="e.g. John Doe"
-                    className="input input-bordered input-primary w-full"
-                    
-                  />
+                    className="input input-bordered input-primary w-full" />
                 </label>
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your firstname</span>
+                  <span className="label-text" style={{ color: 'black' }}>Your lastname</span>
                 </label>
                 <label className="input-group">
                   <span>
@@ -66,32 +98,13 @@ function Profile() {
                   <input
                     type="text"
                     placeholder="e.g. John Doe"
-                    className="input input-bordered input-primary w-full"
-                
-                  />
+                    className="input input-bordered input-primary w-full" />
                 </label>
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your lastname</span>
-                </label>
-                <label className="input-group">
-                  <span>
-                    <BiRename style={{ fontSize: "1.5rem" }} />
-                  </span>
-                  <input
-                    type="text"
-                    placeholder="e.g. John Doe"
-                    className="input input-bordered input-primary w-full"
-                    
-                  />
-                </label>
-              </div>
-
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text" style={{color:'black'}}>Your Cellphone</span>
+                  <span className="label-text" style={{ color: 'black' }}>Your Cellphone</span>
                 </label>
                 <label className="input-group">
                   <span>
@@ -100,19 +113,19 @@ function Profile() {
                   <input
                     type="tel"
                     placeholder="e.g 0712345678"
-                    className="input input-bordered input-primary w-full"
-                   
-                  />
+                    className="input input-bordered input-primary w-full" />
                 </label>
               </div>
 
               <div className="flex justify-end mt-9 space-x-2">
-                <button className="btn btn-primary " >
+                <button className="btn btn-primary ">
                   Update
                 </button>
-               
+
               </div>
-            </form>
+
+            </form></>
+            ))}
           </div>
         </div>
       </div>
