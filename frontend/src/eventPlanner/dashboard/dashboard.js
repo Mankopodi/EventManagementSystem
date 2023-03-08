@@ -8,7 +8,7 @@ import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { Outlet } from "react-router-dom";
-import { removeToken } from "../../helpers";
+//import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 //import PushNotification from "../../customers/pushNotification/pushNotification";
 import { GrNotification } from "react-icons/gr";
@@ -20,8 +20,8 @@ import ev from "../../assets/ev.jpeg";
 function Dashboard() {
   const navigate = useNavigate();
   function logout() {
-    removeToken();
-    navigate("/login/", { replace: true });
+    localStorage.removeItem("authToken")
+    navigate("/", { replace: true });
   }
 
   return (
@@ -51,10 +51,10 @@ function Dashboard() {
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
               <div
-                className="flex justify-center font-bold text-4xl named mb-24"
+                className="font-bold text-4xl named"
                 style={{ color: "black" }}
               >
-                Event Management System
+                EventCentral
               </div>
 
               <div className="down">
@@ -73,7 +73,7 @@ function Dashboard() {
                 >
                   <a>
                     <FiPackage style={{ fontSize: "1.5em" }} />
-                    Event Packages
+                    Packages
                   </a>
                 </li>
                 <li

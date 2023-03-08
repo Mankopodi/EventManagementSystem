@@ -17,7 +17,7 @@ import ForgotPasswordPage from "./Auth/forgot password";
 
 //customer
 import Navbar from "./customers/navbar/navbar";
-import Home from "../src/customers/home/home";
+
 import Bookings from "../src/customers/bookings/bookings";
 import Viewbookings from "./customers/bookings/viewbookings";
 import Pack from "./customers/pack/pack";
@@ -32,7 +32,7 @@ import Contact from "./customers/contact us/contact";
 
 // event planner
 import Dashboard from "./eventPlanner/dashboard/dashboard";
-import Homes from "./eventPlanner/homes/homes";
+
 import ProductReview1 from "./eventPlanner/ratings&Ratings/rating";
 import CRUD from "./eventPlanner/ratings&Ratings/addReview";
 import Modal from "./eventPlanner/ratings&Ratings/Modal";
@@ -97,12 +97,11 @@ function App() {
             {/* CUSTOMER ROUTES */}
 
             <Route path="/dash" element={<Navbar />}>
-              <Route path="home" element={<Home />}></Route>
+            <Route path="pack" element={<Pack />}></Route>
               <Route path="form" element={<Form />}></Route>
               <Route path="viewbookings" element={<Viewbookings />}></Route>
               <Route path="multiform" element={<multStep />}></Route>
               <Route path="bookings" element={<Bookings />}></Route>
-              <Route path="pack" element={<Pack />}></Route>
               <Route path="history" element={<History />}></Route>
               <Route path="review" element={<ProductReview1 />}></Route>
               <Route path="packages" element={<Packages />}></Route>
@@ -121,7 +120,7 @@ function App() {
 
             {/* EVENT PLANNER */}
             <Route path="/dashboard" element={<Dashboard />}>
-              <Route path="homes" element={<Homes />}></Route>
+              
 
               <Route path="addreview" element={<CRUD />}></Route>
               <Route path="modal" element={<Modal />}></Route>
@@ -168,7 +167,7 @@ function App() {
               <Route path="viewbooks" element={<ViewBooks />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route path="history" element={<History />}></Route>
-              <Route path="pack" element={<Pack />}></Route>
+             
               <Route path="ProductReview1" element={<ProductReview1 />}></Route>
               <Route path="ManageEvent" element={<ManageEvent />}></Route>
               <Route path="reportevent" element={<ReportEvents />}></Route>

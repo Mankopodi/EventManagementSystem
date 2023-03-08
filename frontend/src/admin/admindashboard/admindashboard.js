@@ -11,7 +11,7 @@ import { BiLogOut } from 'react-icons/bi';
 import { Outlet } from 'react-router-dom';
 //import { removeToken } from "../../helpers";
 import { useNavigate } from "react-router-dom";
-import { AUTH_TOKEN } from '../../tokens/constant';
+//import { AUTH_TOKEN } from '../../tokens/constant';
 import { GrNotification } from "react-icons/gr";
 
 import ok from "../../assets/ok.jpeg";
@@ -19,9 +19,9 @@ import ok from "../../assets/ok.jpeg";
 function Admindashboard() {
   const navigate = useNavigate();
   function logout() {
-    // removeToken();
-    localStorage.removeItem(AUTH_TOKEN);
-    navigate("/login/", { replace: true });
+   
+    localStorage.removeItem("authToken")
+    navigate("/", { replace: true });
   }
 
   return (
@@ -48,22 +48,22 @@ function Admindashboard() {
           <div className="drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80  text-base-content colg">
-              <div className="flex justify-center font-bold text-4xl named mb-24" style={{ color: 'black' }}>
-                Event Management System
+              <div className="font-bold text-4xl named " style={{ color: 'black' }}>
+              EventCentral
               </div>
 
-              <div className="down">
+              <div className="push mb-8">
 
                 <li style={{ color: 'black' }} onClick={() => navigate("/admindash/homepage")}>
                   <a>
                     <AiOutlineHome style={{ fontSize: "1.5em" }} />
-                    Stats
+                    Statistics
                   </a>
                 </li>
                 <li style={{ color: 'black' }} onClick={() => navigate("/admindash/packs")}>
                   <a >
                     <FiPackage style={{ fontSize: "1.5em" }} />
-                    Event Packages
+                    Packages
                   </a>
                 </li>
                 <li style={{ color: 'black' }} onClick={() => navigate("/admindash/history")}>

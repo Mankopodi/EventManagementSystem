@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { SUCCESS } from "../../enviroments/toast";
 
-
-
 function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -27,10 +25,10 @@ function MultiStepForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData)
+    console.log(formData);
 
-    const data ={
-     data:{
+    const data = {
+      data: {
         FirstName: formData.FirstName,
         LastName: formData.LastName,
         Email: formData.Email,
@@ -38,12 +36,11 @@ function MultiStepForm() {
         NumberOfGuests: formData.NumberOfGuests,
         eventDate: formData.EventDate,
         EventType: formData.EventType,
-        Venue: formData.Venue
-     }
-      
-    }
+        Venue: formData.Venue,
+      },
+    };
     axios
-      .post(`${process.env.React_App_URl}/api/bookings`,data, {
+      .post(`${process.env.React_App_URl}/api/bookings`, data, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -111,15 +108,18 @@ function Step1({ formData, setFormData, onNext }) {
   };
 
   return (
-  
-    <div className="flex justify-center ">
-      <div className="card pack card-compact w-3/4">
-        <div className="card-body pack">
+    <div className="flex justify-center  items-center min-h-screen">
+      <div className="card shadow-2xl pack  w-96 card-compact lg:w-6/12 mt-8">
+        <div className="card-body ">
           <h1 className="text-3xl font-bold " style={{ color: "black" }}>
             Personal details
           </h1>
 
-          <label htmlFor="FirstName"  className="font-bold" style={{ color: "black" }}>
+          <label
+            htmlFor="FirstName"
+            className="font-bold"
+            style={{ color: "black" }}
+          >
             First Name:
           </label>
           <input
@@ -131,7 +131,11 @@ function Step1({ formData, setFormData, onNext }) {
             onChange={handleChange}
             required
           />
-          <label htmlFor="LastName" className="font-bold"  style={{ color: "black" }}>
+          <label
+            htmlFor="LastName"
+            className="font-bold"
+            style={{ color: "black" }}
+          >
             Last Name:
           </label>
           <input
@@ -143,15 +147,12 @@ function Step1({ formData, setFormData, onNext }) {
             onChange={handleChange}
             required
           />
-          <div className="flex justify-start">
           <button className="btn glass w-40 text-black" onClick={onNext}>
             Next
           </button>
-          </div>
         </div>
       </div>
     </div>
-   
   );
 }
 
@@ -189,11 +190,15 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
   return (
     <div className="flex justify-center">
       <div className="card pack card-compact w-3/4">
-        <div className="card-body pack">
+        <div className="card-body ">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Contact Details
           </h1>
-          <label htmlFor="Email" className="font-bold"  style={{ color: "black" }}>
+          <label
+            htmlFor="Email"
+            className="font-bold"
+            style={{ color: "black" }}
+          >
             Email:
           </label>
           <input
@@ -205,8 +210,12 @@ function Step2({ formData, setFormData, onPrevious, onNext }) {
             value={formData.Email}
             onChange={handleChange}
           />
-          
-          <label htmlFor="PhoneNumber" className="font-bold"  style={{ color: "black" }}>
+
+          <label
+            htmlFor="PhoneNumber"
+            className="font-bold"
+            style={{ color: "black" }}
+          >
             Phone number:
           </label>
           <input
@@ -241,7 +250,7 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
   return (
     <div className="flex justify-center">
       <div className="card pack card-compact w-3/4">
-        <div className="card-body pack">
+        <div className="card-body ">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
           </h1>
@@ -264,7 +273,11 @@ function Step3({ formData, setFormData, onPrevious, onNext }) {
             </label>
           </div>
           <div>
-            <label htmlFor="EventDate" className="font-bold" style={{ color: "black" }}>
+            <label
+              htmlFor="EventDate"
+              className="font-bold"
+              style={{ color: "black" }}
+            >
               Date:
             </label>
             <input
@@ -302,11 +315,15 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
   return (
     <div className="flex justify-center">
       <div className="card pack card-compact w-3/4">
-        <div className="card-body pack">
+        <div className="card-body">
           <h1 className="font-bold text-3xl" style={{ color: "black" }}>
             Booking Info
           </h1>
-          <label htmlFor="EventType" className="font-bold" style={{ color: "black" }}>
+          <label
+            htmlFor="EventType"
+            className="font-bold"
+            style={{ color: "black" }}
+          >
             Event Type:
           </label>
           <select
@@ -327,9 +344,13 @@ function Step4({ formData, setFormData, onPrevious, onSubmit }) {
           {EventTypeError && (
             <span className="text-red-500">Please select an event type</span>
           )}
-          
+
           <div>
-            <label htmlFor="Venue" className="font-bold" style={{ color: "black" }}>
+            <label
+              htmlFor="Venue"
+              className="font-bold"
+              style={{ color: "black" }}
+            >
               Venue:
             </label>
             <select

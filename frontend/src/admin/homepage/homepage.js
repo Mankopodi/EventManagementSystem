@@ -32,7 +32,7 @@ function Homepage() {
   return (
     <div className="min-h-screen">
       <h2
-        className=" flex justify-start text-4xl font-bold mt-4 "
+        className=" flex justify-start text-4xl font-bold mt-4 italic"
         style={{ color: "black" }}
       >
         Dashboard

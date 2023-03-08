@@ -62,10 +62,10 @@ export default function Login() {
               console.log("role ", data.data.role.id);
 
               if (data.data.role.id === 4) {
-                navigate("../dash/home");
+                navigate("../dash/pack");
               }
               if (data.data.role.id === 5) {
-                navigate("/dashboard/homes");
+                navigate("/dashboard/packs");
               }
               if (data.data.role.id === 3) {
                 navigate("/admindash/homepage", { replace: true });
