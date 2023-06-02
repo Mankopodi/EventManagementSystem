@@ -15,7 +15,7 @@ function Landingpage() {
       backgroundImage: "url(" + pp + ")",
       backgroundSize: "cover",
       height: "100vh",
-      color: "#f5f5f5",
+      color: "Red",
     }}
   >
       <div className="navbar ">
